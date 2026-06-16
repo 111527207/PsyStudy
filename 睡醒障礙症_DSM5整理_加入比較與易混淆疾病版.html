@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DSM-5 睡－醒障礙症 系統整理</title>
+<style>
+:root{--bg:#0d1117;--s1:#161b22;--s2:#21262d;--b:#30363d;--a:#58a6ff;--a2:#bc8cff;--a3:#3fb950;--w:#d29922;--r:#f85149;--t:#e6edf3;--td:#8b949e;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI','PingFang TC','Microsoft JhengHei',sans-serif;background:var(--bg);color:var(--t);font-size:14px;line-height:1.65;}
+.hdr{background:linear-gradient(135deg,#161b22,#0d1117);border-bottom:1px solid var(--b);padding:16px 22px 12px;position:sticky;top:0;z-index:100;}
+.hdr h1{font-size:19px;font-weight:700;}.hdr p{font-size:12px;color:var(--td);margin-top:2px;}
+.nav{display:flex;flex-wrap:wrap;gap:5px;padding:8px 16px 8px;background:var(--bg);border-bottom:1px solid var(--b);position:sticky;top:62px;z-index:99;}
+.pill{background:var(--s1);border:1px solid var(--b);border-radius:20px;padding:4px 12px;font-size:12px;cursor:pointer;color:var(--td);white-space:nowrap;transition:all .15s;font-weight:500;}
+.pill:hover{border-color:var(--a);color:var(--a);}
+.pill.on{background:var(--a);border-color:var(--a);color:#000;font-weight:700;}
+.main{max-width:1100px;margin:0 auto;padding:14px 16px 60px;}
+.card{border:1px solid var(--b);border-radius:12px;margin-bottom:16px;overflow:hidden;background:var(--s1);}
+.chdr{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;cursor:pointer;background:linear-gradient(90deg,var(--s2),var(--s1));border-bottom:1px solid var(--b);user-select:none;gap:10px;}
+.chdr:hover{background:var(--s2);}
+.chl{display:flex;align-items:center;gap:10px;}
+.code{background:rgba(88,166,255,.1);border:1px solid var(--a);color:var(--a);border-radius:5px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace;white-space:nowrap;}
+.cname{font-size:14px;font-weight:700;}.cen{font-size:11px;color:var(--td);margin-top:1px;}
+.chev{font-size:16px;color:var(--td);transition:transform .25s;}.chev.o{transform:rotate(180deg);}
+.cbody{display:block;}.cbody.h{display:none;}
+.tabs{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--b);background:var(--bg);overflow-x:auto;}
+.tab{padding:7px 12px;font-size:12px;cursor:pointer;color:var(--td);border-bottom:2px solid transparent;white-space:nowrap;transition:all .15s;background:none;border-top:none;border-left:none;border-right:none;}
+.tab:hover{color:var(--t);background:var(--s2);}
+.tab.on{color:var(--a);border-bottom-color:var(--a);}
+.tab.k{color:var(--w);}.tab.k.on{border-bottom-color:var(--w);color:var(--w);}
+.panel{display:none;padding:14px 16px;}.panel.on{display:block;}
+.kbdg{display:inline-flex;align-items:center;gap:4px;background:rgba(210,153,34,.1);border:1px solid var(--w);color:var(--w);border-radius:4px;padding:2px 8px;font-size:11px;font-weight:700;margin-bottom:9px;}
+.ib{background:rgba(88,166,255,.07);border:1px solid rgba(88,166,255,.22);border-radius:8px;padding:9px 12px;margin-bottom:9px;font-size:13px;color:var(--td);}
+.ib strong{color:var(--a);}
+.box{background:var(--bg);border:1px solid var(--b);border-radius:8px;padding:10px 13px;margin-bottom:9px;}
+.bl{font-size:11px;font-weight:700;color:var(--a);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px;}
+.box.w{border-left:3px solid var(--w);}.box.g{border-left:3px solid var(--a3);}
+.box.a{border-left:3px solid var(--a);}.box.p{border-left:3px solid var(--a2);}.box.r{border-left:3px solid var(--r);}
+.rr{display:flex;align-items:flex-start;margin-bottom:8px;gap:8px;}
+.rl{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;border-radius:50%;background:var(--a);color:#000;font-size:11px;font-weight:700;flex-shrink:0;margin-top:2px;}
+.rl.w{background:var(--w);color:#1a1a1a;}.rl.r{background:var(--r);}
+.rc{flex:1;font-size:13px;}
+ul.cl{padding-left:16px;}.ul.cl li{margin-bottom:4px;font-size:13px;}
+ul.cl li{margin-bottom:4px;font-size:13px;}ul.cl li::marker{color:var(--a);}
+p.d{color:var(--td);font-size:13px;line-height:1.7;margin-bottom:7px;}
+h4.sub{font-size:13px;font-weight:700;color:var(--a);margin:10px 0 5px;}
+.diff{background:var(--bg);border:1px solid var(--b);border-radius:7px;padding:9px 12px;margin-bottom:7px;}
+.dn{font-weight:700;color:var(--a2);font-size:13px;margin-bottom:3px;}
+.db{color:var(--td);font-size:13px;}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:7px;margin-bottom:9px;}
+.sc{background:var(--bg);border:1px solid var(--b);border-radius:8px;padding:10px;text-align:center;}
+.sv{font-size:20px;font-weight:700;color:var(--a3);}.sl{font-size:11px;color:var(--td);margin-top:2px;}
+.tag{display:inline-block;padding:2px 7px;border-radius:10px;font-size:11px;font-weight:600;margin:2px;}
+.ta{background:rgba(88,166,255,.12);color:var(--a);}
+.tg{background:rgba(63,185,80,.12);color:var(--a3);}
+.tw{background:rgba(210,153,34,.12);color:var(--w);}
+.tr{background:rgba(248,81,73,.12);color:var(--r);}
+.tp{background:rgba(188,140,255,.12);color:var(--a2);}
+table.ct{width:100%;border-collapse:collapse;font-size:13px;}
+table.ct th{background:var(--s2);color:var(--td);font-size:11px;text-transform:uppercase;padding:6px 10px;text-align:left;border-bottom:2px solid var(--b);}
+table.ct td{padding:7px 10px;border-bottom:1px solid var(--b);vertical-align:top;}
+table.ct tr:last-child td{border-bottom:none;}
+table.ct tr:hover td{background:var(--s2);}
+.spbox{background:rgba(88,166,255,.05);border:1px solid rgba(88,166,255,.2);border-radius:7px;padding:10px 12px;margin-bottom:7px;}
+.sptitle{font-weight:700;color:var(--a);font-size:13px;margin-bottom:3px;}
+.intro-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin-bottom:12px;}
+.intro-card{background:var(--bg);border:1px solid var(--b);border-radius:8px;padding:11px;}
+.ic-name{font-weight:700;color:var(--a2);font-size:13px;margin-bottom:3px;}
+.ic-desc{font-size:12px;color:var(--td);}
+@media(max-width:600px){.hdr{padding:11px 13px 9px;}.nav{padding:7px 10px;}.main{padding:12px 10px 40px;}.panel{padding:12px;}}
+</style>
+</head>
+<body>
+<div class="hdr">
+<h1>😴 DSM-5 睡－醒障礙症 系統整理</h1>
+<p>臨床心理師國考備考 | 診斷準則 · 亞型 · 特別註明 · 鑑別診斷 完整版</p>
+</div>
+<div class="nav">
+<span class="pill on" onclick="fc('all',this)">全部</span>
+<span class="pill" onclick="fc('intro',this)">本章概覽</span>
+<span class="pill" onclick="fc('ins',this)">失眠症</span>
+<span class="pill" onclick="fc('hyp',this)">嗜睡症</span>
+<span class="pill" onclick="fc('narc',this)">猝睡症</span>
+<span class="pill" onclick="fc('breath',this)">呼吸相關</span>
+<span class="pill" onclick="fc('circ',this)">日夜節律</span>
+<span class="pill" onclick="fc('nrem',this)">NREM覺醒</span>
+<span class="pill" onclick="fc('night',this)">夢魔症</span>
+<span class="pill" onclick="fc('rem',this)">REM行為障礙</span>
+<span class="pill" onclick="fc('rls',this)">腿部不寧</span>
+<span class="pill" onclick="fc('subst',this)">物質引發</span>
+</div>
+<div class="main">
+<div class="card" data-cat="compare"><div class="chdr">重點比較總表</div><div class="cbody"><div class="panel on">
+<h3>睡醒障礙症重點比較</h3>
+<table class="ct">
+<tr><th>疾病</th><th>核心特徵</th><th>關鍵鑑別點</th></tr>
+<tr><td>失眠症</td><td>入睡/維持睡眠困難、早醒；≥3晚/週且≥3月</td><td>有睡眠機會仍睡不好</td></tr>
+<tr><td>嗜睡症</td><td>夜睡足夠仍白天過度嗜睡、睡後遲鈍</td><td>無猝倒，長時間睡眠仍不恢復</td></tr>
+<tr><td>猝睡症</td><td>無法抗拒睡眠、猝倒、SOREMP</td><td>下視丘泌素缺乏、REM侵入</td></tr>
+<tr><td>呼吸相關睡眠障礙</td><td>打鼾、呼吸中止、日間嗜睡</td><td>PSG/AHI異常</td></tr>
+<tr><td>日夜節律睡醒障礙症</td><td>睡眠時相與社會需求不一致</td><td>依內在時程可正常睡眠</td></tr>
+<tr><td>非快速動眼睡眠覺醒障礙症</td><td>夢遊、睡驚，多在N3</td><td>事後失憶、難喚醒</td></tr>
+<tr><td>夢魔症</td><td>REM期生動惡夢</td><td>醒後記得夢境</td></tr>
+<tr><td>REM睡眠行為障礙症</td><td>夢境演出、肌肉失抑制</td><td>常與神經退化疾病相關</td></tr>
+<tr><td>腿部不寧症候群</td><td>夜間腿部不適、想動腿</td><td>活動可改善、休息惡化</td></tr>
+</table>
+</div></div></div><div class="card">
+<div class="chdr"><div class="chl"><span class="code">國考重點</span><div><div class="cname">易混淆疾病比較</div></div></div></div>
+<div class="cbody"><div class="panel on">
+<table class="ct">
+<tr><th>比較組合</th><th>關鍵差異</th></tr>
+<tr><td>失眠症 vs 日夜節律睡醒障礙症</td><td>失眠症即使有睡眠機會仍睡不好；日夜節律問題是在符合自身時相時可正常睡眠。</td></tr>
+<tr><td>嗜睡症 vs 猝睡症</td><td>嗜睡症以長時間睡眠、睡後遲鈍為主；猝睡症有猝倒、睡眠癱瘓、將睡期幻覺及SOREMP。</td></tr>
+<tr><td>夢魔症 vs REM睡眠行為障礙症</td><td>夢魔症醒後可清楚回憶惡夢且通常不演出夢境；REM睡眠行為障礙會實際做出夢境動作，可能傷人。</td></tr>
+<tr><td>非快速動眼睡眠覺醒障礙症 vs 夢魔症</td><td>NREM夢遊/睡驚多在前1/3夜、難喚醒且事後失憶；夢魔症多在REM期、醒後定向感完整。</td></tr>
+<tr><td>腿部不寧症候群 vs 失眠症</td><td>RLS因腿部不適導致難入睡，活動可改善；失眠症沒有特徵性腿部感覺症狀。</td></tr>
+<tr><td>OSA vs 嗜睡症</td><td>OSA有打鼾與呼吸中止證據；嗜睡症無此特徵，夜睡通常已充足。</td></tr>
+</table>
+</div></div>
+</div><!-- ── 本章概覽 ── -->
+<div class="card" data-cat="intro">
+<div class="chdr" onclick="td(this)">
+<div class="chl"><span class="code">本章導論</span><div><div class="cname">睡－醒障礙症 — 本章概覽（10項病症/病症群）</div><div class="cen">Sleep-Wake Disorders Overview</div></div></div>
+<span class="chev o">▾</span>
+</div>
+<div class="cbody">
+<div class="panel on">
+<div class="intro-grid">
+<div class="intro-card"><div class="ic-name">① 失眠症</div><div class="ic-desc">Insomnia Disorder — 入睡/維持/清晨早醒困難</div></div>
+<div class="intro-card"><div class="ic-name">② 嗜睡症</div><div class="ic-desc">Hypersomnolence Disorder — 過度嗜睡、睡後遲鈍</div></div>
+<div class="intro-card"><div class="ic-name">③ 猝睡症</div><div class="ic-desc">Narcolepsy — 猝倒、下視丘泌素缺乏</div></div>
+<div class="intro-card"><div class="ic-name">④ 與呼吸相關的睡眠障礙症</div><div class="ic-desc">阻塞性/中樞性睡眠呼吸中止、睡眠相關肺泡通氣低下</div></div>
+<div class="intro-card"><div class="ic-name">⑤ 日夜節律睡醒障礙症</div><div class="ic-desc">Circadian Rhythm — 睡眠時相延遲/前移/輪班工作型等</div></div>
+<div class="intro-card"><div class="ic-name">⑥ 非快速動眼睡眠覺醒障礙症</div><div class="ic-desc">NREM — 夢遊型、睡驚型</div></div>
+<div class="intro-card"><div class="ic-name">⑦ 夢魔症</div><div class="ic-desc">Nightmare Disorder — 快速動眼期、栩栩如生夢境</div></div>
+<div class="intro-card"><div class="ic-name">⑧ 快速動眼睡眠行為障礙症</div><div class="ic-desc">REM Sleep Behavior Disorder — 夢境扮演行為</div></div>
+<div class="intro-card"><div class="ic-name">⑨ 腿部不寧症候群</div><div class="ic-desc">Restless Legs Syndrome — 傍晚/夜間腿部不適衝動</div></div>
+<div class="intro-card"><div class="ic-name">⑩ 物質/醫藥引發的睡眠障礙症</div><div class="ic-desc">失眠型/嗜睡型/異睡型/混合型</div></div>
+</div>
+<div class="box a"><div class="bl">核心臨床觀念</div>
+<ul class="cl">
+<li>所有睡醒障礙症的核心：對睡眠的品質、時機、總量感到不滿意，以及日間苦惱和損害</li>
+<li>持續的睡眠障礙是後續心理疾病和物質使用障礙症的<strong>風險因子</strong>，也可能是精神疾病發作的<strong>前驅症狀</strong></li>
+<li>睡眠混亂對伴隨精神疾病（憂鬱、焦慮）共存是重要的臨床指標</li>
+<li>鑑別診斷需從多方面進行，需考量可能合併的一般醫學或神經學狀況</li>
+<li>快速動眼睡眠行為障礙症是共核蛋白病（帕金森氏病等）的早期指標</li>
+</ul>
+</div>
+<div class="box w"><div class="bl">⚠️ 整合vs分化的理念</div>某些疾病（如失眠症）採用整合（lumping）方式；某些（如猝睡症）採用分化（splitting）方式，反映流行病學、神經生物學、治療研究的驗證可及性。</div>
+</div>
+</div>
+</div>
+<!-- ── 失眠症 ── -->
+<div class="card" data-cat="ins">
+<div class="chdr" onclick="td(this)">
+<div class="chl"><span class="code">780.52 F51.01</span><div><div class="cname">失眠症</div><div class="cen">Insomnia Disorder</div></div></div>
+<span class="chev o">▾</span>
+</div>
+<div class="cbody">
+<div class="tabs">
+<button class="tab k on" onclick="st(this,'ins-dx')">⭐ 診斷準則</button>
+<button class="tab" onclick="st(this,'ins-sp')">特別註明</button>
+<button class="tab" onclick="st(this,'ins-feat')">診斷特質</button>
+<button class="tab" onclick="st(this,'ins-assoc')">支持診斷</button>
+<button class="tab" onclick="st(this,'ins-prev')">盛行率</button>
+<button class="tab" onclick="st(this,'ins-dev')">發展病程</button>
+<button class="tab" onclick="st(this,'ins-risk')">風險預後</button>
+<button class="tab" onclick="st(this,'ins-gender')">性別議題</button>
+<button class="tab" onclick="st(this,'ins-marker')">診斷標記</button>
+<button class="tab" onclick="st(this,'ins-func')">功能後果</button>
+<button class="tab k" onclick="st(this,'ins-diff')">⭐ 鑑別診斷</button>
+<button class="tab" onclick="st(this,'ins-comor')">共病</button>
+</div>
+<div class="panel on" id="ins-dx">
+<div class="kbdg">⭐ 核心：每週≥3晚 + 持續≥3個月 + 有足夠機會睡眠</div>
+<div class="rr"><span class="rl">A</span><div class="rc">主要的抱怨為不滿意睡眠的質或量，伴隨有以下<strong>一個或多個</strong>症狀：<ul class="cl" style="margin-top:5px"><li>難以入睡（兒童：無照顧者協助就無法入睡）</li><li>維持睡眠困難，頻繁地醒來或醒來後難以再進入睡眠（兒童：無照顧者協助就難以再睡）</li><li>清晨很早醒來，無法再睡覺</li></ul></div></div>
+<div class="rr"><span class="rl">B</span><div class="rc">睡眠障礙症引起臨床上顯著苦惱或社交、職業、教育、學業、行為或其他重要領域功能減損</div></div>
+<div class="rr"><span class="rl">C</span><div class="rc">每星期至少有<strong>3個晚上</strong>難以睡眠</div></div>
+<div class="rr"><span class="rl">D</span><div class="rc">難以睡眠的情形至少<strong>三個月</strong></div></div>
+<div class="rr"><span class="rl">E</span><div class="rc">儘管有足夠的機會睡眠，還是出現難以睡眠</div></div>
+<div class="rr"><span class="rl">F</span><div class="rc">失眠無法以不發生於其他睡醒障礙症的病程做更好的解釋（如猝睡症、呼吸相關、日夜節律障礙症、類睡症）</div></div>
+<div class="rr"><span class="rl">G</span><div class="rc">失眠無法歸因於某物質的生理效應</div></div>
+<div class="rr"><span class="rl w">H</span><div class="rc">共存的精神疾病和身體病況，無法適當地解釋失眠的主要抱怨</div></div>
+<div class="box w"><div class="bl">⚠️ 注意</div>急性和短期失眠（症狀持續少於3個月但符合其他所有準則）→ 編碼為<strong>其他特定的失眠症</strong>。</div>
+</div>
+<div class="panel" id="ins-sp">
+<div class="spbox"><div class="sptitle">共病特別說明</div>有非睡眠障礙症的精神疾病共病（包括物質使用疾患）/ 有其他的身體病況共病 / 有其他的睡眠障礙症</div>
+<div class="spbox"><div class="sptitle">病程特別說明</div>
+<ul class="cl">
+<li><strong>陣發型</strong>：症狀持續至少一個月但少於三個月</li>
+<li><strong>持續型</strong>：症狀維持三個月或更久</li>
+<li><strong>多次發作型</strong>：一年內發作兩次（或更多次）</li>
+</ul>
+</div>
+</div>
+<div class="panel" id="ins-feat">
+<p class="d">失眠症的基本特質是對睡眠的質或量感到不滿意，並抱怨進入或維持睡眠有困難。</p>
+<div class="box a"><div class="bl">三種失眠類型</div>
+<ul class="cl">
+<li><strong>睡眠引導型失眠</strong>（sleep onset insomnia / initial insomnia）：就寢時引導入睡困難</li>
+<li><strong>睡眠維持型失眠</strong>（sleep maintenance insomnia / middle insomnia）：整夜頻繁或過長地清醒過來</li>
+<li><strong>晚期失眠</strong>（late insomnia）：清晨早醒伴隨無法再入睡</li>
+</ul>
+</div>
+<div class="box p"><div class="bl">非恢復性睡眠（nonrestorative sleep）</div>即使有足夠的持續時間仍感覺沒有得到休息，通常與入睡困難或睡眠維持困難相關，也可以單獨發生。若非恢復性睡眠符合頻率、持續時間、苦惱和損害但沒有入睡/維持困難 → 下<strong>其他特定的失眠症</strong>。</div>
+<p class="d">白天受影響包括：疲勞、日間嗜睡（後者較不普遍，多見於老年人或共病時）、認知功能損害（注意力、專注力、記憶力、執行功能）、典型的情緒干擾（易怒、情緒易變）。</p>
+</div>
+<div class="panel" id="ins-assoc">
+<ul class="cl">
+<li>失眠通常與生理和認知警醒、及干擾睡眠的制約因子（conditioning factor）相關</li>
+<li>「越努力去睡，越感到挫折及越難睡」的惡性循環</li>
+<li>持續失眠個體可能養成適應不良的睡眠習慣（如：過多時間臥床、打盹小睡）</li>
+<li>制約式的警醒（conditioned arousal）：在常失眠的環境下行為使警醒持續</li>
+<li>在心理或人格評量上可能有輕度憂鬱和焦慮、擔憂的認知型式、情緒取向的衝突解決模式</li>
+</ul>
+</div>
+<div class="panel" id="ins-prev">
+<div class="sg">
+<div class="sc"><div class="sv">1/3</div><div class="sl">成人有失眠症狀</div></div>
+<div class="sc"><div class="sv">10–15%</div><div class="sl">有失眠相關日間功能減損</div></div>
+<div class="sc"><div class="sv">6–10%</div><div class="sl">符合失眠症診斷標準</div></div>
+<div class="sc"><div class="sv">10–20%</div><div class="sl">一般醫療情況下抱怨顯著失眠</div></div>
+<div class="sc"><div class="sv">1.44:1</div><div class="sl">女:男 盛行率比</div></div>
+<div class="sc"><div class="sv">40–50%</div><div class="sl">失眠患者有共病心理疾病</div></div>
+</div>
+<p class="d">失眠症是所有睡眠障礙中盛行率<strong>最高的</strong>。最常見的失眠是與其他一般醫學狀況或心理疾病所共病的。</p>
+</div>
+<div class="panel" id="ins-dev">
+<p class="d">失眠症狀可在一生的任何時期發生，但首次發作較常見於年輕成人期。在女性方面，新產生的失眠可能發生於停經期，甚至在其他停經症狀都緩解後依然持續。</p>
+<div class="box a"><div class="bl">病程類型</div>
+<ul class="cl">
+<li><strong>情境性/急性</strong>：通常持續數天至數週，與生活事件有關，促發事件消失後通常緩解</li>
+<li><strong>持續性</strong>：可能因制約式的警醒或其他維持因子而持續</li>
+<li><strong>反覆性</strong>：與壓力事件相關的睡眠困難反覆發作</li>
+</ul>
+</div>
+<p class="d">年齡差異：年輕成人較常有<strong>入睡困難</strong>；中老年人較常有<strong>維持睡眠困難</strong>。1-7年追蹤後慢性化機率約45-75%。</p>
+</div>
+<div class="panel" id="ins-risk">
+<div class="box a"><div class="bl">氣質</div>焦慮或容易緊張的個性或認知型態，會增加警醒狀態（arousal predisposition）；傾向於壓抑情緒會增加失眠的易感性。</div>
+<div class="box a"><div class="bl">環境</div>噪音、光線、不舒適的高溫或低溫及高海拔，都可能會增加失眠的易感性。</div>
+<div class="box a"><div class="bl">基因和生理</div>
+<ul class="cl">
+<li>女性和高齡與失眠的易感性增加相關</li>
+<li>睡眠中斷和失眠呈現家族分佈；同卵雙胞胎盛行率比異卵雙胞胎高；一等親也比一般人群高</li>
+</ul>
+</div>
+<div class="box p"><div class="bl">病程修飾因子</div>不良的睡眠衛生慣例（如攝取過多咖啡因、不固定的睡眠時間表）會造成病程惡化。</div>
+</div>
+<div class="panel" id="ins-gender">
+<p class="d">女性的失眠盛行率較男性高（1.44:1），首次發作常與<strong>生產或停經</strong>相關。儘管老年女性有較高的盛行率，多頻睡眠檢查的研究顯示老年女性的睡眠連續性和慢波睡眠狀況比老年男性還要好。</p>
+</div>
+<div class="panel" id="ins-marker">
+<p class="d">多頻睡眠檢查（PSG）通常呈現睡眠連續性的損害（睡眠準備期和入睡後清醒增加、睡眠效率減少），以及可能的第一階段睡眠增加和第三、四階段睡眠減少。</p>
+<div class="box w"><div class="bl">⚠️ 重要</div>PSG的損害並非完全與個體的臨床表現相吻合；失眠的人與PSG結果相較，<strong>常會低估睡著的時間和高估醒來的時間</strong>（主觀估計偏差）。</div>
+<p class="d">量化的腦電波分析：失眠的人在入睡期前後和NREM睡眠時，有較高的高頻腦波能量（皮質層激發 cortical arousal 的特徵）。</p>
+</div>
+<div class="panel" id="ins-func">
+<p class="d">失眠或過度關注睡眠、白日易怒增加、專心度差，可能產生人際關係、社會、職業上的問題。</p>
+<p class="d">持續性失眠的長期影響：增加<strong>重度憂鬱症、高血壓和心肌梗塞</strong>的風險；增加曠職率和降低生產力；降低生活品質和增加經濟負擔。</p>
+</div>
+<div class="panel" id="ins-diff">
+<div class="kbdg">⭐ 鑑別重點</div>
+<div class="diff"><div class="dn">正常的睡眠變異性（短時睡眠者 short sleepers）</div><div class="db">短時睡眠者缺乏入睡困難、維持睡眠困難，也沒有白日特徵性症狀（疲勞、注意力問題、易怒）。</div></div>
+<div class="diff"><div class="dn">⭐ 情境性/急性失眠</div><div class="db">持續少於3個月 → 下「其他特定的失眠症」，而非失眠症。</div></div>
+<div class="diff"><div class="dn">⭐ 日夜節律睡醒障礙症</div><div class="db">睡眠時相延遲型：只有在企圖在社會規範時間入睡時才有睡眠引導型失眠，符合內在日夜節律的睡眠時就無困難。輪班工作型：病史中近期內有輪班工作。</div></div>
+<div class="diff"><div class="dn">⭐ 腿部不寧症候群</div><div class="db">特徵在於有一股移動腿部的衝動和任何伴隨的腿部不適感（傍晚/夜間惡化、移動可緩解）。</div></div>
+<div class="diff"><div class="dn">⭐ 與呼吸相關的睡眠障礙症</div><div class="db">大部分會有打鼾、睡眠期間呼吸暫停、日間過度思睡的狀況。高達50%的睡眠呼吸中止患者也會有失眠症狀（女性和老年人更普遍）。</div></div>
+<div class="diff"><div class="dn">猝睡症</div><div class="db">差別在於有顯著的白日過度思睡、猝倒症、睡眠癱瘓、睡眠相關的幻覺。</div></div>
+<div class="diff"><div class="dn">類睡症</div><div class="db">特徵是抱怨在睡眠中有異常的行為或生理事件，導致間斷性的清醒和難再入眠。異常行為事件是主要臨床表徵，而非失眠本身。</div></div>
+<div class="diff"><div class="dn">物質/醫藥引發之睡眠障礙症，失眠型</div><div class="db">有某個物質被判定為造成失眠的原因（如失眠只發生在喝大量咖啡時）。</div></div>
+</div>
+<div class="panel" id="ins-comor">
+<ul class="cl">
+<li>常見共病醫學狀況：糖尿病、冠心病、慢性阻塞性肺病、關節炎、纖維肌痛、慢性疼痛（風險關係是<strong>雙向</strong>的）</li>
+<li>最常共病的精神疾病：<strong>雙相情緒障礙症、憂鬱症、焦慮症</strong></li>
+<li>持續性的失眠代表雙相情緒障礙症、憂鬱症、焦慮症或物質使用障礙症的<strong>風險因子或早期症狀</strong></li>
+<li>失眠者可能誤用醫藥或酒精來幫助睡眠，可進展成物質使用障礙症</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- ── 嗜睡症 ── -->
+<div class="card" data-cat="hyp">
+<div class="chdr" onclick="td(this)">
+<div class="chl"><span class="code">307.44 F51.11</span><div><div class="cname">嗜睡症</div><div class="cen">Hypersomnolence Disorder</div></div></div>
+<span class="chev o">▾</span>
+</div>
+<div class="cbody">
+<div class="tabs">
+<button class="tab k on" onclick="st(this,'hyp-dx')">⭐ 診斷準則</button>
+<button class="tab" onclick="st(this,'hyp-sp')">特別註明</button>
+<button class="tab" onclick="st(this,'hyp-feat')">診斷特質</button>
+<button class="tab" onclick="st(this,'hyp-assoc')">支持診斷</button>
+<button class="tab" onclick="st(this,'hyp-prev')">盛行率</button>
+<button class="tab" onclick="st(this,'hyp-dev')">發展病程</button>
+<button class="tab" onclick="st(this,'hyp-risk')">風險預後</button>
+<button class="tab" onclick="st(this,'hyp-marker')">診斷標記</button>
+<button class="tab" onclick="st(this,'hyp-func')">功能後果</button>
+<button class="tab k" onclick="st(this,'hyp-diff')">⭐ 鑑別診斷</button>
+<button class="tab" onclick="st(this,'hyp-comor')">共病</button>
+</div>
+<div class="panel on" id="hyp-dx">
+<div class="kbdg">⭐ 核心：過度思睡 ≥3個月 + 至少一項額外症狀</div>
+<div class="rr"><span class="rl">A</span><div class="rc">過度嗜睡（hypersomnia）儘管主要睡眠時期至少7小時，顯現以下一項或更多症狀：<ul class="cl" style="margin-top:5px"><li>同一天內重複地昏昏欲睡或睡眠</li><li>一次睡眠發作超過9小時且不恢復精神</li><li>突然清醒後難以完全清醒（睡後遲鈍 sleep drunkenness）</li></ul></div></div>
+<div class="rr"><span class="rl">B</span><div class="rc">嗜睡情形每週發生至少<strong>三次</strong>，持續至少<strong>三個月</strong></div></div>
+<div class="rr"><span class="rl">C</span><div class="rc">嗜睡引起顯著苦惱或認知、社交、職業或其他重要領域功能減損</div></div>
+<div class="rr"><span class="rl w">D</span><div class="rc">嗜睡無法以發生另一個睡眠障礙症的病程（猝睡症、呼吸相關、日夜節律障礙症、類睡症）做更好的解釋，且不是因為睡眠量不足</div></div>
+<div class="rr"><span class="rl w">E</span><div class="rc">嗜睡無法歸因於物質的生理效應，且無法由共存的精神疾病和身體病況做適當解釋</div></div>
+</div>
+<div class="panel" id="hyp-sp">
+<div class="spbox"><div class="sptitle">共病特別說明</div>有精神疾病共病（含物質使用疾患）/ 有其他身體病況 / 有其他睡眠障礙症</div>
+<div class="spbox"><div class="sptitle">病程特別說明</div>急性（&lt;1個月）/ 亞急性（1-3個月）/ 持續型（≥3個月）</div>
+<div class="spbox"><div class="sptitle">嚴重度</div>
+<ul class="cl">
+<li>輕度：每週少於1天難以維持日間清醒</li>
+<li>中度：每週1-2天難以維持日間清醒</li>
+<li>重度：每週3-7天難以維持日間清醒</li>
+</ul>
+</div>
+</div>
+<div class="panel" id="hyp-feat">
+<p class="d">不像猝睡症（許多不連續的「睡眠襲擊」），嗜睡症患者有<strong>較長且較少中斷的夜眠</strong>、<strong>較難清醒過來</strong>、<strong>更持久的日間嗜睡</strong>、<strong>更長且更不具恢復性的日間睡眠發作</strong>、在白日打盹間鮮少作夢。</p>
+<div class="box w"><div class="bl">睡後遲鈍（Sleep Drunkenness）— 高特異性</div>在嗜睡症上很常見（36-50%患者），對嗜睡症有<strong>很高的特異性</strong>（較不普遍但較具特異性）。表現為突然清醒後持久的混亂狀態。</div>
+<p class="d">自動化行為：嗜睡症患者可能以半自動的、朦朧的方式，持續進行活動，且缺乏記憶或意識（如：發現自己已駕駛了數哩之遙，卻沒有發覺在前面的幾分鐘是在「自動」駕駛）。</p>
+</div>
+<div class="panel" id="hyp-assoc">
+<ul class="cl">
+<li>無恢復性睡眠（約80%患者抱怨）</li>
+<li>自動化行為（automatic behavior）</li>
+<li>晨間清醒困難（sleep drunkenness）</li>
+<li>小睡（少於30分鐘）通常也無恢復性（不同於猝睡症的短暫恢復性小睡）</li>
+<li>有部分嗜睡症家族史者，同時也有自主神經系統失調的症狀（反覆的血管收縮、腹痛、頭痛）</li>
+</ul>
+</div>
+<div class="panel" id="hyp-prev">
+<div class="sg">
+<div class="sc"><div class="sv">5–10%</div><div class="sl">至睡眠障礙診所抱怨白日嗜睡者被診斷為嗜睡症</div></div>
+<div class="sc"><div class="sv">~1%</div><div class="sl">一般人口有睡後遲鈍</div></div>
+<div class="sc"><div class="sv">相近</div><div class="sl">男性和女性發生率相近</div></div>
+</div>
+</div>
+<div class="panel" id="hyp-dev">
+<p class="d">大部分的嗜睡症表現於<strong>青少年晚期或成人早期</strong>，平均起始年齡介於17至24歲之間。嗜睡症平均在首次症狀發生後<strong>10-15年才被診斷</strong>。起始是漸進的，在15-25歲之間開始發生，數週或數月後逐漸進展。</p>
+<p class="d">嗜睡症有個持續性的病程，症狀嚴重度有進展性的變化。在最極端病例，睡眠發作可長達20小時。</p>
+</div>
+<div class="panel" id="hyp-risk">
+<div class="box a"><div class="bl">環境</div>嗜睡症會因為心理壓力和使用酒精而暫時增加。大約10%的案例在嗜睡症之前或同時伴有病毒感染（如人類免疫缺陷病毒、艾滋病）。頭部外傷後6到18個月之後也可能發展出嗜睡症。</div>
+<div class="box a"><div class="bl">基因和生理</div>嗜睡症可能是家族性的，體染色體顯性遺傳模式。</div>
+</div>
+<div class="panel" id="hyp-marker">
+<p class="d">有些嗜睡症患者的<strong>漫波睡眠會增加</strong>。多次睡眠準備期測驗（MSLT）記錄的典型平均睡眠準備期少於10分鐘（嗜睡症通常大於8分鐘，猝睡症通常小於或等於8分鐘）。</p>
+<div class="box w"><div class="bl">區別嗜睡症 vs 猝睡症的關鍵</div>
+<ul class="cl">
+<li>嗜睡症：MSLT平均睡眠準備期通常&lt;10分鐘，但<strong>很少入睡出現之快速動眼期</strong></li>
+<li>猝睡症：MSLT平均睡眠準備期≤8分鐘，且4-5次打盹測驗中<strong>≥2次入睡出現之快速動眼期</strong></li>
+</ul>
+</div>
+</div>
+<div class="panel" id="hyp-func">
+<p class="d">嗜睡症會造成顯著的痛苦和工作、社會關係的失能。過長的夜眠和清醒困難都會影響工作效能、注意力、記憶力差。</p>
+</div>
+<div class="panel" id="hyp-diff">
+<div class="kbdg">⭐ 鑑別重點</div>
+<div class="diff"><div class="dn">⭐ 夜眠不足/睡眠剝奪</div><div class="db">嗜睡症患者的過度嗜睡不管其夜眠持續時間長短依然出現；每晚平均睡眠少於7小時強烈顯示為夜眠不足，每24小時超過9-10小時的睡眠則強烈顯示有嗜睡症。若有疑問，可嘗試<strong>10-14天睡眠延長</strong>來確認。夜眠不足不可能一直持續十幾年而未減緩。</div></div>
+<div class="diff"><div class="dn">⭐ 猝睡症</div><div class="db">猝睡症有猝倒，且在睡眠和清醒的交接處有部分的快速動眼期睡眠反覆插入（睡眠相關的幻覺、睡眠癱瘓）。猝睡症患者的MSLT常表現出較短的睡眠準備期及數次入睡出現的快速動眼期。</div></div>
+<div class="diff"><div class="dn">⭐ 與呼吸相關的睡眠障礙症</div><div class="db">有病史的響亮鼾聲、睡眠時呼吸中止、腦傷或心血管疾病，以及在身體檢查呈現肥胖、口咽結構異常、高血壓或心臟衰竭。多頻睡眠檢查可證實呼吸中止發作。</div></div>
+<div class="diff"><div class="dn">⭐ 重度憂鬱症</div><div class="db">嗜睡症或猝睡症可能與憂鬱症相關聯或相混淆。憂鬱症的MSLT通常是<strong>正常的</strong>，且主觀和客觀的嗜睡是互相不一致的。</div></div>
+<div class="diff"><div class="dn">日夜節律睡醒障礙症</div><div class="db">日夜節律睡醒障礙症的特徵常是日間嗜睡，病史上有不正常的睡眠-清醒時程表（輪班或不定時的工作）。</div></div>
+<div class="diff"><div class="dn">睡眠品質差及疲勞</div><div class="db">嗜睡症必須與睡眠的質或量不足相關的過度嗜睡和疲勞作區分。疲勞（fatigue）未必能靠增加睡眠來緩解，且與睡眠的質或量無關。</div></div>
+</div>
+<div class="panel" id="hyp-comor">
+<ul class="cl">
+<li>憂鬱症、躁鬱症（的鬱期）、有季節性模式的重度憂鬱症</li>
+<li>物質相關障礙症的風險（尤其是使用興奮劑來自我治療）</li>
+<li>神經退化性狀況（阿茲海默病、帕金森氏病、多發性系統退化症）</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- ── 猝睡症 ── -->
+<div class="card" data-cat="narc">
+<div class="chdr" onclick="td(this)">
+<div class="chl"><span class="code">347.xx G47.xx</span><div><div class="cname">猝睡症</div><div class="cen">Narcolepsy</div></div></div>
+<span class="chev o">▾</span>
+</div>
+<div class="cbody">
+<div class="tabs">
+<button class="tab k on" onclick="st(this,'narc-dx')">⭐ 診斷準則</button>
+<button class="tab" onclick="st(this,'narc-sub')">亞型</button>
+<button class="tab" onclick="st(this,'narc-feat')">診斷特質</button>
+<button class="tab" onclick="st(this,'narc-assoc')">支持診斷</button>
+<button class="tab" onclick="st(this,'narc-prev')">盛行率</button>
+<button class="tab" onclick="st(this,'narc-dev')">發展病程</button>
+<button class="tab" onclick="st(this,'narc-risk')">風險預後</button>
+<button class="tab" onclick="st(this,'narc-cult')">文化/性別</button>
+<button class="tab" onclick="st(this,'narc-marker')">診斷標記</button>
+<button class="tab" onclick="st(this,'narc-func')">功能後果</button>
+<button class="tab k" onclick="st(this,'narc-diff')">⭐ 鑑別診斷</button>
+<button class="tab" onclick="st(this,'narc-comor')">共病</button>
+</div>
+<div class="panel on" id="narc-dx">
+<div class="kbdg">⭐ 核心：反覆無法抗拒睡眠（A）+ 至少一項B</div>
+<div class="rr"><span class="rl">A</span><div class="rc">於同一天內反覆出現一個無法抗拒睡眠需求的階段，陷入睡眠或小睡。在過去<strong>三個月</strong>中每週至少出現<strong>三次</strong>這樣的狀況</div></div>
+<div class="rr"><span class="rl">B</span><div class="rc">至少出現下列其中的<strong>一項</strong>：
+        <ul class="cl" style="margin-top:5px">
+<li><strong>猝倒（cataplexy）發作</strong>，每個月至少發生幾次：<br/>
+          (a) 個人有長期的疾病，會短暫（幾秒鐘到幾分鐘）發作，在意識清醒時會因<strong>大笑或開玩笑</strong>，而突然喪失兩側肌肉的張力；或<br/>
+          (b) 於兒童或在六個月內發病的人身上，沒有明顯的情感觸發原因，而出現自發性的做鬼臉、張開下顎並伸出舌頭、或整體的肌張力低下</li>
+<li><strong>缺乏下視丘泌素（hypocretin）</strong>：測量腦脊髓液（CSF）的下視丘泌素-1免疫反應值≤控制組均值的1/3，或≤110 pg/mL</li>
+<li><strong>夜間睡眠多頻檢查顯示快速動眼（REM）睡眠潛伏期≤15分鐘</strong>，或多重睡眠潛伏期檢查：平均睡眠潛伏期≤8分鐘，且≥2個入睡出現之快速動眼期（SOREMP）</li>
+</ul>
+</div></div>
+</div>
+<div class="panel" id="narc-sub">
+<div class="kbdg">⭐ 亞型（須依據B準則區分）</div>
+<table class="ct">
+<tr><th>亞型代碼</th><th>名稱</th><th>特點</th></tr>
+<tr><td>347.00 (G47.419)</td><td>猝睡症無猝倒，但缺乏下視丘泌素</td><td>符合B2（CSF低）和B3（PSG/MSLT陽性），但無猝倒（不符合B1）</td></tr>
+<tr><td>347.01 (G47.411)</td><td>有猝倒的猝睡症，無缺乏下視丘泌素</td><td>罕見（&lt;5%），符合B1（猝倒）和B3，但CSF正常（不符合B2）</td></tr>
+<tr><td>347.00 (G47.419)</td><td>自體染色體顯性遺傳小腦共濟失調、耳聾和猝睡症</td><td>DNA胞嘧啶甲基轉移酶-1基因突變；晚發（30-40歲）</td></tr>
+<tr><td>347.00 (G47.419)</td><td>自體染色體顯性遺傳猝睡症、肥胖和第二型糖尿病</td><td>髓鞘寡突膠質細胞糖蛋白基因突變</td></tr>
+<tr><td>347.10 (G47.429)</td><td>猝睡症繼發於另一身體病況</td><td>感染（惠普爾氏症、結節病）、外傷或腫瘤破壞下視丘泌素神經元</td></tr>
+</table>
+<h4 class="sub">嚴重度</h4>
+<ul class="cl">
+<li>輕度：不頻繁猝倒（少於每週一次），每天只需小睡一次或兩次，夜間睡眠較少被干擾</li>
+<li>中度：每天或每幾天出現一次猝倒，夜間睡眠被干擾，每日需要小睡多次</li>
+<li>重度：藥物頑抗型的猝倒與每日多次發病，幾乎固定的猝睡，夜間睡眠被干擾</li>
+</ul>
+</div>
+<div class="panel" id="narc-feat">
+<div class="box a"><div class="bl">猝倒症（Cataplexy）特徵</div>
+<ul class="cl">
+<li>由<strong>大笑或開玩笑</strong>所觸發（不同於壓力或焦慮誘發的一般無力）</li>
+<li>短暫發作：幾秒鐘到幾分鐘，在意識清醒時發生</li>
+<li>個體在猝倒時的過程是<strong>清醒和有意識的</strong></li>
+<li>個別肌群影響：頸部、下頷、手臂、腿或全身</li>
+<li>持續數小時或數天的「猝倒」→ 較不太可能是猝倒症</li>
+</ul>
+</div>
+<p class="d">有猝倒的猝睡症幾乎都是因為下視丘泌素（hypocretin，又稱食慾素 orexin）製造細胞流失。約99%的個體帶有HLA DQB1*06:02（相較於控制組只有12-38%）。</p>
+</div>
+<div class="panel" id="narc-assoc">
+<ul class="cl">
+<li>自動化行為（automatic behavior）：以半自動、朦朧的方式持續進行活動，缺乏記憶或意識</li>
+<li>20-60%個體：<strong>將睡期幻覺（hypnagogic）或將醒期幻覺（hypnopompic）</strong>——清晰鮮活，不同於正常人的似夢精神狀態</li>
+<li>20-60%個體：<strong>睡眠癱瘓（sleep paralysis）</strong>——清醒過來卻無法移動或講話</li>
+<li>肥胖很常見；夜間飲食（nocturnal eating）現象</li>
+<li>夜間睡眠的中斷並伴隨數次短或長的清醒</li>
+</ul>
+</div>
+<div class="panel" id="narc-prev">
+<div class="sg">
+<div class="sc"><div class="sv">0.02–0.04%</div><div class="sl">猝睡症-猝倒症在一般大眾的盛行率</div></div>
+<div class="sc"><div class="sv">男≥女</div><div class="sl">兩性皆會有，男性可能稍微多一點</div></div>
+</div>
+</div>
+<div class="panel" id="narc-dev">
+<p class="d">疾病通常起始於兒童或青少年/年輕成人，老年人則很罕見。兩個發病高峰：<strong>15-25歲</strong>和<strong>30-35歲</strong>。一旦疾病被確立了，其病程是<strong>持續終生</strong>的。</p>
+<div class="box a"><div class="bl">典型病程發展順序</div>
+<ul class="cl">
+<li>首先（90%）：嗜睡或睡眠增加</li>
+<li>1年內50%、3年內85%：出現猝倒症</li>
+<li>早期症狀：嗜睡、將睡期幻覺、鮮明的夢境、快速動眼睡眠行為障礙症</li>
+</ul>
+</div>
+</div>
+<div class="panel" id="narc-risk">
+<div class="box a"><div class="bl">環境</div>A群鏈球菌喉嚨感染、流感（2009年H1N1大流行）或其他冬季感染，容易引發自體免疫病程，在後續幾個月後誘導出嗜睡症。頭部外傷和睡-醒模式的突然變化也可能是觸發因素。</div>
+<div class="box a"><div class="bl">基因和生理</div>
+<ul class="cl">
+<li>同卵雙胞胎有25-32%的機率會一致地罹患嗜睡症</li>
+<li>一等親的嗜睡症盛行率為1-2%（增加10到40倍）</li>
+<li>嗜睡症與<strong>DQB1*06:02</strong>有很強的關連（99% vs 控制組12-38%）</li>
+</ul>
+</div>
+</div>
+<div class="panel" id="narc-cult">
+<p class="d"><strong>文化：</strong>嗜睡症在許多的種族和文化都曾被描述過。在非裔美國人中，特別是有肥胖和睡眠呼吸中止的個案，許多是沒有猝倒症或其猝睡症表現不典型，而增加了診斷的複雜度。</p>
+<p class="d"><strong>性別：</strong>兩性皆會有猝睡症，男性可能稍微多一點。無特定的性別相關診斷議題說明。</p>
+</div>
+<div class="panel" id="narc-marker">
+<p class="d">夜間多頻睡眠檢查（PSG）及隨後的多次睡眠準備期測驗（MSLT）：必須在個體停用所有精神科藥物後，接著有兩週的充足睡眠（依據睡眠日記、腕動計），才可實行。</p>
+<div class="box a"><div class="bl">MSLT陽性標準（診斷準則B3）</div>
+<ul class="cl">
+<li>平均睡眠準備期≤8分鐘</li>
+<li>在四或五次的打盹測驗中，出現<strong>≥2次入睡出現之快速動眼期（SOREMP）</strong></li>
+<li>或夜間PSG下的快速動眼睡眠潛伏期≤15分鐘</li>
+</ul>
+</div>
+<p class="d"><strong>下視丘泌素-1測量（CSF）</strong>：黃金標準。≤110 pg/mL或≤控制組均值的1/3。不受藥物、睡眠剝奪或晝夜節律的影響（若有感染、腦傷或昏迷狀態則無法判斷）。</p>
+<p class="d">HLA DQB1*06:02確認（比腰椎穿刺更實用）：99%有猝倒的猝睡症患者陽性（控制組只有12-38%）。</p>
+</div>
+<div class="panel" id="narc-func">
+<p class="d">開車和工作都會受損。患者須避免使自己或他人置於危險中的工作（使用機械、公車司機、飛行員）。患者藉由控制情緒來努力避免猝倒症，可能讓社會人際關係出現困難。</p>
+</div>
+<div class="panel" id="narc-diff">
+<div class="kbdg">⭐ 鑑別重點</div>
+<div class="diff"><div class="dn">⭐ 嗜睡症</div><div class="db">嗜睡症：較長且較少中斷的夜眠、較難清醒、更持久的日間嗜睡、更長且更不具恢復性的日間睡眠發作、在白日打盹間鮮少作夢。猝睡症：有猝倒，且在睡眠和清醒的交接處有快速動眼期睡眠反覆插入（將睡期幻覺、睡眠癱瘓）。</div></div>
+<div class="diff"><div class="dn">⭐ 睡眠呼吸中止症候群</div><div class="db">特別會出現在肥胖者身上。因為阻塞型呼吸中止比猝睡症更常見，猝倒症可能會被忽視（或不存在）。若個體對常用的療法無反應，假定其有阻塞型呼吸中止時，需考慮猝睡症。</div></div>
+<div class="diff"><div class="dn">⭐ 重度憂鬱症</div><div class="db">憂鬱症的MSLT通常是正常的，且主觀和客觀的嗜睡是互相不一致的。猝倒症並非憂鬱症的診斷準則。</div></div>
+<div class="diff"><div class="dn">⭐ 轉化症（功能性神經症狀障礙症）</div><div class="db">不典型的特徵（持久的猝倒症或不尋常的觸發原因）。個體可能回報有在睡覺和作夢，但MSLT並未顯示特徵性的入睡出現之快速動眼期。完全發作的假性猝倒（pseudocataplexy）：醫師可確認反射完好無損。</div></div>
+<div class="diff"><div class="dn">⭐ ADHD或其他行為問題（兒童）</div><div class="db">嗜睡會導致行為問題，包括攻擊性和不專心，導致誤診為ADHD。</div></div>
+<div class="diff"><div class="dn">癲癇（兒童）</div><div class="db">猝倒症可能被誤診為癲癇。癲癇很少由情緒所觸發，但當它真的由情緒所觸發時，也通常不是大笑或開玩笑。以獨立的肌張力缺乏為特徵的癲癇很罕見，其在腦電圖上有訊號特徵。</div></div>
+<div class="diff"><div class="dn">思覺失調症</div><div class="db">個體可能會認為華麗鮮明的將睡期幻覺是真實的（暗示著可能是思覺失調症）。若有猝倒症，在考慮有同時存在的思覺失調症之前，醫師應該第一個先假設這個症狀是次發於猝睡症。</div></div>
+</div>
+<div class="panel" id="narc-comor">
+<ul class="cl">
+<li>雙相情緒障礙症、憂鬱症、焦慮症</li>
+<li>罕見病例：思覺失調症</li>
+<li>身體質量指數上升或肥胖（特別是未治療時，迅速發病的兒童常見體重迅速增加）</li>
+<li>共病睡眠呼吸中止（若已存在的猝睡症突然惡化，應考慮）</li>
+<li>快速動眼睡眠行為障礙症（在約30%的猝睡症病人上共同發生）</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- ── 與呼吸相關的睡眠障礙症 ── -->
+<div class="card" data-cat="breath">
+<div class="chdr" onclick="td(this)">
+<div class="chl"><span class="code">327.xx G47.xx</span><div><div class="cname">與呼吸相關的睡眠障礙症（三大類）</div><div class="cen">Breathing-Related Sleep Disorders</div></div></div>
+<span class="chev o">▾</span>
+</div>
+<div class="cbody">
+<div class="tabs">
+<button class="tab k on" onclick="st(this,'br-osa')">⭐ 阻塞性(OSA)</button>
+<button class="tab" onclick="st(this,'br-csa')">中樞性(CSA)</button>
+<button class="tab" onclick="st(this,'br-hypo')">肺泡通氣低下</button>
+<button class="tab" onclick="st(this,'br-diff')">⭐ 鑑別診斷</button>
+</div>
+<div class="panel on" id="br-osa">
+<div class="kbdg">⭐ 阻塞性睡眠呼吸中止呼吸不足 Obstructive Sleep Apnea Hypopnea — 327.23 G47.33</div>
+<div class="box a"><div class="bl">診斷準則 A（1）或（2）其中之一</div>
+<p class="d"><strong>(1)</strong> 多頻睡眠檢查（PSG）顯示每小時睡眠中出現<strong>≥5次阻塞性呼吸中止或呼吸不足</strong>，連同以下睡眠症狀之一：<br/>
+        a. 夜間呼吸干擾（打鼾、噴鼻息、喘氣或在睡眠時呼吸中止）<br/>
+        b. 白天嗜睡、疲勞或儘管有足夠的機會睡覺，但睡眠不能恢復體力，不是因為另一身體病況所引起</p>
+<p class="d"><strong>(2)</strong> 無論伴隨症狀為何，PSG顯示每小時睡眠呼吸中止和/或呼吸不足的情況出現的<strong>≥15次</strong></p>
+</div>
+<h4 class="sub">嚴重度（依AHI呼吸中止-呼吸不足指數）</h4>
+<table class="ct">
+<tr><th>嚴重度</th><th>AHI</th></tr>
+<tr><td><span class="tag tg">輕度</span></td><td>&lt;15</td></tr>
+<tr><td><span class="tag tw">中度</span></td><td>15–30</td></tr>
+<tr><td><span class="tag tr">重度</span></td><td>&gt;30</td></tr>
+</table>
+<h4 class="sub">盛行率</h4>
+<div class="sg">
+<div class="sc"><div class="sv">1–2%</div><div class="sl">兒童</div></div>
+<div class="sc"><div class="sv">2–15%</div><div class="sl">中年成人</div></div>
+<div class="sc"><div class="sv">&gt;20%</div><div class="sl">老年成人</div></div>
+<div class="sc"><div class="sv">2–4:1</div><div class="sl">成年 男:女</div></div>
+</div>
+<h4 class="sub">風險因子</h4>
+<ul class="cl">
+<li>主要風險因子：<strong>肥胖</strong>和<strong>男性</strong></li>
+<li>其他：上下頷退縮、小頷畸形、呼吸中止家族史、遺傳疾病（唐氏症）、腺樣體扁桃體肥大（幼兒）、女性停經</li>
+<li>原發病人（proband）的一等親盛行率是控制組的<strong>兩倍</strong></li>
+<li>治療精神疾病和一般醫學狀況的藥物（如苯二氮平類）若未小心使用，可能加重</li>
+</ul>
+<h4 class="sub">性別相關議題</h4>
+<p class="d">女性較常表示有<strong>疲憊而非嗜睡</strong>，打鼾被低報。亞洲血統的個體即使BMI很低，也可能有增加OSA的風險。</p>
+<h4 class="sub">功能性後果</h4>
+<ul class="cl">
+<li>超過50%中度至重度個體表示有白日嗜睡</li>
+<li>職業意外風險升高兩倍</li>
+<li>呼吸中止-呼吸不足指數升高的個體，機車事故上升<strong>七倍</strong></li>
+</ul>
+<h4 class="sub">共病</h4>
+<ul class="cl">
+<li>高血壓（超過60%可能發生）、冠狀動脈疾病、心臟衰竭、中風、糖尿病、死亡率上升</li>
+<li>多達三分之一的被轉介個體有憂鬱症症狀</li>
+</ul>
+</div>
+<div class="panel" id="br-csa">
+<div class="kbdg">中樞性睡眠呼吸中止 Central Sleep Apnea</div>
+<div class="box a"><div class="bl">診斷準則</div>
+        A. PSG顯示每小時睡眠有<strong>≥5次中樞性呼吸中止</strong><br/>
+        B. 此疾病無法以另一目前的睡眠障礙症做更好的解釋
+      </div>
+<h4 class="sub">三種亞型</h4>
+<div class="spbox"><div class="sptitle">327.21 (G47.31) 特發性中樞性睡眠呼吸中止</div>反覆出現睡眠時呼吸中止和呼吸不足發作，無呼吸道阻塞的證據。</div>
+<div class="spbox"><div class="sptitle">786.04 (R06.3) 切恩-斯托克斯呼吸（Cheyne-Stokes Breathing）</div>潮氣量以一個週期漸強漸弱的變化模式出現，導致中樞性呼吸中止和呼吸不足，每小時至少出現五次，伴隨著頻繁的清醒。常見於<strong>心臟衰竭</strong>病人（心室射出分率&lt;45%者，盛行率≥20%）。</div>
+<div class="spbox"><div class="sptitle">780.57 (G47.37) 中樞性睡眠呼吸中止合併鴉片使用</div>鴉片對延髓呼吸節律調節器的影響。長期使用長效鴉片類藥物，常與此相關（約30%）。</div>
+</div>
+<div class="panel" id="br-hypo">
+<div class="kbdg">與睡眠有關的肺泡通氣低下 Sleep-Related Hypoventilation</div>
+<div class="box a"><div class="bl">診斷準則</div>
+        A. PSG顯示與<strong>二氧化碳濃度增高</strong>相關的呼吸減少發作<br/>
+        B. 此困擾無法以另一目前的睡眠障礙症做更好的解釋
+      </div>
+<h4 class="sub">三種亞型</h4>
+<div class="spbox"><div class="sptitle">327.24 (G47.34) 特發性肺泡通氣低下</div>不歸屬於任何可識別的狀況。成人上並不常見。</div>
+<div class="spbox"><div class="sptitle">327.25 (G47.35) 先天性中樞性肺泡通氣低下</div>罕見先天疾病，PHOX2B基因突變，產期前後睡眠時出現淺呼吸或發紺及睡眠呼吸中止。</div>
+<div class="spbox"><div class="sptitle">327.26 (G47.36) 共病與睡眠有關的肺泡通氣低下</div>受身體病況影響：肺疾患（間質性肺疾病、慢性阻塞性肺疾患）、神經肌肉或胸壁疾病（肌肉營養不良症）、藥物（苯二氮平類、鴉片類）、肥胖肺泡通氣低下疾患（BMI&gt;30）。</div>
+<h4 class="sub">診斷標記（黃金準則）</h4>
+<p class="d">睡眠中的動脈二氧化碳分壓（pCO₂）&gt;55 mmHg，或與清醒仰臥時的數值相較，其增加幅度超過10 mmHg（並超過50 mmHg），持續10分鐘或更久。</p>
+</div>
+<div class="panel" id="br-diff">
+<div class="kbdg">⭐ 呼吸相關障礙症鑑別</div>
+<div class="diff"><div class="dn">⭐ OSA vs 原發性打鼾症</div><div class="db">原發性打鼾症（比較沒有症狀，整夜PSG無異常）。OSA患者有夜間喘氣或窒息感，以及相關的症狀和體徵。</div></div>
+<div class="diff"><div class="dn">⭐ OSA vs 猝睡症</div><div class="db">OSA：響亮鼾聲、夜間喘氣、無猝倒、無睡眠相關幻覺和睡眠癱瘓。猝睡症：特徵性MSLT發現（多個SOREMP）。兩者可共存。</div></div>
+<div class="diff"><div class="dn">⭐ OSA vs 失眠症</div><div class="db">失眠症：缺少打鼾，缺少OSA特徵性的病史、症狀、徵候。然而，兩者可共存，若如此，都需同時被處理。</div></div>
+<div class="diff"><div class="dn">⭐ OSA vs 夜間恐慌發作</div><div class="db">夜間恐慌發作：發作頻率低、強烈的自主神經警醒、缺乏過度的嗜睡；PSG不會有特徵性的呼吸中止或血氧飽和度下降。OSA個體不會有日間恐慌發作的病史。</div></div>
+<div class="diff"><div class="dn">⭐ OSA vs ADHD（兒童）</div><div class="db">OSA兒童和ADHD兒童可能有相似的不專心、學業表現障礙、過動、內化行為症狀。若有扁桃腺肥大、肥胖、呼吸中止家族史，則顯示有OSA的可能性。兩者可共存。</div></div>
+<div class="diff"><div class="dn">CSA（中樞性）vs OSA</div><div class="db">中樞性呼吸中止vs阻塞性呼吸中止：若中樞性對阻塞性呼吸中止發作比率&gt;50%，則被認為主要是CSA。需要PSG確認。</div></div>
+</div>
+</div>
+</div>
+<!-- ── 日夜節律 ── -->
+<div class="card" data-cat="circ">
+<div class="chdr" onclick="td(this)">
+<div class="chl"><span class="code">307.45 G47.xx</span><div><div class="cname">日夜節律睡醒障礙症</div><div class="cen">Circadian Rhythm Sleep-Wake Disorders</div></div></div>
+<span class="chev o">▾</span>
+</div>
+<div class="cbody">
+<div class="tabs">
+<button class="tab k on" onclick="st(this,'circ-dx')">⭐ 診斷準則/亞型</button>
+<button class="tab" onclick="st(this,'circ-delay')">睡眠時相延遲</button>
+<button class="tab" onclick="st(this,'circ-adv')">睡眠時相前移</button>
+<button class="tab" onclick="st(this,'circ-shift')">輪班工作型</button>
+<button class="tab k" onclick="st(this,'circ-diff')">⭐ 鑑別診斷</button>
+</div>
+<div class="panel on" id="circ-dx">
+<div class="kbdg">⭐ 核心：持續或反覆的睡眠中斷 + 臨床顯著苦惱</div>
+<div class="rr"><span class="rl">A</span><div class="rc">主要因為日夜節律系統的改變，或內因性日夜節律和個人的生理環境或社會或專業行程所造成的<strong>睡醒時間不協調</strong>，所造成的<strong>持續或反覆的睡眠中斷模式</strong></div></div>
+<div class="rr"><span class="rl">B</span><div class="rc">睡眠中斷導致過度嗜睡或失眠，或兩者兼有</div></div>
+<div class="rr"><span class="rl w">C</span><div class="rc">睡眠困擾引起臨床上顯著苦惱或社交、職業和其他重要領域功能減損</div></div>
+<h4 class="sub">六種亞型</h4>
+<table class="ct">
+<tr><th>亞型</th><th>代碼</th><th>特點</th></tr>
+<tr><td><span class="tag ta">睡眠時相延遲型</span></td><td>G47.21</td><td>延遲入睡和清醒；青少年/年輕成人常見（盛行率0.17%，青少年&gt;7%）</td></tr>
+<tr><td><span class="tag tg">睡眠時相前移型</span></td><td>G47.22</td><td>入睡和清醒時間前移；中年人盛行率約1%；老年人較常見</td></tr>
+<tr><td>不規則的睡醒類型</td><td>G47.23</td><td>混亂睡醒模式，24小時內改變；常與神經退化性疾病、認知障礙症、神經發展障礙症相關</td></tr>
+<tr><td>非24小時睡醒類型</td><td>G47.24</td><td>睡醒週期不與24小時環境同步（通常越來越晚）</td></tr>
+<tr><td><span class="tag tw">輪班工作型</span></td><td>G47.26</td><td>在主要睡眠期間失眠和/在輪班工作時間出現過度嗜睡</td></tr>
+<tr><td>非特定的類型</td><td>G47.20</td><td></td></tr>
+</table>
+<h4 class="sub">病程特別說明</h4>
+<ul class="cl">
+<li>陣發型：症狀持續至少一個月但少於三個月</li>
+<li>症狀持續型：症狀持續三個月或更長的時間</li>
+<li>多次發作型：一年內出現兩次或更多次發作</li>
+</ul>
+</div>
+<div class="panel" id="circ-delay">
+<p class="d"><strong>睡眠時相延遲型</strong>：主要睡眠時期延遲（通常超過2小時），無法在想要或傳統可接受的時間更早入睡和清醒。允許安排自己的睡眠時程時，可呈現正常的睡眠品質。</p>
+<div class="box a"><div class="bl">特別說明</div>家族遺傳：有睡眠時相延遲的家族病史。可能與非24小時睡醒類型重疊。</div>
+<div class="box a"><div class="bl">診斷標記</div>完整的病史和使用睡眠日記或腕動計（至少7天，需包含週末）。必要時才採集生物標記（昏暗燈光下唾液褪黑激素分泌時間）。</div>
+<div class="box p"><div class="bl">共病</div>與憂鬱症、人格障礙症、身體症狀障礙症或罹病焦慮症有很強的關聯性；可能與其他日夜節律睡醒障礙症、非24小時睡醒類型互相重疊。</div>
+</div>
+<div class="panel" id="circ-adv">
+<p class="d"><strong>睡眠時相前移型</strong>：入睡和清醒的時間前移（通常大於2小時），無法保持清醒或睡眠狀態直到希望的或一般可接受的較晚時間。屬「早晨型」，晝夜節律生物標記提前2-4小時。</p>
+<div class="box a"><div class="bl">基因</div>體染色體顯性遺傳模式，包括PER2基因突變和CKI的錯譯突變（missense mutation）。</div>
+<div class="box w"><div class="bl">鑑別</div>清晨早醒也是重度憂鬱症的顯著特徵，故應排除憂鬱症和雙相情緒障礙症。行為因素（不規則的睡眠時程、自願性清晨早醒、暴露於早晨的光線）也應納入考慮（特別是老年人）。</div>
+</div>
+<div class="panel" id="circ-shift">
+<p class="d"><strong>輪班工作型</strong>：在主要的睡眠期間失眠，和/在主要和輪班工作時間表相關的清醒期間出現過度嗜睡（包括非故意的睡眠）。</p>
+<p class="d">與失眠症的差別：病史中近期內有<strong>輪班工作</strong>。</p>
+</div>
+<div class="panel" id="circ-diff">
+<div class="diff"><div class="dn">⭐ 睡眠時相延遲型 vs 失眠症</div><div class="db">睡眠時相延遲型患者：只有企圖在社會界定的正常時間入睡時，才會發生睡眠引導型失眠；但當他們的就寢和起床時間延遲並符合內在日夜節律時，就不會有入睡困難或睡眠維持困難。</div></div>
+<div class="diff"><div class="dn">⭐ 睡眠時相前移型 vs 憂鬱症</div><div class="db">清晨早醒、疲乏、思睡是重度憂鬱症的顯著特徵，需排除。</div></div>
+<div class="diff"><div class="dn">不規則睡醒類型 vs 失眠症/嗜睡症</div><div class="db">不規則睡醒類型的特徵為缺乏可辨別的睡-醒晝夜節律，睡眠在24小時中片段化為至少3個時段。</div></div>
+</div>
+</div>
+</div>
+<!-- ── NREM睡眠覺醒障礙症 ── -->
+<div class="card" data-cat="nrem">
+<div class="chdr" onclick="td(this)">
+<div class="chl"><span class="code">307.46 F51.3/F51.4</span><div><div class="cname">非快速動眼睡眠覺醒障礙症</div><div class="cen">Non-REM Sleep Arousal Disorders（夢遊型 / 睡驚型）</div></div></div>
+<span class="chev o">▾</span>
+</div>
+<div class="cbody">
+<div class="tabs">
+<button class="tab k on" onclick="st(this,'nrem-dx')">⭐ 診斷準則</button>
+<button class="tab" onclick="st(this,'nrem-feat')">診斷特質</button>
+<button class="tab" onclick="st(this,'nrem-assoc')">支持診斷</button>
+<button class="tab" onclick="st(this,'nrem-prev')">盛行率</button>
+<button class="tab" onclick="st(this,'nrem-dev')">發展病程</button>
+<button class="tab" onclick="st(this,'nrem-risk')">風險預後</button>
+<button class="tab" onclick="st(this,'nrem-gender')">性別議題</button>
+<button class="tab" onclick="st(this,'nrem-marker')">診斷標記</button>
+<button class="tab" onclick="st(this,'nrem-func')">功能後果</button>
+<button class="tab k" onclick="st(this,'nrem-diff')">⭐ 鑑別診斷</button>
+<button class="tab" onclick="st(this,'nrem-comor')">共病</button>
+</div>
+<div class="panel on" id="nrem-dx">
+<div class="kbdg">⭐ 核心：反覆發生不完全的覺醒（通常在主要睡眠的前1/3）</div>
+<div class="rr"><span class="rl">A</span><div class="rc">反覆發作從主要睡眠時期的睡眠中<strong>不完全覺醒</strong>，以<strong>（1）或（2）</strong>表現：<ul class="cl" style="margin-top:5px"><li>(1) 夢遊型（Sleepwalking type）：反覆在睡眠中起來走動，發作期間個體警覺性和反應性降低、難以喚醒；若被喚醒，對發作的記憶有限</li><li>(2) 睡驚型（Sleep terror type / Night terror）：反覆突然從睡眠中驚醒，通常以恐慌地尖叫或哭為開端，發作伴隨強烈的自動覺醒和極度恐懼；難以被喚醒或安撫；對發作內容記憶很少或沒有</li></ul></div></div>
+<div class="rr"><span class="rl">B</span><div class="rc">此發作事件造成個人顯著的痛苦或社交、職業或其他重要領域功能減損</div></div>
+<div class="rr"><span class="rl w">C</span><div class="rc">此困擾無法歸因於物質的生理效應或另一身體病況</div></div>
+<div class="box p"><div class="bl">夢遊型特別說明</div>有與睡眠有關的飲食（with sleep-related eating）/ 有與睡眠有關的性行為（sexsomnia）</div>
+</div>
+<div class="panel" id="nrem-feat">
+<p class="d">核心特徵：反覆發生<strong>不完全的覺醒</strong>，通常發生在主要睡眠時期的<strong>前三分之一</strong>（準則A），典型狀況持續1至10分鐘，也可能拖延至1小時。眼睛通常是睜開的。</p>
+<div class="box a"><div class="bl">夢遊 vs 睡驚比較</div>
+<table class="ct">
+<tr><th>特徵</th><th>夢遊</th><th>睡驚（夜驚）</th></tr>
+<tr><td>行為</td><td>複雜運動行為，可包括飲食、性行為</td><td>突然坐起尖叫/哭泣、恐懼表情</td></tr>
+<tr><td>自律神經</td><td>較少強烈</td><td>強烈（心搏過速、呼吸快速、冒汗、瞳孔放大）</td></tr>
+<tr><td>清醒難度</td><td>難以喚醒</td><td>很難被喚醒或安撫</td></tr>
+<tr><td>發作後記憶</td><td>有限</td><td>通常完全失憶</td></tr>
+<tr><td>夢境內容</td><td>通常無</td><td>通常無（或片斷影像）</td></tr>
+</table>
+</div>
+</div>
+<div class="panel" id="nrem-assoc">
+<p class="d"><strong>夢遊</strong>可包括多種行為：混淆、坐起、走動、走進衣櫥、離開建築物、使用浴室、進食、說話、奔跑。大部分持續數分鐘至半小時。兩種特別形式：</p>
+<ul class="cl">
+<li>與睡眠有關的飲食行為：反覆不想要的飲食發作，伴隨不同程度的失憶症，可能造成體重上升、糖尿病控制不佳</li>
+<li>睡眠性交（sexsomnia/sleep sex）：不同程度的性行為，較常出現於男性，可能造成人際關係問題或法醫學後果</li>
+</ul>
+</div>
+<div class="panel" id="nrem-prev">
+<div class="sg">
+<div class="sc"><div class="sv">10–30%</div><div class="sl">兒童有至少一次夢遊</div></div>
+<div class="sc"><div class="sv">2–3%</div><div class="sl">兒童經常夢遊</div></div>
+<div class="sc"><div class="sv">1–5%</div><div class="sl">夢遊障礙症盛行率（反覆發作+功能減損）</div></div>
+<div class="sc"><div class="sv">2.2%</div><div class="sl">成人睡驚發作盛行率</div></div>
+</div>
+</div>
+<div class="panel" id="nrem-dev">
+<p class="d">非快速動眼睡眠覺醒障礙症<strong>最常發生於兒童</strong>，其頻率隨年齡增加而減少。若在兒童時沒有夢遊的病史，卻在成人時發生夢遊的個案，須細查其病因（阻塞性睡眠呼吸中止、夜間癲癇或藥物的作用）。</p>
+</div>
+<div class="panel" id="nrem-risk">
+<div class="box a"><div class="bl">環境</div>鎮靜劑的使用、睡眠剝奪、睡-醒時程的分裂、疲勞、身體或情緒的壓力，會增加發作的可能性；發燒和睡眠剝奪會增加NREM覺醒障礙症的頻率。</div>
+<div class="box a"><div class="bl">基因和生理</div>
+<ul class="cl">
+<li>夢遊或睡驚的家族史，在夢遊的個體上能會<strong>高達80%</strong></li>
+<li>若雙親皆有此病的病史，則罹病的風險高達60%的子女</li>
+<li>睡驚一等親盛行率增加<strong>10倍</strong>；同卵雙胞胎比異卵雙胞胎更多</li>
+</ul>
+</div>
+</div>
+<div class="panel" id="nrem-gender">
+<ul class="cl">
+<li>夢遊發作時的<strong>暴力或性行為</strong>，較常發生於<strong>成人</strong></li>
+<li>夢遊時的<strong>飲食行為</strong>常見於<strong>女性</strong></li>
+<li>夢遊較常見於<strong>兒童期的女性</strong>，而男性則常見於成人期</li>
+<li>在兒童上，<strong>男性出現睡驚的案例比女性還要多</strong>；在成人之間，性別的比例相等</li>
+</ul>
+</div>
+<div class="panel" id="nrem-marker">
+<p class="d">NREM睡眠覺醒障礙症，可在NREM睡眠的任何階段發生，但最常見於<strong>NREM期深度睡眠時（慢波睡眠）</strong>，最常見於<strong>夜晚的前三分之一</strong>。</p>
+<p class="d">多頻睡眠檢查合併視覺聽覺監測，可被用來記錄夢遊發作。若無法捕捉到發作事件，則無多頻睡眠特徵可作為夢遊的標記。睡眠剝奪可能可以增加這些事件被捕捉到的可能性。</p>
+<p class="d">睡驚的特徵：覺醒時心跳增加<strong>兩倍或三倍</strong>，這樣陡然發生的自律神經活動是診斷特徵。</p>
+</div>
+<div class="panel" id="nrem-func">
+<p class="d">在意發作事件造成的難為情會損害社交關係。「障礙症」的判定依據因素：發作頻率、暴力或傷害行為的潛在可能、困窘、或其他家庭成員的分裂/痛苦。嚴重度的判定最好根據<strong>行為的本質或後果</strong>，而非單靠發作的頻率。</p>
+</div>
+<div class="panel" id="nrem-diff">
+<div class="kbdg">⭐ 鑑別重點</div>
+<div class="diff"><div class="dn">⭐ 夢魔症</div><div class="db">夢魔通常：完全清醒、報告鮮明如故事般的夢境、傾向在夜晚較後段的時間發作（快速動眼期）。NREM覺醒障礙症：不完全清醒、很少夢境回憶、發生於夜晚前三分之一（NREM期）。</div></div>
+<div class="diff"><div class="dn">⭐ 快速動眼睡眠行為障礙症（RBD）</div><div class="db">RBD：發生於快速動眼期、患病的個體很容易清醒過來、報告詳細且栩栩如生的夢境、常與暴力夢境設定相關。NREM覺醒障礙症：來自深層NREM睡眠、傾向發生於睡眠期的前面部分，清醒後有混淆和失憶。</div></div>
+<div class="diff"><div class="dn">⭐ 與呼吸相關的睡眠障礙症</div><div class="db">呼吸障礙症也可以產生混淆覺醒伴隨後續的失憶；但伴有打鼾、呼吸暫停及白日思睡。OSA可能會誘導夢遊的發作。</div></div>
+<div class="diff"><div class="dn">⭐ 與睡眠相關的癲癇</div><div class="db">夜間癲癇的表現與NREM覺醒障礙症很相似，但前者表現得更加刻板、每晚發作數次，更可能在白日打盹時發生。兩者可共存。</div></div>
+<div class="diff"><div class="dn">恐慌症</div><div class="db">恐慌發作可能造成從深層NREM睡眠中突然清醒，伴隨著恐懼；但是這樣的發作是快速、完全的清醒，並未有混淆、失憶或NREM覺醒障礙症的典型動作症狀。</div></div>
+<div class="diff"><div class="dn">解離性失憶有解離性失憶遁走症</div><div class="db">解離性遁走症可能很難與夢遊區分。夜間的解離性遁走症來自於<strong>睡眠階段的一段清醒時期</strong>，而非在無清醒的睡眠中急劇發生。</div></div>
+</div>
+<div class="panel" id="nrem-comor">
+<ul class="cl">
+<li>成人的夢遊：重度憂鬱症發作及強迫症有關聯</li>
+<li>罹患睡驚的兒童或成人：人格量表上有憂鬱和焦慮的指數上升</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- ── 夢魔症 ── -->
+<div class="card" data-cat="night">
+<div class="chdr" onclick="td(this)">
+<div class="chl"><span class="code">307.47 F51.5</span><div><div class="cname">夢魔症</div><div class="cen">Nightmare Disorder</div></div></div>
+<span class="chev o">▾</span>
+</div>
+<div class="cbody">
+<div class="tabs">
+<button class="tab k on" onclick="st(this,'nm-dx')">⭐ 診斷準則</button>
+<button class="tab" onclick="st(this,'nm-sp')">特別註明</button>
+<button class="tab" onclick="st(this,'nm-feat')">診斷特質</button>
+<button class="tab" onclick="st(this,'nm-assoc')">支持診斷</button>
+<button class="tab" onclick="st(this,'nm-prev')">盛行率</button>
+<button class="tab" onclick="st(this,'nm-dev')">發展病程</button>
+<button class="tab" onclick="st(this,'nm-risk')">風險預後</button>
+<button class="tab" onclick="st(this,'nm-cg')">文化/性別</button>
+<button class="tab" onclick="st(this,'nm-marker')">診斷標記</button>
+<button class="tab" onclick="st(this,'nm-func')">功能後果</button>
+<button class="tab k" onclick="st(this,'nm-diff')">⭐ 鑑別診斷</button>
+<button class="tab" onclick="st(this,'nm-comor')">共病</button>
+</div>
+<div class="panel on" id="nm-dx">
+<div class="kbdg">⭐ 核心：重複出現令人不能愉悅且記憶完好的夢境</div>
+<div class="rr"><span class="rl">A</span><div class="rc">重複出現或擴展成令人不能愉悅和<strong>記憶完好</strong>的夢境，包括努力避免威脅生存、安全或身體的完整等，通常發生於第二半的主要睡眠期間（→快速動眼期）</div></div>
+<div class="rr"><span class="rl">B</span><div class="rc">從夢境清醒後，個人可迅速轉變為有<strong>良好定向感和警覺</strong></div></div>
+<div class="rr"><span class="rl">C</span><div class="rc">睡眠障礙症引起臨床上顯著苦惱或社交、職業或其他重要領域功能減損</div></div>
+<div class="rr"><span class="rl">D</span><div class="rc">夢魔的症狀無法歸因於某物質的生理效應</div></div>
+<div class="rr"><span class="rl w">E</span><div class="rc">共病的精神和身體疾病不能適當解釋為造成主要抱怨煩躁不安的夢境</div></div>
+</div>
+<div class="panel" id="nm-sp">
+<div class="spbox"><div class="sptitle">共病特別說明</div>有相關的非睡眠障礙症（含物質使用疾患）/ 有相關的其他身體病況 / 有相關的其他睡眠障礙症</div>
+<div class="spbox"><div class="sptitle">病程特別說明</div>
+<ul class="cl">
+<li>急性：惡夢持續時間為一個月或更少</li>
+<li>亞急性：超過一個月，但少於六個月</li>
+<li>持續型：六個月或以上</li>
+</ul>
+</div>
+<div class="spbox"><div class="sptitle">嚴重度（依頻率）</div>
+<ul class="cl">
+<li>輕度：平均每週做惡夢少於一次</li>
+<li>中度：每週一次或更多次，但不是每個晚上</li>
+<li>重度：每晚發作</li>
+</ul>
+</div>
+</div>
+<div class="panel" id="nm-feat">
+<p class="d">夢魔通常是漫長的、詳盡的、似故事的一連串夢中影像，看似真實並激起焦慮、恐懼、或其他不愉快的情緒。內容通常聚焦在企圖迴避或處理即將來臨的危險。</p>
+<p class="d">在創傷經驗後的夢，可能會複製威脅性的情境（重複夢魔 replicative nightmares），但大多數不會如此。幾乎都在<strong>快速動眼期睡眠</strong>時發生，當夢境是較長、較強烈時，通常是發生在主要睡眠時期的<strong>後半段</strong>。</p>
+</div>
+<div class="panel" id="nm-assoc">
+<ul class="cl">
+<li>輕微的自主神經刺激（流汗、心跳加快、呼吸加快）</li>
+<li>身體的運動和發出聲音並非特徵（因快速動眼期睡眠相關的骨骼肌肉張力喪失）</li>
+<li>在性別和精神疾病皆列入考慮的狀況下，<strong>經常夢魔的個體有較高風險的自殺想法和自殺企圖</strong></li>
+</ul>
+</div>
+<div class="panel" id="nm-prev">
+<div class="sg">
+<div class="sc"><div class="sv">1.3–3.9%</div><div class="sl">家長報告其學齡前兒童有經常或總是發生夢魔</div></div>
+<div class="sc"><div class="sv">最少6%/月</div><div class="sl">成人夢魔盛行率（每個月至少一次）</div></div>
+<div class="sc"><div class="sv">1–2%</div><div class="sl">成人經常性夢魔盛行率</div></div>
+<div class="sc"><div class="sv">女&gt;男</div><div class="sl">成年女性比成年男性更頻繁（20至29歲女性可達男性兩倍）</div></div>
+</div>
+</div>
+<div class="panel" id="nm-dev">
+<p class="d">夢魔通常在3歲至6歲之間開始，但在<strong>青春期晚期或成人早期達到盛行率和嚴重度的高峰</strong>。夢魔最可能出現在暴露於急性或慢性心理社會壓力的兒童，且不會自行緩解。</p>
+</div>
+<div class="panel" id="nm-risk">
+<div class="box a"><div class="bl">氣質</div>過去有不順遂但不一定是創傷，以及通常呈現人格受影響的或有精神科診斷的個體較常見。</div>
+<div class="box a"><div class="bl">環境</div>睡眠剝奪或片段化，以及不規則的睡-醒時程並改變快速動眼期睡眠的時間、強度或量，會讓個體有夢魔的風險。</div>
+<div class="box a"><div class="bl">基因和生理</div>雙胞胎研究顯示基因對夢魔傾向以及共同發生其他類睡症（如：說夢話）的影響。</div>
+<div class="box p"><div class="bl">病程修飾因子</div>雙親在床邊的適應性行為（在夢魔後安撫兒童），可能可以保護、防止進展到慢性夢魔。</div>
+</div>
+<div class="panel" id="nm-cg">
+<p class="d"><strong>文化：</strong>夢魔的含意，隨不同文化而不同，且對這個信念的敏感度，會增加此病被發覺。</p>
+<p class="d"><strong>性別：</strong>報告顯示成年女性比成年男性有更頻繁的夢魔。夢魔內容依性別而不同：成年女性較傾向報告性騷擾或所愛之人消失/死亡的主題；成年男性較傾向報告肢體攻擊或戰爭/恐怖的事物。</p>
+</div>
+<div class="panel" id="nm-marker">
+<p class="d">多頻睡眠檢查：從快速動眼期睡眠突然地清醒，通常發生在下半夜，在報告有夢魔之前。在清醒前，心臟、呼吸、眼睛運動速度可能更高或變異率增加。</p>
+</div>
+<div class="panel" id="nm-func">
+<p class="d">比起社交或職業功能減損，夢魔更多是造成顯著的、主觀的苦惱感覺。若清醒相當頻繁或造成睡眠迴避，個體可能會經驗到白日的過度思睡、注意力差、憂鬱、焦慮或易怒。</p>
+</div>
+<div class="panel" id="nm-diff">
+<div class="kbdg">⭐ 鑑別重點</div>
+<div class="diff"><div class="dn">⭐ 睡驚（夜驚/night terror）</div><div class="db">睡驚通常發生於夜晚的前三分之一、第三或第四階段的NREM睡眠，沒有夢境的回憶（或影像但缺乏詳細的故事情節），導致部分清醒，讓個體呈現混淆、失去定向感、只有部分反應性和顯著的自律神經興奮。夢魔通常發生在夜晚的晚期（快速動眼期），並造成<strong>鮮活、似故事的、可被清楚回憶</strong>的夢境，以及輕微交感神經興奮、<strong>完全的清醒</strong>。</div></div>
+<div class="diff"><div class="dn">⭐ 快速動眼睡眠行為障礙症（RBD）</div><div class="db">在驚嚇的夢境時表現複雜的動作行為，應進一步評估RBD。RBD常發生在中年男性的晚期，與夢魔症不同的是，其常與暴力的夢境設定相關，且有夜間受傷的病史。</div></div>
+<div class="diff"><div class="dn">猝睡症</div><div class="db">猝睡症經常抱怨有夢魔，但會出現過度思睡及猝倒，可與夢魔症做鑑別。</div></div>
+<div class="diff"><div class="dn">夜間癲癇</div><div class="db">很少以夢魔的方式來表現，必須用PSG和連續性錄影腦電圖來評估。夜間癲癇通常有刻板運動行為。</div></div>
+<div class="diff"><div class="dn">醫藥或物質使用</div><div class="db">數種物質/醫藥會加重夢魔，包括增加多巴胺的藥物、β腎上腺素拮抗劑、安非他命、古柯鹼、抗憂鬱劑、輔助戒菸藥物、褪黑激素。抑制快速動眼期睡眠的藥物和酒精戒斷，會造成快速動眼期睡眠的反彈，並伴隨夢魔。</div></div>
+</div>
+<div class="panel" id="nm-comor">
+<p class="d">夢魔可以與各種一般醫學狀況共病（冠狀動脈疾病、癌症、帕金森氏症、疼痛）。夢魔<strong>經常與其他精神疾病共病</strong>，包括：</p>
+<ul class="cl">
+<li>創傷後壓力症候群（PTSD）</li>
+<li>失眠症、思覺失調症、精神病、情緒障礙症</li>
+<li>焦慮症、適應障礙症和人格障礙症</li>
+<li>喪親時的傷慟</li>
+</ul>
+<div class="box w"><div class="bl">注意：診斷獨立夢魔症的規則</div>在PTSD、急性壓力症的患者上，若夢魔在這些狀況<strong>之前就發生</strong>，或其<strong>頻率或嚴重度需要獨立的臨床關注</strong>，則可能會獨立地下夢魔症的診斷。</div>
+</div>
+</div>
+</div>
+<!-- ── REM睡眠行為障礙症 ── -->
+<div class="card" data-cat="rem">
+<div class="chdr" onclick="td(this)">
+<div class="chl"><span class="code">327.42 G47.52</span><div><div class="cname">快速動眼睡眠行為障礙症（RBD）</div><div class="cen">Rapid Eye Movement Sleep Behavior Disorder</div></div></div>
+<span class="chev o">▾</span>
+</div>
+<div class="cbody">
+<div class="tabs">
+<button class="tab k on" onclick="st(this,'rem-dx')">⭐ 診斷準則</button>
+<button class="tab" onclick="st(this,'rem-assoc')">支持診斷</button>
+<button class="tab" onclick="st(this,'rem-prev')">盛行率</button>
+<button class="tab" onclick="st(this,'rem-dev')">發展病程</button>
+<button class="tab" onclick="st(this,'rem-risk')">風險預後</button>
+<button class="tab" onclick="st(this,'rem-marker')">⭐ 診斷標記</button>
+<button class="tab" onclick="st(this,'rem-func')">功能後果</button>
+<button class="tab k" onclick="st(this,'rem-diff')">⭐ 鑑別診斷</button>
+<button class="tab" onclick="st(this,'rem-comor')">共病</button>
+</div>
+<div class="panel on" id="rem-dx">
+<div class="kbdg">⭐ 核心：REM期夢境扮演行為 + 多頻睡眠確認 或 已知共核蛋白病</div>
+<div class="rr"><span class="rl">A</span><div class="rc">反覆發作睡眠期間清醒合併與<strong>發聲和/或複雜的運動行為</strong>有關的情形</div></div>
+<div class="rr"><span class="rl">B</span><div class="rc">這些行為出現在<strong>快速動眼（REM）期睡眠</strong>，因此通常發生在<strong>睡眠後90分鐘後</strong>，在後來的睡眠期更頻繁，不常見發生在白天小睡時</div></div>
+<div class="rr"><span class="rl">C</span><div class="rc">從這些發作清醒後，個人是<strong>完全清醒，並沒有意識混亂或失定向感</strong></div></div>
+<div class="rr"><span class="rl">D</span><div class="rc">有以下其中之一：<ul class="cl" style="margin-top:5px"><li>(1) 多項睡眠檢查記錄顯示快速動眼（REM）期<strong>缺乏肌肉麻痺（REM sleep without atonia）</strong></li><li>(2) 有個暗示為RBD的病史和一個已確立的<strong>共核蛋白病（synucleinopathy）</strong>診斷（如帕金森氏症、多發性系統萎縮症）</li></ul></div></div>
+<div class="rr"><span class="rl">E</span><div class="rc">此行為引起臨床顯著苦惱或社交、職業或其他重要領域功能減損（其中可能包括傷害自己或床伴）</div></div>
+<div class="rr"><span class="rl w">F</span><div class="rc">此困擾無法歸因於物質的生理效應或另一身體病況所致</div></div>
+<div class="rr"><span class="rl w">G</span><div class="rc">共存的精神和身體疾病無法解釋發作</div></div>
+</div>
+<div class="panel" id="rem-assoc">
+<p class="d">這些行為通常是被攻擊或試圖從被威脅的情境中逃脫，這樣充滿動作或暴力內容的夢境的動作反應，又稱為<strong>夢境扮演行為（dream enacting behavior）</strong>。發聲通常是大聲、充滿情緒、粗俗的。這些行為可能對病人或枕邊人非常困擾，可能會造成明顯的受傷（跌落、從床上跳起、奔跑、毆打、猛推、撞擊或踢）。</p>
+</div>
+<div class="panel" id="rem-prev">
+<div class="sg">
+<div class="sc"><div class="sv">0.38–0.5%</div><div class="sl">一般大眾盛行率</div></div>
+<div class="sc"><div class="sv">50歲後</div><div class="sl">大量影響50歲以上的男性</div></div>
+</div>
+</div>
+<div class="panel" id="rem-dev">
+<p class="d">起始可能是漸進或迅速的，病程通常是<strong>進展性</strong>的。與神經退化性疾病相關的RBD，可能會在潛在的神經退化性疾病進展時緩解。</p>
+<div class="box r"><div class="bl">⚠️ 重要：神經退化性疾病的早期指標</div>
+        因為與之後出現的潛在性神經退化性疾病有<strong>高度相關性</strong>，最顯著的是共核蛋白病（帕金森氏病、多發性系統萎縮症、路易氏體認知障礙症），而<strong>RBD個體的神經學狀態必須密切監測</strong>。RBD經常是提早數年（通常超過十年）預告這些疾病的徵候。
+      </div>
+</div>
+<div class="panel" id="rem-risk">
+<div class="box a"><div class="bl">基因和生理</div>許多廣泛開立的藥物，包括三環抗憂鬱劑、SSRI、SNRI、乙型阻斷劑，可能會導致快速動眼睡眠缺乏肌肉麻痺（REM sleep without atonia）和純粹RBD的PSG證據。無法知曉是藥物本身造成RBD，還是它們揭露了潛在的致病傾向。</div>
+</div>
+<div class="panel" id="rem-marker">
+<div class="kbdg">⭐ 多頻睡眠檢查（PSG）診斷重點</div>
+<div class="box a"><div class="bl">REM睡眠缺乏肌肉麻痺（REM sleep without atonia）</div>
+<ul class="cl">
+<li>在快速動眼睡眠中，正常狀況下是缺乏肌張力的，RBD有<strong>肌張力增加和/或相位性的肌電活性</strong></li>
+<li>肌電監測需包含：頦下肌（submentalis）、雙側伸指肌（bilateral extensor digitorum）、雙側脛骨前肌（bilateral anterior tibialis）</li>
+<li>連續的錄影監測是必須的</li>
+</ul>
+</div>
+<div class="box w"><div class="bl">⚠️ 注意</div>快速動眼睡眠缺乏肌肉麻痺但缺乏臨床病史上的夢境扮演行為，則純粹是個<strong>無症狀的PSG發現</strong>，不診斷為RBD。<strong>臨床上的夢境扮演行為，合併PSG下的快速動眼睡眠缺乏肌肉麻痺，是診斷RBD所必須的</strong>。</div>
+</div>
+<div class="panel" id="rem-func">
+<p class="d">對發作的難為情，會減損社交關係。個體可能會避免他人會注意到疾病干擾的場合（如拜訪朋友並過夜、與同伴同睡），可能會造成社交孤立或職業困難。不常見的狀況下，RBD可能對患者或同睡者造成嚴重的傷害。</p>
+</div>
+<div class="panel" id="rem-diff">
+<div class="kbdg">⭐ 鑑別重點</div>
+<div class="diff"><div class="dn">⭐ 其他類睡症（混淆覺醒、夢遊、睡驚）</div><div class="db">這些狀況可以發生在較年輕的個體上。它們通常源自深層NREM睡眠，傾向發生於睡眠期的前面部分。從混淆覺醒清醒過來，會有混淆、失去定向感、對伴隨行為的夢中情境的不完整回憶。PSG監測可見正常的快速動眼肌肉麻痺。</div></div>
+<div class="diff"><div class="dn">⭐ 夜間癲癇</div><div class="db">夜間癲癇可能完美地與RBD相雷同，但前者的行為通常更加刻板。PSG監測採用完全腦電圖癲癇組合模式可鑑別兩者。PSG監測不會顯示快速動眼睡眠缺乏肌肉麻痺。</div></div>
+<div class="diff"><div class="dn">⭐ 阻塞性睡眠呼吸中止（OSA）</div><div class="db">OSA可能造成與RBD無法區別的行為，而多頻睡眠監測對於區分是必須的。在這個案例上，症狀在有效治療OSA後緩解，且快速動眼睡眠缺乏肌肉麻痺不會出現在PSG監測。</div></div>
+<div class="diff"><div class="dn">其他特定的解離症（與睡眠有關的心因性解離症）</div><div class="db">與真正的類睡症不同，心因性解離行為來自於睡眠時期一段界限分明的清醒時期。不像RBD，這個疾病在年輕女性的盛行率較高。</div></div>
+</div>
+<div class="panel" id="rem-comor">
+<ul class="cl">
+<li>約30%的猝睡症病人有RBD共同發生；在猝睡症上發生時，在男性和女性上有相同的頻率</li>
+<li>大於50%起初「特發性」RBD者，後來最顯著的是發展出<strong>共核蛋白病</strong>（帕金森氏病、多發性系統萎縮症、路易氏體認知障礙症）</li>
+<li>RBD<strong>經常是提早數年（通常超過十年）預告</strong>這些疾病的徵候</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- ── 腿部不寧症候群 ── -->
+<div class="card" data-cat="rls">
+<div class="chdr" onclick="td(this)">
+<div class="chl"><span class="code">333.94 G25.81</span><div><div class="cname">腿部不寧症候群（RLS）</div><div class="cen">Restless Legs Syndrome</div></div></div>
+<span class="chev o">▾</span>
+</div>
+<div class="cbody">
+<div class="tabs">
+<button class="tab k on" onclick="st(this,'rls-dx')">⭐ 診斷準則</button>
+<button class="tab" onclick="st(this,'rls-assoc')">支持診斷</button>
+<button class="tab" onclick="st(this,'rls-prev')">盛行率</button>
+<button class="tab" onclick="st(this,'rls-dev')">發展病程</button>
+<button class="tab" onclick="st(this,'rls-risk')">風險預後</button>
+<button class="tab" onclick="st(this,'rls-gender')">性別議題</button>
+<button class="tab" onclick="st(this,'rls-marker')">診斷標記</button>
+<button class="tab" onclick="st(this,'rls-func')">功能後果</button>
+<button class="tab k" onclick="st(this,'rls-diff')">⭐ 鑑別診斷</button>
+<button class="tab" onclick="st(this,'rls-comor')">共病</button>
+</div>
+<div class="panel on" id="rls-dx">
+<div class="kbdg">⭐ 四大核心特徵：A1+A2+A3+A4</div>
+<div class="rr"><span class="rl">A</span><div class="rc">一個移動腿部的衝動，通常伴隨有腿部不舒服、不愉快的感覺，有以下各項特點：<ul class="cl" style="margin-top:5px"><li>(1) 在<strong>休息或不活動</strong>的期間，移動腿部的衝動開始或惡化</li><li>(2) 移動腿部的衝動，藉著<strong>動作部分或完全緩解</strong></li><li>(3) 移動腿部的衝動在<strong>傍晚或夜間惡化</strong>，或只出現在傍晚或夜間</li><li>(4) 上述3點<strong>不完全由另一種醫學或行為狀況所獨自解釋</strong></li></ul></div></div>
+<div class="rr"><span class="rl">B</span><div class="rc">準則A的症狀造成明顯的苦惱，或社交、職業、教育或其他重要領域功能的損傷，或在睡眠困擾方面的損傷</div></div>
+<div class="rr"><span class="rl w">C</span><div class="rc">準則A的症狀不能完全用另一精神障礙症、醫學狀況（如關節炎、下肢靜脈曲張、腿部水腫、糖尿病）或行為狀況（如姿勢性不適、慣習性腿部拍擊）所解釋</div></div>
+</div>
+<div class="panel" id="rls-assoc">
+<ul class="cl">
+<li>睡眠中的<strong>週期性腿部運動（PLMS）</strong>：可做為RLS的確認證據，高達90%診斷為RLS的個體會呈現PLMS</li>
+<li>在清醒時的週期性腿部運動，會支持RLS的診斷</li>
+<li>入睡困難、睡眠維持困難及過度日間思睡</li>
+<li>家族史有一等親罹患RLS</li>
+<li>增加多巴胺的治療，至少在一開始時，可以減少症狀</li>
+</ul>
+</div>
+<div class="panel" id="rls-prev">
+<div class="sg">
+<div class="sc"><div class="sv">2–7.2%</div><div class="sl">使用明確診斷標準的盛行率</div></div>
+<div class="sc"><div class="sv">1.5–2:1</div><div class="sl">女:男 盛行率比</div></div>
+<div class="sc"><div class="sv">1.6%</div><div class="sl">每週≥3次且中至重度苦惱</div></div>
+</div>
+<p class="d">腿部不寧症候群也會隨年齡而增加。<strong>亞裔或非裔後代的個體較不常見</strong>，可能顯示著這些族群罹患RLS的風險較低。</p>
+</div>
+<div class="panel" id="rls-dev">
+<p class="d">發病通常始於人生第二和第三個十年（20-30歲）。在診斷為RLS的成人患者，大約40%報告在20歲前就感覺到了症狀，20%在10歲前感覺到症狀。</p>
+<p class="d">RLS的盛行率隨年齡增加而穩定上升，直到大約60歲，在老年族群上其症狀維持穩定或稍微減弱。與非家族性的案例相較，<strong>家族性RLS通常發病年齡較早，病程進展較慢</strong>。</p>
+<div class="box w"><div class="bl">兒童診斷注意</div>兒童的RLS診斷會很困難，因為許多是自我描述的部分。通常大於6歲的兒童可以提供詳細、充足的RLS症狀描述，而非由家長或照顧者。</div>
+</div>
+<div class="panel" id="rls-risk">
+<div class="box a"><div class="bl">基因和生理</div>
+<ul class="cl">
+<li>誘病因子：女性、年齡增加、基因風險變異、有RLS的家族史</li>
+<li>RLS有<strong>很強的家族性</strong>；基因風險變異在MEIS1、BTBD9、MAP2K5三處基因域的常見基因變異</li>
+<li>BTBD9甚至只有一個對偶基因就可以增加80%的RLS盛行率</li>
+<li>病生理機轉：<strong>中樞多巴胺系統的干擾</strong>和<strong>鐵代謝的干擾</strong></li>
+<li>血清素抗憂鬱劑會引發或惡化某些個體的RLS</li>
+</ul>
+</div>
+<p class="d">懷孕：可以重新回到正常的睡眠模式。次發性RLS（次發於尿毒症）：基因易感性個體對於風險因子的存在，會發展出RLS。</p>
+</div>
+<div class="panel" id="rls-gender">
+<p class="d">腿部不寧症候群在女性的盛行率較男性高（1.5-2:1），但沒有因性別而有診斷上的不同。然而，懷孕時的RLS盛行率，是一般大眾的<strong>兩到三倍</strong>，在第三孕期時達到高峰，大部分個案在生產後迅速改善或緩解。</p>
+</div>
+<div class="panel" id="rls-marker">
+<p class="d">多頻睡眠檢查（PSG）顯示RLS有顯著的異常，通常睡眠準備期會增加、警醒指數會增加，並可以記錄到睡眠中的週期性腿部運動（PLMS）。</p>
+<p class="d">清醒時的強制臥床下多導聯和在安靜休息時的腿部不寧症候群運動徵候（Suggested immobilization test, SIT），這兩種狀況皆會刺激RLS的症狀，有助評估。</p>
+</div>
+<div class="panel" id="rls-func">
+<p class="d">腿部不寧症候群嚴重到顯著地損害功能，或與其他精神疾病相關聯，包括<strong>憂鬱和焦慮</strong>。高達50%會報告對情緒有負面影響，47.6%報告缺乏活力。RLS最常見的後果是<strong>睡眠剝奪</strong>。</p>
+</div>
+<div class="panel" id="rls-diff">
+<div class="kbdg">⭐ 鑑別重點（主要是腿部不適感的鑑別）</div>
+<div class="diff"><div class="dn">⭐ 腿部痙攣（Leg cramps）</div><div class="db">腿部痙攣不像RLS，<strong>不會呈現想移動的衝動</strong>，也不會有頻繁的四肢移動。腿部痙攣通常由移動得到緩解，但RLS的移動帶來的是<strong>主動</strong>的暫時緩解。</div></div>
+<div class="diff"><div class="dn">⭐ 姿勢性不適（Positional discomfort）</div><div class="db">與姿勢相關，改變姿勢後不適感消失；RLS的症狀在改變姿勢後依然持續。</div></div>
+<div class="diff"><div class="dn">⭐ 靜坐不能（Akathisia）</div><div class="db">靜坐不能通常是全身性的坐立不安，而非局限在腿部，且通常不會夜間惡化或藉由移動緩解。靜坐不能通常與抗精神病藥物使用有關。</div></div>
+<div class="diff"><div class="dn">周邊神經病變（Peripheral neuropathy）</div><div class="db">周邊神經病變的症狀通常在白天也存在，且不會因移動而緩解；而RLS有<strong>夜間惡化</strong>和<strong>週期性的腿部移動</strong>，較常出現在RLS上。</div></div>
+</div>
+<div class="panel" id="rls-comor">
+<ul class="cl">
+<li><strong>憂鬱症、焦慮症和注意力障礙症</strong>，很常與RLS共病</li>
+<li>主要醫學狀況共病：<strong>心血管疾病</strong></li>
+<li>高血壓、猝睡症、偏頭痛、帕金森氏病、多發性硬化症、癌症</li>
+<li><strong>缺鐵、懷孕及慢性腎衰竭</strong>，也常與RLS共病</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- ── 物質/醫藥引發的睡眠障礙症 ── -->
+<div class="card" data-cat="subst">
+<div class="chdr" onclick="td(this)">
+<div class="chl"><span class="code">各物質別碼</span><div><div class="cname">物質／醫藥引發的睡眠障礙症</div><div class="cen">Substance/Medication-Induced Sleep Disorder</div></div></div>
+<span class="chev o">▾</span>
+</div>
+<div class="cbody">
+<div class="tabs">
+<button class="tab k on" onclick="st(this,'sub-dx')">⭐ 診斷準則</button>
+<button class="tab" onclick="st(this,'sub-sp')">特別註明/類型</button>
+<button class="tab" onclick="st(this,'sub-feat')">診斷特質</button>
+<button class="tab" onclick="st(this,'sub-assoc')">支持診斷</button>
+<button class="tab" onclick="st(this,'sub-risk')">風險預後</button>
+<button class="tab" onclick="st(this,'sub-cg')">文化/性別</button>
+<button class="tab" onclick="st(this,'sub-marker')">診斷標記</button>
+<button class="tab" onclick="st(this,'sub-func')">功能後果</button>
+<button class="tab k" onclick="st(this,'sub-diff')">⭐ 鑑別診斷</button>
+<button class="tab" onclick="st(this,'sub-comor')">共病</button>
+</div>
+<div class="panel on" id="sub-dx">
+<div class="rr"><span class="rl">A</span><div class="rc">顯著的睡眠困擾</div></div>
+<div class="rr"><span class="rl">B</span><div class="rc">有病史、身體檢查或實驗室發現以下<strong>兩者都有</strong>的證據：<ul class="cl" style="margin-top:5px"><li>準則A的症狀在物質中毒/戒斷或醫藥使用時期或使用之後很快出現</li><li>所涉及的物質/醫藥能引發準則A的症狀</li></ul></div></div>
+<div class="rr"><span class="rl">C</span><div class="rc">症狀無法以不是物質/醫藥所致的睡眠障礙症做更好的解釋。獨立的睡眠障礙症的證據：<ul class="cl" style="margin-top:5px"><li>症狀在物質/醫藥使用之前出現</li><li>症狀持續到嚴重中毒或戒斷停止後相當時間（如約一個月）</li><li>有其他的證據顯示單獨非物質/醫藥所致的睡眠障礙症存在</li></ul></div></div>
+<div class="rr"><span class="rl">D</span><div class="rc">此困擾不是只在譫妄過程中發生</div></div>
+<div class="rr"><span class="rl w">E</span><div class="rc">此困擾引起臨床上顯著苦惱或社交、職業或其他重要領域功能減損</div></div>
+</div>
+<div class="panel" id="sub-sp">
+<div class="spbox"><div class="sptitle">物質類型特別說明</div>中毒時發病 / 停用/戒斷時發病</div>
+<h4 class="sub">四種睡眠困擾類型</h4>
+<table class="ct">
+<tr><th>類型</th><th>描述</th></tr>
+<tr><td><span class="tag ta">失眠型</span></td><td>失眠為主要表現</td></tr>
+<tr><td><span class="tag tw">嗜睡型</span></td><td>嗜睡為主要表現</td></tr>
+<tr><td><span class="tag tp">異睡型（類睡症型）</span></td><td>異常的睡眠行為</td></tr>
+<tr><td>混合型</td><td>有多種型式的睡眠症狀，但沒有任何主要的</td></tr>
+</table>
+</div>
+<div class="panel" id="sub-feat">
+<p class="d">物質/醫藥引發的睡眠障礙症的核心特徵為顯著的睡眠困擾，嚴重到需要臨床上獨立地關注。</p>
+<div class="box a"><div class="bl">與原發睡眠障礙症的鑑別</div>
+<ul class="cl">
+<li>不典型的發病年齡或病程（如35歲以上初發失眠症狀）</li>
+<li>物質使用與症狀成因相關（須注意時序）</li>
+<li>若症狀在戒斷或嚴重中毒停止後相當時間（約一個月）仍持續者 → 考慮原發睡眠障礙症</li>
+</ul>
+</div>
+</div>
+<div class="panel" id="sub-assoc">
+<div class="box a"><div class="bl">各物質/藥物的睡眠影響</div>
+<ul class="cl">
+<li><strong>酒精</strong>：急性鎮靜作用，伴隨第三和第四階段NREM睡眠增加以及快速動眼期睡眠減少；慢性使用者失眠；酒精引發精神病症（幻覺性）通常是聽覺性質</li>
+<li><strong>大麻</strong>：THC對睡眠有鎮靜效果，可減少快速動眼期睡眠；有時會有生動的夢境或夢魔（停用時）</li>
+<li><strong>鴉片類</strong>：急性增加非快速動眼期睡眠；慢性使用或戒斷：夢魔和相關夢境增加</li>
+<li><strong>安非他命和相關物質</strong>：增加清醒、減少睡眠；停藥後反彈性嗜睡</li>
+<li><strong>鎮靜催眠藥</strong>：急性：鎮靜；慢性或停藥：嚴重失眠（反彈）</li>
+<li><strong>咖啡因</strong>：失眠（最常見）</li>
+</ul>
+</div>
+</div>
+<div class="panel" id="sub-risk">
+<div class="box a"><div class="bl">風險因子</div>
+<ul class="cl">
+<li>先前有睡眠困擾的個體對物質/醫藥引發的睡眠障礙症有較高的敏感性</li>
+<li>其他睡眠障礙症的個體（例如：有使用興奮劑的嗜睡症患者）有類似的風險</li>
+<li>老年和認知障礙症的患者也有較高風險（可能不會提出抱怨）</li>
+</ul>
+</div>
+</div>
+<div class="panel" id="sub-cg">
+<p class="d"><strong>文化：</strong>特定文化對物質使用的相對接受程度，會影響各文化物質引發的睡眠障礙症的診斷率。</p>
+<p class="d"><strong>性別：</strong>對於使用特定物質的模式（例如：酒精）會造成性別特定的盛行率（女性受到的影響是男性的兩倍）。對於某特定物質相同用量和時間可能會在男性和女性上造成相當不同的睡眠影響。</p>
+</div>
+<div class="panel" id="sub-marker">
+<p class="d">每一種物質/醫藥引發的睡眠障礙症，所產生的與其他障礙症有關的腦電波圖睡眠模式，但卻不能據此就下該診斷。整夜PSG可幫助界定失眠的嚴重度，也可以確認物質對於夜間呼吸及運動動作的影響。兩週的睡眠日記和腕動計可能對於確立此診斷有幫助。</p>
+</div>
+<div class="panel" id="sub-func">
+<p class="d">睡眠障礙症有許多的功能性後果，而對物質/醫藥引發的睡眠障礙症的獨特後果是會增加物質濫用/依賴的風險，以及與其他物質（如興奮劑、苯二氮平類）的交互作用。</p>
+</div>
+<div class="panel" id="sub-diff">
+<div class="kbdg">⭐ 鑑別重點</div>
+<div class="diff"><div class="dn">⭐ 物質中毒或物質戒斷</div><div class="db">只有在睡眠困擾在臨床上相當顯著，嚴重到需要獨立的臨床關注時，才會下「物質/醫藥引發的睡眠障礙症」診斷。</div></div>
+<div class="diff"><div class="dn">⭐ 譫妄</div><div class="db">若物質/醫藥引發的睡眠障礙症只有在譫妄時發生，則<strong>不另外分開做診斷</strong>。</div></div>
+<div class="diff"><div class="dn">⭐ 其他睡眠障礙症</div><div class="db">若物質/醫藥被判定是症狀的原因，則物質/醫藥引發的睡眠障礙症<strong>的嚴重度必須超過</strong>通常伴隨中毒或戒斷狀態的睡眠困擾；僅在症狀嚴重到值得獨立的臨床關注時才下此診斷。</div></div>
+<div class="diff"><div class="dn">因其他身體病況的睡眠障礙症</div><div class="db">若有身體疾病且有藥物使用，兩者皆可能造成睡眠障礙：若只在特定的醫藥/物質後才出現，顯示有物質/醫藥引發的睡眠障礙症；若睡眠困擾與其他身體病況共病也因物質的使用而惡化，則<strong>兩個診斷皆應該給予</strong>。</div></div>
+</div>
+<div class="panel" id="sub-comor">
+<p class="d">常與各種睡眠障礙症共病（見本章其他睡眠障礙症的「共病」部分），包括失眠症、嗜睡症、中樞性睡眠呼吸中止、與睡眠有關的肺泡通氣低下，以及日夜節律睡醒障礙症，輪班工作型。</p>
+</div>
+</div>
+</div>
+</div><!-- end main -->
+<script>
+function td(h){const b=h.nextElementSibling;const c=h.querySelector('.chev');const hid=b.classList.contains('h');b.classList.toggle('h',!hid);c.classList.toggle('o',hid);}
+function st(btn,pid){const sec=btn.closest('.card');sec.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));sec.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));btn.classList.add('on');const p=sec.querySelector('#'+pid);if(p)p.classList.add('on');}
+function fc(cat,btn){document.querySelectorAll('.pill').forEach(p=>p.classList.remove('on'));btn.classList.add('on');document.querySelectorAll('.card').forEach(c=>{c.style.display=(cat==='all'||c.dataset.cat===cat)?'':'none';});}
+</script>
+</body>
+</html>
