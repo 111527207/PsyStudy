@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSM-5 性功能障礙症 系統整理</title>
+<style>
+:root{--bg:#0d1117;--s1:#161b22;--s2:#21262d;--b:#30363d;--a:#58a6ff;--a2:#bc8cff;--a3:#3fb950;--w:#d29922;--r:#f85149;--t:#e6edf3;--td:#8b949e;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI','PingFang TC','Microsoft JhengHei',sans-serif;background:var(--bg);color:var(--t);font-size:14px;line-height:1.65;}
+.hdr{background:linear-gradient(135deg,#161b22,#0d1117);border-bottom:1px solid var(--b);padding:16px 22px 12px;position:sticky;top:0;z-index:100;}
+.hdr h1{font-size:19px;font-weight:700;}.hdr p{font-size:12px;color:var(--td);margin-top:2px;}
+.nav{display:flex;flex-wrap:wrap;gap:5px;padding:8px 16px;background:var(--bg);border-bottom:1px solid var(--b);position:sticky;top:62px;z-index:99;}
+.pill{background:var(--s1);border:1px solid var(--b);border-radius:20px;padding:4px 12px;font-size:12px;cursor:pointer;color:var(--td);white-space:nowrap;transition:all .15s;font-weight:500;}
+.pill:hover{border-color:var(--a);color:var(--a);}.pill.on{background:var(--a);border-color:var(--a);color:#000;font-weight:700;}
+.main{max-width:1100px;margin:0 auto;padding:14px 16px 60px;}
+.card{border:1px solid var(--b);border-radius:12px;margin-bottom:16px;overflow:hidden;background:var(--s1);}
+.chdr{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;cursor:pointer;background:linear-gradient(90deg,var(--s2),var(--s1));border-bottom:1px solid var(--b);user-select:none;gap:10px;}
+.chdr:hover{background:var(--s2);}
+.chl{display:flex;align-items:center;gap:10px;}
+.code{background:rgba(88,166,255,.1);border:1px solid var(--a);color:var(--a);border-radius:5px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace;white-space:nowrap;}
+.cname{font-size:14px;font-weight:700;}.cen{font-size:11px;color:var(--td);margin-top:1px;}
+.chev{font-size:16px;color:var(--td);transition:transform .25s;}.chev.o{transform:rotate(180deg);}
+.cbody{display:block;}.cbody.h{display:none;}
+.tabs{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--b);background:var(--bg);overflow-x:auto;}
+.tab{padding:7px 12px;font-size:12px;cursor:pointer;color:var(--td);border-bottom:2px solid transparent;white-space:nowrap;transition:all .15s;background:none;border-top:none;border-left:none;border-right:none;}
+.tab:hover{color:var(--t);background:var(--s2);}.tab.on{color:var(--a);border-bottom-color:var(--a);}
+.tab.k{color:var(--w);}.tab.k.on{border-bottom-color:var(--w);color:var(--w);}
+.panel{display:none;padding:14px 16px;}.panel.on{display:block;}
+.kbdg{display:inline-flex;align-items:center;gap:4px;background:rgba(210,153,34,.1);border:1px solid var(--w);color:var(--w);border-radius:4px;padding:2px 8px;font-size:11px;font-weight:700;margin-bottom:9px;}
+.ib{background:rgba(88,166,255,.07);border:1px solid rgba(88,166,255,.22);border-radius:8px;padding:9px 12px;margin-bottom:9px;font-size:13px;color:var(--td);}
+.ib strong{color:var(--a);}
+.box{background:var(--bg);border:1px solid var(--b);border-radius:8px;padding:10px 13px;margin-bottom:9px;}
+.bl{font-size:11px;font-weight:700;color:var(--a);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px;}
+.box.w{border-left:3px solid var(--w);}.box.g{border-left:3px solid var(--a3);}
+.box.a{border-left:3px solid var(--a);}.box.p{border-left:3px solid var(--a2);}.box.r{border-left:3px solid var(--r);}
+.rr{display:flex;align-items:flex-start;margin-bottom:8px;gap:8px;}
+.rl{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;border-radius:50%;background:var(--a);color:#000;font-size:11px;font-weight:700;flex-shrink:0;margin-top:2px;}
+.rl.w{background:var(--w);color:#1a1a1a;}.rl.r{background:var(--r);}
+.rc{flex:1;font-size:13px;}
+ul.cl{padding-left:16px;}.cl li{margin-bottom:4px;font-size:13px;}.cl li::marker{color:var(--a);}
+p.d{color:var(--td);font-size:13px;line-height:1.7;margin-bottom:7px;}
+h4.sub{font-size:13px;font-weight:700;color:var(--a);margin:10px 0 5px;}
+.diff{background:var(--bg);border:1px solid var(--b);border-radius:7px;padding:9px 12px;margin-bottom:7px;}
+.dn{font-weight:700;color:var(--a2);font-size:13px;margin-bottom:3px;}.db{color:var(--td);font-size:13px;}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:7px;margin-bottom:9px;}
+.sc{background:var(--bg);border:1px solid var(--b);border-radius:8px;padding:10px;text-align:center;}
+.sv{font-size:20px;font-weight:700;color:var(--a3);}.sl{font-size:11px;color:var(--td);margin-top:2px;}
+.tag{display:inline-block;padding:2px 7px;border-radius:10px;font-size:11px;font-weight:600;margin:2px;}
+.ta{background:rgba(88,166,255,.12);color:var(--a);}
+.tg{background:rgba(63,185,80,.12);color:var(--a3);}
+.tw{background:rgba(210,153,34,.12);color:var(--w);}
+.tr{background:rgba(248,81,73,.12);color:var(--r);}
+.tp{background:rgba(188,140,255,.12);color:var(--a2);}
+table.ct{width:100%;border-collapse:collapse;font-size:13px;}
+table.ct th{background:var(--s2);color:var(--td);font-size:11px;text-transform:uppercase;padding:6px 10px;text-align:left;border-bottom:2px solid var(--b);}
+table.ct td{padding:7px 10px;border-bottom:1px solid var(--b);vertical-align:top;}
+table.ct tr:last-child td{border-bottom:none;}.ct tr:hover td{background:var(--s2);}
+.spbox{background:rgba(88,166,255,.05);border:1px solid rgba(88,166,255,.2);border-radius:7px;padding:10px 12px;margin-bottom:7px;}
+.sptitle{font-weight:700;color:var(--a);font-size:13px;margin-bottom:3px;}
+@media(max-width:600px){.hdr{padding:11px 13px 9px;}.nav{padding:7px 10px;}.main{padding:12px 10px 40px;}.panel{padding:12px;}}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <h1>💑 DSM-5 性功能障礙症 系統整理</h1>
+  <p>臨床心理師國考備考 | 診斷準則 · 鑑別診斷 · 重點比較 完整版</p>
+</div>
+
+<div class="nav">
+  <span class="pill on" onclick="fc('all',this)">全部</span>
+  <span class="pill" onclick="fc('intro',this)">本章概覽</span>
+  <span class="pill" onclick="fc('de',this)">遲洩</span>
+  <span class="pill" onclick="fc('ed',this)">勃起障礙症</span>
+  <span class="pill" onclick="fc('fod',this)">女性高潮障礙症</span>
+  <span class="pill" onclick="fc('fsiad',this)">女性性興趣/興奮</span>
+  <span class="pill" onclick="fc('gppd',this)">骨盆性器疼痛/插入</span>
+  <span class="pill" onclick="fc('mhsdd',this)">男性性慾低落</span>
+  <span class="pill" onclick="fc('pe',this)">早洩</span>
+  <span class="pill" onclick="fc('subst',this)">物質引發</span>
+  <span class="pill" onclick="fc('other',this)">其他/非特定</span>
+  <span class="pill" onclick="fc('cmp',this)">⭐ 比較與鑑別</span>
+</div>
+
+<div class="main">
+
+<!-- ── 本章概覽 ── -->
+<div class="card" data-cat="intro">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">本章導論</span><div><div class="cname">性功能障礙症 — 本章概覽</div><div class="cen">Sexual Dysfunctions Overview</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="panel on">
+      <div class="ib"><strong>本章核心特點：</strong>性功能障礙是一群異質性組成的疾病，其特徵為個體對於性反應或感受到性愉悅的能力有臨床上顯著的困擾。個體可同時有數個性功能障礙，每一種都應給予診斷。</div>
+      <div class="box a"><div class="bl">本章包含的9個診斷</div>
+        <ul class="cl">
+          <li><strong>遲洩</strong>（Delayed Ejaculation）</li>
+          <li><strong>勃起障礙症</strong>（Erectile Disorder）</li>
+          <li><strong>女性高潮障礙症</strong>（Female Orgasmic Disorder）</li>
+          <li><strong>女性性興趣／興奮障礙症</strong>（Female Sexual Interest/Arousal Disorder）</li>
+          <li><strong>骨盆性器疼痛／插入障礙症</strong>（Genito-Pelvic Pain/Penetration Disorder）</li>
+          <li><strong>男性性慾低落障礙症</strong>（Male Hypoactive Sexual Desire Disorder）</li>
+          <li><strong>早洩</strong>（Premature/Early Ejaculation）</li>
+          <li><strong>物質／醫藥引發的性功能障礙症</strong></li>
+          <li>其他特定的／非特定的性功能障礙症</li>
+        </ul>
+      </div>
+      <div class="box w"><div class="bl">⚠️ 重要排除原則</div>
+        <ul class="cl">
+          <li>若性事困難是因<strong>性刺激不充足</strong>造成，不需給予性功能障礙診斷（雖仍可能需要照護）</li>
+          <li>若能被其他<strong>非性精神疾病</strong>大部分解釋（如憂鬱症、雙相情緒障礙症、焦慮症、PTSD、精神病）→ 只需診斷該精神疾病</li>
+          <li>若由<strong>物質/醫藥</strong>使用或中斷較佳解釋 → 診斷物質/醫藥引發的性功能障礙症</li>
+          <li>若由<strong>其他一般身體病況</strong>造成（如骨盆神經損傷）→ 不需精神科診斷</li>
+          <li>若<strong>嚴重關係苦惱、伴侶暴力或顯著壓力源</strong>能更好解釋 → 不下性功能障礙診斷，改列V碼/Z碼呈現關係問題</li>
+        </ul>
+      </div>
+      <div class="box p"><div class="bl">通用亞型架構（適用於大多數性功能障礙症）</div>
+        <ul class="cl">
+          <li><strong>終生（lifelong）</strong>：性問題從第一次性經驗就開始</li>
+          <li><strong>後天（acquired）</strong>：在一段相對正常功能時期後才發生</li>
+          <li><strong>一般型（generalized）</strong>：不限於特定刺激、情境或伴侶</li>
+          <li><strong>情境型（situational）</strong>：只在特定刺激、情境或伴侶時發生</li>
+        </ul>
+      </div>
+      <div class="box g"><div class="bl">評估時應納入考慮的五大因素（幾乎所有疾病皆適用）</div>
+        <ul class="cl">
+          <li>① 伴侶因素（伴侶的性事問題、健康狀態）</li>
+          <li>② 關係因素（溝通不良、性活動渴望不一致）</li>
+          <li>③ 個人易感性因素（身體形象差、性/情緒虐待病史）、精神疾病共病（憂鬱、焦慮）或壓力源（失業、傷慟）</li>
+          <li>④ 文化或宗教因素（禁止性活動或性愉悅的相關抑制、對性的態度）</li>
+          <li>⑤ 與預後、病程、治療相關的醫學因素</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── 遲洩 ── -->
+<div class="card" data-cat="de">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">302.74 F52.32</span><div><div class="cname">遲洩</div><div class="cen">Delayed Ejaculation</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="tabs">
+      <button class="tab k on" onclick="st(this,'de-dx')">⭐ 診斷準則</button>
+      <button class="tab" onclick="st(this,'de-sp')">特別註明</button>
+      <button class="tab" onclick="st(this,'de-feat')">診斷特質</button>
+      <button class="tab" onclick="st(this,'de-assoc')">支持診斷</button>
+      <button class="tab" onclick="st(this,'de-prev')">盛行率</button>
+      <button class="tab" onclick="st(this,'de-dev')">發展病程</button>
+      <button class="tab" onclick="st(this,'de-risk')">風險預後</button>
+      <button class="tab" onclick="st(this,'de-cult')">文化議題</button>
+      <button class="tab" onclick="st(this,'de-func')">功能後果</button>
+      <button class="tab k" onclick="st(this,'de-diff')">⭐ 鑑別診斷</button>
+      <button class="tab" onclick="st(this,'de-comor')">共病</button>
+    </div>
+    <div class="panel on" id="de-dx">
+      <div class="kbdg">⭐ 核心：射精顯著延遲或無法射精，且非自願</div>
+      <div class="rr"><span class="rl">A</span><div class="rc">以下任一症狀必須在大部份或所有與伴侶的性行為時經驗過（約75%-100%），個人並無意拖延：<ul class="cl" style="margin-top:5px"><li>顯著的射精拖延</li><li>顯著的不常或沒射精</li></ul></div></div>
+      <div class="rr"><span class="rl">B</span><div class="rc">準則A症狀持續至少約<strong>六個月</strong></div></div>
+      <div class="rr"><span class="rl">C</span><div class="rc">準則A症狀引起個人臨床上顯著苦惱</div></div>
+      <div class="rr"><span class="rl w">D</span><div class="rc">性功能障礙無法以非性精神疾病、嚴重人際關係苦惱結果、或其他顯著壓力做更好的解釋，且無法歸因於物質/醫藥效應或另一身體病況所致</div></div>
+    </div>
+    <div class="panel" id="de-sp">
+      <ul class="cl"><li>終生 / 後天</li><li>一般型 / 情境型</li><li>嚴重度：輕度/中度/重度（依苦惱程度）</li></ul>
+    </div>
+    <div class="panel" id="de-feat">
+      <p class="d">核心特徵為顯著的延遲或無法達到射精。男人指出儘管有充足的性刺激及想射精的欲望，依然有困難或無法達到射精。「延遲」的定義<strong>沒有精確的界限</strong>，尚無共識多久才是不可接受的。</p>
+    </div>
+    <div class="panel" id="de-assoc">
+      <p class="d">男人和伴侶可能提出要達成高潮有過久插入，直到精力耗竭或性器不適才停止努力；有些男人因反覆射精困難而避免性行為；性伴侶可能因無法輕易讓對方射精而感到性吸引力減少。</p>
+    </div>
+    <div class="panel" id="de-prev">
+      <p class="d">因缺乏精確定義，盛行率不清楚。這是<strong>男性最不常見的性抱怨</strong>。只有75%男人提出每次性行為都會射精，少於1%抱怨超過6個月的難以射精。</p>
+    </div>
+    <div class="panel" id="de-dev">
+      <p class="d">終生遲洩在早期性經驗就開始發病且持續終生。後天遲洩在一段正常性功能期後才開始。遲洩盛行率似乎在<strong>50歲左右</strong>呈現相對穩定，之後發生率開始顯著增加（80幾歲後是小於59歲時的兩倍）。</p>
+    </div>
+    <div class="panel" id="de-risk">
+      <div class="box a"><div class="bl">基因和生理</div>與年齡有關的快速傳導周邊感覺神經喪失，以及與年齡有關的性類固醇分泌下降，可能與50歲以上男人遲洩增加有關。</div>
+    </div>
+    <div class="panel" id="de-cult">
+      <p class="d">遲洩抱怨在不同國家和文化間有差異，<strong>亞洲男性族群</strong>較多於歐洲、澳洲或美國的男性族群，差別可能與文化或基因的不同有關。</p>
+    </div>
+    <div class="panel" id="de-func">
+      <p class="d">射精困難可能造成性交困難，通常與伴侶或雙方相當程度的心理苦惱有關。</p>
+    </div>
+    <div class="panel" id="de-diff">
+      <div class="kbdg">⭐ 鑑別重點</div>
+      <div class="diff"><div class="dn">⭐ 其他身體狀況</div><div class="db">區分可由一般醫學疾病或損傷完全解釋的遲洩，和心因性、特發性或合併原因的遲洩。情境型抱怨提示心理因素。神經退化性疾病（多發性硬化症、糖尿病、酒精性神經病變）、手術創傷（腰部交感神經節、腹會陰手術、腰部交感神經切除術）可導致無法射精。</div></div>
+      <div class="diff"><div class="dn">逆行性射精（Retrograde ejaculation）</div><div class="db">射精入膀胱，可能發生在經尿道攝護腺刮除術之後，需與遲洩鑑別。</div></div>
+      <div class="diff"><div class="dn">物質/醫藥使用</div><div class="db">抗憂鬱劑、抗精神病藥、交感神經藥物、鴉片類藥物會造成射精問題。</div></div>
+      <div class="diff"><div class="dn">高潮功能障礙</div><div class="db">射精與高潮通常但不總是一起發生。無快感射精（anhedonic ejaculation）：射精正常但愉悅減少，不能編碼為遲洩，可編碼為其他特定/非特定性功能障礙症。</div></div>
+    </div>
+    <div class="panel" id="de-comor">
+      <p class="d">有些證據顯示遲洩可能更常發生於<strong>嚴重型重度憂鬱症</strong>上。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── 勃起障礙症 ── -->
+<div class="card" data-cat="ed">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">302.72 F52.21</span><div><div class="cname">勃起障礙症</div><div class="cen">Erectile Disorder</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="tabs">
+      <button class="tab k on" onclick="st(this,'ed-dx')">⭐ 診斷準則</button>
+      <button class="tab" onclick="st(this,'ed-sp')">特別註明</button>
+      <button class="tab" onclick="st(this,'ed-feat')">診斷特質</button>
+      <button class="tab" onclick="st(this,'ed-assoc')">支持診斷</button>
+      <button class="tab" onclick="st(this,'ed-prev')">盛行率</button>
+      <button class="tab" onclick="st(this,'ed-dev')">發展病程</button>
+      <button class="tab" onclick="st(this,'ed-risk')">風險預後</button>
+      <button class="tab" onclick="st(this,'ed-cult')">文化議題</button>
+      <button class="tab" onclick="st(this,'ed-marker')">診斷標記</button>
+      <button class="tab" onclick="st(this,'ed-func')">功能後果</button>
+      <button class="tab k" onclick="st(this,'ed-diff')">⭐ 鑑別診斷</button>
+      <button class="tab" onclick="st(this,'ed-comor')">共病</button>
+    </div>
+    <div class="panel on" id="ed-dx">
+      <div class="kbdg">⭐ 核心：三大症狀中至少一項，反覆達成或維持勃起失敗</div>
+      <div class="rr"><span class="rl">A</span><div class="rc">以下三項症狀至少一種出現，需在大部分或所有（約75%-100%）性行為時經驗過：<ul class="cl" style="margin-top:5px"><li>性行為中欲勃起，有顯著困難</li><li>欲維持勃起持久來完成性行為，有顯著困難</li><li>勃起硬度顯著減弱</li></ul></div></div>
+      <div class="rr"><span class="rl">B</span><div class="rc">準則A症狀持續至少約<strong>六個月</strong></div></div>
+      <div class="rr"><span class="rl">C</span><div class="rc">準則A症狀引起臨床上顯著苦惱</div></div>
+      <div class="rr"><span class="rl w">D</span><div class="rc">性功能障礙無法以非性精神疾病、嚴重人際關係苦惱結果、或其他顯著壓力做更好的解釋，且無法歸因於物質/醫藥效應或另一身體病況所致</div></div>
+    </div>
+    <div class="panel" id="ed-sp">
+      <ul class="cl"><li>終生 / 後天</li><li>一般型 / 情境型</li><li>嚴重度：輕度/中度/重度（依苦惱程度）</li></ul>
+    </div>
+    <div class="panel" id="ed-feat">
+      <p class="d">核心特徵是在與伴侶的性交中反覆地達成或維持勃起失敗。須以仔細性史查明此問題已呈現<strong>顯著時間（至少約6個月）</strong>，且在<strong>大部分性行為場景（至少75%時間）</strong>下發生。</p>
+    </div>
+    <div class="panel" id="ed-assoc">
+      <p class="d">許多勃起障礙症男人可能有低自尊、低自信、男子氣概減少，也可能感覺情緒憂鬱。害怕和/或避免未來性機遇可能發生。伴侶的性滿足減少和性慾減少很常見。</p>
+    </div>
+    <div class="panel" id="ed-prev">
+      <div class="sg">
+        <div class="sc"><div class="sv">13-21%</div><div class="sl">40-80歲男人偶爾有勃起問題</div></div>
+        <div class="sc"><div class="sv">40-50%</div><div class="sl">60-70歲以上抱怨顯著勃起問題</div></div>
+        <div class="sc"><div class="sv">~2%</div><div class="sl">小於40-50歲經常有勃起問題</div></div>
+      </div>
+      <p class="d">大約20%男人在第一次性經驗時害怕有勃起問題，大約8%感覺有勃起問題而無法插入。</p>
+    </div>
+    <div class="panel" id="ed-dev">
+      <p class="d">第一次性行為勃起失敗與不認識的伴侶性交、同時使用藥物/酒精、不想要性行為、同儕壓力有關，大多會自行緩解。<strong>後天勃起障礙症</strong>通常與生物因素有關（糖尿病、心血管疾病），在大部分男人可能持續；<strong>終生勃起障礙症</strong>較與心理因素有關，為自限性或對心理介入有反應性。</p>
+    </div>
+    <div class="panel" id="ed-risk">
+      <div class="box a"><div class="bl">氣質</div>神經質人格特質可能與大學生勃起問題有關；屈從性人格特質可能與40歲以上男人有關。述情障礙症（Alexithymia）在「心因性」勃起障礙症男人身上很常見。勃起問題在憂鬱症或PTSD男人上很常見。</div>
+      <div class="box p"><div class="bl">病程修飾因子</div>後天勃起障礙症風險因子：年齡、吸菸、缺乏運動、糖尿病、性慾下降。</div>
+    </div>
+    <div class="panel" id="ed-cult">
+      <p class="d">勃起障礙症抱怨在不同國家間有差異。這是代表不同文化期待的差別，還是純粹是勃起失敗發生頻率的差別，尚未可知。</p>
+    </div>
+    <div class="panel" id="ed-marker">
+      <p class="d">夜間陰莖勃起試驗（NPT）：若快速動眼期有充足勃起則顯示心因性問題。其他評估：都卜勒超音波、血管內注射血管活性藥物、動力注射海綿體造影、陰部神經傳導檢查（疑周邊神經病變時）、血清游離睪固酮、甲狀腺功能、空腹血糖（篩檢糖尿病）、血脂評估（40歲以上勃起障礙可預測未來心血管疾病風險）。</p>
+    </div>
+    <div class="panel" id="ed-func">
+      <p class="d">會干擾生育，造成個體和人際苦惱，害怕和/或避免性機遇可能干擾親密關係的形成。</p>
+    </div>
+    <div class="panel" id="ed-diff">
+      <div class="kbdg">⭐ 鑑別重點</div>
+      <div class="diff"><div class="dn">⭐ 重度憂鬱症</div><div class="db">重度憂鬱症和勃起障礙症兩者緊密相關，勃起障礙症伴隨嚴重憂鬱疾患也可能發生。</div></div>
+      <div class="diff"><div class="dn">正常勃起功能</div><div class="db">需考慮有正常勃起功能但有過多期待的男人。</div></div>
+      <div class="diff"><div class="dn">⭐ 物質/醫藥使用</div><div class="db">發病與物質/醫藥開始使用不謀而合，且症狀消散伴隨中斷或減量，顯示有物質/醫藥引發的性功能障礙症。</div></div>
+      <div class="diff"><div class="dn">⭐ 其他身體狀況</div><div class="db">最困難的鑑別部分。年齡&gt;40-50歲和/或有身體病況，需考慮血管疾病。器質性因素造成的勃起功能障礙通常是<strong>廣泛性且逐漸發病</strong>；脊髓損傷例外。情境型、非持續性、生活壓力事件後急性發生的勃起問題最常是心理性；年齡&lt;40歲也顯示心理原因。</div></div>
+      <div class="diff"><div class="dn">其他性功能障礙</div><div class="db">可能與早洩和男性性慾低落障礙症共存。</div></div>
+    </div>
+    <div class="panel" id="ed-comor">
+      <p class="d">可與早洩、男性性慾低落障礙症、焦慮症、憂鬱症共病。在攝護腺增生相關下泌尿道症狀的男人上很常見。可能與血脂異常、心血管疾病、性腺功能低下、多發性硬化症、糖尿病等共病。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── 女性高潮障礙症 ── -->
+<div class="card" data-cat="fod">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">302.73 F52.31</span><div><div class="cname">女性高潮障礙症</div><div class="cen">Female Orgasmic Disorder</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="tabs">
+      <button class="tab k on" onclick="st(this,'fod-dx')">⭐ 診斷準則</button>
+      <button class="tab" onclick="st(this,'fod-sp')">特別註明</button>
+      <button class="tab" onclick="st(this,'fod-assoc')">支持診斷</button>
+      <button class="tab" onclick="st(this,'fod-prev')">盛行率</button>
+      <button class="tab" onclick="st(this,'fod-dev')">發展病程</button>
+      <button class="tab" onclick="st(this,'fod-risk')">風險預後</button>
+      <button class="tab" onclick="st(this,'fod-cult')">文化議題</button>
+      <button class="tab" onclick="st(this,'fod-marker')">診斷標記</button>
+      <button class="tab" onclick="st(this,'fod-func')">功能後果</button>
+      <button class="tab k" onclick="st(this,'fod-diff')">⭐ 鑑別診斷</button>
+      <button class="tab" onclick="st(this,'fod-comor')">共病</button>
+    </div>
+    <div class="panel on" id="fod-dx">
+      <div class="kbdg">⭐ 核心：高潮拖延/罕有/缺乏，或高潮感受強度顯著降低</div>
+      <div class="rr"><span class="rl">A</span><div class="rc">以下任一症狀是在大部份或所有（約75%-100%）性行為時經驗過：<ul class="cl" style="margin-top:5px"><li>高潮明顯拖延，高潮不常有或完全沒有</li><li>高潮的感受明顯降低</li></ul></div></div>
+      <div class="rr"><span class="rl">B</span><div class="rc">準則A症狀持續至少約<strong>六個月</strong></div></div>
+      <div class="rr"><span class="rl">C</span><div class="rc">準則A症狀引起臨床上顯著苦惱</div></div>
+      <div class="rr"><span class="rl w">D</span><div class="rc">性功能障礙無法以非性精神疾病、嚴重人際關係苦惱結果（如伴侶暴力）、或其他顯著壓力做更好的解釋，且無法歸因於物質/醫藥效應或另一身體病況所致</div></div>
+    </div>
+    <div class="panel" id="fod-sp">
+      <ul class="cl"><li>終生 / 後天</li><li>一般型 / 情境型</li><li><strong>特別註明：從未在任何情境下有性高潮</strong></li><li>嚴重度：輕度/中度/重度</li></ul>
+    </div>
+    <div class="panel" id="fod-assoc">
+      <p class="d">一般而言，並不支持特定人格特質或精神病理學與高潮功能障礙之間有關聯。患有此症者對討論性事有較大困難，但整體性滿足並不強烈與高潮經驗相關（許多女性即使很少或沒有高潮，仍表示有很高程度性滿足）。</p>
+    </div>
+    <div class="panel" id="fod-prev">
+      <div class="sg">
+        <div class="sc"><div class="sv">10-42%</div><div class="sl">女性高潮問題盛行率（依不同因素變化）</div></div>
+        <div class="sc"><div class="sv">~10%</div><div class="sl">女人終生不會經驗到高潮</div></div>
+      </div>
+      <p class="d">這些估計都沒有將苦惱納入考量，只有一部分經驗高潮困難的女人也會說出相關苦惱。</p>
+    </div>
+    <div class="panel" id="fod-dev">
+      <p class="d">終生型表示高潮困難一直存在；後天型是在一段正常高潮功能期後才發展出。女人第一次經驗到高潮的年齡變化很大。女人高潮一致性的比率，<strong>手淫時比與性伴侶性行為時還要高</strong>。</p>
+    </div>
+    <div class="panel" id="fod-risk">
+      <div class="box a"><div class="bl">氣質</div>焦慮和擔心懷孕等廣泛心理因素可能影響經驗高潮的能力。</div>
+      <div class="box a"><div class="bl">環境</div>關係問題、身體健康、心理健康，與女人高潮困難有很強關聯性。</div>
+      <div class="box a"><div class="bl">基因和生理</div>多發性硬化症、子宮全切除術導致骨盆神經損傷、脊髓損傷會影響高潮功能。SSRI已知會延遲或抑制高潮。外陰陰道萎縮患者比無此狀況者更顯著抱怨高潮困難。停經狀態不與高潮困難有一致關聯。基因因素可能對高潮功能差異有顯著影響。</div>
+    </div>
+    <div class="panel" id="fod-cult">
+      <p class="d">女人缺乏高潮被認為需要治療的程度，在不同文化間可能不同；高潮對性滿足的重要性也不同。無法達到高潮的盛行率可從<strong>17.7%（北歐）至42.2%（東南亞）</strong>。</p>
+    </div>
+    <div class="panel" id="fod-marker">
+      <p class="d">女人高潮時有可測量的生理變化（荷爾蒙、骨盆底肌肉、大腦活性改變），但個體差異很大。臨床上診斷是根據女人自己的報告。</p>
+    </div>
+    <div class="panel" id="fod-func">
+      <p class="d">功能性後果並不清楚。雖然關係問題和高潮困難有很強的關聯性，但關係因素是風險因子或結果，尚不清楚。</p>
+    </div>
+    <div class="panel" id="fod-diff">
+      <div class="kbdg">⭐ 鑑別重點</div>
+      <div class="diff"><div class="dn">⭐ 重度憂鬱症</div><div class="db">對所有或幾乎所有活動興趣或喜樂顯著減少的特徵，可能可以解釋女性高潮障礙症；若可被其他精神疾病解釋則不下此診斷。</div></div>
+      <div class="diff"><div class="dn">物質/醫藥引發的性功能障礙症</div><div class="db">物質/醫藥使用可能解釋高潮困難。</div></div>
+      <div class="diff"><div class="dn">其他身體病況</div><div class="db">若因多發性硬化症、脊髓損傷等則不下此診斷。</div></div>
+      <div class="diff"><div class="dn">人際因素</div><div class="db">嚴重關係苦惱、親密伴侶暴力或其他顯著壓力源可解釋時，不下此診斷。</div></div>
+      <div class="diff"><div class="dn">⭐ 陰蒂刺激依賴</div><div class="db">若女性在陰蒂刺激時能達到高潮，但無法在性交時達到，<strong>不符合</strong>女性高潮障礙症診斷。</div></div>
+      <div class="diff"><div class="dn">性刺激不足</div><div class="db">需評估是否因性刺激不足造成插入困難，這種狀況不應診斷此疾病。</div></div>
+    </div>
+    <div class="panel" id="fod-comor">
+      <p class="d">可能同時存在女性性興趣／興奮障礙症。重鬱症等其他非性精神疾病可能經驗到降低的性興趣/興奮，間接增加高潮困難可能性。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── 女性性興趣／興奮障礙症 ── -->
+<div class="card" data-cat="fsiad">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">302.72 F52.22</span><div><div class="cname">女性性興趣／興奮障礙症</div><div class="cen">Female Sexual Interest/Arousal Disorder</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="tabs">
+      <button class="tab k on" onclick="st(this,'fsiad-dx')">⭐ 診斷準則</button>
+      <button class="tab" onclick="st(this,'fsiad-sp')">特別註明</button>
+      <button class="tab" onclick="st(this,'fsiad-feat')">診斷特質</button>
+      <button class="tab" onclick="st(this,'fsiad-assoc')">支持診斷</button>
+      <button class="tab" onclick="st(this,'fsiad-prev')">盛行率</button>
+      <button class="tab" onclick="st(this,'fsiad-dev')">發展病程</button>
+      <button class="tab" onclick="st(this,'fsiad-risk')">風險預後</button>
+      <button class="tab" onclick="st(this,'fsiad-cult')">文化議題</button>
+      <button class="tab" onclick="st(this,'fsiad-gender')">性別議題</button>
+      <button class="tab" onclick="st(this,'fsiad-func')">功能後果</button>
+      <button class="tab k" onclick="st(this,'fsiad-diff')">⭐ 鑑別診斷</button>
+      <button class="tab" onclick="st(this,'fsiad-comor')">共病</button>
+    </div>
+    <div class="panel on" id="fsiad-dx">
+      <div class="kbdg">⭐ 核心：6項中至少3項，缺乏或明顯降低性慾，持續≥6個月</div>
+      <div class="rr"><span class="rl">A</span><div class="rc">缺乏或明顯降低性慾，以下症狀至少出現<strong>三種</strong>：
+        <ul class="cl" style="margin-top:5px">
+          <li>對性活動無／降低興趣</li>
+          <li>對性幻想無／降低興趣</li>
+          <li>無／降低起始性活動，且對性伴侶的起始邀約無感</li>
+          <li>大部分或所有（約75%-100%）性行為經驗中，對性行為無／降低興奮／愉悅感</li>
+          <li>對任何內在或外在性／色情暗示（如書面、口語、視覺）無／降低性興趣／興奮</li>
+          <li>大部分或所有性行為經驗中，對生殖部位或非生殖部位無／降低感覺</li>
+        </ul>
+      </div></div>
+      <div class="rr"><span class="rl">B</span><div class="rc">準則A症狀持續至少約<strong>六個月</strong></div></div>
+      <div class="rr"><span class="rl">C</span><div class="rc">準則A症狀引起臨床上顯著苦惱</div></div>
+      <div class="rr"><span class="rl w">D</span><div class="rc">性功能障礙無法以非性精神疾病、嚴重人際關係苦惱結果（如伴侶暴力）、或其他顯著壓力做更好的解釋，且無法歸因於物質/醫藥效應或另一身體病況所致</div></div>
+    </div>
+    <div class="panel" id="fsiad-sp">
+      <ul class="cl"><li>終生 / 後天</li><li>一般型 / 情境型</li><li>嚴重度：輕度/中度/重度</li></ul>
+    </div>
+    <div class="panel" id="fsiad-feat">
+      <div class="box w"><div class="bl">⚠️ 重要概念：性慾不同步（Desire Discrepancy）</div>女人對性活動的欲望比伴侶低，<strong>此並不足以</strong>診斷為女性性興趣／興奮障礙症。</div>
+      <p class="d">不同女人之間的症狀呈現可能有變化。性慾和興奮通常同時困難是此疾病患者的抱怨特徵。短期的性興趣或興奮轉變很常見，可能是調適性反應，不代表性功能障礙。</p>
+      <p class="d">若終生缺少性慾是對於<strong>自認為「無性戀」</strong>的較佳解釋，則不應診斷此疾病。</p>
+    </div>
+    <div class="panel" id="fsiad-assoc">
+      <p class="d">時常與經驗高潮有困難、性活動之間經驗疼痛感、不常有性活動、和伴侶間性慾不同步等問題相關。關係困難和情緒障礙症也是常見相關特質。對性興趣或興奮的「適切」程度不實際期待，伴隨差的性技巧和缺少性資訊也可能明顯。</p>
+    </div>
+    <div class="panel" id="fsiad-prev">
+      <p class="d">盛行率未知。性慾低落和性興奮問題的盛行率（DSM-IV/ICD-10定義）可能有顯著差異。<strong>較年老的女人比年輕女人較少有低性慾的苦惱</strong>，即使性慾可能隨年齡降低。</p>
+    </div>
+    <div class="panel" id="fsiad-dev">
+      <p class="d">終生型表示缺少性興趣或興奮在整個性生活都會呈現。<strong>擁有較長伴侶關係的女性</strong>比短伴侶關係者比較能從事性行為，即使一開始沒有明顯性慾。年長女性陰道乾燥可與年紀和更年期有關。</p>
+    </div>
+    <div class="panel" id="fsiad-risk">
+      <div class="box a"><div class="bl">氣質</div>對性的負面認知和態度，以及精神疾病過去病史。性興奮和性抑制傾向不同，可能可以預測發展性事問題可能性。</div>
+      <div class="box a"><div class="bl">環境</div>關係困難、伴侶性功能及發展史（早期照顧者關係、童年壓力）。</div>
+      <div class="box a"><div class="bl">基因和生理</div>糖尿病、甲狀腺功能障礙症是風險因子。基因因素對性事問題易感性有很強影響力。</div>
+    </div>
+    <div class="panel" id="fsiad-cult">
+      <p class="d">不同文化間性慾低下盛行率有很大不同，<strong>東亞女人</strong>比歐美女人更常見。可能反映文化對性興趣較少，或量化工具的人為誤差。需考量不同文化會將某些行為病態化，而其他文化則不會。</p>
+    </div>
+    <div class="panel" id="fsiad-gender">
+      <p class="d">根據定義，<strong>女性性興趣／興奮障礙症的診斷只能給予女人</strong>。對性慾有困難苦惱的男人，可考慮給予<strong>男性性慾低落障礙症</strong>的診斷。</p>
+    </div>
+    <div class="panel" id="fsiad-func">
+      <p class="d">性興趣／興奮的困難通常與關係滿足感的下降有關。</p>
+    </div>
+    <div class="panel" id="fsiad-diff">
+      <div class="kbdg">⭐ 鑑別重點</div>
+      <div class="diff"><div class="dn">⭐ 重度憂鬱症</div><div class="db">若缺乏興趣或興奮完全由另一精神疾病造成，則不下此診斷。</div></div>
+      <div class="diff"><div class="dn">物質/醫藥使用</div><div class="db">可能解釋缺乏興趣／興奮。</div></div>
+      <div class="diff"><div class="dn">其他身體病況</div><div class="db">糖尿病、內皮細胞疾病、甲狀腺功能障礙、中樞神經系統疾病相關時不下此診斷。</div></div>
+      <div class="diff"><div class="dn">人際因素</div><div class="db">嚴重關係苦惱、親密伴侶暴力或顯著壓力源可解釋時，不下此診斷。</div></div>
+      <div class="diff"><div class="dn">其他性功能障礙</div><div class="db">不能排除此診斷；經驗超過一種性功能障礙症很常見（如慢性性器疼痛可能導致對疼痛性行為缺乏性慾）。</div></div>
+      <div class="diff"><div class="dn">⭐ 不足或缺乏性刺激</div><div class="db">評估性經驗中性刺激是否足夠很重要。若不足是原因，可能需臨床照護但不下性功能障礙診斷。</div></div>
+    </div>
+    <div class="panel" id="fsiad-comor">
+      <p class="d">與其他性事困難之間互相共病相當常見。苦惱的性慾低落與<strong>憂鬱症、成人性或身體虐待、整體知能和酒精的使用</strong>共病。關節炎和發炎性或刺激性腸疾病也與性興奮問題有關。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── 骨盆性器疼痛／插入障礙症 ── -->
+<div class="card" data-cat="gppd">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">302.76 F52.6</span><div><div class="cname">骨盆性器疼痛／插入障礙症</div><div class="cen">Genito-Pelvic Pain/Penetration Disorder</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="tabs">
+      <button class="tab k on" onclick="st(this,'gppd-dx')">⭐ 診斷準則</button>
+      <button class="tab" onclick="st(this,'gppd-sp')">特別註明</button>
+      <button class="tab" onclick="st(this,'gppd-feat')">診斷特質</button>
+      <button class="tab" onclick="st(this,'gppd-assoc')">支持診斷</button>
+      <button class="tab" onclick="st(this,'gppd-prev')">盛行率</button>
+      <button class="tab" onclick="st(this,'gppd-dev')">發展病程</button>
+      <button class="tab" onclick="st(this,'gppd-risk')">風險預後</button>
+      <button class="tab" onclick="st(this,'gppd-cult')">文化議題</button>
+      <button class="tab" onclick="st(this,'gppd-gender')">性別議題</button>
+      <button class="tab" onclick="st(this,'gppd-func')">功能後果</button>
+      <button class="tab k" onclick="st(this,'gppd-diff')">⭐ 鑑別診斷</button>
+      <button class="tab" onclick="st(this,'gppd-comor')">共病</button>
+    </div>
+    <div class="panel on" id="gppd-dx">
+      <div class="kbdg">⭐ 核心：四症狀面向中≥1項持續/反覆出現</div>
+      <div class="rr"><span class="rl">A</span><div class="rc">持續或反覆出現以下<strong>一項（或更多）</strong>困難：
+        <ul class="cl" style="margin-top:5px">
+          <li>性交時插入陰道困難</li>
+          <li>陰道內性交或企圖插入時顯著外陰道或骨盆疼痛</li>
+          <li>在性交準備插入時、插入期間或插入後有明顯恐懼或焦慮外陰陰道或骨盆疼痛</li>
+          <li>在性交插入時骨盆肌肉繃緊或緊縮</li>
+        </ul>
+      </div></div>
+      <div class="rr"><span class="rl">B</span><div class="rc">準則A症狀持續至少約<strong>六個月</strong></div></div>
+      <div class="rr"><span class="rl">C</span><div class="rc">準則A症狀引起臨床上顯著苦惱</div></div>
+      <div class="rr"><span class="rl w">D</span><div class="rc">性功能障礙無法以非性精神疾病、嚴重人際關係苦惱結果（如伴侶暴力）、或其他顯著壓力做更好的解釋，也無法歸因於物質/醫藥效應或另一身體病況所致</div></div>
+      <div class="box g"><div class="bl">診斷特殊性</div>因任何一個症狀面向上的明顯困難就足以造成臨床顯著苦惱，<strong>診斷可基於只有一個症狀面向</strong>。但仍須評估所有四個面向。</div>
+    </div>
+    <div class="panel" id="gppd-sp">
+      <ul class="cl"><li>終生 / 後天（無一般型/情境型亞型）</li><li>嚴重度：輕度/中度/重度</li></ul>
+    </div>
+    <div class="panel" id="gppd-feat">
+      <p class="d">提及四個常見共病的症狀面向：①性交困難②骨盆性器疼痛③害怕疼痛或陰道插入④骨盆底肌肉緊繃。疼痛特徵可為表淺（外陰陰道或插入時）或深部（骨盆，直到插入深部才感覺）。</p>
+      <p class="d">恐懼/焦慮（準則A3）有些被描述為近似畏懼反應，畏懼對象可能是陰道插入或對疼痛的恐懼。骨盆肌肉緊繃（準則A4）變化從骨盆底反射性痙攣，到對預期疼痛的「正常/保衛」肌肉反應。</p>
+    </div>
+    <div class="panel" id="gppd-assoc">
+      <p class="d">通常與其他性功能障礙症有關，特別是性慾和興趣減少。儘管有性興趣/動機，行為上會避免性的情境或機會。儘管有醫療建議仍避免婦科檢查很常見（迴避模式類似畏懼症）。常有相關關係/婚姻問題，同時常回報感覺女性特質顯著減少。</p>
+    </div>
+    <div class="panel" id="gppd-prev">
+      <p class="d">盛行率未知。北美<strong>約15%女人</strong>反映在性交時有反覆疼痛。</p>
+    </div>
+    <div class="panel" id="gppd-dev">
+      <p class="d">疾病發展和病程不清楚（女人通常不會尋求醫療援助直到經驗到性功能問題）。<strong>有困難或避免使用陰道棉塞，是對未來此問題的重要預測因子</strong>。骨盆性器疼痛抱怨在<strong>成人早期、停經前和停經後時期</strong>是高峰；產後時期也可能增加。</p>
+    </div>
+    <div class="panel" id="gppd-risk">
+      <div class="box a"><div class="bl">環境</div>性和/或身體虐待常被視為預測因子（近期文獻有爭議）。</div>
+      <div class="box a"><div class="bl">基因和生理</div>表淺疼痛者常報告發生在陰道感染病史之後（即使感染緩解疼痛仍持續）。未有性接觸前陰道棉塞置入疼痛或無法塞入，是重要風險因子。</div>
+    </div>
+    <div class="panel" id="gppd-cult">
+      <p class="d">性教育不足和宗教傳統觀念，常被視為DSM-IV診斷陰道痙攣的文化相關誘發因子。土耳其（穆斯林國家）有驚人高盛行率報告，但大部分研究並不支持此概念。</p>
+    </div>
+    <div class="panel" id="gppd-gender">
+      <p class="d">根據定義，<strong>只會給予女性</strong>診斷。男人可能經驗到相似慢性骨盆疼痛症狀，研究和臨床經驗尚不足以建立應用在男人上的診斷，可考慮其他特定的/非特定的性功能障礙症。</p>
+    </div>
+    <div class="panel" id="gppd-func">
+      <p class="d">通常與干擾關係上的滿足，以及有時可以接受陰莖/陰道性交有關。</p>
+    </div>
+    <div class="panel" id="gppd-diff">
+      <div class="kbdg">⭐ 鑑別重點</div>
+      <div class="diff"><div class="dn">⭐ 其他身體病況</div><div class="db">常合併硬化性苔癬、子宮內膜異位症、骨盆發炎疾病、外陰陰道萎縮等診斷。沒有可靠工具讓醫生知道哪一個是原發的。停經後疼痛上升可能與雌激素濃度下降有關，但關係尚未完全了解。</div></div>
+      <div class="diff"><div class="dn">⭐ 身體症狀及相關障礙症</div><div class="db">有些患者也可能被診斷為身體症狀及相關障礙症，兩者是否能可靠鑑別尚不清楚。有些患者也會被診斷為<strong>特定畏懼症</strong>。</div></div>
+      <div class="diff"><div class="dn">性刺激不足</div><div class="db">前戲或高潮不足可能導致插入困難、疼痛或迴避。男性伴侶的勃起障礙症或早洩可能導致插入困難，需謹慎評估。</div></div>
+    </div>
+    <div class="panel" id="gppd-comor">
+      <p class="d">與其他性事困難之間很常共病，與關係苦惱共病也很常見。因骨盆底症狀有關聯，也會有其他骨盆底或生殖器官障礙症（間質性膀胱炎、便秘、陰道感染、子宮內膜異位、腸躁症）的高盛行率。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── 男性性慾低落障礙症 ── -->
+<div class="card" data-cat="mhsdd">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">302.71 F52.0</span><div><div class="cname">男性性慾低落障礙症</div><div class="cen">Male Hypoactive Sexual Desire Disorder</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="tabs">
+      <button class="tab k on" onclick="st(this,'mhsdd-dx')">⭐ 診斷準則</button>
+      <button class="tab" onclick="st(this,'mhsdd-sp')">特別註明</button>
+      <button class="tab" onclick="st(this,'mhsdd-feat')">診斷特質</button>
+      <button class="tab" onclick="st(this,'mhsdd-assoc')">支持診斷</button>
+      <button class="tab" onclick="st(this,'mhsdd-prev')">盛行率</button>
+      <button class="tab" onclick="st(this,'mhsdd-dev')">發展病程</button>
+      <button class="tab" onclick="st(this,'mhsdd-risk')">風險預後</button>
+      <button class="tab" onclick="st(this,'mhsdd-cult')">文化議題</button>
+      <button class="tab" onclick="st(this,'mhsdd-gender')">性別議題</button>
+      <button class="tab k" onclick="st(this,'mhsdd-diff')">⭐ 鑑別診斷</button>
+      <button class="tab" onclick="st(this,'mhsdd-comor')">共病</button>
+    </div>
+    <div class="panel on" id="mhsdd-dx">
+      <div class="kbdg">⭐ 核心：性幻想與性慾持續/反覆不足或完全沒有</div>
+      <div class="rr"><span class="rl">A</span><div class="rc">對性行為之性幻想與性慾<strong>持續或反覆不足（或完全沒有）</strong>。由臨床專家判定是否有缺陷，需考慮影響性功能障礙因素，如年齡和個人生命中的一般及社會文化情境</div></div>
+      <div class="rr"><span class="rl">B</span><div class="rc">準則A症狀持續至少約<strong>六個月</strong></div></div>
+      <div class="rr"><span class="rl">C</span><div class="rc">準則A症狀引起臨床上顯著苦惱</div></div>
+      <div class="rr"><span class="rl w">D</span><div class="rc">性功能障礙無法以非性精神疾病、嚴重人際關係苦惱結果、或其他顯著壓力做更好的解釋，也無法歸因於物質/醫藥效應或另一身體病況所致</div></div>
+    </div>
+    <div class="panel" id="mhsdd-sp">
+      <ul class="cl"><li>終生 / 後天</li><li>一般型 / 情境型</li><li>嚴重度：輕度/中度/重度</li></ul>
+    </div>
+    <div class="panel" id="mhsdd-feat">
+      <div class="box w"><div class="bl">⚠️ 性慾不同步</div>男人對性活動的慾望低於伴侶，<strong>不足以</strong>診斷此疾病。</div>
+      <p class="d">「低下/無性慾」和「缺乏/不存在性念頭或幻想」<strong>兩者都必須具備</strong>才能診斷。男性如何表達性慾可能有所差異。準則B的「約」允許臨床醫師在症狀持續度未達6個月標準時做出判斷。</p>
+    </div>
+    <div class="panel" id="mhsdd-assoc">
+      <p class="d">有時與勃起和/或射精問題有關（持續勃起困難可能導致對性活動喪失興趣）。患者通常報告不再主動引起性活動，也極少接受伴侶的引起企圖。<strong>許多男人傾向讓伴侶來誘發性活動</strong>，評估性慾低落時須考量男人缺乏對伴侶誘發的接受。</p>
+    </div>
+    <div class="panel" id="mhsdd-prev">
+      <div class="sg">
+        <div class="sc"><div class="sv">6%</div><div class="sl">年輕男性(18-24歲)有性慾問題</div></div>
+        <div class="sc"><div class="sv">41%</div><div class="sl">老年男性(66-74歲)有性慾問題</div></div>
+        <div class="sc"><div class="sv">1.8%</div><div class="sl">16-44歲持續≥6個月缺乏性興趣</div></div>
+      </div>
+    </div>
+    <div class="panel" id="mhsdd-dev">
+      <p class="d">終生型表示低下或無性慾一直存在；後天型在性慾正常一段時期後才發展出。性慾有與年齡相關的正常下降。情色視覺提示誘發年輕男性慾望潛力較高，性暗示潛力可能隨年齡下降。</p>
+    </div>
+    <div class="panel" id="mhsdd-risk">
+      <div class="box a"><div class="bl">氣質</div>情緒和焦慮症狀是男人性慾低下的強烈預測因子。<strong>高達一半</strong>有精神症狀過去病史的男人有中度至重度失去慾望（相較無病史者只有15%）。</div>
+      <div class="box a"><div class="bl">環境</div>酒精使用可能增加低性慾發生。同性戀男人、自我導向恐同症、人際問題、缺乏足夠性教育、早期生活創傷需納入考量。</div>
+      <div class="box a"><div class="bl">基因和生理</div>內分泌障礙症（如高泌乳激素血症）顯著影響性慾。年齡是顯著風險因子。性腺低下男人之間性慾低下很常見。有明確睪固酮濃度門檻（低於此值影響性慾，高於則影響很小）。</div>
+    </div>
+    <div class="panel" id="mhsdd-cult">
+      <p class="d">不同文化盛行率有很大不同，從<strong>北歐男人12.5%到東南亞40-80歲男人28%</strong>。東亞種族男人也有較高性慾低落比率，對性的罪惡感可能是相關原因。</p>
+    </div>
+    <div class="panel" id="mhsdd-gender">
+      <p class="d">相對於女性性障礙症分類，性慾和興奮障礙症<strong>仍維持為男性獨有類別</strong>。男人比女人有顯著較高頻率和強度的性慾。</p>
+    </div>
+    <div class="panel" id="mhsdd-diff">
+      <div class="kbdg">⭐ 鑑別重點</div>
+      <div class="diff"><div class="dn">⭐ 重度憂鬱症</div><div class="db">若缺乏性慾可被另一精神疾病更好解釋，則不下此診斷。</div></div>
+      <div class="diff"><div class="dn">物質/醫藥使用</div><div class="db">可能解釋性慾低下。</div></div>
+      <div class="diff"><div class="dn">⭐ 其他身體病況</div><div class="db">性腺低下、糖尿病、甲狀腺功能障礙、中樞神經系統疾病更好解釋時，不下此診斷。</div></div>
+      <div class="diff"><div class="dn">人際因素</div><div class="db">嚴重關係苦惱或其他顯著壓力源相關時，不下此診斷。</div></div>
+      <div class="diff"><div class="dn">⭐ 其他性功能障礙症</div><div class="db">不能排除此診斷；<strong>高達一半性慾低下男性也有勃起困難</strong>，稍低比例可能有早洩困難。</div></div>
+      <div class="diff"><div class="dn">無性戀（Asexual）</div><div class="db">若被解釋為自我認同無性戀，則不下此診斷。</div></div>
+    </div>
+    <div class="panel" id="mhsdd-comor">
+      <p class="d">憂鬱症和其他精神疾病，以及內分泌因素，時常與男性性慾低落障礙症共病。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── 早洩 ── -->
+<div class="card" data-cat="pe">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">302.75 F52.4</span><div><div class="cname">早洩</div><div class="cen">Premature (Early) Ejaculation</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="tabs">
+      <button class="tab k on" onclick="st(this,'pe-dx')">⭐ 診斷準則</button>
+      <button class="tab" onclick="st(this,'pe-sp')">特別註明</button>
+      <button class="tab" onclick="st(this,'pe-feat')">診斷特質</button>
+      <button class="tab" onclick="st(this,'pe-assoc')">支持診斷</button>
+      <button class="tab" onclick="st(this,'pe-prev')">盛行率</button>
+      <button class="tab" onclick="st(this,'pe-dev')">發展病程</button>
+      <button class="tab" onclick="st(this,'pe-risk')">風險預後</button>
+      <button class="tab" onclick="st(this,'pe-cult')">文化議題</button>
+      <button class="tab" onclick="st(this,'pe-gender')">性別議題</button>
+      <button class="tab" onclick="st(this,'pe-marker')">診斷標記</button>
+      <button class="tab" onclick="st(this,'pe-func')">功能後果</button>
+      <button class="tab k" onclick="st(this,'pe-diff')">⭐ 鑑別診斷</button>
+      <button class="tab" onclick="st(this,'pe-comor')">共病</button>
+    </div>
+    <div class="panel on" id="pe-dx">
+      <div class="kbdg">⭐ 核心：插入陰道後約1分鐘內射精（終生型異性戀男人）</div>
+      <div class="rr"><span class="rl">A</span><div class="rc">在性行為時，持續或反覆在插入陰道後及個人希望射精前，<strong>一分鐘內</strong>便射出。雖然診斷早洩可適用於非陰道性行為，特定時間長短準則尚未建立</div></div>
+      <div class="rr"><span class="rl">B</span><div class="rc">準則A症狀出現至少約<strong>六個月</strong>，在大部分或所有（約75%-100%）性行為中（可辨識情境或一般所有情境）發生</div></div>
+      <div class="rr"><span class="rl">C</span><div class="rc">準則A症狀引起臨床上顯著苦惱</div></div>
+      <div class="rr"><span class="rl w">D</span><div class="rc">性功能障礙無法以非性精神疾病、嚴重人際關係苦惱結果、或其他顯著壓力做更好的解釋，也無法歸因於物質/醫藥效應或另一身體病況所致</div></div>
+    </div>
+    <div class="panel" id="pe-sp">
+      <ul class="cl"><li>終生 / 後天</li><li>一般型 / 情境型</li></ul>
+      <h4 class="sub">⭐ 嚴重度（依時間特殊標準！）</h4>
+      <table class="ct">
+        <tr><th>嚴重度</th><th>時間</th></tr>
+        <tr><td>輕度</td><td>插入陰道後30秒到1分鐘射出</td></tr>
+        <tr><td>中度</td><td>插入陰道後15秒到30秒射出</td></tr>
+        <tr><td>重度</td><td>性行為之前或開始、或插入陰道後15秒內射出</td></tr>
+      </table>
+    </div>
+    <div class="panel" id="pe-feat">
+      <p class="d">表現為陰道插入前或插入後很短時間內就射精。操作定義為個體估計在陰道插入後的射精等待期。只要等待期很短，自我估計與測量的陰道內射精等待期高度相關，<strong>自我估計已足夠用來診斷</strong>。</p>
+      <div class="box a"><div class="bl">60秒劃分點</div>60秒陰道內射精等待時間是診斷異性戀男人<strong>終身早洩</strong>的適當劃分點，但沒有足夠數據顯示此準則可用於<strong>後天型</strong>。此定義可應用在不同性傾向男人上（等待期在不同性傾向男人之間相似）。</div>
+    </div>
+    <div class="panel" id="pe-assoc">
+      <p class="d">許多患者會抱怨對射精缺乏控制感覺，以及恐懼預期未來性情境下仍會無法延遲射精。</p>
+    </div>
+    <div class="panel" id="pe-prev">
+      <div class="sg">
+        <div class="sc"><div class="sv">20-30%</div><div class="sl">18-70歲男性擔心射精太快(舊定義)</div></div>
+        <div class="sc"><div class="sv">1-3%</div><div class="sl">使用新定義(約1分鐘)可診斷比例</div></div>
+      </div>
+      <p class="d">盛行率可能隨年齡增加。</p>
+    </div>
+    <div class="panel" id="pe-dev">
+      <p class="d">終生型在初次性經驗就開始，且日後持續。決定診斷要持續射精問題超過6個月。<strong>後天型遠比終生型還要不為人知</strong>，較晚發，通常在<strong>四十歲或之後</strong>才出現。終生型在整個生命中較為穩定。一般醫學狀況改善（甲狀腺功能亢進、攝護腺炎）似乎可恢復射精等待至基本水平。大約20%患者射精等待期隨年齡而越來越短；年齡和關係的長久度與早洩盛行率有負相關。</p>
+    </div>
+    <div class="panel" id="pe-risk">
+      <div class="box a"><div class="bl">氣質</div>早洩可能更常見於患有焦慮症的男人，特別是<strong>社交焦慮症（社交畏懼）</strong>。</div>
+      <div class="box a"><div class="bl">基因和生理</div>終生型早洩有中度基因因素，可能與多巴胺轉運蛋白基因多型性或血清素轉運蛋白基因多型性有關。甲狀腺疾病、攝護腺炎、藥物戒斷與後天型有關。射精時的局部大腦血流主要在中腦交界區域（包括腹側被蓋區）。</div>
+    </div>
+    <div class="panel" id="pe-cult">
+      <p class="d">正常射精等待期的感覺在許多文化間不一樣，不同國家的測量射精等待期可能不同，可能由文化、宗教因素及基因差異所解釋。</p>
+    </div>
+    <div class="panel" id="pe-gender">
+      <p class="d">早洩是男性的性疾病。男人及性伴侶對可接受射精等待期的感覺不同。女性對伴侶早洩問題的關注可能有增加，反映女性性行為的社會態度改變。</p>
+    </div>
+    <div class="panel" id="pe-marker">
+      <p class="d">射精等待期通常在研究環境下由伴侶使用計時器（碼表）監測，雖非現實場景的理想狀況。對陰道性交，測量陰道插入和射精之間的時間。</p>
+    </div>
+    <div class="panel" id="pe-func">
+      <p class="d">可能與自尊降低、缺乏控制感覺、與伴侶關係負面後果有關，也可能造成伴侶個人苦惱和性滿足降低，插入前射精可能與受孕困難有關。</p>
+    </div>
+    <div class="panel" id="pe-diff">
+      <div class="kbdg">⭐ 鑑別重點</div>
+      <div class="diff"><div class="dn">⭐ 物質/醫藥引發的性功能障礙症</div><div class="db">當早洩問題只是因物質使用、中毒或戒斷，則診斷物質/醫藥引發的性功能障礙症。</div></div>
+      <div class="diff"><div class="dn">⭐ 擔心射精但不符合診斷準則</div><div class="db">需分辨擁有正常射精等待期但希望更長的男性，以及間歇性早洩男性（如第一次性場景、新伴侶時很短的射精準備期可能很常見或正常）。這些狀況不下早洩診斷。</div></div>
+    </div>
+    <div class="panel" id="pe-comor">
+      <p class="d">可能與勃起問題有關聯（難以區分何種困難先發生）。終生型可能與特定焦慮症有關；後天型可能與攝護腺炎、甲狀腺疾病、或藥物戒斷（如鴉片類藥物戒斷期間）有關。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── 物質/醫藥引發的性功能障礙症 ── -->
+<div class="card" data-cat="subst">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">各物質別碼</span><div><div class="cname">物質／醫藥引發的性功能障礙症</div><div class="cen">Substance/Medication-Induced Sexual Dysfunction</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="tabs">
+      <button class="tab k on" onclick="st(this,'sub-dx')">⭐ 診斷準則</button>
+      <button class="tab" onclick="st(this,'sub-sp')">特別註明</button>
+      <button class="tab" onclick="st(this,'sub-feat')">診斷特質</button>
+      <button class="tab" onclick="st(this,'sub-assoc')">支持診斷</button>
+      <button class="tab" onclick="st(this,'sub-prev')">盛行率</button>
+      <button class="tab" onclick="st(this,'sub-dev')">發展病程</button>
+      <button class="tab" onclick="st(this,'sub-cg')">文化/性別</button>
+      <button class="tab" onclick="st(this,'sub-func')">功能後果</button>
+      <button class="tab k" onclick="st(this,'sub-diff')">⭐ 鑑別診斷</button>
+    </div>
+    <div class="panel on" id="sub-dx">
+      <div class="rr"><span class="rl">A</span><div class="rc">臨床上顯著性功能困擾</div></div>
+      <div class="rr"><span class="rl">B</span><div class="rc">病史、體檢或實驗室發現以下<strong>(1)及(2)</strong>：<ul class="cl" style="margin-top:5px"><li>準則A症狀在物質中毒、或戒斷時、或使用後很快出現</li><li>所用相關物質/醫藥會產生準則A症狀</li></ul></div></div>
+      <div class="rr"><span class="rl">C</span><div class="rc">性功能障礙的困擾無法以非物質/醫藥引發的性功能障礙做更好的解釋。獨立的性功能障礙證據：<ul class="cl" style="margin-top:5px"><li>症狀在物質/醫藥使用之前發作</li><li>戒斷或嚴重中毒後持續一段時間（如約一個月）</li><li>有其他證據顯示存在獨立的非物質/醫藥引發的性功能障礙（如復發的非物質/醫藥相關發作史）</li></ul></div></div>
+      <div class="rr"><span class="rl">D</span><div class="rc">此困擾並非在譫妄時專一發生</div></div>
+      <div class="rr"><span class="rl w">E</span><div class="rc">此困擾引起臨床上顯著苦惱</div></div>
+      <div class="box w"><div class="bl">⚠️ 重要</div>只有主要症狀為準則A且顯著嚴重者才用本診斷，而非物質中毒或戒斷。</div>
+    </div>
+    <div class="panel" id="sub-sp">
+      <div class="spbox"><div class="sptitle">中毒時發病</div>符合物質/醫藥中毒準則，中毒時發生症狀</div>
+      <div class="spbox"><div class="sptitle">戒斷時發病</div>符合物質戒斷準則，戒斷時或之後很快發生症狀</div>
+      <div class="spbox"><div class="sptitle">使用醫藥後發病</div>使用醫藥時或用藥方式改變之後發生症狀</div>
+      <h4 class="sub">嚴重度（依性行為中發生比例）</h4>
+      <table class="ct">
+        <tr><th>嚴重度</th><th>性行為中發生比例</th></tr>
+        <tr><td>輕度</td><td>25%-50%</td></tr>
+        <tr><td>中度</td><td>50%-75%</td></tr>
+        <tr><td>重度</td><td>75%以上</td></tr>
+      </table>
+    </div>
+    <div class="panel" id="sub-feat">
+      <p class="d">主要特徵為性功能上的干擾，在時間上與物質/醫藥的<strong>啟用、劑量增加或停用</strong>有關。</p>
+    </div>
+    <div class="panel" id="sub-assoc">
+      <div class="box a"><div class="bl">各物質/藥物的性功能影響</div>
+        <ul class="cl">
+          <li><strong>抗憂鬱劑</strong>：最常報告高潮或射精困難（性慾和勃起問題較不頻繁）；約30%與性有關抱怨顯著；bupropion和mirtazapine看起來與性副作用無關</li>
+          <li><strong>抗精神病藥物</strong>：性慾、勃起、潤滑、射精或高潮問題；與顯著升高泌乳激素的藥物相比，較不影響泌乳激素的藥物較不常見</li>
+          <li><strong>情緒穩定劑</strong>：鋰鹽和抗癲癇藥物對性慾有負面影響（可能排除lamotrigine）；gabapentin可能與高潮問題有關</li>
+          <li><strong>苯二氮平類</strong>：與勃起和高潮問題較高盛行率有關；Buspirone則沒有這樣報告</li>
+          <li><strong>非法物質</strong>：與性慾減少、勃起功能障礙、達高潮困難有關</li>
+          <li><strong>美沙冬</strong>：性功能障礙較多見；佈諾非（buprenorphine）較少見</li>
+          <li><strong>慢性酒精/尼古丁濫用</strong>：與勃起問題有關</li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel" id="sub-prev">
+      <div class="sg">
+        <div class="sc"><div class="sv">25-80%</div><div class="sl">服用MAOI/TCA/SSRI/SNRI報告性功能副作用</div></div>
+        <div class="sc"><div class="sv">~50%</div><div class="sl">服用抗精神病藥物經驗性功能副作用</div></div>
+        <div class="sc"><div class="sv">60-70%</div><div class="sl">海洛因濫用者性功能副作用比率</div></div>
+      </div>
+      <p class="d">盛行率和發生率尚不清楚，似乎因低報緊急治療的性功能副作用。海洛因濫用者比安非他命或MDMA濫用者性功能副作用比率較高。</p>
+    </div>
+    <div class="panel" id="sub-dev">
+      <p class="d">抗憂鬱劑誘發的性功能障礙症可能<strong>早至第一次服藥後第8天</strong>就發生。大約30%輕度至中度高潮延遲個體會在6個月內自行緩解。SSRI誘發的性功能障礙症可能持續至停藥之後。尼古丁和酒精的副作用可能不會出現，直到使用數年之後。有些證據顯示物質/醫藥相關的性功能困擾隨年齡增加。</p>
+    </div>
+    <div class="panel" id="sub-cg">
+      <p class="d"><strong>文化：</strong>文化因素、醫藥對性功能的作用、個體對這些變化的反應，彼此之間可能互相影響。</p>
+      <p class="d"><strong>性別：</strong>性功能副作用可能存在性別差異。</p>
+    </div>
+    <div class="panel" id="sub-func">
+      <p class="d">醫藥引發的性功能障礙症可能會導致<strong>醫藥不順從（noncompliance）</strong>。</p>
+    </div>
+    <div class="panel" id="sub-diff">
+      <div class="kbdg">⭐ 鑑別重點</div>
+      <div class="diff"><div class="dn">⭐ 非物質/醫藥引發的性功能障礙症</div><div class="db">許多精神疾病（憂鬱、躁鬱、焦慮、精神病類）都與性功能困擾有關。若觀察到症狀發生在物質/醫藥啟用之後，停用後症狀消失，重新使用後又再發生，則可確立此診斷。<strong>只有慢性使用才發生的性功能副作用，診斷確定極度困難</strong>。</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── 其他特定/非特定 ── -->
+<div class="card" data-cat="other">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">302.79/302.70 F52.8/F52.9</span><div><div class="cname">其他特定的 / 非特定的性功能障礙</div><div class="cen">Other Specified / Unspecified Sexual Dysfunction</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="panel on">
+      <div class="box a"><div class="bl">其他特定的性功能障礙（302.79 F52.8）</div>
+        <p class="d">適用於個人性功能障礙症狀表現，造成臨床上顯著苦惱，但完全不符合任何性功能障礙診斷類別。臨床專家認定因準則不完全符合特定性功能障礙時使用，需記錄特定原因（例如：「性嫌惡 sexual aversion」）。</p>
+      </div>
+      <div class="box p"><div class="bl">非特定的性功能障礙（302.70 F52.9）</div>
+        <p class="d">適用於個人性功能障礙症狀表現，造成臨床上顯著苦惱，但完全不符合任何性功能障礙診斷類別。臨床專家不去註明無法符合特定診斷的原因，包括無足夠資訊去作特定診斷。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ⭐ 比較與鑑別 ── -->
+<div class="card" data-cat="cmp">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">⭐ 速查</span><div><div class="cname">七大性功能障礙症速查總表</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="panel on">
+      <div class="kbdg">⭐ 國考速查：性別 × 性反應週期階段</div>
+      <table class="ct">
+        <tr><th>疾病</th><th>適用性別</th><th>性反應週期階段</th><th>核心症狀</th><th>持續時間</th></tr>
+        <tr><td>男性性慾低落障礙症</td><td>男</td><td>慾望期</td><td>性幻想與性慾持續不足/缺乏</td><td>≥6個月</td></tr>
+        <tr><td>女性性興趣／興奮障礙症</td><td>女</td><td>慾望期+興奮期</td><td>6項中≥3項缺乏/降低</td><td>≥6個月</td></tr>
+        <tr><td>勃起障礙症</td><td>男</td><td>興奮期</td><td>3項中≥1項：難以勃起/維持/硬度減弱</td><td>≥6個月</td></tr>
+        <tr><td>骨盆性器疼痛／插入障礙症</td><td>女</td><td>興奮期/插入</td><td>4項中≥1項：插入困難/疼痛/恐懼/肌肉緊縮</td><td>≥6個月</td></tr>
+        <tr><td>早洩</td><td>男</td><td>射精/高潮期</td><td>插入後約1分鐘內射精</td><td>≥6個月</td></tr>
+        <tr><td>遲洩</td><td>男</td><td>射精/高潮期</td><td>顯著延遲/缺乏射精</td><td>≥6個月</td></tr>
+        <tr><td>女性高潮障礙症</td><td>女</td><td>高潮期</td><td>高潮拖延/罕有/缺乏，或強度降低</td><td>≥6個月</td></tr>
+      </table>
+      <div class="criteria-box info" style="background:rgba(88,166,255,.07);border:1px solid rgba(88,166,255,.22);border-radius:8px;padding:10px 13px;margin-top:12px">
+        <div class="bl">記憶口訣：依性反應週期排列</div>
+        <strong>慾望 → 興奮 → 高潮（射精）</strong><br>
+        慾望期：男性性慾低落、女性性興趣/興奮（合併興奮期）<br>
+        興奮期：勃起障礙症（男）、骨盆性器疼痛/插入障礙症（女，含插入機制問題）<br>
+        高潮/射精期：早洩、遲洩（男）、女性高潮障礙症（女）
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-cat="cmp">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">⭐ 通用準則</span><div><div class="cname">通用診斷準則架構比較（A-B-C-D模式）</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="panel on">
+      <div class="kbdg">⭐ 幾乎所有性功能障礙症（除GPPD外）共用此架構</div>
+      <table class="ct">
+        <tr><th>準則</th><th>共通內容</th><th>例外/特殊狀況</th></tr>
+        <tr><td><strong>A</strong></td><td>核心症狀描述，需在約75%-100%性行為中出現</td><td>早洩為「1分鐘內射精」（非比例描述）；男性性慾低落無75-100%描述</td></tr>
+        <tr><td><strong>B</strong></td><td>持續至少約<strong>六個月</strong></td><td>GPPD的B準則同樣是六個月，但A準則結構不同（無75-100%要求）</td></tr>
+        <tr><td><strong>C</strong></td><td>引起臨床上顯著苦惱</td><td>—</td></tr>
+        <tr><td><strong>D</strong></td><td>排除非性精神疾病、人際苦惱結果、其他壓力、物質/醫藥效應、另一身體病況</td><td>所有疾病共通的排除準則</td></tr>
+      </table>
+      <div class="box w"><div class="bl">⚠️ 共同的「六個月」規則意義</div>
+        六個月持續時間用以區分<strong>暫時性功能變化（正常適應反應）</strong>與<strong>持續性性功能障礙</strong>。短期的性興趣、興奮或功能轉變很常見，可能是對生活事件的適應性反應，不應視為疾病。
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-cat="cmp">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">⭐ 易混淆</span><div><div class="cname">易混淆疾病深度鑑別</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="tabs">
+      <button class="tab k on" onclick="st(this,'cf-edhsdd')">⭐ 勃起障礙症 vs 男性性慾低落</button>
+      <button class="tab k" onclick="st(this,'cf-fodfsiad')">⭐ 女性高潮障礙症 vs 性興趣/興奮障礙症</button>
+      <button class="tab k" onclick="st(this,'cf-pede')">⭐ 早洩 vs 遲洩</button>
+      <button class="tab k" onclick="st(this,'cf-substprimary')">⭐ 原發性功能障礙 vs 物質引發</button>
+      <button class="tab" onclick="st(this,'cf-stim')">性刺激不足 vs 真性功能障礙</button>
+      <button class="tab" onclick="st(this,'cf-mdd')">所有性功能障礙 vs 重度憂鬱症</button>
+    </div>
+
+    <div class="panel on" id="cf-edhsdd">
+      <div class="key-badge" style="display:inline-flex;align-items:center;gap:4px;background:rgba(210,153,34,.1);border:1px solid var(--w);color:var(--w);border-radius:4px;padding:2px 8px;font-size:11px;font-weight:700;margin-bottom:9px">⭐ 兩者常並存，需分清主因</div>
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>勃起障礙症</th><th>男性性慾低落障礙症</th></tr>
+        <tr><td><strong>核心問題</strong></td><td>生理性勃起功能（興奮期）</td><td>心理性慾望本身（慾望期）</td></tr>
+        <tr><td><strong>性幻想/性念頭</strong></td><td>可能正常，僅勃起功能受損</td><td>缺乏/不存在（必要條件）</td></tr>
+        <tr><td><strong>常見病因</strong></td><td>血管/神經/內分泌疾病、年齡相關</td><td>內分泌（高泌乳激素）、情緒/焦慮症狀</td></tr>
+        <tr><td><strong>共病關係</strong></td><td>持續勃起困難→可能繼發性慾喪失</td><td>可能伴隨勃起問題（約一半有此共病）</td></tr>
+        <tr><td><strong>診斷標記</strong></td><td>夜間陰莖勃起試驗、都卜勒超音波</td><td>血清游離睪固酮、泌乳激素</td></tr>
+      </table>
+      <div class="box w"><div class="bl">⚠️ 臨床判斷順序</div>先確認是否有「性慾」本身的缺乏（男性性慾低落），再評估若有性慾時是否仍有勃起困難（勃起障礙症）。兩者可同時診斷。</div>
+    </div>
+
+    <div class="panel" id="cf-fodfsiad">
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>女性高潮障礙症</th><th>女性性興趣／興奮障礙症</th></tr>
+        <tr><td><strong>核心問題</strong></td><td>高潮階段（拖延/罕有/缺乏/強度降低）</td><td>慾望期+興奮期（6項中≥3項）</td></tr>
+        <tr><td><strong>性慾本身</strong></td><td>可能正常（許多女性即使少有高潮仍表示性滿足高）</td><td>核心問題（缺乏興趣/幻想/起始）</td></tr>
+        <tr><td><strong>陰蒂刺激 vs 性交</strong></td><td>若陰蒂刺激可達高潮但性交不能→<strong>不符合</strong>診斷</td><td>不適用此鑑別點</td></tr>
+        <tr><td><strong>常見共病</strong></td><td>性興趣／興奮障礙症</td><td>高潮困難、性活動疼痛</td></tr>
+      </table>
+      <div class="box a"><div class="bl">關鍵區分</div>女性高潮困難常與性興趣/興奮問題一起發生，但<strong>兩者並非互斥</strong>，臨床上需個別評估是否符合各自準則，可同時診斷。</div>
+    </div>
+
+    <div class="panel" id="cf-pede">
+      <div class="key-badge" style="display:inline-flex;align-items:center;gap:4px;background:rgba(210,153,34,.1);border:1px solid var(--w);color:var(--w);border-radius:4px;padding:2px 8px;font-size:11px;font-weight:700;margin-bottom:9px">⭐ 射精時間軸的兩端</div>
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>早洩</th><th>遲洩</th></tr>
+        <tr><td><strong>射精時間</strong></td><td><span class="tag tr">太快</span>：插入後約1分鐘內</td><td><span class="tag tg">太慢</span>：顯著延遲或無法射精</td></tr>
+        <tr><td><strong>準則A結構</strong></td><td>具體時間標準（1分鐘）</td><td>無精確時間界限，依個人感受判斷</td></tr>
+        <tr><td><strong>嚴重度依據</strong></td><td>射精時間（15秒/30秒/1分鐘）</td><td>無時間分級（依苦惱程度）</td></tr>
+        <tr><td><strong>常見病因</strong></td><td>焦慮症（尤其社交焦慮）、基因因素（多巴胺/血清素轉運蛋白）</td><td>年齡相關神經/性類固醇變化、神經病變、手術創傷</td></tr>
+        <tr><td><strong>後天型特點</strong></td><td>較晚發（常40歲後），與攝護腺炎、甲狀腺疾病相關</td><td>50歲左右盛行率上升，與年齡相關神經傳導變化有關</td></tr>
+        <tr><td><strong>盛行率</strong></td><td>較常見（1-3%依新定義）</td><td>男性最不常見的性抱怨（&lt;1%持續&gt;6個月）</td></tr>
+      </table>
+    </div>
+
+    <div class="panel" id="cf-substprimary">
+      <div class="key-badge" style="display:inline-flex;align-items:center;gap:4px;background:rgba(210,153,34,.1);border:1px solid var(--w);color:var(--w);border-radius:4px;padding:2px 8px;font-size:11px;font-weight:700;margin-bottom:9px">⭐ 適用所有7種性功能障礙症的鑑別原則</div>
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>原發性功能障礙</th><th>物質/醫藥引發的性功能障礙</th></tr>
+        <tr><td><strong>時序關係</strong></td><td>症狀<strong>先於</strong>物質/醫藥使用，或停用後仍持續</td><td>症狀在物質/醫藥<strong>啟用、劑量增加或停用</strong>之後出現</td></tr>
+        <tr><td><strong>停藥後表現</strong></td><td>症狀持續不消失</td><td>多數在停用/減量後消失（SSRI例外，可能持續）</td></tr>
+        <tr><td><strong>重新使用測試</strong></td><td>不適用</td><td>重新使用相同藥物後症狀又再發生→確立診斷</td></tr>
+        <tr><td><strong>診斷難度</strong></td><td>—</td><td><strong>慢性使用才發生的副作用</strong>，診斷確定極度困難</td></tr>
+      </table>
+    </div>
+
+    <div class="panel" id="cf-stim">
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>真性功能障礙症</th><th>性刺激不足</th></tr>
+        <tr><td><strong>本質</strong></td><td>個體本身的性反應能力受損</td><td>外在刺激/技巧不足，非個體功能問題</td></tr>
+        <tr><td><strong>診斷處理</strong></td><td>給予相應性功能障礙診斷</td><td><strong>不給予性功能障礙診斷</strong>（雖可能仍需臨床照護，如性教育）</td></tr>
+        <tr><td><strong>常見情境</strong></td><td>持續存在，不因刺激改變而改善</td><td>缺乏有效刺激知識、伴侶技巧不足、前戲不足</td></tr>
+      </table>
+      <div class="box w"><div class="bl">⚠️ 評估要點</div>幾乎所有性功能障礙症的鑑別診斷都包含「性刺激是否足夠」的評估，這是臨床決策的重要分支點。</div>
+    </div>
+
+    <div class="panel" id="cf-mdd">
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>單純性功能障礙症</th><th>重度憂鬱症伴隨性功能症狀</th></tr>
+        <tr><td><strong>核心特徵</strong></td><td>局限於性功能領域的特定困擾</td><td>對所有或幾乎所有活動的興趣或喜樂顯著減少（廣泛性）</td></tr>
+        <tr><td><strong>診斷處理</strong></td><td>下性功能障礙診斷</td><td>若性功能困難完全可被憂鬱症解釋 → <strong>只診斷憂鬱症</strong>，不另加性功能障礙診斷</td></tr>
+        <tr><td><strong>常見共病關係</strong></td><td>遲洩、勃起障礙症、女性高潮障礙症皆可能與重度憂鬱症共病</td><td>—</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-cat="cmp">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">⭐ 決策流程</span><div><div class="cname">性功能障礙症診斷決策流程</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="panel on">
+      <div class="kbdg">⭐ 國考臨床推理流程</div>
+      <div class="box a"><div class="bl">Step 1 — 排除性刺激不足</div>
+        評估性經驗中性刺激是否足夠。若不足為主因 → 不給予性功能障礙診斷（可能需其他臨床照護）。
+      </div>
+      <div class="box a"><div class="bl">Step 2 — 排除其他精神疾病的更佳解釋</div>
+        是否能被重度憂鬱症、雙相情緒障礙症、焦慮症、PTSD、精神病症做更好的解釋？若是 → 只診斷該精神疾病。
+      </div>
+      <div class="box a"><div class="bl">Step 3 — 排除人際/情境因素</div>
+        是否有嚴重關係苦惱、伴侶暴力或顯著壓力源能更好解釋？若是 → 不下性功能障礙診斷，列V碼/Z碼。
+      </div>
+      <div class="box a"><div class="bl">Step 4 — 排除物質/醫藥及身體病況</div>
+        症狀是否與物質/醫藥使用時序相關？是否由其他一般身體病況（神經、血管、內分泌疾病）造成？<br>
+        → 物質/醫藥相關：診斷物質/醫藥引發的性功能障礙症<br>
+        → 純身體病況：不需精神科診斷
+      </div>
+      <div class="box a"><div class="bl">Step 5 — 確定症狀所屬性反應週期階段</div>
+        <ul class="content-list" style="padding-left:18px">
+          <li>慾望期問題 → 男性性慾低落障礙症 / 女性性興趣興奮障礙症</li>
+          <li>興奮期/插入問題 → 勃起障礙症 / 骨盆性器疼痛插入障礙症</li>
+          <li>射精/高潮期問題 → 早洩 / 遲洩 / 女性高潮障礙症</li>
+        </ul>
+      </div>
+      <div class="box w"><div class="bl">⚠️ 共病處理原則</div>個體可同時有數個性功能障礙，<strong>每一種都應給予診斷</strong>（非互斥關係，與其他DSM-5章節「單一發作期僅一診斷」的原則不同）。
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end main -->
+
+<script>
+function td(h){const b=h.nextElementSibling;const c=h.querySelector('.chev');const hid=b.classList.contains('h');b.classList.toggle('h',!hid);c.classList.toggle('o',hid);}
+function st(btn,pid){const sec=btn.closest('.card');sec.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));sec.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));btn.classList.add('on');const p=sec.querySelector('#'+pid);if(p)p.classList.add('on');}
+function fc(cat,btn){document.querySelectorAll('.pill').forEach(p=>p.classList.remove('on'));btn.classList.add('on');document.querySelectorAll('.card').forEach(c=>{c.style.display=(cat==='all'||c.dataset.cat===cat)?'':'none';});}
+</script>
+</body>
+</html>

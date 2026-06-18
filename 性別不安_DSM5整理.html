@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSM-5 性別不安 系統整理</title>
+<style>
+:root{--bg:#0d1117;--s1:#161b22;--s2:#21262d;--b:#30363d;--a:#58a6ff;--a2:#bc8cff;--a3:#3fb950;--w:#d29922;--r:#f85149;--t:#e6edf3;--td:#8b949e;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI','PingFang TC','Microsoft JhengHei',sans-serif;background:var(--bg);color:var(--t);font-size:14px;line-height:1.65;}
+.hdr{background:linear-gradient(135deg,#161b22,#0d1117);border-bottom:1px solid var(--b);padding:16px 22px 12px;position:sticky;top:0;z-index:100;}
+.hdr h1{font-size:19px;font-weight:700;}.hdr p{font-size:12px;color:var(--td);margin-top:2px;}
+.nav{display:flex;flex-wrap:wrap;gap:5px;padding:8px 16px;background:var(--bg);border-bottom:1px solid var(--b);position:sticky;top:62px;z-index:99;}
+.pill{background:var(--s1);border:1px solid var(--b);border-radius:20px;padding:4px 12px;font-size:12px;cursor:pointer;color:var(--td);white-space:nowrap;transition:all .15s;font-weight:500;}
+.pill:hover{border-color:var(--a);color:var(--a);}.pill.on{background:var(--a);border-color:var(--a);color:#000;font-weight:700;}
+.main{max-width:1100px;margin:0 auto;padding:14px 16px 60px;}
+.card{border:1px solid var(--b);border-radius:12px;margin-bottom:16px;overflow:hidden;background:var(--s1);}
+.chdr{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;cursor:pointer;background:linear-gradient(90deg,var(--s2),var(--s1));border-bottom:1px solid var(--b);user-select:none;gap:10px;}
+.chdr:hover{background:var(--s2);}
+.chl{display:flex;align-items:center;gap:10px;}
+.code{background:rgba(88,166,255,.1);border:1px solid var(--a);color:var(--a);border-radius:5px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace;white-space:nowrap;}
+.cname{font-size:14px;font-weight:700;}.cen{font-size:11px;color:var(--td);margin-top:1px;}
+.chev{font-size:16px;color:var(--td);transition:transform .25s;}.chev.o{transform:rotate(180deg);}
+.cbody{display:block;}.cbody.h{display:none;}
+.tabs{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--b);background:var(--bg);overflow-x:auto;}
+.tab{padding:7px 12px;font-size:12px;cursor:pointer;color:var(--td);border-bottom:2px solid transparent;white-space:nowrap;transition:all .15s;background:none;border-top:none;border-left:none;border-right:none;}
+.tab:hover{color:var(--t);background:var(--s2);}.tab.on{color:var(--a);border-bottom-color:var(--a);}
+.tab.k{color:var(--w);}.tab.k.on{border-bottom-color:var(--w);color:var(--w);}
+.panel{display:none;padding:14px 16px;}.panel.on{display:block;}
+.kbdg{display:inline-flex;align-items:center;gap:4px;background:rgba(210,153,34,.1);border:1px solid var(--w);color:var(--w);border-radius:4px;padding:2px 8px;font-size:11px;font-weight:700;margin-bottom:9px;}
+.ib{background:rgba(88,166,255,.07);border:1px solid rgba(88,166,255,.22);border-radius:8px;padding:9px 12px;margin-bottom:9px;font-size:13px;color:var(--td);}
+.ib strong{color:var(--a);}
+.box{background:var(--bg);border:1px solid var(--b);border-radius:8px;padding:10px 13px;margin-bottom:9px;}
+.bl{font-size:11px;font-weight:700;color:var(--a);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px;}
+.box.w{border-left:3px solid var(--w);}.box.g{border-left:3px solid var(--a3);}
+.box.a{border-left:3px solid var(--a);}.box.p{border-left:3px solid var(--a2);}.box.r{border-left:3px solid var(--r);}
+.rr{display:flex;align-items:flex-start;margin-bottom:8px;gap:8px;}
+.rl{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;border-radius:50%;background:var(--a);color:#000;font-size:11px;font-weight:700;flex-shrink:0;margin-top:2px;}
+.rl.w{background:var(--w);color:#1a1a1a;}.rl.r{background:var(--r);}
+.rc{flex:1;font-size:13px;}
+ul.cl{padding-left:16px;}.cl li{margin-bottom:4px;font-size:13px;}.cl li::marker{color:var(--a);}
+p.d{color:var(--td);font-size:13px;line-height:1.7;margin-bottom:7px;}
+h4.sub{font-size:13px;font-weight:700;color:var(--a);margin:10px 0 5px;}
+.diff{background:var(--bg);border:1px solid var(--b);border-radius:7px;padding:9px 12px;margin-bottom:7px;}
+.dn{font-weight:700;color:var(--a2);font-size:13px;margin-bottom:3px;}.db{color:var(--td);font-size:13px;}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:7px;margin-bottom:9px;}
+.sc{background:var(--bg);border:1px solid var(--b);border-radius:8px;padding:10px;text-align:center;}
+.sv{font-size:20px;font-weight:700;color:var(--a3);}.sl{font-size:11px;color:var(--td);margin-top:2px;}
+.tag{display:inline-block;padding:2px 7px;border-radius:10px;font-size:11px;font-weight:600;margin:2px;}
+.ta{background:rgba(88,166,255,.12);color:var(--a);}
+.tg{background:rgba(63,185,80,.12);color:var(--a3);}
+.tw{background:rgba(210,153,34,.12);color:var(--w);}
+.tr{background:rgba(248,81,73,.12);color:var(--r);}
+.tp{background:rgba(188,140,255,.12);color:var(--a2);}
+table.ct{width:100%;border-collapse:collapse;font-size:13px;}
+table.ct th{background:var(--s2);color:var(--td);font-size:11px;text-transform:uppercase;padding:6px 10px;text-align:left;border-bottom:2px solid var(--b);}
+table.ct td{padding:7px 10px;border-bottom:1px solid var(--b);vertical-align:top;}
+table.ct tr:last-child td{border-bottom:none;}.ct tr:hover td{background:var(--s2);}
+.spbox{background:rgba(88,166,255,.05);border:1px solid rgba(88,166,255,.2);border-radius:7px;padding:10px 12px;margin-bottom:7px;}
+.sptitle{font-weight:700;color:var(--a);font-size:13px;margin-bottom:3px;}
+.termcard{background:var(--bg);border:1px solid var(--b);border-radius:8px;padding:11px 13px;margin-bottom:8px;}
+.termname{font-weight:700;color:var(--a2);font-size:13px;margin-bottom:3px;}
+.termdesc{font-size:12px;color:var(--td);}
+@media(max-width:600px){.hdr{padding:11px 13px 9px;}.nav{padding:7px 10px;}.main{padding:12px 10px 40px;}.panel{padding:12px;}}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <h1>🏳️‍⚧️ DSM-5 性別不安 系統整理</h1>
+  <p>臨床心理師國考備考 | 診斷準則 · 鑑別診斷 · 重點比較 完整版</p>
+</div>
+
+<div class="nav">
+  <span class="pill on" onclick="fc('all',this)">全部</span>
+  <span class="pill" onclick="fc('term',this)">名詞定義</span>
+  <span class="pill" onclick="fc('child',this)">兒童性別不安</span>
+  <span class="pill" onclick="fc('adult',this)">青少年/成人性別不安</span>
+  <span class="pill" onclick="fc('other',this)">其他/非特定</span>
+  <span class="pill" onclick="fc('cmp',this)">⭐ 比較與鑑別</span>
+</div>
+
+<div class="main">
+
+<!-- ── 名詞定義 ── -->
+<div class="card" data-cat="term">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">本章導論</span><div><div class="cname">性別不安 — 重要名詞定義</div><div class="cen">Gender Dysphoria — Key Terminology</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="panel on">
+      <div class="ib"><strong>本章核心概念：</strong>性別不安表示個人經驗的或表現的性別和個人指定的性別之間不一致所伴隨的苦惱。本章在發展上有分別適合兒童、青少年、成人的診斷準則。</div>
+      <div class="kbdg">⭐ 重要名詞區辨（國考常考定義題）</div>
+      <div class="termcard"><div class="termname">性（Sex）/性的（Sexual）</div><div class="termdesc">表示男性和女性的<strong>生物指標</strong>（理解為其生殖能力），例如：性染色體、生殖腺、性賀爾蒙、明確的內和外生殖器</div></div>
+      <div class="termcard"><div class="termname">性別（Gender）</div><div class="termdesc">表示公共生活角色（通常是法律認定）所指的男孩或女孩、男人或女人。生物因子被視為性別發展成因之一，並與社會和心理因子交互影響</div></div>
+      <div class="termcard"><div class="termname">性發育的疾病（Disorders of Sex Development）</div><div class="termdesc">表示生殖系統在先天上偏離身體的正常標準和／或與男女性的生物指標不一致的狀況（如先天性腎上腺增生症、雄性素不敏感症候群）</div></div>
+      <div class="termcard"><div class="termname">跨性別賀爾蒙治療（Cross-sex hormone treatment）</div><div class="termdesc">出生時依傳統生物指標判斷為男性者使用女性化賀爾蒙，或判斷為女性者使用男性化賀爾蒙</div></div>
+      <div class="termcard"><div class="termname">性別指定（Gender assignment）</div><div class="termdesc">初始指定為男性或女性，通常在出生時發生，因此產生「出生性別（natal gender）」這個詞</div></div>
+      <div class="termcard"><div class="termname">性別不典型（Gender atypical）/性別非常規（Gender-nonconforming）</div><div class="termdesc">身體特徵或行為與相同指定性別個體相較，在統計學上是不典型的</div></div>
+      <div class="termcard"><div class="termname">性別重置（Gender reassignment）</div><div class="termdesc">官方的（通常是合法的）性別改變</div></div>
+      <div class="termcard"><div class="termname">性別認同（Gender identity）</div><div class="termdesc">屬於社會認同的一個項目，表示個體做為男性、女性，或有時是其他不屬於男性或女性類別的身分認同</div></div>
+      <div class="termcard"><div class="termname">⭐ 性別不安（Gender dysphoria）</div><div class="termdesc">一個籠統的描述名詞，表示個體的情感／認知對於被指定的性別感到不滿，但用於診斷分類時有更明確的定義</div></div>
+      <div class="termcard"><div class="termname">跨性別（Transgender）</div><div class="termdesc">包含一群廣泛的個體，其性別認同暫時性或持續性地與出生時的性別不同</div></div>
+      <div class="termcard"><div class="termname">變性（Transsexual）</div><div class="termdesc">個體尋求或已經進行男性到女性、或女性到男性的社會轉換，有不少（但非全部）個體也藉由跨性別賀爾蒙治療和性器官手術（變性手術）來達到身體上的轉換</div></div>
+      <div class="box w"><div class="bl">⚠️ DSM-IV → DSM-5 名詞演進的意義</div>
+        目前名詞「性別不安」比DSM-IV的「<strong>性別認同疾患</strong>（gender identity disorder）」更能描述狀況，將臨床問題聚焦於<strong>不安的情緒</strong>，而非認同本身。這是重要的概念轉變：<strong>跨性別身分認同本身不是疾病，只有伴隨的臨床顯著苦惱才構成診斷</strong>。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── 兒童性別不安 ── -->
+<div class="card" data-cat="child">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">302.6 F64.2</span><div><div class="cname">性別不安（兒童）</div><div class="cen">Gender Dysphoria in Children</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="tabs">
+      <button class="tab k on" onclick="st(this,'ch-dx')">⭐ 診斷準則</button>
+      <button class="tab" onclick="st(this,'ch-sp')">特別註明</button>
+      <button class="tab" onclick="st(this,'ch-feat')">診斷特質(男孩)</button>
+      <button class="tab" onclick="st(this,'ch-featg')">診斷特質(女孩)</button>
+      <button class="tab" onclick="st(this,'ch-assoc')">支持診斷</button>
+      <button class="tab" onclick="st(this,'ch-prev')">盛行率</button>
+      <button class="tab" onclick="st(this,'ch-dev')">發展病程</button>
+      <button class="tab" onclick="st(this,'ch-risk')">風險預後</button>
+      <button class="tab" onclick="st(this,'ch-comor')">共病</button>
+    </div>
+    <div class="panel on" id="ch-dx">
+      <div class="kbdg">⭐ 核心：8項中≥6項（含A1）+ 持續≥6個月 + 功能減損</div>
+      <div class="rr"><span class="rl">A</span><div class="rc">個人所經驗／展現的性別和指定性別之間顯著不一致，持續至少<strong>六個月</strong>，至少出現以下<strong>6項準則（必須包含準則A1）</strong>：
+        <ul class="cl" style="margin-top:5px">
+          <li>① 強烈渴望成為異性或堅持他/她就是異性（或有別於指定性別的其他性別）<strong>【必要項目】</strong></li>
+          <li>② 男孩（指定性別）：強烈偏好異裝打扮或模仿女性打扮；女孩（指定性別）：強烈偏好只穿著典型的男性衣著，並強烈拒穿典型女性衣著</li>
+          <li>③ 在假扮或幻想遊戲中，強烈偏好跨越自己性別的角色</li>
+          <li>④ 強烈偏好典型的異性玩具、遊戲或活動</li>
+          <li>⑤ 強烈偏好異性的玩伴</li>
+          <li>⑥ 男孩：強烈拒絕典型的男孩玩具/遊戲/活動，以及避免打鬧的遊戲；女孩：強烈拒絕典型的女孩玩具/遊戲/活動</li>
+          <li>⑦ 強烈厭惡個人的性器官</li>
+          <li>⑧ 強烈渴望擁有符合個人所經驗的性別的主要／次要性徵</li>
+        </ul>
+      </div></div>
+      <div class="rr"><span class="rl w">B</span><div class="rc">此狀況與臨床上顯著苦惱或社交、學業或其他重要領域功能減損有關</div></div>
+    </div>
+    <div class="panel" id="ch-sp">
+      <div class="spbox"><div class="sptitle">有性發展障礙（with a disorder of sex development）</div>例如：先天性腎上腺增生症（255.2 [E25.0]）或雄性素不敏感症候群（259.50 [E34.50]）<br><strong>編碼註：同時編碼性發展障礙和性別不安</strong></div>
+    </div>
+    <div class="panel" id="ch-feat">
+      <p class="d">患有性別不安的青春期前<strong>天生男孩</strong>，可能表現：</p>
+      <ul class="cl">
+        <li>希望成為女孩、斷言他們是女孩、或斷言長大會成為女人</li>
+        <li>偏好穿著女孩或女人服裝，或利用可獲得材料改進服裝（如毛巾、圍裙當長髮或裙子）</li>
+        <li>可能扮演女性形象角色（如扮演「母親」），對女性幻想人物有強烈興趣</li>
+        <li>偏好傳統女性活動、刻板印象遊戲（扮家家酒、畫女性圖案、觀看女性角色影片）</li>
+        <li>偏好刻板印象女性類型娃娃（如芭比），傾向和女孩當玩伴</li>
+        <li>迴避打鬧遊戲和競賽運動，對刻板印象男性玩具興趣很少</li>
+        <li>有些假裝沒有陰莖而堅持坐著排尿</li>
+        <li>更罕見：表示覺得陰莖或睪丸很噁心、希望移除、或希望擁有陰道</li>
+      </ul>
+    </div>
+    <div class="panel" id="ch-featg">
+      <p class="d">患有性別不安的青春期前<strong>天生女孩</strong>，可能表現：</p>
+      <ul class="cl">
+        <li>希望成為男孩、斷言她們是男孩、或斷言長大會成為男人</li>
+        <li>偏好男孩的服裝和髮型，常被陌生人認為是男孩，可能要求用男性名字稱呼</li>
+        <li>父母企圖要其穿裙裝或做女性打扮時，表現強烈負面反應；服裝非穿不可時可能拒絕上學或社交活動</li>
+        <li>在角色扮演、夢境和幻想中呈現顯著對異性性別的認同</li>
+        <li>偏好身體接觸運動、打鬧遊戲、傳統男孩遊戲，與男孩成為玩伴</li>
+        <li>對刻板印象女性玩具（娃娃）或活動表現鮮少興趣</li>
+        <li>有時拒絕用坐姿排尿</li>
+        <li>有些表現渴望有陰莖或宣稱擁有陰莖或長大後會長出陰莖，可能表示不想發育乳房或月經</li>
+      </ul>
+    </div>
+    <div class="panel" id="ch-assoc">
+      <p class="d">較年幼兒童<strong>較不傾向</strong>表現極度且持續的解剖構造不安（anatomic dysphoria）。非常年幼兒童可能只在父母告訴孩子他/她只是「渴望」而「實際上」不是另一性別成員時，才表現苦惱徵象（如強烈哭泣）。</p>
+      <p class="d">社會環境若支持孩子以另一性別生活的渴望，苦惱可能不會表現出來，而可能只在渴望受到干擾時表現。</p>
+    </div>
+    <div class="panel" id="ch-prev">
+      <div class="sg">
+        <div class="sc"><div class="sv">2:1 至 4.5:1</div><div class="sl">兒童被轉介比例（男:女）</div></div>
+      </div>
+      <p class="d">在兒童上，天生男孩對女孩的轉介性別比例從2:1到4.5:1。</p>
+    </div>
+    <div class="panel" id="ch-dev">
+      <p class="d">臨床上，兒童的跨性別行為通常起始於<strong>2到4歲之間</strong>，與大部分典型發展兒童開始表現性別行為和興趣的發展時期一致。對於一些學齡前兒童，可能呈現廣泛的跨性別行為和渴望成為異性；有些案例上，渴望表現較遲出現，通常在進入小學時。</p>
+      <p class="d"><strong>解剖構造不安</strong>的表現，會在性別不安兒童接近和預期青春期來臨時變得更常見。</p>
+      <div class="box w"><div class="bl">⚠️ 持續性比率（兒童期→青少年/成人期）</div>
+        <ul class="cl">
+          <li>天生男性：持續性從<strong>2.2%到30%</strong></li>
+          <li>天生女性：持續性從<strong>12%到50%</strong></li>
+        </ul>
+        持續性與兒童期基準衡鑑時的嚴重度層面式評估有<strong>中度關聯</strong>。較低社經背景也與持續度有中度相關。
+      </div>
+      <div class="box a"><div class="bl">不持續者的性傾向發展</div>
+        <ul class="cl">
+          <li>天生男性兒童但性別不安沒有持續者：大多數為<strong>戀男癖</strong>（被男性吸引），通常自認為男同志或同性戀（63%-100%）</li>
+          <li>天生女性兒童但性別不安沒有持續者：<strong>戀女癖</strong>（被女性吸引）和自我認同女同志百分比較低（32%-50%）</li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel" id="ch-risk">
+      <div class="box a"><div class="bl">氣質</div>早發型性別不安個體在學齡前就開始發展不典型性別行為，高度不典型可能促使性別不安發展，且傾向持續到青少年和成人。</div>
+      <div class="box a"><div class="bl">環境</div>患有性別不安的男性（童年期及青少年期）相較於無此狀況男性，較常有<strong>哥哥</strong>。</div>
+      <div class="box a"><div class="bl">基因和生理</div>變性慾在非雙胞胎手足間有微弱家族性證據；同卵與異卵同性別雙胞胎相較有較高一致率，顯示有些基因因素。46,XY個體無性賀爾蒙濃度內分泌異常；46,XX個體顯得有雄性素提高（但遠低於正常男性濃度）。</div>
+    </div>
+    <div class="panel" id="ch-comor">
+      <p class="d">表現有更高程度的情緒和行為問題，<strong>最常見：焦慮症、侵擾行為和衝動控制障礙症、憂鬱症</strong>。青春期前兒童，逐漸增長的年齡與更多行為或情緒問題有關（與他人對性別多元化行為不接納增加有關）。年紀較大的兒童，性別多元化行為通常導致同儕排斥，導致更多行為問題。</p>
+      <div class="box w"><div class="bl">⚠️ 重要共病提醒</div>臨床上，相較於一般大眾，<strong>自閉症類群障礙症（ASD）在患有性別不安的兒童上有較高的盛行率</strong>。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── 青少年和成人性別不安 ── -->
+<div class="card" data-cat="adult">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">302.85 F64.0</span><div><div class="cname">性別不安（青少年和成人）</div><div class="cen">Gender Dysphoria in Adolescents and Adults</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="tabs">
+      <button class="tab k on" onclick="st(this,'ad-dx')">⭐ 診斷準則</button>
+      <button class="tab" onclick="st(this,'ad-sp')">特別註明</button>
+      <button class="tab" onclick="st(this,'ad-feat')">診斷特質</button>
+      <button class="tab" onclick="st(this,'ad-assoc')">支持診斷</button>
+      <button class="tab" onclick="st(this,'ad-prev')">盛行率</button>
+      <button class="tab" onclick="st(this,'ad-dev')">發展病程</button>
+      <button class="tab" onclick="st(this,'ad-risk')">風險預後</button>
+      <button class="tab" onclick="st(this,'ad-cult')">文化議題</button>
+      <button class="tab" onclick="st(this,'ad-marker')">診斷標記</button>
+      <button class="tab r" onclick="st(this,'ad-sui')">⚠️ 自殺風險</button>
+      <button class="tab" onclick="st(this,'ad-func')">功能後果</button>
+      <button class="tab" onclick="st(this,'ad-comor')">共病</button>
+    </div>
+    <div class="panel on" id="ad-dx">
+      <div class="kbdg">⭐ 核心：6項中≥2項 + 持續≥6個月 + 功能減損</div>
+      <div class="rr"><span class="rl">A</span><div class="rc">個人所經驗／展現的性別和指定性別之間顯著不一致，持續至少<strong>六個月</strong>，至少出現以下<strong>2項</strong>準則：
+        <ul class="cl" style="margin-top:5px">
+          <li>① 個人所經驗／展現的性別和主要及／或次要性徵（或青少年指預期發育的次要性徵）之間顯著不一致</li>
+          <li>② 強烈渴望除去個人的主要及／或次要性徵，因和個人所經驗／展現的性別顯著不一致（或青少年渴望去阻止預期發育的次要性徵）</li>
+          <li>③ 強烈渴望擁有異性的主要及／或次要性徵</li>
+          <li>④ 強烈渴望成為異性（或有別於指定性別的其他性別）</li>
+          <li>⑤ 強烈渴望被當作異性（或有別於指定性別的其他性別）一般看待</li>
+          <li>⑥ 強烈堅信個人有異性（或有別於指定性別的其他性別）的典型感受和反應</li>
+        </ul>
+      </div></div>
+      <div class="rr"><span class="rl w">B</span><div class="rc">此狀況與臨床上顯著苦惱或社交、學業或其他重要領域功能減損有關</div></div>
+    </div>
+    <div class="panel" id="ad-sp">
+      <div class="spbox"><div class="sptitle">有性發展障礙</div>例如先天性腎上腺增生症、雄性素不敏感症候群<br><strong>編碼註：同時編碼性發展障礙和性別不安</strong></div>
+      <div class="spbox"><div class="sptitle">⭐ 性別已轉換（Posttransition）</div>指個體已經全天轉換成所欲求的性別（有或無合法性別變更），並且已經進行（或正在進行）至少一種跨性別的醫療處置或治療——亦即規律地接受跨性別賀爾蒙治療，或進行所欲求性別的性別重建手術（例如生理男性進行陰莖切除術、陰道成形術，生理女性進行乳房切除術、陰莖成形術）<br><strong>用途：可能用於支持新的性別指定療程還在繼續進行時</strong></div>
+    </div>
+    <div class="panel" id="ad-feat">
+      <p class="d">患有性別不安的成人，所經驗的性別與身體性徵經常不一致，但不總是伴隨想要移除第一/第二性徵的慾望，和/或想要獲得另一性別第一/第二性徵的渴望。可能不同程度地採取所經驗性別的行為、衣著、癖好。</p>
+      <p class="d">對於被其他人視為指定性別的一份子，或在社會上如指定性別一份子般活動，感到不舒服。有些可能尋求其他方法（部分過著渴望角色的生活、扮演既非傳統男性也非傳統女性的性別角色）來消除不一致。</p>
+      <p class="d"><strong>年輕青少年</strong>：因第二性徵尚未完全發展，可能不會表示不喜歡它們，但會關注即將來臨的身體變化。</p>
+    </div>
+    <div class="panel" id="ad-assoc">
+      <p class="d">天生男孩發展出青春期可見特徵時，可能初次見到毛髮生長時刮除腿毛；有時會綑綁生殖器讓勃起不明顯。女孩可能綑綁乳房、駝背走路、穿寬鬆運動衫讓乳房不明顯。</p>
+      <p class="d">青少年逐漸要求或在沒有醫療處方下獲得性腺類固醇的賀爾蒙抑制劑（「阻斷劑」，如促性腺激素釋放激素類似物、螺環固醇內酮）。生活在接受度高環境的青少年可能開放表達渴望、部分或完全打扮成經驗的性別、取與經驗性別一致的新名字。</p>
+      <div class="box w"><div class="bl">⚠️ 性行為相關表現</div>較年長青少年有性活動時，常不願露出或讓伴侶觸碰其性器官。成人也因傾向性器官不被看見/觸碰，性行為因而受限制。</div>
+    </div>
+    <div class="panel" id="ad-prev">
+      <div class="sg">
+        <div class="sc"><div class="sv">0.005-0.014%</div><div class="sl">天生男性成人盛行率</div></div>
+        <div class="sc"><div class="sv">0.002-0.003%</div><div class="sl">天生女性成人盛行率</div></div>
+      </div>
+      <p class="d">因不是所有成人會到專科診所尋求賀爾蒙治療和手術重置，比率可能稍有低估。</p>
+      <h4 class="sub">轉介性別比例（依年齡群組變化）</h4>
+      <table class="ct">
+        <tr><th>年齡群組</th><th>性別比例（天生男:天生女）</th></tr>
+        <tr><td>兒童</td><td>2:1 至 4.5:1（男較多）</td></tr>
+        <tr><td>青少年</td><td>趨近於兩者相當</td></tr>
+        <tr><td>成人</td><td>1:1 至 6.1:1（天生男性較高）</td></tr>
+      </table>
+      <p class="d">有兩個國家性別比例是天生女性較高：<strong>日本（2.2:1）、波蘭（3.4:1）</strong>。</p>
+    </div>
+    <div class="panel" id="ad-dev">
+      <p class="d">青少年和成人，經驗的性別和身體性別之間的不一致，是診斷核心特徵。年幼兒童較不傾向表現極度持續的解剖構造不安，但此不安隨年齡增加而更常見和顯著。</p>
+      <div class="kbdg">⭐ 兩種主要發展軌跡（天生男性）</div>
+      <table class="ct">
+        <tr><th>類型</th><th>特徵</th><th>性傾向</th></tr>
+        <tr><td><strong>早發型（Early-onset）</strong></td><td>從兒童期就開始且持續至青少年和成人期；或有間斷消失期，個體自我認同為男同志，伴隨性別不安復發</td><td>幾乎都被男人吸引（親雄性）</td></tr>
+        <tr><td><strong>晚發型（Late-onset）</strong></td><td>青春期或更晚起始，有些表示童年有渴望但沒說出，其他無法想起任何童年跡象</td><td>大多數親雌性，或被其他晚發型且性別已轉換的天生男性吸引</td></tr>
+      </table>
+      <p class="d">晚發型天生男性青少年的父母通常表示驚訝（沒看見童年跡象）。晚發型常做<strong>異裝癖行為並伴隨性興奮</strong>，性別轉換後許多會自我認同女同志。<strong>早發型</strong>群體會在較早年齡尋求賀爾蒙治療和變性手術；<strong>晚發型</strong>群體對手術態度較模稜兩可、術後滿意度較低。</p>
+      <div class="box a"><div class="bl">天生女性的發展軌跡</div>最常見病程是<strong>早發型</strong>（晚發型比天生男性少很多）。早發型幾乎總是<strong>親雌性</strong>；晚發型通常<strong>親雄性</strong>，性別置換手術後會自我認同男同志，且<strong>不會</strong>同時存在異裝癖行為伴隨性興奮。</div>
+      <div class="box p"><div class="bl">性別不安伴隨性發展障礙症</div>大部分患有性發展障礙症並發展出性別不安的個體，在很小時候就已尋求醫療處理。不孕在此群體很常見。性發展障礙症普遍與童年早期開始的性別不典型行為有關，但<strong>大多數不會導致性別不安</strong>。性別不安和性別轉換可能差異甚大，與性發展障礙症的<strong>嚴重度及指定性別有密切相關</strong>。</div>
+    </div>
+    <div class="panel" id="ad-risk">
+      <div class="box a"><div class="bl">環境</div>習慣性戀物症性變裝癖發展成幻想變性性興奮（autogynephilia，意指自身成為女人的想法/影像而引發的性興奮），以及其他社會、心理或發展問題，特別是晚發型個體（青少年期、成人期）的誘病因素。</div>
+      <div class="box a"><div class="bl">基因和生理（伴隨性發展障礙症者）</div>
+        <ul class="cl">
+          <li>若產前雄性素的製造和使用與相同指定性別個體常見狀況相較<strong>顯著不典型</strong>，晚發型性別不安可能性增加</li>
+          <li>例如46,XY個體出生前雄性賀爾蒙環境正常，但有天生非賀爾蒙性器官缺陷，被指定女性</li>
+          <li>性別不安可能性被<strong>額外、過久、高度性別不典型的出生後雄性素暴露伴隨身體雄性化</strong>所加強</li>
+          <li>出生前雄性素環境與<strong>性別行為</strong>有更緊密關聯，勝於<strong>性別認同</strong></li>
+          <li>性別不典型行為本身<strong>不應</strong>被詮釋為目前或未來性別不安的標誌</li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel" id="ad-cult">
+      <p class="d">性別不安個體在許多不同國家和文化皆有報告。生活在將非男性或女性性別分類也被接受的文化下，也有相同性別不安個案被報告出來。對這些個體，性別不安診斷準則是否能符合，尚不清楚。</p>
+    </div>
+    <div class="panel" id="ad-marker">
+      <p class="d">患有性發展障礙的個體，呈現出產前雄性素的製造和使用程度，與最終性別認同結果有些許關聯。<strong>然而這樣的關聯並沒有強到足夠成為生物因素並取代評估性別不安的詳細且全面的診斷性會談</strong>。</p>
+    </div>
+    <div class="panel" id="ad-sui">
+      <div class="kbdg">⚠️ 重要自殺風險警示</div>
+      <div class="box r"><div class="bl">術前與術後自殺風險</div>
+        <ul class="cl">
+          <li>患有性別不安的青少年和成人，<strong>在性別手術前</strong>，會有自殺想法、自殺企圖和自殺行為的<strong>風險增加</strong></li>
+          <li><strong>變性手術後</strong>，調適狀況可能不盡相同，<strong>自殺風險也有可能持續</strong></li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel" id="ad-func">
+      <p class="d">縈繞著跨性別的願望可能在童年期2-3歲後任何年紀發展出來，通常造成每日活動干擾。較年長兒童上，無法發展出與年齡相稱的同性同儕關係和技巧，可能造成同儕間被孤立和苦惱；有些兒童因被嘲笑/騷擾，或被強迫穿上指定性別服裝而拒絕上學。</p>
+      <p class="d">青少年和成人，心中縈繞跨性別願望常干擾日常活動。關係上困難（包括性關係問題）很常見，在學校或工作上功能可能受損。</p>
+      <div class="box w"><div class="bl">⚠️ 重要：性別不安的社會後果</div>
+        性別不安伴隨不典型的性別表現，與<strong>高度汙名化、歧視、受害者化</strong>有關，導致：
+        <ul class="cl">
+          <li>負面自我觀念</li>
+          <li>精神疾病共病比率增加</li>
+          <li>輟學、經濟邊緣化（包括失業）</li>
+          <li>伴隨出現社會和精神健康風險，特別是來自資源匱乏家庭背景的個體</li>
+          <li>在獲得健康照護和精神健康照護上可能遭遇<strong>結構性阻礙</strong></li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel" id="ad-comor">
+      <p class="d">臨床上患有性別不安的青少年和成人，可能有共存的精神健康問題，<strong>最常見是焦慮症和憂鬱症</strong>。如同兒童狀況，青少年相較於一般大眾，也有較高的ASD盛行率。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── 其他特定/非特定 ── -->
+<div class="card" data-cat="other">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">302.6 F64.8/F64.9</span><div><div class="cname">其他特定的 / 非特定的性別不安</div><div class="cen">Other Specified / Unspecified Gender Dysphoria</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="panel on">
+      <div class="box a"><div class="bl">其他特定的性別不安（302.6 F64.8）</div>
+        <p class="d">適用於性別不安症狀表現，造成臨床上顯著苦惱或社交、學業或其他重要領域功能減損，但尚未完全達到性別不安的診斷準則。當臨床專家認為某些特定原因導致無法達到診斷準則時使用，需載明特定原因（例如「短暫的性別不安」）。</p>
+        <h4 class="sub">使用「其他特定」診斷的例子</h4>
+        <ul class="cl">
+          <li>目前的困擾程度已達到性別不安的診斷準則，但是期間<strong>少於六個月</strong></li>
+        </ul>
+      </div>
+      <div class="box p"><div class="bl">非特定的性別不安（302.6 F64.9）</div>
+        <p class="d">適用於性別不安症狀表現，造成臨床上顯著苦惱或社交、學業或其他重要領域功能減損，但尚未完全達到性別不安的診斷準則。臨床專家未載明無法達到診斷準則的特定原因時使用，包括適用於資訊不足以作出特定診斷時。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ⭐ 比較與鑑別 ── -->
+<div class="card" data-cat="cmp">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">⭐ 速查</span><div><div class="cname">兒童 vs 青少年/成人性別不安準則比較</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="panel on">
+      <div class="kbdg">⭐ 國考核心：6個月 + 數量門檻差異</div>
+      <table class="ct">
+        <tr><th>比較項目</th><th>兒童性別不安</th><th>青少年和成人性別不安</th></tr>
+        <tr><td><strong>準則A項目總數</strong></td><td>8項</td><td>6項</td></tr>
+        <tr><td><strong>需符合項目數</strong></td><td><span class="tag tr">≥6項（必須包含A1）</span></td><td><span class="tag tw">≥2項（無特定必要項目）</span></td></tr>
+        <tr><td><strong>持續時間</strong></td><td>≥6個月（兩者相同）</td><td>≥6個月（兩者相同）</td></tr>
+        <tr><td><strong>準則描述方式</strong></td><td>較具體、較以行為方式為主（來自典型發展男女孩性別行為差異記錄）</td><td>聚焦於經驗性別與身體性徵（主要/次要性徵）之間的不一致</td></tr>
+        <tr><td><strong>必要核心項目</strong></td><td>A1：強烈渴望成為異性或堅持自己是異性<strong>（必須有）</strong></td><td>無強制必要項目，6項任選2項</td></tr>
+        <tr><td><strong>解剖構造不安</strong></td><td>較不傾向表現極度持續的解剖構造不安</td><td>解剖構造不安是診斷核心特徵，隨年齡增加更顯著</td></tr>
+        <tr><td><strong>性發展障礙特別註明</strong></td><td>有（同時編碼）</td><td>有（同時編碼）</td></tr>
+        <tr><td><strong>性別已轉換特別註明</strong></td><td>無此特別註明</td><td><strong>有</strong>（青少年/成人專屬）</td></tr>
+        <tr><td><strong>準則B（功能減損）</strong></td><td>需要（兩者相同）</td><td>需要（兩者相同）</td></tr>
+      </table>
+      <div class="box w" style="margin-top:10px"><div class="bl">⚠️ 為什麼兒童準則需要更多項目（6/8）？</div>
+        因為兒童的性別表現可能受發展階段、環境影響較大，需要<strong>更高的閾值（更多症狀數）</strong>以避免將正常的性別角色不順從行為誤診為性別不安。同時<strong>強制要求準則A1</strong>（渴望成為異性的核心信念），確保診斷聚焦於性別認同本身的不一致，而非單純的行為偏好。
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-cat="cmp">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">⭐ 易混淆</span><div><div class="cname">易混淆疾病/狀況深度鑑別</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="tabs">
+      <button class="tab k on" onclick="st(this,'cf-role')">⭐ 性別不安 vs 性別角色不順從</button>
+      <button class="tab k" onclick="st(this,'cf-tv')">⭐ 性別不安 vs 變裝癖障礙症</button>
+      <button class="tab k" onclick="st(this,'cf-bdd')">⭐ 性別不安 vs 身體臆形症</button>
+      <button class="tab k" onclick="st(this,'cf-schz')">⭐ 性別不安 vs 思覺失調症</button>
+      <button class="tab" onclick="st(this,'cf-biid')">性別不安 vs 身體完整性認同障礙症</button>
+      <button class="tab" onclick="st(this,'cf-sexdys')">性別發展障礙症 vs 性發展障礙</button>
+    </div>
+
+    <div class="panel on" id="cf-role">
+      <div class="kbdg">⭐ 最重要的基礎鑑別：核心信念 vs 表面行為</div>
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>性別不安</th><th>單純性別角色不順從</th></tr>
+        <tr><td><strong>核心特徵</strong></td><td>想成為另一性別的<strong>強烈渴望</strong>（而非僅指定性別）</td><td>對刻板印象性別角色行為的不順從（如似男孩行為的女孩、似女孩行為的男孩）</td></tr>
+        <tr><td><strong>活動廣泛性</strong></td><td>性別多元化活動和興趣有<strong>顯著的程度和廣泛性</strong></td><td>侵限於特定行為或興趣，不涉及性別認同的核心信念</td></tr>
+        <tr><td><strong>例子</strong></td><td>堅持自己是異性、強烈渴望異性性徵</td><td>偶爾跨性別裝扮的成年男性（無認同問題）</td></tr>
+        <tr><td><strong>診斷準則</strong></td><td>需符合完整DSM-5診斷準則（含功能減損）</td><td>不符合性別不安診斷準則</td></tr>
+      </table>
+      <div class="box w"><div class="bl">⚠️ 臨床診斷侵限原則</div>
+        由於對性別的不典型表現，從個體至整個跨性別光譜的開放性增加，<strong>很重要的是臨床診斷侵限於個體的苦惱和損害符合特定準則</strong>，不應僅因表面行為不符合刻板性別角色就診斷性別不安。
+      </div>
+    </div>
+
+    <div class="panel" id="cf-tv">
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>性別不安</th><th>變裝癖障礙症（Transvestic Disorder）</th></tr>
+        <tr><td><strong>好發族群</strong></td><td>各性別、各性傾向皆可發生</td><td>異性戀（或雙性戀）青少年和成人<strong>男性</strong>（罕見於女性）</td></tr>
+        <tr><td><strong>核心驅動力</strong></td><td>對自己性別認同的不一致感與渴望成為異性</td><td>跨性別裝扮行為<strong>產生性興奮</strong></td></tr>
+        <tr><td><strong>原本性別認同</strong></td><td>對原指定性別感到不滿/不一致</td><td><strong>不會將原本的性別帶入問題中</strong></td></tr>
+        <tr><td><strong>共病可能性</strong></td><td>偶爾伴隨變裝癖障礙症</td><td>若同時有臨床顯著性別不安，<strong>可同時給予兩個診斷</strong></td></tr>
+        <tr><td><strong>發展關聯</strong></td><td>—</td><td>在許多<strong>晚發型性別不安的戀女癖天生男性</strong>案例上，變裝行為伴隨性興奮是前驅狀況</td></tr>
+      </table>
+    </div>
+
+    <div class="panel" id="cf-bdd">
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>性別不安</th><th>身體臆形症（Body Dysmorphic Disorder）</th></tr>
+        <tr><td><strong>專注焦點</strong></td><td><strong>否定其指定的性別</strong>（整體性別認同層面）</td><td>專注於<strong>身體特定部位</strong>的改變和移除（因該部位被感知為不正常形成）</td></tr>
+        <tr><td><strong>核心問題本質</strong></td><td>性別認同不一致</td><td>對身體外觀的扭曲認知</td></tr>
+        <tr><td><strong>共病處理</strong></td><td>若個體表現符合性別不安和身體臆形症兩者時，<strong>兩個診斷皆可以給予</strong></td><td>同上</td></tr>
+      </table>
+    </div>
+
+    <div class="panel" id="cf-schz">
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>性別不安</th><th>思覺失調症（或其他精神病症）</th></tr>
+        <tr><td><strong>信念性質</strong></td><td>在<strong>缺乏精神病症狀</strong>下，堅持自己是屬於另一性別，<strong>不被認為是妄想</strong></td><td>罕見但可能有關於屬於另一性別的<strong>妄想</strong></td></tr>
+        <tr><td><strong>現實感</strong></td><td>對性別認同的堅信，但對其他現實檢驗能力完整</td><td>伴隨其他精神病症狀（幻覺、其他妄想等）</td></tr>
+        <tr><td><strong>共存可能性</strong></td><td>—</td><td>思覺失調症（或其他精神病症）和性別不安<strong>可能會共存</strong></td></tr>
+      </table>
+    </div>
+
+    <div class="panel" id="cf-biid">
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>性別不安</th><th>身體完整性認同障礙症（Body Integrity Identity Disorder）</th></tr>
+        <tr><td><strong>渴望內容</strong></td><td>渴望改變性別（從男到女或女到男）</td><td>希望讓<strong>健康的肢體被截肢</strong>，以使他們感覺更「完整」</td></tr>
+        <tr><td><strong>身分認同目標</strong></td><td>渴望改變性別身分</td><td><strong>不希望改變性別</strong>，而較渴望以被截肢者或殘障者的身分來生活</td></tr>
+      </table>
+      <div class="box a"><div class="bl">其他相關但不符合性別不安準則的情況</div>有些男性為了<strong>美觀理由</strong>或想移除雄性素造成的心理影響，但<strong>不改變男性身份認同</strong>，而尋求閹割和/或陰莖切除術，這些案例<strong>並不符合</strong>性別不安的診斷準則。</div>
+    </div>
+
+    <div class="panel" id="cf-sexdys">
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>性別不安（不伴隨性發展障礙）</th><th>性發展障礙症（DSD）</th></tr>
+        <tr><td><strong>生物指標</strong></td><td>性染色體、性腺、性賀爾蒙、生殖器與指定性別<strong>一致</strong></td><td>生殖系統在先天上偏離身體正常標準和/或與男女性生物指標不一致</td></tr>
+        <tr><td><strong>是否導致性別不安</strong></td><td>—</td><td>普遍與童年早期開始的性別不典型行為有關，但<strong>大多數不會導致性別不安</strong></td></tr>
+        <tr><td><strong>編碼方式</strong></td><td>單一性別不安診斷</td><td>若同時發展出性別不安，<strong>需同時編碼性發展障礙和性別不安</strong>（特別註明：有性發展障礙）</td></tr>
+        <tr><td><strong>不確定感 vs 信念堅定</strong></td><td>深信自己是另一性別</td><td>許多DSD個體對性別有<strong>不確定感</strong>，而非發展出深信是另一性別；大部分不會進行性別轉換</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-cat="cmp">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">⭐ 風險因子</span><div><div class="cname">兒童 vs 成人性別不安風險與預後因子比較</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="panel on">
+      <table class="ct">
+        <tr><th>項目</th><th>兒童</th><th>青少年/成人</th></tr>
+        <tr><td><strong>氣質風險因子</strong></td><td>學齡前就開始發展不典型性別行為，高度不典型可能促使性別不安發展並持續</td><td>習慣性戀物症性變裝癖發展成幻想變性性興奮（特別是晚發型）</td></tr>
+        <tr><td><strong>環境風險因子</strong></td><td>患性別不安的男性較常有<strong>哥哥</strong></td><td>更多社會、心理或發展問題（晚發型個體）</td></tr>
+        <tr><td><strong>基因/生理因子</strong></td><td>非雙胞胎手足間微弱家族性證據；同卵雙胞胎一致率較高</td><td>產前雄性素製造/使用顯著不典型，增加晚發型性別不安可能性（伴隨DSD者）</td></tr>
+        <tr><td><strong>持續性預測</strong></td><td>兒童期嚴重度評估與持續性有中度關聯；較低社經背景也有中度相關</td><td>不適用（已是後期表現）</td></tr>
+        <tr><td><strong>自殺風險</strong></td><td>未特別強調（隨年齡增加風險上升）</td><td><strong>術前和術後皆有風險增加</strong>，需密切關注</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-cat="cmp">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">⭐ 決策流程</span><div><div class="cname">性別不安診斷決策流程</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="panel on">
+      <div class="kbdg">⭐ 國考臨床推理流程</div>
+      <div class="box a"><div class="bl">Step 1 — 確認核心要素：經驗性別與指定性別的顯著不一致</div>
+        是否有明顯的、持續至少6個月的不一致感，且伴隨臨床顯著苦惱？若僅是表面行為偏好（無核心認同不一致或苦惱）→ 考慮<strong>性別角色不順從</strong>（非疾病）。
+      </div>
+      <div class="box a"><div class="bl">Step 2 — 依年齡選擇對應準則組</div>
+        <ul class="content-list" style="padding-left:18px">
+          <li>兒童（青春期前）→ 8項中需符合<strong>≥6項，且必須含A1</strong></li>
+          <li>青少年/成人 → 6項中需符合<strong>≥2項</strong></li>
+        </ul>
+      </div>
+      <div class="box a"><div class="bl">Step 3 — 排除其他更佳解釋的疾病</div>
+        <ul class="content-list" style="padding-left:18px">
+          <li>是否為跨性別裝扮帶來性興奮，且不涉及原本性別認同問題？→ 變裝癖障礙症（可共病）</li>
+          <li>是否專注於特定身體部位而非整體性別認同？→ 身體臆形症（可共病）</li>
+          <li>是否伴隨精神病症狀（妄想/幻覺）？→ 思覺失調症等精神病症（可共存）</li>
+          <li>是否僅希望被截肢但不涉及性別改變？→ 身體完整性認同障礙症（不符合性別不安）</li>
+        </ul>
+      </div>
+      <div class="box a"><div class="bl">Step 4 — 評估是否伴隨性發展障礙症（DSD）</div>
+        若有DSD（如先天性腎上腺增生症、雄性素不敏感症候群）且同時符合性別不安準則 → <strong>同時編碼性發展障礙和性別不安</strong>。
+      </div>
+      <div class="box a"><div class="bl">Step 5 — 評估轉換狀態（適用青少年/成人）</div>
+        若已全天轉換成所欲求性別並進行至少一種跨性別醫療處置 → 加註<strong>「性別已轉換」</strong>特別註明。
+      </div>
+      <div class="box w"><div class="bl">⚠️ 貫穿全程的自殺風險評估</div>
+        無論處於診斷流程的哪個階段，皆需評估自殺風險——<strong>性別手術前後皆是高風險時期</strong>，需提供持續的臨床關注與支持性環境。
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end main -->
+
+<script>
+function td(h){const b=h.nextElementSibling;const c=h.querySelector('.chev');const hid=b.classList.contains('h');b.classList.toggle('h',!hid);c.classList.toggle('o',hid);}
+function st(btn,pid){const sec=btn.closest('.card');sec.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));sec.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));btn.classList.add('on');const p=sec.querySelector('#'+pid);if(p)p.classList.add('on');}
+function fc(cat,btn){document.querySelectorAll('.pill').forEach(p=>p.classList.remove('on'));btn.classList.add('on');document.querySelectorAll('.card').forEach(c=>{c.style.display=(cat==='all'||c.dataset.cat===cat)?'':'none';});}
+</script>
+</body>
+</html>
