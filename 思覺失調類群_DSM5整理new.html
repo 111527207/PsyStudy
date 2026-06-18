@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSM-5 思覺失調類群及其他精神病症 系統整理</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #21262d;
+    --border: #30363d;
+    --accent: #58a6ff;
+    --accent2: #bc8cff;
+    --accent3: #3fb950;
+    --warn: #d29922;
+    --danger: #f85149;
+    --text: #e6edf3;
+    --text-dim: #8b949e;
+    --text-muted: #6e7681;
+    --tag-bg: rgba(88,166,255,.1);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI','PingFang TC','Microsoft JhengHei',sans-serif; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.65; }
+
+  .header { background: linear-gradient(135deg,#161b22,#0d1117); border-bottom: 1px solid var(--border); padding: 18px 24px 14px; position: sticky; top:0; z-index:100; }
+  .header h1 { font-size:19px; font-weight:700; }
+  .header p { font-size:12px; color:var(--text-dim); margin-top:2px; }
+
+  .nav-pills { display:flex; flex-wrap:wrap; gap:6px; padding:10px 20px 10px; background:#0d1117; border-bottom:1px solid var(--border); position:sticky; top:66px; z-index:99; }
+  .nav-pill { background:var(--surface); border:1px solid var(--border); border-radius:20px; padding:4px 14px; font-size:12px; cursor:pointer; color:var(--text-dim); white-space:nowrap; transition:all .15s; font-weight:500; }
+  .nav-pill:hover { border-color:var(--accent); color:var(--accent); }
+  .nav-pill.active { background:var(--accent); border-color:var(--accent); color:#000; font-weight:700; }
+
+  .main { max-width:1100px; margin:0 auto; padding:18px 18px 60px; }
+
+  /* intro box */
+  .intro-box { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px 20px; margin-bottom:20px; }
+  .intro-title { font-size:15px; font-weight:700; color:var(--accent); margin-bottom:10px; }
+  .features-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:10px; margin-top:10px; }
+  .feature-card { background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:12px; }
+  .feature-name { font-weight:700; color:var(--accent2); font-size:13px; margin-bottom:4px; }
+  .feature-desc { font-size:12px; color:var(--text-dim); }
+
+  /* disorder section */
+  .disorder-section { border:1px solid var(--border); border-radius:12px; margin-bottom:20px; overflow:hidden; background:var(--surface); }
+  .disorder-header { display:flex; align-items:center; justify-content:space-between; padding:14px 18px; cursor:pointer; background:linear-gradient(90deg,var(--surface2),var(--surface)); border-bottom:1px solid var(--border); user-select:none; gap:12px; }
+  .disorder-header:hover { background:var(--surface2); }
+  .disorder-header-left { display:flex; align-items:center; gap:12px; }
+  .disorder-code { background:var(--tag-bg); border:1px solid var(--accent); color:var(--accent); border-radius:6px; padding:2px 8px; font-size:11px; font-weight:700; font-family:monospace; white-space:nowrap; }
+  .disorder-name { font-size:15px; font-weight:700; }
+  .disorder-name-en { font-size:11px; color:var(--text-dim); margin-top:1px; }
+  .chevron { font-size:16px; color:var(--text-dim); transition:transform .25s; }
+  .chevron.open { transform:rotate(180deg); }
+  .disorder-body { display:block; }
+  .disorder-body.hidden { display:none; }
+
+  /* tabs */
+  .section-tabs { display:flex; flex-wrap:wrap; gap:0; border-bottom:1px solid var(--border); background:var(--bg); overflow-x:auto; }
+  .sec-tab { padding:8px 13px; font-size:12px; cursor:pointer; color:var(--text-dim); border-bottom:2px solid transparent; white-space:nowrap; transition:all .15s; background:none; border-top:none; border-left:none; border-right:none; }
+  .sec-tab:hover { color:var(--text); background:var(--surface2); }
+  .sec-tab.active { color:var(--accent); border-bottom-color:var(--accent); }
+  .sec-tab.key-tab { color:var(--warn); }
+  .sec-tab.key-tab.active { border-bottom-color:var(--warn); color:var(--warn); }
+
+  .tab-panel { display:none; padding:16px 18px; }
+  .tab-panel.active { display:block; }
+
+  /* content */
+  .key-badge { display:inline-flex; align-items:center; gap:4px; background:rgba(210,153,34,.1); border:1px solid var(--warn); color:var(--warn); border-radius:4px; padding:2px 8px; font-size:11px; font-weight:700; margin-bottom:10px; }
+  .info-banner { background:rgba(88,166,255,.08); border:1px solid rgba(88,166,255,.25); border-radius:8px; padding:10px 14px; margin-bottom:12px; font-size:13px; color:var(--text-dim); }
+  .info-banner strong { color:var(--accent); }
+
+  .rule-row { display:flex; align-items:flex-start; margin-bottom:10px; gap:10px; }
+  .rule-letter { display:inline-flex; align-items:center; justify-content:center; min-width:22px; height:22px; border-radius:50%; background:var(--accent); color:#000; font-size:11px; font-weight:700; flex-shrink:0; margin-top:1px; }
+  .rule-letter.w { background:var(--warn); color:#1a1a1a; }
+  .rule-letter.d { background:var(--danger); }
+  .rule-content { flex:1; font-size:13px; }
+
+  .criteria-box { background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:12px 14px; margin-bottom:10px; }
+  .criteria-label { font-size:11px; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:.04em; margin-bottom:8px; }
+  .criteria-box.warn { border-left:3px solid var(--warn); }
+  .criteria-box.ok { border-left:3px solid var(--accent3); }
+  .criteria-box.info { border-left:3px solid var(--accent); }
+  .criteria-box.purple { border-left:3px solid var(--accent2); }
+  .criteria-box.danger { border-left:3px solid var(--danger); }
+
+  ul.cl { padding-left:18px; }
+  ul.cl li { margin-bottom:4px; font-size:13px; }
+  ul.cl li::marker { color:var(--accent); }
+
+  .diff-item { background:var(--bg); border:1px solid var(--border); border-radius:7px; padding:10px 13px; margin-bottom:8px; }
+  .diff-name { font-weight:700; color:var(--accent2); font-size:13px; margin-bottom:4px; }
+  .diff-body { color:var(--text-dim); font-size:13px; }
+
+  .stat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:8px; margin-bottom:12px; }
+  .stat-card { background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:12px; text-align:center; }
+  .stat-val { font-size:22px; font-weight:700; color:var(--accent3); }
+  .stat-label { font-size:11px; color:var(--text-dim); margin-top:2px; }
+
+  .tag { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:600; margin:2px; }
+  .tb { background:rgba(88,166,255,.12); color:var(--accent); }
+  .tg { background:rgba(63,185,80,.12); color:var(--accent3); }
+  .tw { background:rgba(210,153,34,.12); color:var(--warn); }
+  .tr { background:rgba(248,81,73,.12); color:var(--danger); }
+  .tp { background:rgba(188,140,255,.12); color:var(--accent2); }
+
+  p.desc { color:var(--text-dim); font-size:13px; line-height:1.7; margin-bottom:8px; }
+  h4.sub { font-size:13px; font-weight:700; color:var(--accent); margin:12px 0 6px; }
+
+  table.ct { width:100%; border-collapse:collapse; font-size:13px; }
+  table.ct th { background:var(--surface2); color:var(--text-dim); font-size:11px; text-transform:uppercase; padding:7px 10px; text-align:left; border-bottom:2px solid var(--border); }
+  table.ct td { padding:8px 10px; border-bottom:1px solid var(--border); vertical-align:top; }
+  table.ct tr:last-child td { border-bottom:none; }
+  table.ct tr:hover td { background:var(--surface2); }
+
+  .timeline { display:flex; gap:0; flex-wrap:wrap; margin-bottom:12px; }
+  .tl-item { flex:1; min-width:120px; background:var(--bg); border:1px solid var(--border); border-radius:6px; padding:10px; margin:3px; text-align:center; }
+  .tl-dur { font-size:16px; font-weight:700; color:var(--accent3); }
+  .tl-label { font-size:11px; color:var(--text-dim); margin-top:2px; }
+
+  .specifier-box { background:rgba(88,166,255,.05); border:1px solid rgba(88,166,255,.2); border-radius:8px; padding:12px 14px; margin-bottom:8px; }
+  .specifier-title { font-weight:700; color:var(--accent); font-size:13px; margin-bottom:4px; }
+
+  @media(max-width:600px) {
+    .header { padding:12px 14px 10px; }
+    .nav-pills { padding:8px 12px; }
+    .main { padding:12px 12px 40px; }
+    .tab-panel { padding:12px; }
+    .disorder-name { font-size:13px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🧠 DSM-5 思覺失調類群及其他精神病症 系統整理</h1>
+  <p>臨床心理師國考備考 | 定義 · 診斷準則 · 鑑別診斷 · 盛行率 · 共病 完整版</p>
+</div>
+
+<div class="nav-pills">
+  <span class="nav-pill active" onclick="filterCat('all',this)">全部</span>
+  <span class="nav-pill" onclick="filterCat('def',this)">精神病症定義</span>
+  <span class="nav-pill" onclick="filterCat('del',this)">妄想症</span>
+  <span class="nav-pill" onclick="filterCat('brief',this)">短暫精神病症</span>
+  <span class="nav-pill" onclick="filterCat('schzf',this)">類思覺失調症</span>
+  <span class="nav-pill" onclick="filterCat('schz',this)">思覺失調症</span>
+  <span class="nav-pill" onclick="filterCat('saff',this)">情感思覺失調症</span>
+  <span class="nav-pill" onclick="filterCat('subst',this)">物質引發</span>
+  <span class="nav-pill" onclick="filterCat('med',this)">身體病況引起</span>
+  <span class="nav-pill" onclick="filterCat('cat',this)">僵直症</span>
+  <span class="nav-pill" onclick="filterCat('cmp',this)">⭐ 比較與鑑別</span>
+</div>
+
+<div class="main">
+
+<!-- ══ 精神病症主要特徵定義 ══ -->
+<div class="disorder-section" id="sec-def" data-cat="def">
+  <div class="disorder-header" onclick="toggleDis(this)">
+    <div class="disorder-header-left">
+      <span class="disorder-code">本章前言</span>
+      <div>
+        <div class="disorder-name">定義精神病症的主要特徵</div>
+        <div class="disorder-name-en">Key Features That Define the Psychotic Disorders</div>
+      </div>
+    </div>
+    <span class="chevron open">▾</span>
+  </div>
+  <div class="disorder-body">
+    <div class="tab-panel active" style="display:block">
+      <div class="info-banner"><strong>五大精神病症核心領域：</strong> 妄想、幻覺、胡亂思考（言語）、整體上混亂或異常的運動行為（含僵直）、負性症狀</div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-name">妄想 Delusions</div>
+          <div class="feature-desc">固定的信念，不會因相互矛盾的證據而改變。分為：被害型（最常見）、關係型、誇大型、愛戀型、虛無型、身體型。<br><br><strong>怪異妄想</strong>：顯然不合理、無法被相同文化的人理解（如外力移除器官）<br><strong>非怪異妄想</strong>：相信被監視（雖無說服力的證據）</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-name">幻覺 Hallucinations</div>
+          <div class="feature-desc">無外部刺激的知覺般經驗；生動清晰、具十足效力、不受自己控制。<br><br>可發生在任何感覺模式，但<strong>聽幻覺最常見</strong>（思覺失調症和相關障礙症中）。<br>思覺失調症典型：評論個案行為或兩個聲音互相交談的聽幻覺。<br>在入睡或醒來前可正常發生（入睡前/醒前幻覺），非精神病。</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-name">胡亂思考（言語）Disorganized Thinking</div>
+          <div class="feature-desc">經由言語推斷。從一個話題跳到另一話題（鬆散聯想 loose associations）、答非所問（切線反應 tangentiality）、言語完全不連貫（語詞沙拉 word salad）。<br><br>在前驅和殘餘期（輕度形式）也可能發生。</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-name">整體上混亂或異常的運動行為（含僵直）</div>
+          <div class="feature-desc">包括：幼稚行為、無目的的激越、缺乏目標導向行為。<br><br>僵直（Catatonia）：減少活動（木僵、蠟樣屈曲）或過度增加活動（激越）、奇特的姿勢、嘲弄性模仿（echopraxia）、緘默（mutism）、言語模仿（echoing of speech）。<br><strong>注意</strong>：僵直症狀是非特異性的，可發生在其他精神障礙症和身體疾病中。</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-name">負性症狀 Negative Symptoms</div>
+          <div class="feature-desc">在思覺失調症中最為顯著。<br><br>兩種最突出：<br>• <strong>減少情感表達</strong>（臉部、眼神、言語語調、手勢）<br>• <strong>無動機</strong>（積極自發目的性活動減少）<br><br>其他：貧語症（alogia）、喜樂不能（anhedonia）、失去社交互動（asociality）</div>
+        </div>
+      </div>
+      <div class="criteria-box warn" style="margin-top:12px">
+        <div class="criteria-label">⚠️ 本章組織原則</div>
+        沿精神病理學的層度組織。<br>
+        思覺失調型（人格）障礙症 → 妄想症 → 短暫精神病症 → 類思覺失調症 → 思覺失調症 → 情感思覺失調症 → 物質/醫藥引發 → 另一身體病況引起 → 僵直症
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 妄想症 ══ -->
+<div class="disorder-section" id="sec-del" data-cat="del">
+  <div class="disorder-header" onclick="toggleDis(this)">
+    <div class="disorder-header-left">
+      <span class="disorder-code">297.1 F22</span>
+      <div>
+        <div class="disorder-name">妄想症</div>
+        <div class="disorder-name-en">Delusional Disorder</div>
+      </div>
+    </div>
+    <span class="chevron open">▾</span>
+  </div>
+  <div class="disorder-body">
+    <div class="section-tabs">
+      <button class="sec-tab key-tab active" onclick="switchTab(this,'del-dx')">⭐ 診斷準則</button>
+      <button class="sec-tab" onclick="switchTab(this,'del-sub')">亞型</button>
+      <button class="sec-tab" onclick="switchTab(this,'del-spec')">特別註明</button>
+      <button class="sec-tab" onclick="switchTab(this,'del-feat')">診斷特質</button>
+      <button class="sec-tab" onclick="switchTab(this,'del-assoc')">支持診斷</button>
+      <button class="sec-tab" onclick="switchTab(this,'del-prev')">盛行率</button>
+      <button class="sec-tab" onclick="switchTab(this,'del-dev')">發展病程</button>
+      <button class="sec-tab" onclick="switchTab(this,'del-func')">功能性後果</button>
+      <button class="sec-tab key-tab" onclick="switchTab(this,'del-diff')">⭐ 鑑別診斷</button>
+    </div>
+    <div class="tab-panel active" id="del-dx">
+      <div class="key-badge">⭐ 國考核心</div>
+      <div class="rule-row"><span class="rule-letter">A</span><div class="rule-content">出現一種（或多種）持續超過 <strong>1個月以上</strong>的妄想</div></div>
+      <div class="rule-row"><span class="rule-letter">B</span><div class="rule-content">從未符合思覺失調症診斷準則A。<br>幻覺——若存在的話——並非主要表現，且和妄想主題相關</div></div>
+      <div class="rule-row"><span class="rule-letter">C</span><div class="rule-content">除了妄想或其衍生的影響外，功能並未顯著減損，且行為不明顯奇特或怪異</div></div>
+      <div class="rule-row"><span class="rule-letter">D</span><div class="rule-content">若病程中發生躁症或鬱症發作，其發病時間相對於妄想發病時間是<strong>短暫的</strong></div></div>
+      <div class="rule-row"><span class="rule-letter w">E</span><div class="rule-content">非起因於物質使用或另一身體病況的生理效應，且無法以另一精神疾病（如身體臆形症、強迫症）作更好的解釋</div></div>
+      <div class="criteria-box warn">
+        <div class="criteria-label">⚠️ 核心鑑別原則</div>
+        妄想症 vs 思覺失調症：<strong>缺乏思覺失調症活躍期其他特徵性症狀</strong>（顯著幻覺、胡言亂語、混亂行為、負性症狀）<br>妄想症 vs OCD/BDD：若強迫信念達妄想程度，給予「OCD（無病識感/具妄想信念）」，而非妄想症
+      </div>
+    </div>
+    <div class="tab-panel" id="del-sub">
+      <div class="key-badge">⭐ 亞型定義</div>
+      <table class="ct">
+        <tr><th>亞型</th><th>DSM中文名</th><th>核心主題</th><th>特別注意</th></tr>
+        <tr><td><span class="tag tb">愛戀型</span></td><td>Erotomanic type</td><td>相信另一人（通常地位較高）愛著自己</td><td>可能頻繁嘗試聯繫妄想對象</td></tr>
+        <tr><td><span class="tag tp">誇大型</span></td><td>Grandiose type</td><td>相信自己有偉大才能/洞察力/重要發現</td><td>可能有宗教內容</td></tr>
+        <tr><td><span class="tag tw">嫉妒型</span></td><td>Jealous type</td><td>配偶或愛人不忠（無正當理由）</td><td>可能面質、監視伴侶</td></tr>
+        <tr><td><span class="tag tr">被害型</span><br>（最常見）</td><td>Persecutory type</td><td>被謀害、欺騙、監視、跟隨、下毒等</td><td>可能訴諸法律或暴力行為</td></tr>
+        <tr><td><span class="tag tg">身體型</span></td><td>Somatic type</td><td>身體功能和感覺（發出異味、皮膚有蟲、寄生蟲）</td><td>常見的具體化形式</td></tr>
+        <tr><td>混合型</td><td>Mixed type</td><td>無顯著的主要主題</td><td></td></tr>
+        <tr><td>非特定型</td><td>Unspecified type</td><td>妄想主題無法確定（如關係妄想）</td><td></td></tr>
+      </table>
+    </div>
+    <div class="tab-panel" id="del-spec">
+      <div class="specifier-box">
+        <div class="specifier-title">有奇特內容（Bizarre content）</div>
+        妄想明顯不是具體的、無法理解且不是來自日常生活經驗者（如個案相信器官被移除換成別人的，卻無傷口）
+      </div>
+      <h4 class="sub">病程特別註明（適用於發病一年後）</h4>
+      <ul class="cl">
+        <li>第一次發作，目前急性發作</li>
+        <li>第一次發作，目前部份緩解</li>
+        <li>第一次發作，目前完全緩解</li>
+        <li>多次發作，目前急性/部份緩解/完全緩解</li>
+        <li>持續型（符合診斷準則症狀占病程大多數時間）</li>
+        <li>非特定病程</li>
+      </ul>
+      <h4 class="sub">嚴重度評分（0-4分，五大精神病症狀）</h4>
+      <p class="desc">注意：診斷妄想症可不用此嚴重度特別註記。</p>
+    </div>
+    <div class="tab-panel" id="del-feat">
+      <p class="desc">基本特徵：持續≥1個月的妄想（準則A）。心理社會功能障礙比思覺失調症更為受限（circumscribed）。行為不明顯奇特或怪異（準則C）。</p>
+      <div class="criteria-box info">
+        <div class="criteria-label">「實際的病識感」vs「真實的病識感」</div>
+        妄想症個案可能能如實描述別人認為其堅信是不合理的（有<strong>實際的病識感</strong>），但自己無法接受這狀況（沒有<strong>真實的病識感</strong>）。
+      </div>
+    </div>
+    <div class="tab-panel" id="del-assoc">
+      <ul class="cl">
+        <li>社會、婚姻、工作問題可起因於妄想信念</li>
+        <li>暴躁或不悅情緒（對妄想信念的反應）</li>
+        <li>憤怒和暴力行為：可發生於被害、嫉妒和愛戀型妄想</li>
+        <li>訴訟或對抗性行為（如寄出數百封抗議信）</li>
+        <li>法律困難：特別是嫉妒和愛戀型妄想</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="del-prev">
+      <div class="stat-grid">
+        <div class="stat-card"><div class="stat-val">0.2%</div><div class="stat-label">終生盛行率</div></div>
+        <div class="stat-card"><div class="stat-val">被害型</div><div class="stat-label">最常見亞型</div></div>
+      </div>
+      <p class="desc">妄想症、嫉妒型可能男性比女性常見，但整體發生率無明顯性別差異。</p>
+    </div>
+    <div class="tab-panel" id="del-dev">
+      <p class="desc">整體功能通常比思覺失調症更好。雖然診斷一般穩定，但有部分個案會繼續發展成思覺失調症。</p>
+      <p class="desc">妄想症與思覺失調症和思覺失調型人格障礙症有顯著的家庭關係。可能在老年人更為普遍。</p>
+    </div>
+    <div class="tab-panel" id="del-func">
+      <p class="desc">功能障礙通常比其他精神病症更受限，雖在某些個案可能相當大（職業功能不佳、社交孤立）。</p>
+      <p class="desc">當妄想觀念沒有被討論或採取行動時，個案的行為和外觀明顯符合常態（此為妄想症的共同特徵）。</p>
+    </div>
+    <div class="tab-panel" id="del-diff">
+      <div class="key-badge">⭐ 鑑別重點</div>
+      <div class="diff-item"><div class="diff-name">⭐ 強迫症及相關障礙症（OCD/BDD）</div><div class="diff-body">若強迫症個案完全相信其信念是真實的 → 給予「強迫症（無病識感/具妄想信念）」，<strong>而非妄想症</strong>。若身體臆形症達妄想程度 → 給予「BDD（無病識感/具妄想信念）」。</div></div>
+      <div class="diff-item"><div class="diff-name">⭐ 思覺失調症和類思覺失調症</div><div class="diff-body">妄想症缺乏思覺失調症活躍期的<strong>其他特徵性症狀</strong>（顯著幻覺、胡言亂語、混亂或僵直行為、負性症狀）。</div></div>
+      <div class="diff-item"><div class="diff-name">⭐ 憂鬱症、雙相情緒障礙症和情感思覺失調症</div><div class="diff-body">透過情緒障礙和妄想之間的時間關係鑑別。若妄想<strong>只發生在情緒發作時</strong> → 給予「憂鬱/雙相情緒障礙症，有精神病特徵」。</div></div>
+      <div class="diff-item"><div class="diff-name">譫妄、認知障礙症、物質引發、另一身體病況引起</div><div class="diff-body">認知障礙症中出現的單純被害妄想 → 給予「認知障礙症，有行為困擾」。物質/醫藥引發：透過使用物質及妄想信念的發作緩解時間順序關係鑑別。</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 短暫精神病症 ══ -->
+<div class="disorder-section" id="sec-brief" data-cat="brief">
+  <div class="disorder-header" onclick="toggleDis(this)">
+    <div class="disorder-header-left">
+      <span class="disorder-code">298.8 F23</span>
+      <div>
+        <div class="disorder-name">短暫精神病症</div>
+        <div class="disorder-name-en">Brief Psychotic Disorder</div>
+      </div>
+    </div>
+    <span class="chevron open">▾</span>
+  </div>
+  <div class="disorder-body">
+    <div class="section-tabs">
+      <button class="sec-tab key-tab active" onclick="switchTab(this,'brief-dx')">⭐ 診斷準則</button>
+      <button class="sec-tab" onclick="switchTab(this,'brief-spec')">特別註明</button>
+      <button class="sec-tab" onclick="switchTab(this,'brief-feat')">診斷特質</button>
+      <button class="sec-tab" onclick="switchTab(this,'brief-assoc')">支持診斷</button>
+      <button class="sec-tab" onclick="switchTab(this,'brief-prev')">盛行率</button>
+      <button class="sec-tab" onclick="switchTab(this,'brief-dev')">發展病程</button>
+      <button class="sec-tab" onclick="switchTab(this,'brief-risk')">風險預後</button>
+      <button class="sec-tab" onclick="switchTab(this,'brief-func')">功能性後果</button>
+      <button class="sec-tab key-tab" onclick="switchTab(this,'brief-diff')">⭐ 鑑別診斷</button>
+    </div>
+    <div class="tab-panel active" id="brief-dx">
+      <div class="key-badge">⭐ 持續時間關鍵：&gt;1天，&lt;1個月</div>
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-dur">&gt;1天</div><div class="tl-label">最短持續</div></div>
+        <div class="tl-item"><div class="tl-dur">&lt;1個月</div><div class="tl-label">最長持續</div></div>
+        <div class="tl-item"><div class="tl-dur">完全</div><div class="tl-label">需回復到發作前功能</div></div>
+      </div>
+      <div class="rule-row"><span class="rule-letter">A</span><div class="rule-content">出現1項或更多以下症狀，<strong>至少有1項要是(1)(2)或(3)</strong>：<ul class="cl" style="margin-top:6px"><li>妄想</li><li>幻覺</li><li>胡言亂語（如經常離題或前後不連貫）</li><li>混亂或僵直行為</li></ul>注意：若有文化上默許的反應，不可列入症狀。</div></div>
+      <div class="rule-row"><span class="rule-letter">B</span><div class="rule-content">失常發作期至少一天，但<strong>少於一個月</strong>，最後完全回復到發作前的功能</div></div>
+      <div class="rule-row"><span class="rule-letter w">C</span><div class="rule-content">無法以鬱症或雙相情緒障礙症合併精神病症狀、另一精神病症（如思覺失調症或僵直症）更好解釋，且無法歸因於物質使用或另一身體病況的生理效應</div></div>
+    </div>
+    <div class="tab-panel" id="brief-spec">
+      <div class="specifier-box"><div class="specifier-title">有顯著壓力（短暫反應型精神病症 Brief reactive psychosis）</div>症狀出現在幾乎每個人都會顯著感受的壓力事件下的個別或整體反應</div>
+      <div class="specifier-box"><div class="specifier-title">無顯著壓力</div>症狀並非出現在顯著壓力事件的反應下</div>
+      <div class="specifier-box"><div class="specifier-title">周產期發病</div>發病在懷孕期或產後4週內</div>
+      <div class="specifier-box"><div class="specifier-title">有僵直症</div>附加碼 293.89 (F06.1)</div>
+    </div>
+    <div class="tab-panel" id="brief-feat">
+      <p class="desc">主要特徵：涉及正性精神病症狀的突然發病（2週內從非精神病狀態到明確精神病狀態，通常無前驅症狀）。</p>
+    </div>
+    <div class="tab-panel" id="brief-assoc">
+      <ul class="cl">
+        <li>情緒風暴或壓倒性混亂</li>
+        <li>可能從一個強烈情感迅速變化到另一個</li>
+        <li>損傷程度可能嚴重，可能需要監督</li>
+        <li><strong>自殺行為風險增加</strong>（特別是急性發作時）</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="brief-prev">
+      <div class="stat-grid">
+        <div class="stat-card"><div class="stat-val">9%</div><div class="stat-label">佔美國首次發作精神病</div></div>
+        <div class="stat-card"><div class="stat-val">2:1</div><div class="stat-label">女:男 比例</div></div>
+        <div class="stat-card"><div class="stat-val">30歲</div><div class="stat-label">中期平均發病年齡</div></div>
+      </div>
+      <p class="desc">符合準則A和C但不符合準則B（活躍症狀持續1-6個月而非1個月緩解），在開發中國家比已開發國家更常見。</p>
+    </div>
+    <div class="tab-panel" id="brief-dev">
+      <p class="desc">可能出現在青春期或成年早期，發病可發生在整個生命週期。定義上需要在障礙發作一個月內達到所有症狀充分緩解。在某些個案，精神病症狀持續時間可能相當短暫（如幾天）。</p>
+    </div>
+    <div class="tab-panel" id="brief-risk">
+      <div class="criteria-box info">
+        <div class="criteria-label">氣質風險因子</div>
+        先前存在的人格障礙症和特性：<ul class="cl"><li>思覺失調型人格障礙症</li><li>邊緣型人格障礙症</li><li>精神病領域特性（如感知失調）</li><li>負向情感領域（如猜疑）</li></ul>
+      </div>
+    </div>
+    <div class="tab-panel" id="brief-func">
+      <p class="desc">儘管復發率很高，但對於大多數人來說，在社會功能和症狀的部分，其<strong>預後是極好的</strong>。</p>
+    </div>
+    <div class="tab-panel" id="brief-diff">
+      <div class="key-badge">⭐ 鑑別重點</div>
+      <div class="diff-item"><div class="diff-name">⭐ 其他身體疾病</div><div class="diff-body">如庫欣氏症候群的腦腫瘤 → 給予「另一身體病況引起的精神病症」或「譫妄」。</div></div>
+      <div class="diff-item"><div class="diff-name">⭐ 物質相關障礙症</div><div class="diff-body">判斷物質使用與精神症狀的成因相關，並注意物質使用和症狀發作的時序關係。</div></div>
+      <div class="diff-item"><div class="diff-name">⭐ 憂鬱和雙相情緒障礙症</div><div class="diff-body">若精神病症狀可由情緒發作更好解釋（精神病症狀只發生在完整的憂鬱/躁症/混合發作之時），不能給予短暫精神病症診斷。</div></div>
+      <div class="diff-item"><div class="diff-name">⭐ 其他精神病症</div><div class="diff-body">若症狀持續≥1個月 → 依其他症狀考慮類思覺失調症、妄想症、憂/雙相情緒障礙症併精神病特徵。<br>藥物成功治療後1個月內減緩時，短暫精神病症和類思覺失調症鑑別困難。</div></div>
+      <div class="diff-item"><div class="diff-name">詐病和人為障礙症</div><div class="diff-body">人為障礙症：有意產生症狀（intentionally produced）。詐病：有可理解的目標而假裝疾病。</div></div>
+      <div class="diff-item"><div class="diff-name">人格障礙症</div><div class="diff-body">某些人格障礙症在心理社會壓力下可誘發短期精神病症狀，通常暫時性。若持續≥1天，額外給予短暫精神病症診斷可能適當。</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 類思覺失調症 ══ -->
+<div class="disorder-section" id="sec-schzf" data-cat="schzf">
+  <div class="disorder-header" onclick="toggleDis(this)">
+    <div class="disorder-header-left">
+      <span class="disorder-code">295.40 F20.81</span>
+      <div>
+        <div class="disorder-name">類思覺失調症</div>
+        <div class="disorder-name-en">Schizophreniform Disorder</div>
+      </div>
+    </div>
+    <span class="chevron open">▾</span>
+  </div>
+  <div class="disorder-body">
+    <div class="section-tabs">
+      <button class="sec-tab key-tab active" onclick="switchTab(this,'schzf-dx')">⭐ 診斷準則</button>
+      <button class="sec-tab" onclick="switchTab(this,'schzf-spec')">特別註明</button>
+      <button class="sec-tab" onclick="switchTab(this,'schzf-feat')">診斷特質</button>
+      <button class="sec-tab" onclick="switchTab(this,'schzf-prev')">盛行率</button>
+      <button class="sec-tab" onclick="switchTab(this,'schzf-dev')">發展病程</button>
+      <button class="sec-tab" onclick="switchTab(this,'schzf-risk')">風險預後</button>
+      <button class="sec-tab" onclick="switchTab(this,'schzf-func')">功能性後果</button>
+      <button class="sec-tab key-tab" onclick="switchTab(this,'schzf-diff')">⭐ 鑑別診斷</button>
+    </div>
+    <div class="tab-panel active" id="schzf-dx">
+      <div class="key-badge">⭐ 關鍵：症狀同思覺失調症，但持續1-6個月</div>
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-dur">≥1個月</div><div class="tl-label">最短持續</div></div>
+        <div class="tl-item"><div class="tl-dur">&lt;6個月</div><div class="tl-label">最長持續</div></div>
+        <div class="tl-item"><div class="tl-dur"><em>不</em>需</div><div class="tl-label">功能顯著減退</div></div>
+      </div>
+      <div class="rule-row"><span class="rule-letter">A</span><div class="rule-content">在一個月內出現以下2項或更多症狀，<strong>至少有1項必須為(1)(2)或(3)</strong>：
+        <ul class="cl" style="margin-top:6px"><li>妄想</li><li>幻覺</li><li>胡言亂語（如經常離題或前後不連貫）</li><li>整體上混亂或僵直行為</li><li>負性症狀（減少情感表達或動機降低）</li></ul></div></div>
+      <div class="rule-row"><span class="rule-letter">B</span><div class="rule-content">此障礙症發作期<strong>至少持續一個月，但不超過六個月</strong>。若還未恢復，下「暫時診斷 (provisional)」</div></div>
+      <div class="rule-row"><span class="rule-letter">C</span><div class="rule-content">排除情感思覺失調症和鬱症/雙相情緒障礙症伴隨精神病症狀者：<br>1) 活躍期症狀沒有同時出現在鬱症或躁症發作中，或<br>2) 情緒障礙症僅佔活躍期及殘餘期的一小部分(minority)</div></div>
+      <div class="rule-row"><span class="rule-letter w">D</span><div class="rule-content">非起因於物質使用或另一身體病況的生理效應</div></div>
+    </div>
+    <div class="tab-panel" id="schzf-spec">
+      <div class="specifier-box"><div class="specifier-title">有良好預後的特徵（至少出現以下2項）</div>
+        <ul class="cl"><li>明顯精神病症狀發作於平常行為或功能中的<strong>四週內出現顯著改變</strong></li><li>混亂(confusion)或迷惑(perplexity)</li><li>良好的發病前社交或職業功能</li><li>沒有遲鈍或呆板情感</li></ul></div>
+      <div class="specifier-box"><div class="specifier-title">無良好預後特徵</div>沒有出現上述2項或以上的良好預後特徵</div>
+      <div class="specifier-box"><div class="specifier-title">有僵直症</div>附加碼 293.89 (F06.1)</div>
+    </div>
+    <div class="tab-panel" id="schzf-feat">
+      <p class="desc">類思覺失調症的特徵性症狀與思覺失調症<strong>相同</strong>（準則A）。主要區別：持續時間（至少1個月但少於6個月）。</p>
+      <div class="criteria-box warn">
+        <div class="criteria-label">⚠️ 重要：不需功能下降</div>
+        不像思覺失調症，類思覺失調症<strong>沒有診斷準則要求符合受損的社會和職業功能</strong>。
+      </div>
+      <p class="desc">給予類思覺失調症的兩種情況：<br>1) 疾病持續1至6個月，且個案已恢復<br>2) 目前症狀持續時間&lt;6個月，但還沒有恢復（此時下「暫時診斷」）</p>
+    </div>
+    <div class="tab-panel" id="schzf-prev">
+      <p class="desc">美國和其他已開發國家的發生率可能比思覺失調症少<strong>五倍</strong>。在開發中國家，特別是「有良好預後特徵」者可能較高。</p>
+    </div>
+    <div class="tab-panel" id="schzf-dev">
+      <div class="criteria-box info">
+        <div class="criteria-label">轉歸（預後）</div>
+        <ul class="cl">
+          <li>約<strong>1/3</strong>在6個月內恢復（類思覺失調症為最終診斷）</li>
+          <li>剩餘<strong>2/3</strong>中，大多數最終診斷為<strong>思覺失調症或情感思覺失調症</strong></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tab-panel" id="schzf-risk">
+      <div class="criteria-box info"><div class="criteria-label">基因和生理</div>親戚中有類思覺失調症的個案，其患有思覺失調症的危險會增加。</div>
+    </div>
+    <div class="tab-panel" id="schzf-func">
+      <p class="desc">對於最終診斷為思覺失調症或情感思覺失調症的個案，功能性後遺症類似其最終診斷的疾病。能恢復的個案有較好的功能性結果。</p>
+    </div>
+    <div class="tab-panel" id="schzf-diff">
+      <div class="diff-item"><div class="diff-name">⭐ 短暫精神病症</div><div class="diff-body">短暫精神病症持續時間少於1個月；類思覺失調症為1至6個月。</div></div>
+      <div class="diff-item"><div class="diff-name">⭐ 思覺失調症</div><div class="diff-body">思覺失調症需要≥6個月的症狀期，且需要功能顯著減退。類思覺失調症&lt;6個月，不需功能減退準則。</div></div>
+      <div class="diff-item"><div class="diff-name">其他精神障礙症和身體疾病（見思覺失調症鑑別診斷）</div><div class="diff-body">包括：另一身體病況或其治療引起的精神病症、譫妄或認知障礙症、物質/醫藥引發的精神病症、憂鬱/雙相情緒障礙症有精神病特徵、情感思覺失調症等。</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 思覺失調症 ══ -->
+<div class="disorder-section" id="sec-schz" data-cat="schz">
+  <div class="disorder-header" onclick="toggleDis(this)">
+    <div class="disorder-header-left">
+      <span class="disorder-code">295.90 F20.9</span>
+      <div>
+        <div class="disorder-name">思覺失調症</div>
+        <div class="disorder-name-en">Schizophrenia</div>
+      </div>
+    </div>
+    <span class="chevron open">▾</span>
+  </div>
+  <div class="disorder-body">
+    <div class="section-tabs">
+      <button class="sec-tab key-tab active" onclick="switchTab(this,'schz-dx')">⭐ 診斷準則</button>
+      <button class="sec-tab" onclick="switchTab(this,'schz-spec')">特別註明</button>
+      <button class="sec-tab" onclick="switchTab(this,'schz-feat')">診斷特質</button>
+      <button class="sec-tab" onclick="switchTab(this,'schz-assoc')">支持診斷</button>
+      <button class="sec-tab" onclick="switchTab(this,'schz-prev')">盛行率</button>
+      <button class="sec-tab" onclick="switchTab(this,'schz-dev')">發展病程</button>
+      <button class="sec-tab" onclick="switchTab(this,'schz-risk')">風險預後</button>
+      <button class="sec-tab" onclick="switchTab(this,'schz-gender')">性別議題</button>
+      <button class="sec-tab" onclick="switchTab(this,'schz-suicide')">自殺風險</button>
+      <button class="sec-tab" onclick="switchTab(this,'schz-func')">功能性後果</button>
+      <button class="sec-tab key-tab" onclick="switchTab(this,'schz-diff')">⭐ 鑑別診斷</button>
+      <button class="sec-tab" onclick="switchTab(this,'schz-comor')">共病</button>
+    </div>
+    <div class="tab-panel active" id="schz-dx">
+      <div class="key-badge">⭐ 國考核心：A(≥2，至少1項為1/2/3) + B + C(≥6個月) + D + E + F</div>
+      <div class="criteria-box info">
+        <div class="criteria-label">準則A — 活躍期症狀（≥2項，持續至少1個月；至少有1項必須為(1)(2)或(3)）</div>
+        <ul class="cl">
+          <li>妄想</li>
+          <li>幻覺</li>
+          <li>胡言亂語（如經常離題或前後不連貫）</li>
+          <li>整體上混亂或僵直行為</li>
+          <li>負性症狀（減少情感表達或動機降低）</li>
+        </ul>
+      </div>
+      <div class="rule-row"><span class="rule-letter">B</span><div class="rule-content">此困擾發病以來的大部分時間，一項或更多項主要領域功能（工作、人際關係或自我照顧）顯著比未發病前降低（或兒童/青少年無法達到預期的人際、學業或職業功能）</div></div>
+      <div class="rule-row"><span class="rule-letter">C</span><div class="rule-content">此困擾的徵兆至少持續出現<strong>六個月</strong>。此六個月期間一定要包括至少一個月（如成功治療者，略少於一個月）符合準則A的活躍期症狀。可包括前驅或殘餘期症狀。</div></div>
+      <div class="rule-row"><span class="rule-letter">D</span><div class="rule-content">排除情感思覺失調症和鬱症/雙相情緒障礙症伴隨精神病症狀者（同類思覺失調症準則C的排除原則）</div></div>
+      <div class="rule-row"><span class="rule-letter w">E</span><div class="rule-content">非起因於物質使用或另一身體病況的生理效應</div></div>
+      <div class="rule-row"><span class="rule-letter w">F</span><div class="rule-content">若有ASD或童年期發作的溝通障礙症病史者，只有在除了思覺失調症其他必要症狀外，又出現<strong>明顯的妄想或幻覺至少一個月</strong>，才可額外下思覺失調症診斷</div></div>
+    </div>
+    <div class="tab-panel" id="schz-spec">
+      <h4 class="sub">病程特別註明（適用於發作一年後）</h4>
+      <ul class="cl">
+        <li>第一次發作，目前急性發作</li>
+        <li>第一次發作，目前部份緩解</li>
+        <li>第一次發作，目前完全緩解</li>
+        <li>多次發作，目前急性發作（至少2次發作，即第一次發作後有緩解再至少復發一次）</li>
+        <li>多次發作，目前部份/完全緩解</li>
+        <li>持續型（大部分病程維持符合症狀和時程診斷準則）</li>
+        <li>非特定病程</li>
+        <li><strong>有僵直症</strong>（附加碼 293.89 F06.1）</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="schz-feat">
+      <p class="desc">思覺失調症的特徵性症狀包括一系列的認知、行為和情緒功能障礙，但沒有單一症狀可作為疾病的特殊病徵。</p>
+      <div class="criteria-box info">
+        <div class="criteria-label">認知缺陷（常見且與功能障礙密切相關）</div>
+        <ul class="cl">
+          <li>陳述性記憶、工作記憶減損</li>
+          <li>語言功能及其他執行功能減損</li>
+          <li>較慢的處理速度</li>
+          <li>感覺處理和抑制能力異常</li>
+          <li>社交認知缺陷（心智理論障礙）</li>
+        </ul>
+      </div>
+      <div class="criteria-box warn">
+        <div class="criteria-label">病覺缺失症（Anosognosia）</div>
+        缺乏對疾病的病識感，不是應對策略，而是疾病本身的症狀。<br>
+        是<strong>治療不順從最常見的預測因子</strong>，可預測較高的復發率、較差的心理社會功能。
+      </div>
+    </div>
+    <div class="tab-panel" id="schz-assoc">
+      <ul class="cl">
+        <li>不恰當的情感（如在沒有適當刺激下大笑）</li>
+        <li>煩躁不安的情緒（憂鬱、焦慮或憤怒形式）</li>
+        <li>睡眠困擾（白天睡覺，夜間活動）</li>
+        <li>缺乏進食興趣或拒食</li>
+        <li>人格解離、現實解離、身體擔憂</li>
+        <li>焦慮和恐慌（常見）</li>
+        <li>敵意和攻擊性（更常見於年輕男性、有暴力史、治療不順從、藥物濫用和衝動病史者）</li>
+        <li><strong>神經軟徵兆</strong>：運動協調、感覺統合、複雜動作排序障礙；左右混淆；細微身體異常</li>
+        <li>神經影像學異常（前額葉和顳葉皮質細胞結構、白質連接性、灰質體積差異）</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="schz-prev">
+      <div class="stat-grid">
+        <div class="stat-card"><div class="stat-val">0.3–0.7%</div><div class="stat-label">終生盛行率</div></div>
+        <div class="stat-card"><div class="stat-val">20歲</div><div class="stat-label">男性發病高峰（早至中期）</div></div>
+        <div class="stat-card"><div class="stat-val">20歲晚期</div><div class="stat-label">女性發病高峰</div></div>
+      </div>
+      <p class="desc">不同種族/民族、不同國家及不同地理來源的移民和移民子女之間有差異。</p>
+    </div>
+    <div class="tab-panel" id="schz-dev">
+      <p class="desc">精神病特徵通常在青春期晚期和30歲中期間出現。青春期前發病是罕見的。發病可能突然或逐漸，但大多數病人有多種臨床顯著徵兆和症狀緩慢漸進的發展，一半抱怨憂鬱症狀。</p>
+      <div class="criteria-box info">
+        <div class="criteria-label">病程和預後</div>
+        <ul class="cl">
+          <li>約<strong>20%</strong>的病人病程似乎較好；有少數完全恢復的報告</li>
+          <li>大多數仍需日常支持，許多人慢性化，伴隨活躍期症狀的惡化和緩解</li>
+          <li>精神病症狀在整個生命過程中會趨於減弱（可能與多巴胺活性隨年齡正常下降有關）</li>
+          <li><strong>負性症狀</strong>與預後更密切相關，往往是持續最久的</li>
+          <li>認知缺陷可能不會隨病程改善</li>
+        </ul>
+      </div>
+      <div class="criteria-box warn">
+        <div class="criteria-label">⚠️ 早發病年齡的意義</div>
+        發病年齡較早傳統上被當作是預後較差的預測。男性一般有較差的病前適應能力、較低教育成就、更顯著負性症狀和認知功能障礙。
+      </div>
+    </div>
+    <div class="tab-panel" id="schz-risk">
+      <div class="criteria-box info">
+        <div class="criteria-label">環境風險因子</div>
+        <ul class="cl">
+          <li>出生季節（晚冬/早春發生率較高）</li>
+          <li>成長於城市環境</li>
+          <li>部分少數民族（某些移民族群）</li>
+        </ul>
+      </div>
+      <div class="criteria-box info">
+        <div class="criteria-label">基因和生理風險因子</div>
+        <ul class="cl">
+          <li>遺傳因子有巨大影響，但大多數患者無精神病家族史</li>
+          <li>罕見或常見的危險對偶基因類群共同促成，每個貢獻只有一小部分的總人口變異</li>
+          <li>確立的對偶基因也與其他精神障礙症相關（雙相情緒障礙症、憂鬱症、ASD）</li>
+          <li>懷孕和分娩併發缺氧、較大生父年齡</li>
+          <li>其他產前和產期不利因素：壓力、感染、營養不良、妊娠糖尿病</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tab-panel" id="schz-gender">
+      <div class="stat-grid">
+        <div class="stat-card"><div class="stat-val">略低</div><div class="stat-label">女性發病率（接受治療病例）</div></div>
+        <div class="stat-card"><div class="stat-val">較晚</div><div class="stat-label">女性發病年齡</div></div>
+      </div>
+      <p class="desc">女性有第二個中年高峰（second mid-life peak）。</p>
+      <p class="desc">女性症狀特徵：</p>
+      <ul class="cl">
+        <li>往往有較多的情緒症狀</li>
+        <li>有更多的精神病症狀（但精神病症狀在生命後期可能惡化）</li>
+        <li>頻率較低的負性症狀和混亂</li>
+        <li>社會功能趨於保持更好地保留</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="schz-suicide">
+      <div class="stat-grid">
+        <div class="stat-card"><div class="stat-val">5–6%</div><div class="stat-label">死於自殺的比例</div></div>
+        <div class="stat-card"><div class="stat-val">約20%</div><div class="stat-label">有一或多次自殺企圖</div></div>
+      </div>
+      <div class="criteria-box danger">
+        <div class="criteria-label">自殺風險因子</div>
+        <ul class="cl">
+          <li>命令式幻覺（command hallucinations）</li>
+          <li>憂鬱症狀或絕望感</li>
+          <li>失業</li>
+          <li>精神病發作後或出院後的期間</li>
+        </ul>
+        男性和女性在整個生命週期自殺風險都很高。
+      </div>
+    </div>
+    <div class="tab-panel" id="schz-func">
+      <p class="desc">與顯著社會和職業功能障礙有關。教育繼續接受和就業維持常因動機降低或其他疾病表現而受損。</p>
+      <p class="desc">大多數病人受僱於比父母職業還要低水平的工作，大多數（特別是男人）不會結婚或限制家庭之外的社交互動。</p>
+    </div>
+    <div class="tab-panel" id="schz-diff">
+      <div class="key-badge">⭐ 國考重點鑑別</div>
+      <div class="diff-item"><div class="diff-name">⭐ 憂鬱症或雙相情緒障礙症，有精神病或僵直特徵</div><div class="diff-body">關鍵：情緒障礙和精神病之間的時間關係，以及憂鬱或躁症症狀的嚴重程度。<br>若妄想或幻覺<strong>只發生在憂鬱發作或躁症發作期間</strong> → 診斷為「憂/雙相情緒障礙症，有精神病特徵」。</div></div>
+      <div class="diff-item"><div class="diff-name">⭐ 情感思覺失調症</div><div class="diff-body">情感思覺失調症：需要一個鬱症或躁症發作同時與活躍期症狀同發生，同時情緒症狀存在於大多數活躍期的總持續時間。</div></div>
+      <div class="diff-item"><div class="diff-name">⭐ 類思覺失調症和短暫精神病症</div><div class="diff-body">短暫精神病症：&gt;1天，&lt;1個月<br>類思覺失調症：≥1個月，&lt;6個月，不需功能減退<br>思覺失調症：≥6個月，需功能減退</div></div>
+      <div class="diff-item"><div class="diff-name">⭐ 妄想症</div><div class="diff-body">妄想症缺乏思覺失調症的其他症狀（顯著的聽幻覺或視幻覺、胡言亂語、混亂或僵直行為、負性症狀等）。</div></div>
+      <div class="diff-item"><div class="diff-name">⭐ 強迫症和身體臆形症</div><div class="diff-body">可透過顯著的強迫意念、強迫行為、對身體外觀或體味的想法意念、儲物或著重在身體的重複行為，來與思覺失調症區分。</div></div>
+      <div class="diff-item"><div class="diff-name">⭐ 創傷後壓力症（PTSD）</div><div class="diff-body">PTSD可能包括有幻覺特質的回憶重現和可能達偏執地步的過度警覺。但創傷事件及對事件的反應或緩解的相關特性症狀，是作出PTSD診斷的必要條件。</div></div>
+      <div class="diff-item"><div class="diff-name">⭐ ASD或溝通障礙症</div><div class="diff-body">ASD/溝通障礙症可有類似精神病發作的症狀，但可透過社交互動缺陷與重複受限行為，以及認知和溝通缺陷來區分。若要同時診斷思覺失調症，必須滿足所有思覺失調症診斷準則，且有顯著幻覺或妄想≥1個月。</div></div>
+      <div class="diff-item"><div class="diff-name">思覺失調型人格障礙症</div><div class="diff-body">可透過與持續人格特徵相關的閾值下症狀（subthreshold symptoms）來與思覺失調症區分。</div></div>
+      <div class="diff-item"><div class="diff-name">譫妄或認知障礙症 / 物質/醫藥引起</div><div class="diff-body">在這些障礙症和認知改變的發作時間上，必須要有時間上的關係。物質/醫藥引起：通常在物質使用和精神病發作，以及物質停止使用和緩解之間有時間順序關係。</div></div>
+    </div>
+    <div class="tab-panel" id="schz-comor">
+      <ul class="cl">
+        <li><strong>物質相關障礙症</strong>：超過一半有煙草使用障礙症，並定期吸菸</li>
+        <li>焦慮症（越來越明顯）</li>
+        <li>強迫症和恐慌症比率較高（與一般人相比）</li>
+        <li>思覺失調型或妄想型人格障礙症有時先於思覺失調症發病</li>
+        <li><strong>預期壽命縮短</strong>（相關身體病況：體重增加、糖尿病、代謝症候群、心血管和肺部疾病）</li>
+        <li>健康維護行為的參與度差（癌症篩查、運動）</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 情感思覺失調症 ══ -->
+<div class="disorder-section" id="sec-saff" data-cat="saff">
+  <div class="disorder-header" onclick="toggleDis(this)">
+    <div class="disorder-header-left">
+      <span class="disorder-code">295.70 F25.x</span>
+      <div>
+        <div class="disorder-name">情感思覺失調症</div>
+        <div class="disorder-name-en">Schizoaffective Disorder</div>
+      </div>
+    </div>
+    <span class="chevron open">▾</span>
+  </div>
+  <div class="disorder-body">
+    <div class="section-tabs">
+      <button class="sec-tab key-tab active" onclick="switchTab(this,'saff-dx')">⭐ 診斷準則</button>
+      <button class="sec-tab" onclick="switchTab(this,'saff-sub')">亞型/特別註明</button>
+      <button class="sec-tab" onclick="switchTab(this,'saff-feat')">診斷特質</button>
+      <button class="sec-tab" onclick="switchTab(this,'saff-assoc')">支持診斷</button>
+      <button class="sec-tab" onclick="switchTab(this,'saff-prev')">盛行率</button>
+      <button class="sec-tab" onclick="switchTab(this,'saff-dev')">發展病程</button>
+      <button class="sec-tab" onclick="switchTab(this,'saff-risk')">風險預後</button>
+      <button class="sec-tab" onclick="switchTab(this,'saff-suicide')">自殺風險</button>
+      <button class="sec-tab" onclick="switchTab(this,'saff-func')">功能性後果</button>
+      <button class="sec-tab key-tab" onclick="switchTab(this,'saff-diff')">⭐ 鑑別診斷</button>
+      <button class="sec-tab" onclick="switchTab(this,'saff-comor')">共病</button>
+    </div>
+    <div class="tab-panel active" id="saff-dx">
+      <div class="key-badge">⭐ 核心：精神病+情緒發作同時 + 無情緒發作時≥2週妄想/幻覺 + 情緒佔大半時間</div>
+      <div class="rule-row"><span class="rule-letter">A</span><div class="rule-content">在一段沒有中斷的疾病期中，<strong>同時</strong>發生一次情緒障礙症發作（鬱症或躁症）和思覺失調症準則A的症狀。<br><em>注意：鬱症發作要包括心情憂鬱（準則A1），僅有興趣/喜樂減少不夠）</em></div></div>
+      <div class="rule-row"><span class="rule-letter">B</span><div class="rule-content">終生發病時期內，曾經在<strong>無情緒障礙症發作（躁或鬱）時，有2週或2週以上的妄想或幻覺</strong></div></div>
+      <div class="rule-row"><span class="rule-letter">C</span><div class="rule-content">符合情緒障礙症發作的症狀出現在<strong>整個疾病活躍期及殘餘期的大半部分（majority of total duration）</strong></div></div>
+      <div class="rule-row"><span class="rule-letter w">D</span><div class="rule-content">非起因於物質使用或另一身體病況的生理效應</div></div>
+      <div class="criteria-box warn">
+        <div class="criteria-label">⚠️ 三大準則的鑑別功能</div>
+        準則C：區分情感思覺失調症 vs 思覺失調症（情緒症狀應佔疾病大部分時間）<br>
+        準則B：區分情感思覺失調症 vs 憂鬱/雙相情緒障礙症有精神病特徵（需有≥2週的獨立精神病症狀）<br>
+        準則C需評估<strong>整個病程</strong>（非僅目前病期），不同於DSM-IV
+      </div>
+    </div>
+    <div class="tab-panel" id="saff-sub">
+      <div class="specifier-box">
+        <div class="specifier-title">295.70 (F25.0) 雙相型（Bipolar type）</div>
+        假如躁症為臨床表現的一部分時，則特別註明此亞型。此亞型也可能是鬱症發作。
+      </div>
+      <div class="specifier-box">
+        <div class="specifier-title">295.70 (F25.1) 憂鬱型（Depressive type）</div>
+        假如僅出現鬱症（major depressive episode）時，則註明為此亞型。
+      </div>
+      <div class="specifier-box"><div class="specifier-title">有僵直症</div>附加碼 293.89 (F06.1)</div>
+      <h4 class="sub">病程特別註明（同思覺失調症）</h4>
+      <p class="desc">第一次發作目前急性/部份緩解/完全緩解；多次發作；持續型；非特定病程</p>
+    </div>
+    <div class="tab-panel" id="saff-feat">
+      <p class="desc">診斷是根據沒有中斷的疾病期之評估。通常在精神病的期間進行診斷，但不一定都是如此。</p>
+      <p class="desc">不需要符合思覺失調症的準則B（社會功能障礙）和準則F（排除ASD/溝通障礙症）。</p>
+      <div class="criteria-box warn">
+        <div class="criteria-label">⚠️ 準則C的例子</div>
+        4年病史中，有鬱症和躁症發作，但情緒症狀發作時間總加起來在4年精神病史中<strong>不超過1年</strong> → 不符合準則C（情緒症狀未佔大多數時間）。
+      </div>
+    </div>
+    <div class="tab-panel" id="saff-assoc">
+      <ul class="cl">
+        <li>職業功能經常受損，但不在準則中（不同於思覺失調症）</li>
+        <li>受限的社交接觸和自我照顧困難</li>
+        <li>與思覺失調症相比，負性症狀可能較不嚴重、較不持續</li>
+        <li>病覺缺失症常見，但可能較不嚴重</li>
+        <li>若在準則A症狀緩解後情緒症狀仍持續 → 日後出現憂鬱症或雙相情緒障礙症情緒發作的危險增加</li>
+        <li>可能伴隨酒精和其他物質相關障礙症</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="saff-prev">
+      <div class="stat-grid">
+        <div class="stat-card"><div class="stat-val">0.3%</div><div class="stat-label">終生盛行率</div></div>
+        <div class="stat-card"><div class="stat-val">1/3</div><div class="stat-label">約為思覺失調症盛行率</div></div>
+        <div class="stat-card"><div class="stat-val">女>男</div><div class="stat-label">主因：女性憂鬱型較高</div></div>
+      </div>
+    </div>
+    <div class="tab-panel" id="saff-dev">
+      <p class="desc">典型發病年齡是成年早期，但可從青春期到生命晚年的任何時間。</p>
+      <p class="desc">情感思覺失調症的預後比思覺失調症要<strong>好一些</strong>，但比情緒障礙症的預後<strong>差</strong>。</p>
+      <div class="criteria-box info">
+        <div class="criteria-label">典型時間模式示例</div>
+        明顯聽幻覺和被害妄想2個月 → 精神病症狀+完全鬱症發作3個月 → 鬱症完全恢復，精神病症狀額外持續1個月<br><br>
+        情感思覺失調症，雙相型更常見於年輕成人；情感思覺失調症，憂鬱型更常見於老年人。
+      </div>
+    </div>
+    <div class="tab-panel" id="saff-risk">
+      <div class="criteria-box info">
+        <div class="criteria-label">基因和生理</div>
+        一等親屬患有情感思覺失調症的風險增加。若一等親屬中患有思覺失調症、雙相情緒障礙症或情感思覺失調症，則本身患有情感思覺失調症的風險也會增加。
+      </div>
+    </div>
+    <div class="tab-panel" id="saff-suicide">
+      <div class="stat-card" style="max-width:200px">
+        <div class="stat-val">5%</div>
+        <div class="stat-label">思覺失調症和情感思覺失調症終生自殺風險</div>
+      </div>
+      <p class="desc" style="margin-top:10px">伴隨有憂鬱症狀表現的自殺風險較高。北美人族群的自殺率高於歐洲、東歐、南美和印第安人族群。</p>
+    </div>
+    <div class="tab-panel" id="saff-func">
+      <p class="desc">與社會和職業功能障礙相關，但功能障礙不是診斷準則（是思覺失調症的準則），且診斷患有情感思覺失調症的個體之間也有明顯的變異性。</p>
+    </div>
+    <div class="tab-panel" id="saff-diff">
+      <div class="key-badge">⭐ 鑑別重點</div>
+      <div class="diff-item"><div class="diff-name">⭐ 思覺失調症</div><div class="diff-body">準則C的目的：區分情感思覺失調症（情緒症狀佔疾病大多數時間）和思覺失調症（情緒症狀只佔少數時間）。<br>若一開始給予情感思覺失調症診斷，但之後幾年情緒發作未復發 → 診斷應改為思覺失調症。</div></div>
+      <div class="diff-item"><div class="diff-name">⭐ 憂鬱或雙相情緒障礙症，有精神病特徵</div><div class="diff-body">準則B的目的：在無情緒發作時有≥2週的顯著妄想和/或幻覺 → 情感思覺失調症。<br>憂/雙相情緒障礙症有精神病特徵：精神病特徵<strong>主要發生於情緒發作時</strong>。</div></div>
+      <div class="diff-item"><div class="diff-name">另一身體病況引起的精神病症</div><div class="diff-body">身體疾病和物質使用都可以合併出現精神病和情緒症狀，需排除。</div></div>
+    </div>
+    <div class="tab-panel" id="saff-comor">
+      <ul class="cl">
+        <li>物質使用障礙症</li>
+        <li>焦慮症</li>
+        <li>身體病況的發生率增加（預期壽命降低）</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 物質/醫藥引發的精神病症 ══ -->
+<div class="disorder-section" id="sec-subst" data-cat="subst">
+  <div class="disorder-header" onclick="toggleDis(this)">
+    <div class="disorder-header-left">
+      <span class="disorder-code">各物質別碼</span>
+      <div>
+        <div class="disorder-name">物質／醫藥引發的精神病症</div>
+        <div class="disorder-name-en">Substance/Medication-Induced Psychotic Disorder</div>
+      </div>
+    </div>
+    <span class="chevron open">▾</span>
+  </div>
+  <div class="disorder-body">
+    <div class="section-tabs">
+      <button class="sec-tab key-tab active" onclick="switchTab(this,'subst-dx')">⭐ 診斷準則</button>
+      <button class="sec-tab" onclick="switchTab(this,'subst-spec')">特別註明</button>
+      <button class="sec-tab" onclick="switchTab(this,'subst-feat')">診斷特質</button>
+      <button class="sec-tab" onclick="switchTab(this,'subst-assoc')">支持診斷</button>
+      <button class="sec-tab" onclick="switchTab(this,'subst-prev')">盛行率</button>
+      <button class="sec-tab" onclick="switchTab(this,'subst-dev')">發展病程</button>
+      <button class="sec-tab key-tab" onclick="switchTab(this,'subst-diff')">⭐ 鑑別診斷</button>
+    </div>
+    <div class="tab-panel active" id="subst-dx">
+      <div class="rule-row"><span class="rule-letter">A</span><div class="rule-content">以下症狀出現一項或二項者：<ul class="cl" style="margin-top:6px"><li>妄想</li><li>幻覺</li></ul></div></div>
+      <div class="rule-row"><span class="rule-letter">B</span><div class="rule-content">有病史、身體檢查或實驗室發現以下<strong>兩者都有</strong>的證據：<ul class="cl" style="margin-top:6px"><li>準則A的症狀在物質中毒/戒斷或醫藥使用時期或使用之後很快出現</li><li>所涉及的物質/醫藥能引發準則A的症狀</li></ul></div></div>
+      <div class="rule-row"><span class="rule-letter">C</span><div class="rule-content">症狀無法以不是「物質/醫藥引發的精神病症」作更好的解釋。獨立精神病症的證據：<ul class="cl" style="margin-top:6px"><li>症狀在物質/醫藥使用之前出現</li><li>症狀持續到戒斷或嚴重中毒停止後相當時間（如約一個月）</li><li>有其他證據顯示不是物質/醫藥引發的精神病症</li></ul></div></div>
+      <div class="rule-row"><span class="rule-letter">D</span><div class="rule-content">此困擾不是只在譫妄過程中發生</div></div>
+      <div class="rule-row"><span class="rule-letter w">E</span><div class="rule-content">此困擾引起臨床上顯著苦惱或社交、職業或其他重要領域功能減損</div></div>
+      <div class="criteria-box warn">
+        <div class="criteria-label">⚠️ 重要</div>
+        只有當主要症狀為準則A的症狀，且嚴重到值得臨床上注意者，才可用此診斷（而非僅在物質中毒或戒斷的診斷症狀時就下此診斷）。
+      </div>
+    </div>
+    <div class="tab-panel" id="subst-spec">
+      <div class="specifier-box"><div class="specifier-title">中毒時發病（with onset during intoxication）</div>符合物質/醫藥中毒準則，且中毒時發生精神病症狀</div>
+      <div class="specifier-box"><div class="specifier-title">戒斷時發病（with onset during withdrawal）</div>符合物質戒斷準則，且物質戒斷時或之後很快發生精神病症狀</div>
+    </div>
+    <div class="tab-panel" id="subst-feat">
+      <div class="criteria-box info">
+        <div class="criteria-label">如何與原發精神病症區分</div>
+        <ul class="cl">
+          <li>不典型的發病年齡或病程（如35歲以上初發妄想症狀，無已知過去精神病病史）</li>
+          <li>物質使用與症狀成因相關</li>
+          <li>症狀在戒斷或嚴重中毒停止後相當時間（約一個月）仍持續者 → 考慮原發精神病症</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tab-panel" id="subst-assoc">
+      <h4 class="sub">可引發精神病症狀的物質類別</h4>
+      <table class="ct">
+        <tr><th>中毒時引發</th><th>戒斷時引發</th></tr>
+        <tr><td>酒精、大麻、幻覺劑（含苯環利定PCP）、吸入劑、鎮靜劑/安眠/抗焦慮藥、興奮劑（含古柯鹼）、其他（或未知）物質</td><td>酒精、鎮靜劑/安眠/抗焦慮藥、其他（或未知）物質</td></tr>
+      </table>
+      <h4 class="sub">可誘發精神病症狀的藥物</h4>
+      <p class="desc">麻醉藥、止痛藥、抗膽鹼藥、抗癲癇藥、抗組織胺、抗高血壓和心血管藥、抗菌藥、抗帕金森病藥、化療藥、皮質類固醇、抗憂鬱藥、disulfiram等。</p>
+    </div>
+    <div class="tab-panel" id="subst-prev">
+      <p class="desc">在一般人中的盛行率是未知的。在不同環境或研究條件下，首次精神病發作的病人中，約有7%到25%被認為是物質/醫藥引發的精神病症。</p>
+    </div>
+    <div class="tab-panel" id="subst-dev">
+      <ul class="cl">
+        <li>古柯鹼：一次吸入高劑量可在數分鐘內發生精神病</li>
+        <li>高劑量酒精或鎮靜劑：需數天或數週才發生精神病</li>
+        <li>酒精引發精神病症（幻覺性）：通常只發生在有長時間重度飲酒的中度至重度酒精使用障礙症病人，幻覺通常是聽覺性質的</li>
+        <li>安非他命/古柯鹼：不久後被害妄想可迅速發生；蟲爬感幻覺（formication）</li>
+        <li>大麻：被害妄想、顯著焦慮、情緒不穩及失自我感，通常一天內緩解</li>
+        <li>安非他命、苯環利定（PCP）及古柯鹼引發的精神病狀態有時可持續數週或更長</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="subst-diff">
+      <div class="diff-item"><div class="diff-name">⭐ 物質中毒或物質戒斷（有知覺障礙）</div><div class="diff-body">若病人<strong>知道</strong>此知覺是物質引起的，既不相信也不會有行為反應（現實感測試完好）→ <strong>不</strong>診斷物質/醫藥引發的精神病症；應診斷為「物質中毒/戒斷，有知覺障礙」。</div></div>
+      <div class="diff-item"><div class="diff-name">⭐ 迷幻藥持續知覺障礙症（Flashback）</div><div class="diff-body">若致幻劑已停止使用後仍出現長時間的「回憶重現式」幻覺 → 診斷「迷幻藥持續知覺障礙症」。</div></div>
+      <div class="diff-item"><div class="diff-name">⭐ 譫妄</div><div class="diff-body">若物質/醫藥引發的精神病症狀完全發生於譫妄期間 → 所述精神病症狀被視為譫妄的相關特徵，不額外給予診斷。</div></div>
+      <div class="diff-item"><div class="diff-name">原發精神病症</div><div class="diff-body">透過判斷物質的使用與症狀成因相關時，可與思覺失調症、情感思覺失調症、妄想症、短暫精神病症等區分。</div></div>
+      <div class="diff-item"><div class="diff-name">另一身體病況引起的精神病症</div><div class="diff-body">若有身體疾病的病人接受藥物治療，精神病症狀可能是身體疾病的生理性後果而非藥物造成；可同時給予兩種診斷。</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 另一身體病況引起的精神病症 ══ -->
+<div class="disorder-section" id="sec-med" data-cat="med">
+  <div class="disorder-header" onclick="toggleDis(this)">
+    <div class="disorder-header-left">
+      <span class="disorder-code">293.81/82 F06.0/2</span>
+      <div>
+        <div class="disorder-name">另一身體病況引起的精神病症</div>
+        <div class="disorder-name-en">Psychotic Disorder Due to Another Medical Condition</div>
+      </div>
+    </div>
+    <span class="chevron open">▾</span>
+  </div>
+  <div class="disorder-body">
+    <div class="section-tabs">
+      <button class="sec-tab key-tab active" onclick="switchTab(this,'med-dx')">⭐ 診斷準則</button>
+      <button class="sec-tab" onclick="switchTab(this,'med-feat')">診斷特質</button>
+      <button class="sec-tab" onclick="switchTab(this,'med-assoc')">支持診斷</button>
+      <button class="sec-tab" onclick="switchTab(this,'med-prev')">盛行率/發展</button>
+      <button class="sec-tab" onclick="switchTab(this,'med-risk')">風險預後</button>
+      <button class="sec-tab" onclick="switchTab(this,'med-func')">功能性後果</button>
+      <button class="sec-tab key-tab" onclick="switchTab(this,'med-diff')">⭐ 鑑別診斷</button>
+      <button class="sec-tab" onclick="switchTab(this,'med-comor')">共病</button>
+    </div>
+    <div class="tab-panel active" id="med-dx">
+      <div class="rule-row"><span class="rule-letter">A</span><div class="rule-content">主要症狀為幻覺或妄想</div></div>
+      <div class="rule-row"><span class="rule-letter">B</span><div class="rule-content">有病史、身體檢查或實驗室發現，該困擾為其他身體病況的<strong>直接病生理後果</strong></div></div>
+      <div class="rule-row"><span class="rule-letter">C</span><div class="rule-content">此困擾無法以另一精神障礙症做更好的解釋</div></div>
+      <div class="rule-row"><span class="rule-letter">D</span><div class="rule-content">此困擾不是只在譫妄過程中發生</div></div>
+      <div class="rule-row"><span class="rule-letter w">E</span><div class="rule-content">此困擾引起臨床上顯著苦惱或功能減損</div></div>
+      <div class="criteria-box info">
+        <div class="criteria-label">編碼依據顯著症狀</div>
+        293.81 (F06.2) 有妄想；293.82 (F06.0) 有幻覺
+      </div>
+    </div>
+    <div class="tab-panel" id="med-feat">
+      <p class="desc">確定病因關係的考量：</p>
+      <ul class="cl">
+        <li>身體病況和精神病困擾的發病、惡化或緩解之間有<strong>時間上的關聯性</strong></li>
+        <li>臨床表現並不符合精神病症的典型特徵（不典型的發病年齡或存在視或嗅幻覺）</li>
+      </ul>
+      <div class="criteria-box info">
+        <div class="criteria-label">常見與精神病有關的身體病況</div>
+        <ul class="cl">
+          <li>神經系統疾病（腫瘤、腦血管疾病、亨丁頓病、多發性硬化症、癲癇、耳聾）</li>
+          <li>內分泌疾病（甲狀腺亢進/低下、副甲狀腺亢進/低下、腎上腺皮質亢進/低下）</li>
+          <li>自體免疫疾病：SLE、NMDA受體自身免疫性腦炎</li>
+          <li>顳葉癲癇（temporal lobe epilepsy）</li>
+          <li>新陳代謝疾病（缺氧、高碳酸血症、低血糖）</li>
+          <li>肝或腎疾病</li>
+        </ul>
+      </div>
+      <div class="criteria-box warn">
+        <div class="criteria-label">嗅幻覺特別注意</div>
+        嗅幻覺（olfactory hallucinations）須考慮有顳葉癲癇的可能。
+      </div>
+    </div>
+    <div class="tab-panel" id="med-assoc">
+      <p class="desc">與身體病況的發作或惡化有時間上的關聯性，提供了最大的診斷確定性。</p>
+      <p class="desc">特別是使用類固醇治療自體免疫疾病等，伴隨身體病況的治療本身可能就會有造成精神病的風險。</p>
+    </div>
+    <div class="tab-panel" id="med-prev">
+      <div class="stat-grid">
+        <div class="stat-card"><div class="stat-val">0.21–0.54%</div><div class="stat-label">終生盛行率估計</div></div>
+        <div class="stat-card"><div class="stat-val">0.74%</div><div class="stat-label">65歲以上盛行率</div></div>
+      </div>
+      <p class="desc">癲癇造成的精神病中，<strong>發作後精神病（postictal psychosis）</strong>最常見，可在2%-7.8%的癲癇病人觀察到。</p>
+      <p class="desc">可以是單一次的暫時狀態，或者是復發或循環性（伴隨身體病況的惡化和緩解）。老年人族群盛行率較高（身體疾病負擔增加）。</p>
+    </div>
+    <div class="tab-panel" id="med-risk">
+      <div class="criteria-box info"><div class="criteria-label">病程修飾因子</div>身體病況的辨識與治療對病程影響最大。若先前即存在中樞神經系統損傷（頭部外傷、腦血管疾病），則病程的預後更差。</div>
+    </div>
+    <div class="tab-panel" id="med-func">
+      <p class="desc">功能障礙通常很嚴重，但會因不同的病況而有很大的不同，且在身體病況成功緩解後，功能障礙可能會改善。</p>
+    </div>
+    <div class="tab-panel" id="med-diff">
+      <div class="diff-item"><div class="diff-name">⭐ 譫妄</div><div class="diff-body">幻覺和妄想很常於譫妄時發生，但若此困擾只發生在譫妄期間，則不另外單獨給予診斷。若妄想發生於認知障礙症 → 診斷「認知障礙症，有行為困擾」。</div></div>
+      <div class="diff-item"><div class="diff-name">⭐ 物質/醫藥引發的精神病症</div><div class="diff-body">若在物質中毒/戒斷或醫藥使用不久後（4週內）出現症狀，考慮物質/藥物引起的精神病症。若臨床醫生確定困擾同時歸因於身體病況和物質/醫藥使用，可同時給予兩種診斷。</div></div>
+      <div class="diff-item"><div class="diff-name">⭐ 精神病症（思覺失調症、妄想症、情感思覺失調症等）</div><div class="diff-body">在精神病症中，沒有任何身體病況可以透過特定和直接致病生理機制與臨床精神病症狀相關。<br><strong>嗅覺和視覺幻覺</strong>通常是另一身體病況引起的精神病症或物質/藥物引起的精神病症的可能信號（相比之下，複雜句子的人聲幻聽較是思覺失調症的特徵）。</div></div>
+    </div>
+    <div class="tab-panel" id="med-comor">
+      <p class="desc">年齡超過80歲的病人與同時合併認知障礙症（失智症）有關。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 僵直症 ══ -->
+<div class="disorder-section" id="sec-cat" data-cat="cat">
+  <div class="disorder-header" onclick="toggleDis(this)">
+    <div class="disorder-header-left">
+      <span class="disorder-code">293.89 F06.1</span>
+      <div>
+        <div class="disorder-name">僵直症（Catatonia）</div>
+        <div class="disorder-name-en">Catatonia Associated with Another Mental Disorder / Due to Another Medical Condition / Unspecified</div>
+      </div>
+    </div>
+    <span class="chevron open">▾</span>
+  </div>
+  <div class="disorder-body">
+    <div class="section-tabs">
+      <button class="sec-tab key-tab active" onclick="switchTab(this,'cat-dx')">⭐ 診斷準則</button>
+      <button class="sec-tab" onclick="switchTab(this,'cat-feat')">診斷特質</button>
+      <button class="sec-tab key-tab" onclick="switchTab(this,'cat-diff')">⭐ 鑑別診斷</button>
+    </div>
+    <div class="tab-panel active" id="cat-dx">
+      <div class="key-badge">⭐ 三種診斷類別</div>
+      <div class="criteria-box info">
+        <div class="criteria-label">a) 另一精神障礙症合併的僵直症（特別註明僵直症）</div>
+        適用於神經發展障礙症、精神病症、雙相情緒障礙症、憂鬱症、或其他精神障礙症
+      </div>
+      <div class="criteria-box info">
+        <div class="criteria-label">b) 另一身體病況引起的僵直症</div>
+        如大腦葉酸缺乏、罕見的自體免疫性及副腫瘤疾病
+      </div>
+      <div class="criteria-box info">
+        <div class="criteria-label">c) 非特定的僵直症</div>
+        精神疾病或其他身體病況的本質不明
+      </div>
+      <div class="info-banner" style="margin-top:12px"><strong>核心準則：</strong>12項精神運動特徵中，臨床上有出現<strong>3項或3項以上</strong></div>
+      <h4 class="sub">12項僵直症診斷特徵</h4>
+      <div class="stat-grid">
+        <div class="stat-card" style="text-align:left"><strong>抑制型</strong><ul class="cl" style="margin-top:4px"><li>木僵（stupor）：無精神運動活動</li><li>僵局（catalepsy）：被動地擺姿勢</li><li>蠟樣屈曲（waxy flexibility）</li><li>緘默（mutism）：無或極少語言反應</li></ul></div>
+        <div class="stat-card" style="text-align:left"><strong>激越型</strong><ul class="cl" style="margin-top:4px"><li>激越（agitation）</li></ul><strong>其他特徵</strong><ul class="cl"><li>怪異姿勢（mannerism）</li><li>鬼臉（grimacing）</li><li>自動服從（automatic obedience）</li><li>對抗（negativism）</li><li>嘲弄性模仿動作（echopraxia）</li><li>嘲弄性模仿言語（echolalia）</li><li>刻板動作（stereotypy）</li></ul></div>
+      </div>
+    </div>
+    <div class="tab-panel" id="cat-feat">
+      <p class="desc">僵直症不作為一個獨立的類別，而是歸類為：a) 另一精神障礙症合併（特別註明）、b) 另一身體病況引起、c) 非特定的僵直症。</p>
+      <div class="criteria-box warn">
+        <div class="criteria-label">⚠️ 重要：僵直症是非特異性的</div>
+        僵直症可發生在若干障礙症，包括：<br>
+        神經發展障礙症、精神病症、雙相情緒障礙症、憂鬱症、以及其他身體病況（如大腦葉酸缺乏、罕見自體免疫性及副腫瘤疾病）
+      </div>
+    </div>
+    <div class="tab-panel" id="cat-diff">
+      <div class="diff-item"><div class="diff-name">⭐ 神經惡性症候群（Neuroleptic Malignant Syndrome, NMS）</div><div class="diff-body">NMS：由抗精神病藥物引起，特徵為高熱、肌肉強直、自律神經不穩定、意識改變。可能與僵直症重疊，需仔細鑑別。</div></div>
+      <div class="diff-item"><div class="diff-name">⭐ 另一身體病況引起的僵直症</div><div class="diff-body">神經系統疾病（腦炎、腦部病變）、代謝異常（缺鈣、肝性腦病）、自體免疫腦炎（NMDA受體）。需進行完整的身體/神經/實驗室評估。</div></div>
+      <div class="diff-item"><div class="diff-name">嚴重憂鬱症</div><div class="diff-body">憂鬱性木僵（depressive stupor）可能類似僵直症，需區分其是否符合完整的12項僵直症特徵。</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 比較總表 ══ -->
+<div class="disorder-section" id="sec-compare" data-cat="def">
+  <div class="disorder-header" onclick="toggleDis(this)">
+    <div class="disorder-header-left">
+      <span class="disorder-code">總覽</span>
+      <div><div class="disorder-name">各障礙症病程時間比較總表</div></div>
+    </div>
+    <span class="chevron open">▾</span>
+  </div>
+  <div class="disorder-body">
+    <div class="tab-panel active" style="display:block">
+      <div class="key-badge">⭐ 國考常考：病程時間鑑別</div>
+      <table class="ct">
+        <tr><th>障礙症</th><th>症狀持續</th><th>功能減退</th><th>情緒發作條件</th><th>特殊條件</th></tr>
+        <tr><td><strong>短暫精神病症</strong></td><td><span class="tag tg">&gt;1天，&lt;1個月</span></td><td>不需要</td><td>非主要</td><td>完全回復到發作前功能</td></tr>
+        <tr><td><strong>類思覺失調症</strong></td><td><span class="tag tw">≥1個月，&lt;6個月</span></td><td>不需要</td><td>佔少數</td><td>暫時診斷（未恢復時）</td></tr>
+        <tr><td><strong>思覺失調症</strong></td><td><span class="tag tr">≥6個月</span></td><td>必須（準則B）</td><td>佔少數</td><td>包含前驅/殘餘期</td></tr>
+        <tr><td><strong>妄想症</strong></td><td><span class="tag tb">≥1個月</span></td><td>不顯著</td><td>短暫</td><td>無APS其他症狀（僅妄想）</td></tr>
+        <tr><td><strong>情感思覺失調症</strong></td><td>長期</td><td>不是準則</td><td>佔大半（大多數時間）</td><td>無情緒時≥2週妄想/幻覺</td></tr>
+        <tr><td><strong>憂/雙相+精神病特徵</strong></td><td>情緒期間</td><td>情緒症狀為主</td><td>精神病發生在情緒發作期間</td><td>無獨立精神病期</td></tr>
+      </table>
+      <div class="criteria-box info" style="margin-top:14px">
+        <div class="criteria-label">關鍵鑑別決策樹</div>
+        精神病症狀 → 排除物質/身體病況 → 評估情緒症狀比例 → 評估病程時間：<br>
+        &lt;1天 → 排除；1天~1個月 → 短暫精神病症；1~6個月 → 類思覺失調症；≥6個月 → 思覺失調症<br>
+        若情緒症狀佔<strong>大多數時間</strong>（且有≥2週無情緒期精神病）→ 情感思覺失調症<br>
+        若精神病<strong>只在情緒發作時</strong>出現 → 憂/雙相情緒障礙症，有精神病特徵<br>
+        若精神病症狀僅有妄想（無其他A準則症狀）→ 妄想症
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end main -->
+
+<div class="main" style="padding-top:0">
+
+<!-- ══════════════════════════════════════════════════════════════
+     ⭐ 比較與鑑別 — 全新章節
+     ══════════════════════════════════════════════════════════════ -->
+
+<!-- ── 五大精神病症狀領域速查 ── -->
+<div class="disorder-section" data-cat="cmp">
+  <div class="disorder-header" onclick="toggleDis(this)">
+    <div class="disorder-header-left">
+      <span class="disorder-code">⭐ 速查</span>
+      <div><div class="disorder-name">五大精神病症狀領域 × 各疾病出現頻率速查</div></div>
+    </div>
+    <span class="chevron open">▾</span>
+  </div>
+  <div class="disorder-body">
+    <div class="tab-panel active" style="display:block">
+      <div class="key-badge">⭐ 國考重點：哪個疾病一定要有哪些症狀</div>
+      <table class="ct">
+        <tr><th>疾病</th><th>妄想</th><th>幻覺</th><th>胡言亂語</th><th>混亂/僵直行為</th><th>負性症狀</th><th>準則A symptom數要求</th></tr>
+        <tr><td><strong>妄想症</strong></td><td><span class="tag tr">必要</span></td><td>若有需與妄想主題相關，非主要</td><td>無</td><td>不可有（明顯奇特行為）</td><td>無</td><td>僅妄想（1項）</td></tr>
+        <tr><td><strong>短暫精神病症</strong></td><td>可有</td><td>可有</td><td>可有</td><td>可有</td><td>不適用（不含於A）</td><td>≥1項，含1/2/3之一</td></tr>
+        <tr><td><strong>類思覺失調症</strong></td><td>可有</td><td>可有</td><td>可有</td><td>可有</td><td>可有</td><td>≥2項，含1/2/3之一</td></tr>
+        <tr><td><strong>思覺失調症</strong></td><td>可有</td><td>可有</td><td>可有</td><td>可有</td><td>常見且顯著</td><td>≥2項，含1/2/3之一</td></tr>
+        <tr><td><strong>情感思覺失調症</strong></td><td>可有</td><td>可有</td><td>可有</td><td>可有</td><td>可有但較不嚴重</td><td>同思覺失調症準則A</td></tr>
+      </table>
+      <div class="criteria-box info" style="margin-top:12px">
+        <div class="criteria-label">記憶口訣</div>
+        妄想症：<strong>只有妄想，沒有別的</strong>（行為正常、無幻覺主導、無負性症狀）<br>
+        思覺失調症類群（短暫/類/思覺失調）：<strong>五大領域任選，但思覺失調症的負性症狀最突出最持久</strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── 病程時間軸深度比較 ── -->
+<div class="disorder-section" data-cat="cmp">
+  <div class="disorder-header" onclick="toggleDis(this)">
+    <div class="disorder-header-left">
+      <span class="disorder-code">⭐ 時間軸</span>
+      <div><div class="disorder-name">病程時間軸深度比較（精神病類群四疾病）</div></div>
+    </div>
+    <span class="chevron open">▾</span>
+  </div>
+  <div class="disorder-body">
+    <div class="sec-tabs">
+      <button class="sec-tab important active" onclick="switchTab(this,'tl-dur')">⭐ 持續時間規則</button>
+      <button class="sec-tab important" onclick="switchTab(this,'tl-func')">⭐ 功能減退要求</button>
+      <button class="sec-tab" onclick="switchTab(this,'tl-trans')">診斷轉換規則</button>
+      <button class="sec-tab" onclick="switchTab(this,'tl-prog')">預後比較</button>
+    </div>
+    <div class="tab-panel active" id="tl-dur">
+      <div class="key-badge">⭐ 核心記憶：1天 / 1個月 / 6個月 三個切點</div>
+      <table class="ct">
+        <tr><th>疾病</th><th>最短持續</th><th>最長持續</th><th>備註</th></tr>
+        <tr><td>短暫精神病症</td><td><span class="tag tg">&gt;1天</span></td><td><span class="tag tg">&lt;1個月</span></td><td>需完全回復到發作前功能</td></tr>
+        <tr><td>類思覺失調症</td><td><span class="tag tw">≥1個月</span></td><td><span class="tag tw">&lt;6個月</span></td><td>未恢復時下「暫時診斷」</td></tr>
+        <tr><td>思覺失調症</td><td><span class="tag tr">≥6個月</span></td><td>無上限</td><td>須包含至少1個月活躍期症狀，可含前驅/殘餘期</td></tr>
+        <tr><td>妄想症</td><td><span class="tag tb">≥1個月</span></td><td>無上限</td><td>僅針對妄想本身的持續時間</td></tr>
+      </table>
+      <div class="criteria-box warn">
+        <div class="criteria-label">⚠️ 易混淆點</div>
+        類思覺失調症與思覺失調症的症狀內容完全相同（準則A），唯一差異是<strong>持續時間</strong>與<strong>是否需要功能減退準則</strong>。
+      </div>
+    </div>
+    <div class="tab-panel" id="tl-func">
+      <table class="ct">
+        <tr><th>疾病</th><th>是否需功能顯著減退</th><th>說明</th></tr>
+        <tr><td>短暫精神病症</td><td><span class="tag tg">不需要</span></td><td>反而要求「完全回復到發作前的功能」</td></tr>
+        <tr><td>類思覺失調症</td><td><span class="tag tg">不需要</span></td><td>這是與思覺失調症的關鍵差異之一</td></tr>
+        <tr><td>思覺失調症</td><td><span class="tag tr">必須（準則B）</span></td><td>工作、人際關係或自我照顧顯著低於未發病前</td></tr>
+        <tr><td>妄想症</td><td><span class="tag tg">不顯著</span></td><td>功能障礙比思覺失調症更受限（除妄想直接影響外）</td></tr>
+        <tr><td>情感思覺失調症</td><td><span class="tag tg">不是診斷準則</span></td><td>不同於思覺失調症，職業功能受損不在準則中</td></tr>
+      </table>
+    </div>
+    <div class="tab-panel" id="tl-trans">
+      <div class="key-badge">⭐ 各疾病可能的診斷演變方向</div>
+      <table class="ct">
+        <tr><th>初始診斷</th><th>追蹤後常見演變</th><th>比例/說明</th></tr>
+        <tr><td>短暫精神病症</td><td>多數人完全恢復；少數可能演變為其他精神病症</td><td>預後通常極好</td></tr>
+        <tr><td>類思覺失調症（暫時診斷）</td><td>約1/3在6個月內恢復（最終診斷=類思覺失調症）；2/3最終診斷為思覺失調症或情感思覺失調症</td><td>關鍵的中繼診斷</td></tr>
+        <tr><td>思覺失調症</td><td>持續性診斷，但若後續出現顯著情緒發作且佔大半病程→需重新評估是否為情感思覺失調症</td><td>—</td></tr>
+        <tr><td>妄想症</td><td>部分個案可能發展成思覺失調症（少數）</td><td>整體功能通常優於思覺失調症</td></tr>
+      </table>
+    </div>
+    <div class="tab-panel" id="tl-prog">
+      <table class="ct">
+        <tr><th>疾病</th><th>預後特徵</th></tr>
+        <tr><td>短暫精神病症</td><td>儘管復發率高，但社會功能和症狀的預後<strong>極好</strong></td></tr>
+        <tr><td>類思覺失調症</td><td>有「良好預後特徵」註明可協助判斷（4項中≥2項：4週內症狀急性發作、混亂或迷惑、良好病前功能、無遲鈍情感）</td></tr>
+        <tr><td>思覺失調症</td><td>約20%病程較好；多數需長期支持；負性症狀與較差預後最相關</td></tr>
+        <tr><td>妄想症</td><td>功能通常比思覺失調症好，心理社會功能受限但較侵入性小</td></tr>
+        <tr><td>情感思覺失調症</td><td>預後介於思覺失調症與情緒障礙症之間（比思覺失調症好，比情緒障礙症差）</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ── 易混淆疾病深度鑑別 ── -->
+<div class="disorder-section" data-cat="cmp">
+  <div class="disorder-header" onclick="toggleDis(this)">
+    <div class="disorder-header-left">
+      <span class="disorder-code">⭐ 易混淆</span>
+      <div><div class="disorder-name">易混淆疾病深度鑑別比較</div></div>
+    </div>
+    <span class="chevron open">▾</span>
+  </div>
+  <div class="disorder-body">
+    <div class="sec-tabs">
+      <button class="sec-tab important active" onclick="switchTab(this,'cf-saff')">⭐ 思覺失調症 vs 情感思覺失調症</button>
+      <button class="sec-tab important" onclick="switchTab(this,'cf-mood')">⭐ 情感思覺失調症 vs 憂/雙相+精神病特徵</button>
+      <button class="sec-tab important" onclick="switchTab(this,'cf-del')">⭐ 妄想症 vs 思覺失調症</button>
+      <button class="sec-tab important" onclick="switchTab(this,'cf-ocd')">⭐ 妄想症 vs OCD/BDD</button>
+      <button class="sec-tab" onclick="switchTab(this,'cf-asd')">思覺失調症 vs ASD</button>
+      <button class="sec-tab" onclick="switchTab(this,'cf-ptsd')">思覺失調症 vs PTSD</button>
+      <button class="sec-tab" onclick="switchTab(this,'cf-subst')">原發精神病症 vs 物質引發</button>
+      <button class="sec-tab" onclick="switchTab(this,'cf-sm')">類睡症 vs 重複動作 vs 抽搐症</button>
+    </div>
+
+    <div class="tab-panel active" id="cf-saff">
+      <div class="key-badge">⭐ 國考最常考：用「準則C」一句話判斷</div>
+      <div class="info-banner"><strong>核心判斷工具：</strong>計算「情緒症狀佔整個病程（活躍期+殘餘期）的時間比例」</div>
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>思覺失調症</th><th>情感思覺失調症</th></tr>
+        <tr><td><strong>情緒症狀比例</strong></td><td><span class="tag tg">佔病程少數時間</span></td><td><span class="tag tr">佔病程大半時間（準則C）</span></td></tr>
+        <tr><td><strong>無情緒期的精神病</strong></td><td>整個病程多為精神病為主</td><td><span class="tag tr">需≥2週無情緒發作時仍有妄想/幻覺（準則B）</span></td></tr>
+        <tr><td><strong>準則B/F</strong></td><td>需符合社會功能減退（B）、排除ASD等（F）</td><td>不需符合思覺失調症準則B和F</td></tr>
+        <tr><td><strong>預後</strong></td><td>較差</td><td>介於思覺失調症與情緒障礙症之間</td></tr>
+      </table>
+      <div class="criteria-box warn">
+        <div class="criteria-label">⚠️ 經典例題型態（如108年/110年類似考題）</div>
+        計算情緒症狀持續時間 ÷ 總病程時間：<br>
+        若 <strong>≥50%</strong> → 情感思覺失調症（需同時滿足準則B：無情緒期有≥2週精神病symptom）<br>
+        若 <strong>&lt;50%</strong> → 思覺失調症（情緒發作相對於整體病程是短暫的）
+      </div>
+    </div>
+
+    <div class="tab-panel" id="cf-mood">
+      <div class="key-badge">⭐ 國考重點：精神病與情緒的時間關係決定診斷</div>
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>情感思覺失調症</th><th>憂/雙相情緒障礙症，有精神病特徵</th></tr>
+        <tr><td><strong>精神病出現時機</strong></td><td>可在<strong>無情緒發作時</strong>也出現（≥2週）</td><td><span class="tag tg">只發生在情緒發作期間</span></td></tr>
+        <tr><td><strong>情緒症狀佔比</strong></td><td>佔病程大半時間</td><td>精神病與情緒幾乎同進同出</td></tr>
+        <tr><td><strong>診斷核心原則</strong></td><td>準則B：無情緒期仍有妄想/幻覺≥2週</td><td>妄想/幻覺<strong>只發生在</strong>鬱症或躁症發作時</td></tr>
+      </table>
+      <div class="criteria-box info">
+        <div class="criteria-label">一句話鑑別公式</div>
+        「精神病症狀是否能脫離情緒發作獨立存在≥2週？」<br>
+        → 能 → 情感思覺失調症 ／ 不能（精神病只跟著情緒出現）→ 憂/雙相情緒障礙症有精神病特徵
+      </div>
+    </div>
+
+    <div class="tab-panel" id="cf-del">
+      <div class="key-badge">⭐ 妄想症的核心特徵：只有妄想，無其他思覺失調症特徵</div>
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>妄想症</th><th>思覺失調症</th></tr>
+        <tr><td><strong>準則A symptom</strong></td><td>僅妄想（B準則：若有幻覺也與妄想主題相關，非主要）</td><td>≥2項（妄想、幻覺、胡言亂語、混亂/僵直行為、負性症狀）</td></tr>
+        <tr><td><strong>行為表現</strong></td><td><span class="tag tg">不明顯奇特或怪異</span>（準則C）</td><td>可有明顯混亂或僵直行為</td></tr>
+        <tr><td><strong>功能減退</strong></td><td>較受限但侵入性小</td><td>顯著減退（準則B）</td></tr>
+        <tr><td><strong>持續時間</strong></td><td>≥1個月</td><td>≥6個月</td></tr>
+      </table>
+    </div>
+
+    <div class="tab-panel" id="cf-ocd">
+      <div class="key-badge">⭐ 病識感程度決定診斷：完全相信→妄想症；部分病識感→OCD/BDD</div>
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>妄想症</th><th>強迫症/身體臆形症（無病識感/具妄想信念）</th></tr>
+        <tr><td><strong>核心症狀本質</strong></td><td>原發性妄想（無強迫意念驅動）</td><td>強迫意念/外觀想法達妄想程度</td></tr>
+        <tr><td><strong>診斷給予方式</strong></td><td>單獨診斷妄想症</td><td><strong>仍診斷OCD或BDD</strong>，加註「無病識感/具妄想信念」specifier，<strong>不另診斷妄想症</strong></td></tr>
+      </table>
+      <div class="criteria-box warn">
+        <div class="criteria-label">⚠️ 重要原則</div>
+        若強迫症或BDD個案完全相信其信念是真實的（達妄想程度）→ <strong>仍診斷原疾病</strong>並加specifier，而非改診斷為妄想症。
+      </div>
+    </div>
+
+    <div class="tab-panel" id="cf-asd">
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>思覺失調症</th><th>ASD/溝通障礙症</th></tr>
+        <tr><td><strong>核心缺損</strong></td><td>妄想、幻覺等精神病症狀為主</td><td>社交互動缺陷、重複受限行為、認知和溝通缺陷</td></tr>
+        <tr><td><strong>共病診斷條件</strong></td><td>—</td><td>需另外出現<strong>明顯妄想或幻覺≥1個月</strong>才能加診斷思覺失調症（準則F）</td></tr>
+        <tr><td><strong>發病時序</strong></td><td>通常青春期晚期至30歲中期</td><td>ASD症狀通常在發展早期已存在</td></tr>
+      </table>
+    </div>
+
+    <div class="tab-panel" id="cf-ptsd">
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>思覺失調症</th><th>創傷後壓力症（PTSD）</th></tr>
+        <tr><td><strong>類幻覺症狀</strong></td><td>幻覺通常與創傷事件無關</td><td>回憶重現（flashback）可能有幻覺特質；過度警覺可能達偏執程度</td></tr>
+        <tr><td><strong>診斷必要條件</strong></td><td>不需要創傷史</td><td><strong>創傷事件及其反應/緩解相關特徵是必要診斷條件</strong></td></tr>
+      </table>
+    </div>
+
+    <div class="tab-panel" id="cf-subst">
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>原發精神病症</th><th>物質/醫藥引發的精神病症</th></tr>
+        <tr><td><strong>時序關係</strong></td><td>症狀在物質使用<strong>之前</strong>出現，或停用後仍持續</td><td>症狀在物質中毒/戒斷或使用後<strong>很快</strong>出現</td></tr>
+        <tr><td><strong>停用後表現</strong></td><td>症狀持續（不因停藥消失）</td><td>戒斷或嚴重中毒停止後<strong>約1個月內緩解</strong></td></tr>
+        <tr><td><strong>典型發病年齡</strong></td><td>符合該疾病典型發病年齡</td><td>不典型發病年齡（如35歲後首次發作）提示物質引發</td></tr>
+        <tr><td><strong>知覺障礙的病識感</strong></td><td>無病識感（相信幻覺/妄想為真）</td><td>若個案知道是物質引起、現實感測試完好 → 應診斷「物質中毒/戒斷，有知覺障礙」，非此疾病</td></tr>
+      </table>
+    </div>
+
+    <div class="tab-panel" id="cf-sm">
+      <div class="key-badge">⭐ 動作症狀三者鑑別（常考於僵直症章節，但與本章相關）</div>
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>僵直症</th><th>重複動作障礙症</th><th>抽搐症</th></tr>
+        <tr><td>動作性質</td><td>木僵/蠟樣屈曲/激越/緘默等12項特徵</td><td>節律性、複雜、可被「保持」較久</td><td>突然、快速、非規律節奏</td></tr>
+        <tr><td>分心時表現</td><td>—</td><td>分心時常停止</td><td>分心時不會停止</td></tr>
+        <tr><td>伴隨疾病</td><td>非特異性，可見於多種精神/身體疾病</td><td>常與ASD、智能不足共病</td><td>常與ADHD、OCD共病（妥瑞氏症）</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ── 共病模式總覽 ── -->
+<div class="disorder-section" data-cat="cmp">
+  <div class="disorder-header" onclick="toggleDis(this)">
+    <div class="disorder-header-left">
+      <span class="disorder-code">⭐ 共病</span>
+      <div><div class="disorder-name">各疾病共病模式比較</div></div>
+    </div>
+    <span class="chevron open">▾</span>
+  </div>
+  <div class="disorder-body">
+    <div class="tab-panel active" style="display:block">
+      <table class="ct">
+        <tr><th>疾病</th><th>最常見共病</th><th>特殊注意</th></tr>
+        <tr><td>妄想症</td><td>—</td><td>較少強調共病；以社會/法律問題為主要功能後果</td></tr>
+        <tr><td>短暫精神病症</td><td>人格障礙症（思覺失調型、邊緣型）</td><td>人格病理可誘發短暫精神病發作</td></tr>
+        <tr><td>類思覺失調症</td><td>—</td><td>親屬中有類思覺失調症者，本身思覺失調症風險增加</td></tr>
+        <tr><td>思覺失調症</td><td><strong>物質使用障礙症（煙草最常見，超過半數）</strong>、焦慮症、OCD、恐慌症</td><td>預期壽命縮短（代謝症候群、心血管/肺部疾病）；健康維護行為差</td></tr>
+        <tr><td>情感思覺失調症</td><td>物質使用障礙症、焦慮症</td><td>身體病況發生率增加，預期壽命降低</td></tr>
+        <tr><td>物質/醫藥引發的精神病症</td><td>依賴所涉物質的使用障礙症</td><td>—</td></tr>
+        <tr><td>另一身體病況引起的精神病症</td><td>與致病身體病況相關的共病（如80歲以上常合併失智症）</td><td>—</td></tr>
+      </table>
+      <div class="criteria-box info" style="margin-top:10px">
+        <div class="criteria-label">自殺風險比較</div>
+        思覺失調症和情感思覺失調症終生自殺風險約<strong>5%</strong>（約20%曾有自殺企圖）；命令式幻覺、憂鬱/絕望感、失業、出院後期間為高風險因子。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── 診斷決策流程圖 ── -->
+<div class="disorder-section" data-cat="cmp">
+  <div class="disorder-header" onclick="toggleDis(this)">
+    <div class="disorder-header-left">
+      <span class="disorder-code">⭐ 決策流程</span>
+      <div><div class="disorder-name">精神病症診斷決策流程</div></div>
+    </div>
+    <span class="chevron open">▾</span>
+  </div>
+  <div class="disorder-body">
+    <div class="tab-panel active" style="display:block">
+      <div class="key-badge">⭐ 國考臨床推理流程</div>
+      <div class="criteria-box info">
+        <div class="criteria-label">Step 1 — 排除物質/身體病況</div>
+        是否因物質中毒/戒斷或醫藥使用而引發症狀？是否有身體病況（腦腫瘤、自體免疫腦炎、顳葉癲癇等）的直接病生理後果？<br>
+        → 是：診斷「物質/醫藥引發的精神病症」或「另一身體病況引起的精神病症」<br>
+        → 否：進入Step 2
+      </div>
+      <div class="criteria-box info">
+        <div class="criteria-label">Step 2 — 是否只有妄想（無其他A準則症狀）？</div>
+        若只有妄想，無顯著幻覺/胡言亂語/混亂行為/負性症狀 → <strong>妄想症</strong>（需≥1個月，行為不明顯怪異）<br>
+        → 否：進入Step 3
+      </div>
+      <div class="criteria-box info">
+        <div class="criteria-label">Step 3 — 評估情緒症狀與精神病症狀的時間關係</div>
+        <ul class="content-list">
+          <li>精神病症狀<strong>只在</strong>情緒發作（鬱症/躁症）期間出現 → <strong>憂/雙相情緒障礙症，有精神病特徵</strong></li>
+          <li>情緒症狀佔病程<strong>大半時間</strong>，且<strong>無情緒期仍有≥2週精神病symptom</strong> → <strong>情感思覺失調症</strong></li>
+          <li>情緒症狀佔病程<strong>少數時間</strong> → 進入Step 4</li>
+        </ul>
+      </div>
+      <div class="criteria-box info">
+        <div class="criteria-label">Step 4 — 評估病程持續時間</div>
+        <ul class="content-list">
+          <li>&gt;1天，&lt;1個月，且完全回復發作前功能 → <strong>短暫精神病症</strong></li>
+          <li>≥1個月，&lt;6個月，不需功能減退 → <strong>類思覺失調症</strong>（未恢復則為暫時診斷）</li>
+          <li>≥6個月，且有功能顯著減退（準則B） → <strong>思覺失調症</strong></li>
+        </ul>
+      </div>
+      <div class="criteria-box warn">
+        <div class="criteria-label">⚠️ 特殊情況：僵直症狀</div>
+        若有12項僵直特徵中≥3項，需另外標註僵直症（可合併於思覺失調症、雙相情緒障礙症、憂鬱症或因身體病況引起）。需先排除神經惡性症候群（NMS）。
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end main -->
+
+<script>
+function toggleDis(hdr) {
+  const body = hdr.nextElementSibling;
+  const chev = hdr.querySelector('.chevron');
+  const hidden = body.classList.contains('hidden');
+  body.classList.toggle('hidden', !hidden);
+  chev.classList.toggle('open', hidden);
+}
+function switchTab(btn, panelId) {
+  const sec = btn.closest('.disorder-section');
+  sec.querySelectorAll('.sec-tab').forEach(t => t.classList.remove('active'));
+  sec.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  const p = sec.querySelector('#' + panelId);
+  if (p) p.classList.add('active');
+}
+function filterCat(cat, btn) {
+  document.querySelectorAll('.nav-pill').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.disorder-section').forEach(s => {
+    s.style.display = (cat === 'all' || s.dataset.cat === cat) ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>
