@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSM-5 焦慮症（下）系統整理</title>
+<style>
+:root{--bg:#0d1117;--s1:#161b22;--s2:#21262d;--b:#30363d;--a:#58a6ff;--a2:#bc8cff;--a3:#3fb950;--w:#d29922;--r:#f85149;--t:#e6edf3;--td:#8b949e;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI','PingFang TC','Microsoft JhengHei',sans-serif;background:var(--bg);color:var(--t);font-size:14px;line-height:1.65;}
+.hdr{background:linear-gradient(135deg,#161b22,#0d1117);border-bottom:1px solid var(--b);padding:16px 22px 12px;position:sticky;top:0;z-index:100;}
+.hdr h1{font-size:19px;font-weight:700;}.hdr p{font-size:12px;color:var(--td);margin-top:2px;}
+.nav{display:flex;flex-wrap:wrap;gap:5px;padding:8px 16px;background:var(--bg);border-bottom:1px solid var(--b);position:sticky;top:62px;z-index:99;}
+.pill{background:var(--s1);border:1px solid var(--b);border-radius:20px;padding:4px 12px;font-size:12px;cursor:pointer;color:var(--td);white-space:nowrap;transition:all .15s;font-weight:500;}
+.pill:hover{border-color:var(--a);color:var(--a);}.pill.on{background:var(--a);border-color:var(--a);color:#000;font-weight:700;}
+.main{max-width:1100px;margin:0 auto;padding:14px 16px 60px;}
+.card{border:1px solid var(--b);border-radius:12px;margin-bottom:16px;overflow:hidden;background:var(--s1);}
+.chdr{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;cursor:pointer;background:linear-gradient(90deg,var(--s2),var(--s1));border-bottom:1px solid var(--b);user-select:none;gap:10px;}
+.chdr:hover{background:var(--s2);}
+.chl{display:flex;align-items:center;gap:10px;}
+.code{background:rgba(88,166,255,.1);border:1px solid var(--a);color:var(--a);border-radius:5px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace;white-space:nowrap;}
+.cname{font-size:14px;font-weight:700;}.cen{font-size:11px;color:var(--td);margin-top:1px;}
+.chev{font-size:16px;color:var(--td);transition:transform .25s;}.chev.o{transform:rotate(180deg);}
+.cbody{display:block;}.cbody.h{display:none;}
+.tabs{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--b);background:var(--bg);overflow-x:auto;}
+.tab{padding:7px 12px;font-size:12px;cursor:pointer;color:var(--td);border-bottom:2px solid transparent;white-space:nowrap;transition:all .15s;background:none;border-top:none;border-left:none;border-right:none;}
+.tab:hover{color:var(--t);background:var(--s2);}.tab.on{color:var(--a);border-bottom-color:var(--a);}
+.tab.k{color:var(--w);}.tab.k.on{border-bottom-color:var(--w);color:var(--w);}
+.panel{display:none;padding:14px 16px;}.panel.on{display:block;}
+.kbdg{display:inline-flex;align-items:center;gap:4px;background:rgba(210,153,34,.1);border:1px solid var(--w);color:var(--w);border-radius:4px;padding:2px 8px;font-size:11px;font-weight:700;margin-bottom:9px;}
+.ib{background:rgba(88,166,255,.07);border:1px solid rgba(88,166,255,.22);border-radius:8px;padding:9px 12px;margin-bottom:9px;font-size:13px;color:var(--td);}
+.ib strong{color:var(--a);}
+.box{background:var(--bg);border:1px solid var(--b);border-radius:8px;padding:10px 13px;margin-bottom:9px;}
+.bl{font-size:11px;font-weight:700;color:var(--a);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px;}
+.box.w{border-left:3px solid var(--w);}.box.g{border-left:3px solid var(--a3);}
+.box.a{border-left:3px solid var(--a);}.box.p{border-left:3px solid var(--a2);}.box.r{border-left:3px solid var(--r);}
+.rr{display:flex;align-items:flex-start;margin-bottom:8px;gap:8px;}
+.rl{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;border-radius:50%;background:var(--a);color:#000;font-size:11px;font-weight:700;flex-shrink:0;margin-top:2px;}
+.rl.w{background:var(--w);color:#1a1a1a;}.rl.r{background:var(--r);}
+.rc{flex:1;font-size:13px;}
+ul.cl{padding-left:16px;}.cl li{margin-bottom:4px;font-size:13px;}.cl li::marker{color:var(--a);}
+p.d{color:var(--td);font-size:13px;line-height:1.7;margin-bottom:7px;}
+h4.sub{font-size:13px;font-weight:700;color:var(--a);margin:10px 0 5px;}
+.diff{background:var(--bg);border:1px solid var(--b);border-radius:7px;padding:9px 12px;margin-bottom:7px;}
+.dn{font-weight:700;color:var(--a2);font-size:13px;margin-bottom:3px;}.db{color:var(--td);font-size:13px;}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:7px;margin-bottom:9px;}
+.sc{background:var(--bg);border:1px solid var(--b);border-radius:8px;padding:10px;text-align:center;}
+.sv{font-size:20px;font-weight:700;color:var(--a3);}.sl{font-size:11px;color:var(--td);margin-top:2px;}
+.tag{display:inline-block;padding:2px 7px;border-radius:10px;font-size:11px;font-weight:600;margin:2px;}
+.ta{background:rgba(88,166,255,.12);color:var(--a);}
+.tg{background:rgba(63,185,80,.12);color:var(--a3);}
+.tw{background:rgba(210,153,34,.12);color:var(--w);}
+.tr{background:rgba(248,81,73,.12);color:var(--r);}
+.tp{background:rgba(188,140,255,.12);color:var(--a2);}
+table.ct{width:100%;border-collapse:collapse;font-size:13px;}
+table.ct th{background:var(--s2);color:var(--td);font-size:11px;text-transform:uppercase;padding:6px 10px;text-align:left;border-bottom:2px solid var(--b);}
+table.ct td{padding:7px 10px;border-bottom:1px solid var(--b);vertical-align:top;}
+table.ct tr:last-child td{border-bottom:none;}.ct tr:hover td{background:var(--s2);}
+.spbox{background:rgba(88,166,255,.05);border:1px solid rgba(88,166,255,.2);border-radius:7px;padding:10px 12px;margin-bottom:7px;}
+.sptitle{font-weight:700;color:var(--a);font-size:13px;margin-bottom:3px;}
+@media(max-width:600px){.hdr{padding:11px 13px 9px;}.nav{padding:7px 10px;}.main{padding:12px 10px 40px;}.panel{padding:12px;}}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <h1>😨 DSM-5 焦慮症（下）系統整理</h1>
+  <p>臨床心理師國考備考 | 特定場所畏懼症 · 廣泛性焦慮症 · 七大焦慮症比較與鑑別 完整版</p>
+</div>
+
+<div class="nav">
+  <span class="pill on" onclick="fc('all',this)">全部</span>
+  <span class="pill" onclick="fc('ag',this)">特定場所畏懼症</span>
+  <span class="pill" onclick="fc('gad',this)">廣泛性焦慮症</span>
+  <span class="pill" onclick="fc('cmp',this)">⭐ 七大疾病比較</span>
+  <span class="pill" onclick="fc('confuse',this)">⭐ 易混淆鑑別</span>
+</div>
+
+<div class="main">
+
+<!-- ── 特定場所畏懼症 ── -->
+<div class="card" data-cat="ag">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">300.22 F40.00</span><div><div class="cname">特定場所畏懼症</div><div class="cen">Agoraphobia</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="tabs">
+      <button class="tab k on" onclick="st(this,'ag-dx')">⭐ 診斷準則</button>
+      <button class="tab" onclick="st(this,'ag-feat')">診斷特質</button>
+      <button class="tab" onclick="st(this,'ag-assoc')">支持診斷</button>
+      <button class="tab" onclick="st(this,'ag-prev')">盛行率</button>
+      <button class="tab" onclick="st(this,'ag-dev')">發展病程</button>
+      <button class="tab" onclick="st(this,'ag-risk')">風險預後</button>
+      <button class="tab" onclick="st(this,'ag-cult')">文化議題</button>
+      <button class="tab" onclick="st(this,'ag-gender')">性別議題</button>
+      <button class="tab" onclick="st(this,'ag-func')">功能性後果</button>
+      <button class="tab k" onclick="st(this,'ag-diff')">⭐ 鑑別診斷</button>
+      <button class="tab" onclick="st(this,'ag-comor')">共病</button>
+    </div>
+    <div class="panel on" id="ag-dx">
+      <div class="kbdg">⭐ 核心：5種場合中≥2種 + 害怕難以逃脫/無法獲得協助 + ≥6個月</div>
+      <div class="rr"><span class="rl">A</span><div class="rc">對於以下<strong>五種場合中的兩種（或更多）</strong>，具有顯著的恐懼或焦慮：
+        <ul class="cl" style="margin-top:5px">
+          <li>搭乘公共交通工具（汽車、巴士、火車、船隻、飛機）</li>
+          <li>在開放空間（停車場、市場、橋樑）</li>
+          <li>在封閉的場所（商店、劇院、電影院）</li>
+          <li>排隊或在人群中</li>
+          <li>獨自在家以外的地方</li>
+        </ul>
+      </div></div>
+      <div class="rr"><span class="rl">B</span><div class="rc">個案會恐懼或迴避這些場所，是因為會聯想到萬一產生<strong>類似恐慌症狀</strong>時或其他<strong>令人失常或尷尬的症狀</strong>時，<strong>難以逃脫或無法獲得協助</strong>（如：年長者害怕跌倒；怕失禁）</div></div>
+      <div class="rr"><span class="rl">C</span><div class="rc">特定場所畏懼症的場合幾乎總是會引起恐懼或焦慮</div></div>
+      <div class="rr"><span class="rl">D</span><div class="rc">積極迴避特定場所畏懼症的場合、需有同伴陪同，或忍受著強烈的恐懼或焦慮</div></div>
+      <div class="rr"><span class="rl">E</span><div class="rc">此恐懼或焦慮與特定場所畏懼症的場合所造成的實際威脅及由社會文化背景層面來看是<strong>不成比例</strong>的</div></div>
+      <div class="rr"><span class="rl">F</span><div class="rc">此恐懼、焦慮或逃避是持續的，通常持續<strong>六個月</strong>或更久</div></div>
+      <div class="rr"><span class="rl">G</span><div class="rc">此恐懼、焦慮或逃避引起臨床上顯著苦惱或社交、職業或其他重要領域功能減損</div></div>
+      <div class="rr"><span class="rl w">H</span><div class="rc">假如存在另一身體病況（發炎性腸道疾病、巴金森氏症），此恐懼、焦慮或逃避很明顯地是過度的</div></div>
+      <div class="rr"><span class="rl w">I</span><div class="rc">此恐懼、焦慮或逃避無法以另一精神疾病的症狀做更好的解釋——症狀並不局限於<strong>特定畏懼症，場所型</strong>；不涉及社交場合（如社交焦慮症）；非僅與強迫思考（強迫症）、感受到身體外觀的缺陷或瑕疵（身體臆形症）、回憶起創傷性事件（創傷後壓力症）、或害怕分離（分離焦慮症）相關</div></div>
+      <div class="box w"><div class="bl">⚠️ 重要：與恐慌症的關係</div>特定場所畏懼症的診斷<strong>與有沒有恐慌症無關</strong>。如果個案出現的症狀同時符合恐慌症和特定場所畏懼症的診斷準則，<strong>應下兩個診斷</strong>。</div>
+    </div>
+    <div class="panel" id="ag-feat">
+      <p class="d">必要特徵是<strong>真實或想像</strong>接觸多種情境而引起明顯或強烈的害怕或焦慮（準則A）。診斷需要符合的症狀發生在五種情境中<strong>至少兩項</strong>。各情境的例子並非詳盡的，其他情境可能也會害怕。</p>
+      <p class="d">當有這些情境的線索而經驗到害怕與焦慮，此人通常經驗到<strong>某些壞事可能發生</strong>（準則B）。當類恐慌症狀或其他令人失常或尷尬的症狀發生，此人常相信逃離此情境可能是困難的（如：「無法出去」）或無法獲得幫助（如：「這裡沒有人幫我」）。<strong>類恐慌的症狀</strong>指的是恐慌發作準則中13個症狀包含的，如頭暈、快要暈倒與害怕即將死亡。<strong>「其他令人失常或尷尬的症狀」</strong>包含嘔吐與發炎性腸胃症狀，以及老年人害怕摔倒、孩童害怕失去定向感與迷路的感覺。</p>
+      <p class="d">經驗到害怕的程度可能伴隨與害怕的情境親近的程度變化，且可能發生在預期或實際存在特別畏懼的情境。此害怕或焦慮可能以充分症狀或<strong>有限症狀的恐慌發作</strong>的形式表現（如一次預期的恐慌發作）。當此人接觸到害怕的情境，害怕或焦慮<strong>幾乎每一次</strong>都會被誘發（準則C）。因此，當一個人只有<strong>偶爾</strong>在一個特定畏懼的情境下變得緊張的話（如五次中只有一次在排隊時變得緊張），<strong>不會診斷為特定場所畏懼症</strong>。</p>
+      <div class="box w"><div class="bl">⚠️ 主動迴避的判斷</div>主動避免的意思是此人正以某些方式行動刻意預防或減少與畏懼的情境接觸。避免可能是在<strong>行為上</strong>（改變每天的常規、選擇就近的工作以避免使用大眾交通工具、叫食物外送以避免進到店裡與超市）及<strong>認知上</strong>（使用分心以撐過畏懼的情境）。此避免可能變得嚴重，使此人完全被困在家中。當有人陪伴（同伴、朋友或醫療專家），此人常能更加忍受一個害怕的情境。</div>
+      <p class="d">區分臨床上重大特定場所畏懼症的害怕與<strong>合理的</strong>（如大風暴時離開家）或<strong>必定有危險</strong>的情境的害怕（在高犯罪地區走進停車場或使用大眾交通工具）是很重要的，理由有三：<strong>① 害怕必須與真實危險不成比例</strong>（準則E，需考量社會文化背景，如正統穆斯林女性避免離家是文化上適當的，不算特定場所畏懼症）；<strong>② 老年人容易過度歸因</strong>他們的害怕為年齡相關的限制，較不會判斷其超過實際危險的比例；<strong>③ 特定場所畏懼症的人容易過度推測</strong>與類恐慌或其他身體症狀有關的症狀。</p>
+    </div>
+    <div class="panel" id="ag-assoc">
+      <p class="d">在最嚴重的形式，特定場所畏懼症可能造成此人變得<strong>完全足不出戶、無法離開他們的家</strong>，且依賴他人以服務或協助提供基本需求。<strong>失志與憂鬱症狀，以及酒精、鎮定藥物濫用以做為自我治療的策略很常見</strong>。</p>
+    </div>
+    <div class="panel" id="ag-prev">
+      <div class="sg">
+        <div class="sc"><div class="sv">1.7%</div><div class="sl">青少年與成年人每年診斷率</div></div>
+        <div class="sc"><div class="sv">2倍</div><div class="sl">女性比男性經驗到此症的機會</div></div>
+        <div class="sc"><div class="sv">0.4%</div><div class="sl">65歲以上老年人12個月盛行率</div></div>
+      </div>
+      <p class="d">特定場所畏懼症可能發生在兒童，但發生率在<strong>青少年晚期與成人早期達到頂點</strong>。盛行率在跨文化／種族族群<strong>沒有太大不同</strong>。</p>
+    </div>
+    <div class="panel" id="ag-dev">
+      <p class="d">特定場所畏懼症的病人報告在發作之前有恐慌發作或恐慌症的人，<strong>從社區取樣有30%到診所取樣超過50%</strong>。大部分有恐慌症的人在恐慌症出現之前表現出焦慮與特定場所畏懼症的跡象。</p>
+      <div class="box a"><div class="bl">發病年齡分布</div>
+        <ul class="cl">
+          <li><strong>三分之二</strong>特定場所畏懼症的病人初次發作是在<strong>35歲之前</strong></li>
+          <li>在<strong>青春期晚期與成年早期</strong>有較高的發生危險，第二高的發生危險為<strong>40歲之後</strong></li>
+          <li>兒童期發作是罕見的</li>
+          <li>特定場所畏懼症發作的整體平均年齡為<strong>17歲</strong>，雖然沒有恐慌發作或恐慌症的人發作是在<strong>25至29歲</strong></li>
+        </ul>
+      </div>
+      <div class="box w"><div class="bl">⚠️ 病程特點：除非治療，完全緩解罕見</div>
+        特定場所畏懼症一般是<strong>持續且慢性</strong>。除非被治療，否則完全緩解是<strong>罕見的（10%）</strong>。隨著更嚴重的特定場所畏懼症，<strong>完全緩解的機率降低，而復發與慢性化的機率增加</strong>。許多其他疾病，尤其是其他焦慮症、憂鬱症、物質使用障礙症與人格障礙症可能複雜化此病程。<strong>特定場所畏懼症的長期病程與結果，與大幅增加次發重鬱症、持續性憂鬱症（輕鬱症）與物質使用障礙症有關係</strong>。
+      </div>
+    </div>
+    <div class="panel" id="ag-risk">
+      <p class="d">特定場所畏懼症患者容易發展共病症及越嚴重的損害。<strong>慢性身體疾病</strong>的到來是老年人過度擔憂的可能議題，在脆弱的老人上，<strong>擔憂安全</strong>，特別是關於跌倒，可能會限制活動。在那些早期認知損害的個體上，那些呈現為過度擔憂的狀況（如擔心東西在何處），可能最好被考慮為導因於<strong>認知損害</strong>，而非特定場所畏懼症。</p>
+    </div>
+    <div class="panel" id="ag-cult">
+      <p class="d">盛行率在跨文化／種族族群<strong>沒有太大不同</strong>。逃避的成因在跨文化與社會文化背景可能很難判斷——對在世界某些區域的正統穆斯林女人來說，<strong>避免離家是文化社會上適當的</strong>，這樣的逃避不會被認為是特定場所畏懼症。</p>
+    </div>
+    <div class="panel" id="ag-gender">
+      <p class="d">女性比男性<strong>多出兩倍</strong>的機會經驗到特定場所畏懼症。</p>
+    </div>
+    <div class="panel" id="ag-func">
+      <p class="d">最嚴重形式可能造成<strong>完全足不出戶</strong>，依賴他人提供基本需求。常見<strong>失志與憂鬱症狀</strong>，以及用酒精、鎮定藥物自我治療。長期病程與結果大幅增加<strong>次發重鬱症、持續性憂鬱症（輕鬱症）與物質使用障礙症</strong>的風險。</p>
+    </div>
+    <div class="panel" id="ag-diff">
+      <div class="kbdg">⭐ 國考最重要鑑別：特定場所畏懼症 vs 特定畏懼症（場所型）</div>
+      <div class="diff"><div class="dn">⭐ 特定畏懼症（場所型）</div><div class="db">場所性質的特定畏懼症在面對恐懼情境（飛行、封閉環境、電梯）的臨床表現上和特定場所畏懼症相似。<strong>關鍵鑑別點</strong>：①若個案<strong>只對其中一個</strong>情境感到害怕，診斷為「特定畏懼症，場所型」；若個案對<strong>2個或2個以上</strong>特定場所畏懼症情境感到害怕，更可能是特定場所畏懼症。②特定場所畏懼症準則B（這些場所會被恐懼或迴避，是因為會聯想到萬一產生類恐慌症狀時難以逃脫或無法獲得協助）在鑑別時很有用——若情境是因為<strong>其他的原因</strong>被恐懼（如害怕墜機、害怕被特定對象傷害），診斷為特定畏懼症較恰當。</div></div>
+      <div class="diff"><div class="dn">⭐ 社交焦慮症</div><div class="db">特定場所畏懼症的個案會害怕或迴避社交場景（如看電影），是因為擔心發生類恐慌症狀時<strong>難以逃脫或無法獲得協助</strong>，並非害怕被別人檢視。社交焦慮症個案獨處時更可以保持冷靜，但特定場所畏懼症個案通常沒辦法。</div></div>
+      <div class="diff"><div class="dn">⭐ 分離焦慮症</div><div class="db">不像特定場所畏懼症的個案，分離焦慮症的個案並不會聯想到萬一發生類似恐慌症狀或其他令人失常的症狀時，難以逃脫或無法獲得協助的情境；分離焦慮症考量的是與依附對象分離的可能性。</div></div>
+      <div class="diff"><div class="dn">強迫症</div><div class="db">若情境是因強迫思考而被恐懼（如害怕被細菌污染而避免人群），應考慮強迫症診斷而非特定場所畏懼症。</div></div>
+      <div class="diff"><div class="dn">身體臆形症</div><div class="db">若迴避公共場合是出自於感受到身體外觀的缺陷或瑕疵，應考慮身體臆形症診斷。</div></div>
+      <div class="diff"><div class="dn">創傷後壓力症</div><div class="db">若迴避情境是因為會回憶起創傷性事件，應考慮PTSD診斷。</div></div>
+    </div>
+    <div class="panel" id="ag-comor">
+      <p class="d">特定場所畏懼症常與<strong>其他焦慮症、憂鬱症、物質使用障礙症、人格障礙症</strong>共病，這些疾病可能使病程複雜化。長期而言與<strong>次發重鬱症、持續性憂鬱症（輕鬱症）、物質使用障礙症</strong>的發生有密切關係。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── 廣泛性焦慮症 ── -->
+<div class="card" data-cat="gad">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">300.02 F41.1</span><div><div class="cname">廣泛性焦慮症</div><div class="cen">Generalized Anxiety Disorder (GAD)</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="tabs">
+      <button class="tab k on" onclick="st(this,'gad-dx')">⭐ 診斷準則</button>
+      <button class="tab" onclick="st(this,'gad-feat')">診斷特質</button>
+      <button class="tab" onclick="st(this,'gad-assoc')">支持診斷</button>
+      <button class="tab" onclick="st(this,'gad-prev')">盛行率</button>
+      <button class="tab" onclick="st(this,'gad-dev')">發展病程</button>
+      <button class="tab" onclick="st(this,'gad-risk')">風險預後</button>
+      <button class="tab" onclick="st(this,'gad-cult')">文化議題</button>
+      <button class="tab" onclick="st(this,'gad-gender')">性別議題</button>
+      <button class="tab" onclick="st(this,'gad-func')">功能性後果</button>
+      <button class="tab k" onclick="st(this,'gad-diff')">⭐ 鑑別診斷</button>
+      <button class="tab" onclick="st(this,'gad-comor')">共病</button>
+    </div>
+    <div class="panel on" id="gad-dx">
+      <div class="kbdg">⭐ 核心：過度且難以控制的擔憂 + 6項中≥3項（兒童≥1項）+ ≥6個月</div>
+      <div class="rr"><span class="rl">A</span><div class="rc">對於不同的領域（如工作或學校表現），表現出過度的焦慮和擔憂（焦慮的期待），時間至少<strong>六個月</strong>，且發生的天數比沒有發生的天數還多</div></div>
+      <div class="rr"><span class="rl">B</span><div class="rc">個案自覺<strong>難以控制</strong>此擔憂</div></div>
+      <div class="rr"><span class="rl">C</span><div class="rc">此焦慮和擔憂伴隨以下<strong>六項症狀中至少三項</strong>（在過去六個月中，至少有些症狀在多數的日子中出現）<em>（注意：兒童只需一項）</em>：
+        <ul class="cl" style="margin-top:5px">
+          <li>坐立不安或感覺緊張或心情不定</li>
+          <li>容易疲勞</li>
+          <li>注意力不集中或腦筋一片空白</li>
+          <li>易怒</li>
+          <li>肌肉緊繃</li>
+          <li>睡眠困擾（難以入睡或難以維持睡眠，或睡得不安穩、無法滿足的睡眠品質）</li>
+        </ul>
+      </div></div>
+      <div class="rr"><span class="rl">D</span><div class="rc">此焦慮、擔憂或身體症狀引起臨床上顯著苦惱或社交、職業或其他重要領域功能減損</div></div>
+      <div class="rr"><span class="rl w">E</span><div class="rc">此困擾無法歸因於某物質（濫用的藥物、醫藥）或另一身體病況（如甲狀腺機能亢進）的生理效應</div></div>
+      <div class="rr"><span class="rl w">F</span><div class="rc">此困擾無法以另一精神疾病做更好的解釋（如焦慮或擔憂並非：恐慌症中恐慌發作的擔憂、社交焦慮症中的負面評價、強迫症中的污染、分離焦慮症中的分離、創傷後壓力症中創傷事件的提醒、厭食症中的體重增加、身體症狀障礙症中的身體抱怨、身體臆形症中的外觀缺陷、罹病焦慮症中的疾病、或思覺失調症或妄想症中的妄想信念）</div></div>
+    </div>
+    <div class="panel" id="gad-feat">
+      <p class="d">關鍵特質是對於不同的領域（如工作或學校表現），感到持續和過度的焦慮和擔憂，而且個案自認難以控制此擔憂。個案也會經歷坐立不安或感覺緊張或心情不定、容易疲勞、注意力不集中或腦筋一片空白、易怒、肌肉緊繃、睡眠困擾等症狀。</p>
+      <div class="box a"><div class="bl">兒童青少年的特殊表現</div>
+        <ul class="cl">
+          <li>焦慮和擔憂通常是關於<strong>學校或運動賽事上的表現品質或能力</strong>，即使表現並未由他人來衡量</li>
+          <li>可能過度關注於<strong>守時</strong>，也可能擔憂<strong>災難性事件</strong>（地震、核子戰爭）</li>
+          <li>患有此病的兒童可能<strong>過度順從、完美主義，對自己感到不確定</strong>，因過度不滿足於不完美表現而傾向重做任務</li>
+          <li>一般會<strong>過度熱衷於尋求再保證和認可</strong>，需要過多關於表現和其他擔憂事項的再保證</li>
+        </ul>
+      </div>
+      <div class="box w"><div class="bl">⚠️ 兒童的過度診斷警示</div>
+        廣泛性焦慮症在兒童上<strong>可能會被過度診斷</strong>。當兒童考慮此診斷時，必須徹底評估有無其他兒童期的焦慮症或其他精神疾病，以確認此擔憂是否可能可以被這些疾病之一做更好的解釋。<strong>分離焦慮症、社交焦慮症（社交畏懼症）和強迫症</strong>，經常伴隨類似於廣泛性焦慮症所描述的擔憂——例如，一位患有社交焦慮症的兒童，可能會因害怕羞辱而關注於學校表現；擔憂疾病也可能被分離焦慮症和強迫症做更好的解釋。
+      </div>
+    </div>
+    <div class="panel" id="gad-assoc">
+      <p class="d">伴隨焦慮和擔憂的身體症狀，包括肌肉緊繃相關症狀及肌肉酸痛或抽痛、不舒服。許多個案也會經驗到一些自律神經反應的軀體症狀（流汗、噁心、腹瀉），這些症狀更常見於合併恐慌症的個案。</p>
+    </div>
+    <div class="panel" id="gad-prev">
+      <p class="d">廣泛性焦慮症的盛行率資料未在此次提取的章節片段中完整呈現，但根據國際比較研究，<strong>美國的12個月盛行率明顯高於大多數其他國家</strong>。<strong>女性</strong>診斷頻率明顯高於男性（臨床情境下大約55-60%是女性；流行病學研究上大約三分之二是女性）。</p>
+    </div>
+    <div class="panel" id="gad-dev">
+      <p class="d">廣泛性焦慮症的擔憂內容隨年齡和發展階段而不同。兒童和青少年的焦慮聚焦在學校表現、運動表現及災難性事件；成人則多聚焦於日常生活責任、財務、家人健康及工作表現等議題。</p>
+    </div>
+    <div class="panel" id="gad-risk">
+      <div class="box a"><div class="bl">氣質</div><strong>行為抑制、負面情感（神經質）和畏避傷害</strong>，這些與廣泛性焦慮症有關。</div>
+      <div class="box a"><div class="bl">環境</div>雖然<strong>童年的不順利和雙親的過度保護</strong>與廣泛性焦慮症有關，但沒有任何環境因子被確認為對廣泛性焦慮症有<strong>特異性</strong>，必須或足夠用來確立此診斷。</div>
+      <div class="box a"><div class="bl">基因和生理</div>經歷到廣泛性焦慮症，有<strong>三分之一</strong>的風險是基因；而這些基因因素與<strong>神經質（neuroticism）</strong>的風險重疊，且與其他焦慮症和情緒障礙症共有，特別是<strong>憂鬱症</strong>。</div>
+    </div>
+    <div class="panel" id="gad-cult">
+      <p class="d">廣泛性焦慮症的表現有很大的<strong>文化差異</strong>。舉例而言，在某些文化中，疾病的表現以<strong>身體症狀</strong>為主，而在其他文化中以<strong>認知症狀</strong>為主。這些差異可能在起初的表現上較後續更為顯著，隨時間過去會有更多的症狀被報告出來。尚無資料顯示過度擔憂的傾向是否與文化相關，雖然所擔憂的主題可以是有文化特異性的。<strong>評估對特定狀況的擔憂是否為過度時，要考量社會和文化的情境</strong>。</p>
+    </div>
+    <div class="panel" id="gad-gender">
+      <p class="d">在臨床情境下，廣泛性焦慮症被診斷於<strong>女性上要比男性還要更加頻繁</strong>（此疾病的表現大約有<strong>55-60%是女性</strong>）。在流行病學的研究上，大約<strong>三分之二是女性</strong>。</p>
+      <div class="box a"><div class="bl">性別差異的共病模式</div>
+        有經歷到廣泛性焦慮症的女性和男性看起來有<strong>類似的症狀</strong>，但呈現與此疾病盛行率的性別差異一致之<strong>不同共病樣式</strong>：
+        <ul class="cl">
+          <li><strong>女性</strong>：共病大多侷限於<strong>焦慮症和單極性憂鬱症</strong></li>
+          <li><strong>男性</strong>：共病較可能擴展到<strong>物質使用障礙症</strong></li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel" id="gad-func">
+      <p class="d">過度擔憂會損害個體快速及有效率地完成事情的能力，無論是在家中或職場。擔憂會消耗時間和精力，肌肉緊繃有關的症狀和感覺緊張或心情不定、疲勞、注意力不集中及睡眠困擾，會造成功能損害。重要的是，這樣的過度擔憂，<strong>會損害廣泛性焦慮症的個體鼓勵其孩子自信心的能力</strong>。</p>
+      <p class="d">廣泛性焦慮症與顯著失能及痛苦有關，其損害<strong>獨立於共病之外</strong>，且大部分不在醫療機構內接受治療的罹病成人有<strong>中度至重度的失能</strong>。在美國的民眾中，廣泛性焦慮症造成<strong>每年有1億1千萬個失能天數</strong>。</p>
+    </div>
+    <div class="panel" id="gad-diff">
+      <div class="kbdg">⭐ 鑑別重點</div>
+      <div class="diff"><div class="dn">⭐ 另一身體病況引起的焦慮症</div><div class="db">必須在個體的焦慮和擔憂被確定後，依據病史、實驗室檢查或身體檢查，被判定為另一特定的身體病況的生理作用（如嗜鉻細胞瘤、甲狀腺機能亢進）。</div></div>
+      <div class="diff"><div class="dn">⭐ 物質/醫藥引發的焦慮症</div><div class="db">與廣泛性焦慮症的區分，在於一種物質或醫藥（一向被濫用的藥物、暴露於毒物）被判定為焦慮的原因。例如：嚴重焦慮只發生於重度咖啡攝取的場景下，則被診斷為咖啡因引發的焦慮症。</div></div>
+      <div class="diff"><div class="dn">⭐ 社交焦慮症</div><div class="db">患有社交焦慮症的個體，常會有預期性焦慮，其聚焦於<strong>即將面臨的社交情境</strong>（當個案必須表演或被他人所評價時）；而廣泛性焦慮症的個體，<strong>無論其是否會被評價，皆會擔憂</strong>。</div></div>
+      <div class="diff"><div class="dn">⭐ 強迫症</div><div class="db">數個特徵可以區別廣泛性焦慮症的過度擔憂和強迫症的強迫性意念：在廣泛性焦慮症上，其所擔憂的焦點是關於<strong>即將來到的問題</strong>，關於未來事件的擔憂的「過度」是其異常所在；在強迫症上，強迫思考是<strong>不合宜的意念</strong>，以侵入性和不想要的想法、衝動或影像的形式來表現。</div></div>
+      <div class="diff"><div class="dn">⭐ 創傷後壓力症和適應障礙症</div><div class="db">焦慮在創傷後壓力症上是一定會表現的。倘若焦慮和擔憂可以被PTSD的症狀做更好的解釋，則不下廣泛性焦慮症的診斷。焦慮也可能出現於適應障礙症，但這項剩餘分類選項<strong>必須只在不符合任何其他障礙症的診斷準則時（包括廣泛性焦慮症）才能使用</strong>。此外，在適應障礙症上，此焦慮的發生是對於一個可識別壓力源發生的<strong>三個月內</strong>之反應，且在壓力源或它的結果終止後<strong>不會持續超過6個月</strong>。</div></div>
+      <div class="diff"><div class="dn">⭐ 憂鬱症、雙相情緒障礙症和精神病症</div><div class="db">儘管廣泛性焦慮/擔憂是憂鬱症、雙相情緒障礙症和精神病症的常見相關特徵，但<strong>若焦慮或擔心嚴重到需臨床關注，則可診斷為共病廣泛性焦慮症</strong>。</div></div>
+    </div>
+    <div class="panel" id="gad-comor">
+      <p class="d">有符合廣泛性焦慮症診斷準則表現的個體，有可能曾經符合或目前正符合<strong>其他焦慮和單極性憂鬱症</strong>的準則。支持這樣的共病模式的<strong>神經質和情緒易變</strong>，其和與生俱來的氣質以及這些疾病之間共有的<strong>基因和環境風險因子</strong>有關，雖然獨立的疾病路徑也是有可能的。</p>
+      <p class="d">而與<strong>物質使用障礙症、行為規範障礙症、精神病症、神經發展障礙症和認知障礙症</strong>共病較不常見。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── ⭐ 七大焦慮症比較 ── -->
+<div class="card" data-cat="cmp">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">⭐ 速查</span><div><div class="cname">七大焦慮症速查總表</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="panel on">
+      <div class="kbdg">⭐ 國考速查：核心恐懼對象 × 持續時間 × 好發年齡</div>
+      <table class="ct">
+        <tr><th>疾病</th><th>核心恐懼/擔憂焦點</th><th>持續時間</th><th>典型發病年齡</th><th>男女比</th></tr>
+        <tr><td>分離焦慮症</td><td>與主要依附者分離</td><td>兒童≥4週<br>成人≥6個月</td><td>學齡前~兒童期最常見</td><td>女&gt;男（社區）</td></tr>
+        <tr><td>選擇性緘默症</td><td>特定社交場合說話本身（常合併社交焦慮）</td><td>≥1個月</td><td>&lt;5歲</td><td>無顯著差異</td></tr>
+        <tr><td>特定畏懼症</td><td>特定對象/情境本身</td><td>≥6個月</td><td>中位7-11歲（平均10歲）</td><td>2:1（女&gt;男）</td></tr>
+        <tr><td>社交焦慮症</td><td>被他人負面評價</td><td>≥6個月</td><td>中位13歲（75%於8-15歲）</td><td>1.5-2.2:1（女&gt;男，臨床上相近或男略多）</td></tr>
+        <tr><td>恐慌症</td><td>恐慌發作本身及其後果</td><td>≥1個月（發作後續反應）</td><td>中位20-24歲</td><td>2:1（女&gt;男）</td></tr>
+        <tr><td>特定場所畏懼症</td><td>難以逃脫/無法獲得協助的場合</td><td>≥6個月</td><td>平均17歲（2/3於35歲前）</td><td>2:1（女&gt;男）</td></tr>
+        <tr><td>廣泛性焦慮症</td><td>多領域、廣泛、不限定對象的擔憂</td><td>≥6個月</td><td>無特定高峰（成人多見）</td><td>2:1～3:2（女&gt;男）</td></tr>
+      </table>
+      <div class="box w" style="margin-top:10px"><div class="bl">⚠️ 發展順序記憶口訣</div>
+        本章節是依照<strong>典型起始發作年齡</strong>排序：<strong>分離焦慮症 → 選擇性緘默症 → 特定畏懼症 → 社交焦慮症 → 恐慌症 → 特定場所畏懼症 → 廣泛性焦慮症</strong>，大致反映從兒童期到成人期的發展軌跡。
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-cat="cmp">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">⭐ 核心機制</span><div><div class="cname">七大焦慮症「迴避邏輯」比較</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="panel on">
+      <div class="kbdg">⭐ 國考核心：每種焦慮症「害怕的是什麼」</div>
+      <table class="ct">
+        <tr><th>疾病</th><th>迴避的根本邏輯</th></tr>
+        <tr><td>分離焦慮症</td><td>迴避「分離」這件事——擔心依附對象安危或自己遭遇不測而被迫分離</td></tr>
+        <tr><td>選擇性緘默症</td><td>迴避「在特定社交場合說話」這個行為本身（常源於高社交焦慮）</td></tr>
+        <tr><td>特定畏懼症</td><td>迴避「特定對象或情境」本身——恐懼源自對象/情境本身的特質</td></tr>
+        <tr><td>社交焦慮症</td><td>迴避「被他人觀察與評價」的情境——核心是害怕負面評價，非情境本身</td></tr>
+        <tr><td>恐慌症</td><td>迴避「可能誘發恐慌發作」的活動/情境——核心是恐懼恐慌發作再次出現</td></tr>
+        <tr><td>特定場所畏懼症</td><td>迴避「類恐慌/失常症狀發生時難以逃脫或無法獲得協助」的場所——核心是逃脫可能性的擔憂</td></tr>
+        <tr><td>廣泛性焦慮症</td><td>不迴避特定對象，而是對「多個生活領域」持續且廣泛地擔憂，難以控制</td></tr>
+      </table>
+      <div class="box a"><div class="bl">⭐ 關鍵區分公式</div>
+        <strong>特定畏懼症</strong>＝怕「那個東西/情境」本身<br>
+        <strong>社交焦慮症</strong>＝怕「別人怎麼看我」<br>
+        <strong>恐慌症</strong>＝怕「恐慌發作再度發生」<br>
+        <strong>特定場所畏懼症</strong>＝怕「發作時逃不掉、沒人幫」<br>
+        <strong>廣泛性焦慮症</strong>＝怕「很多事情都可能出錯」（無特定對象）
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ⭐ 易混淆疾病深度鑑別 ── -->
+<div class="card" data-cat="confuse">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">⭐ 易混淆</span><div><div class="cname">易混淆疾病深度鑑別比較</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="tabs">
+      <button class="tab k on" onclick="st(this,'cf-agsp')">⭐ 特定場所畏懼症 vs 特定畏懼症(場所型)</button>
+      <button class="tab k" onclick="st(this,'cf-pdag')">⭐ 恐慌症 vs 特定場所畏懼症</button>
+      <button class="tab k" onclick="st(this,'cf-gadsoc')">⭐ 廣泛性焦慮症 vs 社交焦慮症</button>
+      <button class="tab k" onclick="st(this,'cf-sadag')">⭐ 分離焦慮症 vs 特定場所畏懼症</button>
+      <button class="tab k" onclick="st(this,'cf-socag')">⭐ 社交焦慮症 vs 特定場所畏懼症</button>
+      <button class="tab" onclick="st(this,'cf-gadocd')">廣泛性焦慮症 vs 強迫症</button>
+      <button class="tab" onclick="st(this,'cf-smsoc')">選擇性緘默症 vs 社交焦慮症</button>
+      <button class="tab" onclick="st(this,'cf-spsoc')">特定畏懼症 vs 社交焦慮症</button>
+      <button class="tab" onclick="st(this,'cf-sadpd')">分離焦慮症 vs 恐慌症</button>
+    </div>
+
+    <div class="panel on" id="cf-agsp">
+      <div class="kbdg">⭐ 國考最常考的一對：場所數量 + 恐懼原因</div>
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>特定場所畏懼症</th><th>特定畏懼症（場所型）</th></tr>
+        <tr><td><strong>恐懼場所數量</strong></td><td><span class="tag tr">≥2種</span>（5類中至少2類）</td><td><span class="tag tg">通常僅1種</span>特定情境</td></tr>
+        <tr><td><strong>恐懼的根本原因</strong></td><td>害怕<strong>類恐慌症狀發生時難以逃脫或無法獲得協助</strong></td><td>害怕情境/對象<strong>本身</strong>（如墜機、被動物咬）</td></tr>
+        <tr><td><strong>診斷準則B的角色</strong></td><td>必要（核心鑑別點）</td><td>不適用此邏輯</td></tr>
+        <tr><td><strong>例子</strong></td><td>同時害怕飛機、電梯、人群、開放空間、獨自在外</td><td>只害怕飛機（因為怕墜機）</td></tr>
+      </table>
+      <div class="box w"><div class="bl">⚠️ 判斷流程</div>
+        若個案害怕的情境只有<strong>飛機和電梯</strong>（與特定場所畏懼症的「公共交通工具」和「封閉場所」重疊），但<strong>不害怕</strong>特定場所畏懼症的其他情境（開放空間、排隊人群、獨自在外）→ 較可能診斷<strong>特定畏懼症，場所型</strong>，而非特定場所畏懼症。
+      </div>
+    </div>
+
+    <div class="panel" id="cf-pdag">
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>恐慌症</th><th>特定場所畏懼症</th></tr>
+        <tr><td><strong>核心恐懼對象</strong></td><td>恐慌發作本身及其後果（心臟病、瘋掉）</td><td>特定場所中發作時難以逃脫/無法獲得協助</td></tr>
+        <tr><td><strong>診斷獨立性</strong></td><td colspan="2"><span class="tag tg">兩者診斷互相獨立</span>，與是否同時存在無關；若同時符合兩者準則，<strong>應下兩個診斷</strong></td></tr>
+        <tr><td><strong>典型病程關係</strong></td><td>常先於特定場所畏懼症發生</td><td>30-50%以上特定場所畏懼症患者報告先有恐慌發作/恐慌症病史</td></tr>
+        <tr><td><strong>迴避對象</strong></td><td>迴避運動、不熟悉情境（任何可能誘發恐慌的刺激）</td><td>迴避5類特定場所（交通工具、開放空間、封閉場所、人群、獨自外出）</td></tr>
+      </table>
+    </div>
+
+    <div class="panel" id="cf-gadsoc">
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>廣泛性焦慮症</th><th>社交焦慮症</th></tr>
+        <tr><td><strong>擔憂觸發條件</strong></td><td><span class="tag tg">無論是否被評價，皆會擔憂</span></td><td><span class="tag tr">聚焦於即將面臨的社交情境</span>（表演、被評價時）</td></tr>
+        <tr><td><strong>擔憂範圍</strong></td><td>廣泛、多領域（工作、健康、家人、財務）</td><td>侵限於社交表現及他人評價</td></tr>
+        <tr><td><strong>兒童的特殊情況</strong></td><td>對社交表現品質的過度擔憂，<strong>也關聯於非社交表現</strong>，且出現在沒被檢視時</td><td>擔憂<strong>聚焦在社交表現及他人評價</strong>本身</td></tr>
+      </table>
+    </div>
+
+    <div class="panel" id="cf-sadag">
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>分離焦慮症</th><th>特定場所畏懼症</th></tr>
+        <tr><td><strong>恐懼焦點</strong></td><td>與<strong>依附對象分離</strong>的可能性</td><td>類恐慌症狀發生時<strong>難以逃脫或無法獲得協助</strong></td></tr>
+        <tr><td><strong>依附對象在場時</strong></td><td>焦慮可顯著緩解</td><td>同伴在場可增加忍受度，但場所恐懼仍可能存在</td></tr>
+        <tr><td><strong>關鍵鑑別句</strong></td><td colspan="2">「不像特定場所畏懼症個案，分離焦慮症個案並不會聯想到萬一發生類似恐慌症狀時難以逃脫或無法獲得協助的情境」</td></tr>
+      </table>
+    </div>
+
+    <div class="panel" id="cf-socag">
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>社交焦慮症</th><th>特定場所畏懼症</th></tr>
+        <tr><td><strong>核心恐懼</strong></td><td>被<strong>別人檢視</strong>、害怕負面評價</td><td>類恐慌症狀發生時<strong>難以逃脫或無法獲得協助</strong></td></tr>
+        <tr><td><strong>獨處時的反應</strong></td><td><span class="tag tg">獨處時可以保持冷靜</span></td><td><span class="tag tr">獨處時通常無法冷靜</span>（核心恐懼仍在）</td></tr>
+        <tr><td><strong>例子</strong></td><td>害怕在電影院被認識的人看到自己緊張的樣子</td><td>害怕在電影院（封閉場所）發作時逃不出去</td></tr>
+      </table>
+    </div>
+
+    <div class="panel" id="cf-gadocd">
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>廣泛性焦慮症</th><th>強迫症</th></tr>
+        <tr><td><strong>擔憂/思考本質</strong></td><td>關於<strong>即將來到的真實問題</strong>，「過度」是異常所在</td><td><strong>不合宜的意念</strong>，侵入性、不想要的想法/衝動/影像</td></tr>
+        <tr><td><strong>內容真實性</strong></td><td>擔憂內容通常基於現實可能性（雖然程度過度）</td><td>強迫思考常與現實脫節或誇大（如反覆懷疑門有沒有鎖好）</td></tr>
+        <tr><td><strong>伴隨行為</strong></td><td>尋求再保證、過度準備</td><td>強迫行為（重複檢查、清洗、計數）以中和焦慮</td></tr>
+      </table>
+    </div>
+
+    <div class="panel" id="cf-smsoc">
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>選擇性緘默症</th><th>社交焦慮症</th></tr>
+        <tr><td><strong>核心症狀</strong></td><td>特定社交場合<strong>無法說話</strong>（但可參與不需說話的活動）</td><td>害怕被負面評價，<strong>不限於說話</strong>本身</td></tr>
+        <tr><td><strong>共病可能性</strong></td><td colspan="2"><span class="tag tg">兩者高度重疊，可同時診斷</span>——選擇性緘默症最常見共病即為社交焦慮症</td></tr>
+        <tr><td><strong>病程關係</strong></td><td>有些個案選擇性緘默症會消失，但社交焦慮症狀持續</td><td>—</td></tr>
+      </table>
+    </div>
+
+    <div class="panel" id="cf-spsoc">
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>特定畏懼症</th><th>社交焦慮症</th></tr>
+        <tr><td><strong>恐懼來源</strong></td><td>對象/情境<strong>本身</strong>的特質引發恐懼</td><td>害怕該情境中<strong>被他人負面評價</strong></td></tr>
+        <tr><td><strong>判斷準則</strong></td><td>若情境被恐懼非因負面評價，診斷特定畏懼症</td><td>若情境被恐懼是出自負面評價考量，診斷社交焦慮症</td></tr>
+        <tr><td><strong>例子</strong></td><td>害怕在公開場合被抽血時昏倒的「身體反應」本身</td><td>害怕在公開場合昏倒「被別人看到很丟臉」</td></tr>
+      </table>
+    </div>
+
+    <div class="panel" id="cf-sadpd">
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>分離焦慮症</th><th>恐慌症</th></tr>
+        <tr><td><strong>恐慌發作的角色</strong></td><td>因分離而誘發的<strong>極度焦慮，可能造成恐慌發作</strong>（非預期性恐慌發作不是核心特徵）</td><td><strong>非預期性</strong>恐慌發作反覆發生，且發作本身才是核心恐懼</td></tr>
+        <tr><td><strong>主要考量</strong></td><td>與依附對象分離的可能性、依附對象的安危</td><td>恐慌發作再度發生的可能性及後果</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-cat="cmp">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">⭐ 決策流程</span><div><div class="cname">焦慮症診斷決策流程</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="panel on">
+      <div class="kbdg">⭐ 國考臨床推理流程</div>
+      <div class="box a"><div class="bl">Step 1 — 排除物質/身體病況</div>
+        <ul class="cl">
+          <li>是否因物質（咖啡因、興奮劑）或醫藥使用/戒斷引發焦慮症狀？</li>
+          <li>是否有身體病況（甲狀腺亢進、嗜鉻細胞瘤、心肺疾病）的直接病生理後果？</li>
+          <li>→ 是：診斷「物質/醫藥引發的焦慮症」或「另一身體病況引起的焦慮症」</li>
+          <li>→ 否：進入Step 2</li>
+        </ul>
+      </div>
+      <div class="box a"><div class="bl">Step 2 — 確認是否有非預期性恐慌發作</div>
+        <ul class="cl">
+          <li>是否有反覆<strong>非預期性</strong>完整症狀恐慌發作，且持續擔憂發作或行為改變≥1個月？→ <strong>恐慌症</strong></li>
+          <li>恐慌發作僅在特定情境誘發（非預期外）→ 考慮其他焦慮症伴隨恐慌發作的特別註記</li>
+        </ul>
+      </div>
+      <div class="box a"><div class="bl">Step 3 — 確認核心恐懼/擔憂的焦點對象</div>
+        <ul class="cl">
+          <li>恐懼焦點是「與依附對象分離」？→ <strong>分離焦慮症</strong></li>
+          <li>核心問題是「特定社交場合無法說話」？→ <strong>選擇性緘默症</strong></li>
+          <li>恐懼焦點是「特定單一對象/情境」本身？→ <strong>特定畏懼症</strong></li>
+          <li>恐懼焦點是「被他人負面評價」？→ <strong>社交焦慮症</strong></li>
+          <li>恐懼焦點是「≥2種場所中類恐慌發作時難以逃脫/無法獲得協助」？→ <strong>特定場所畏懼症</strong></li>
+          <li>擔憂廣泛、多領域、不限定對象，難以控制？→ <strong>廣泛性焦慮症</strong></li>
+        </ul>
+      </div>
+      <div class="box a"><div class="bl">Step 4 — 評估病程持續時間是否符合各疾病要求</div>
+        <ul class="cl">
+          <li>分離焦慮症：兒童≥4週，成人≥6個月</li>
+          <li>選擇性緘默症：≥1個月（不限入學首月）</li>
+          <li>特定畏懼症、社交焦慮症、特定場所畏懼症、廣泛性焦慮症：均為≥6個月</li>
+        </ul>
+      </div>
+      <div class="box w"><div class="bl">⚠️ 共病/共存診斷原則</div>
+        多數焦慮症之間<strong>可以同時診斷</strong>（如恐慌症+特定場所畏懼症；選擇性緘默症+社交焦慮症）。診斷的關鍵在於確認<strong>每個障礙症的核心恐懼/擔憂焦點是否獨立存在且符合各自完整準則</strong>，而非僅因症狀表面相似就互相替代。
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end main -->
+
+<script>
+function td(h){const b=h.nextElementSibling;const c=h.querySelector('.chev');const hid=b.classList.contains('h');b.classList.toggle('h',!hid);c.classList.toggle('o',hid);}
+function st(btn,pid){const sec=btn.closest('.card');sec.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));sec.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));btn.classList.add('on');const p=sec.querySelector('#'+pid);if(p)p.classList.add('on');}
+function fc(cat,btn){document.querySelectorAll('.pill').forEach(p=>p.classList.remove('on'));btn.classList.add('on');document.querySelectorAll('.card').forEach(c=>{c.style.display=(cat==='all'||c.dataset.cat===cat)?'':'none';});}
+</script>
+</body>
+</html>
