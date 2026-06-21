@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSM-5 憂鬱症 系統整理</title>
+<style>
+:root{--bg:#0d1117;--s1:#161b22;--s2:#21262d;--b:#30363d;--a:#58a6ff;--a2:#bc8cff;--a3:#3fb950;--w:#d29922;--r:#f85149;--t:#e6edf3;--td:#8b949e;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI','PingFang TC','Microsoft JhengHei',sans-serif;background:var(--bg);color:var(--t);font-size:14px;line-height:1.65;}
+.hdr{background:linear-gradient(135deg,#161b22,#0d1117);border-bottom:1px solid var(--b);padding:16px 22px 12px;position:sticky;top:0;z-index:100;}
+.hdr h1{font-size:19px;font-weight:700;}.hdr p{font-size:12px;color:var(--td);margin-top:2px;}
+.nav{display:flex;flex-wrap:wrap;gap:5px;padding:8px 16px;background:var(--bg);border-bottom:1px solid var(--b);position:sticky;top:62px;z-index:99;}
+.pill{background:var(--s1);border:1px solid var(--b);border-radius:20px;padding:4px 12px;font-size:12px;cursor:pointer;color:var(--td);white-space:nowrap;transition:all .15s;font-weight:500;}
+.pill:hover{border-color:var(--a);color:var(--a);}.pill.on{background:var(--a);border-color:var(--a);color:#000;font-weight:700;}
+.main{max-width:1100px;margin:0 auto;padding:14px 16px 60px;}
+.card{border:1px solid var(--b);border-radius:12px;margin-bottom:16px;overflow:hidden;background:var(--s1);}
+.chdr{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;cursor:pointer;background:linear-gradient(90deg,var(--s2),var(--s1));border-bottom:1px solid var(--b);user-select:none;gap:10px;}
+.chdr:hover{background:var(--s2);}
+.chl{display:flex;align-items:center;gap:10px;}
+.code{background:rgba(88,166,255,.1);border:1px solid var(--a);color:var(--a);border-radius:5px;padding:2px 7px;font-size:11px;font-weight:700;font-family:monospace;white-space:nowrap;}
+.cname{font-size:14px;font-weight:700;}.cen{font-size:11px;color:var(--td);margin-top:1px;}
+.chev{font-size:16px;color:var(--td);transition:transform .25s;}.chev.o{transform:rotate(180deg);}
+.cbody{display:block;}.cbody.h{display:none;}
+.tabs{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--b);background:var(--bg);overflow-x:auto;}
+.tab{padding:7px 12px;font-size:12px;cursor:pointer;color:var(--td);border-bottom:2px solid transparent;white-space:nowrap;transition:all .15s;background:none;border-top:none;border-left:none;border-right:none;}
+.tab:hover{color:var(--t);background:var(--s2);}.tab.on{color:var(--a);border-bottom-color:var(--a);}
+.tab.k{color:var(--w);}.tab.k.on{border-bottom-color:var(--w);color:var(--w);}
+.panel{display:none;padding:14px 16px;}.panel.on{display:block;}
+.kbdg{display:inline-flex;align-items:center;gap:4px;background:rgba(210,153,34,.1);border:1px solid var(--w);color:var(--w);border-radius:4px;padding:2px 8px;font-size:11px;font-weight:700;margin-bottom:9px;}
+.ib{background:rgba(88,166,255,.07);border:1px solid rgba(88,166,255,.22);border-radius:8px;padding:9px 12px;margin-bottom:9px;font-size:13px;color:var(--td);}
+.ib strong{color:var(--a);}
+.box{background:var(--bg);border:1px solid var(--b);border-radius:8px;padding:10px 13px;margin-bottom:9px;}
+.bl{font-size:11px;font-weight:700;color:var(--a);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px;}
+.box.w{border-left:3px solid var(--w);}.box.g{border-left:3px solid var(--a3);}
+.box.a{border-left:3px solid var(--a);}.box.p{border-left:3px solid var(--a2);}.box.r{border-left:3px solid var(--r);}
+.rr{display:flex;align-items:flex-start;margin-bottom:8px;gap:8px;}
+.rl{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;border-radius:50%;background:var(--a);color:#000;font-size:11px;font-weight:700;flex-shrink:0;margin-top:2px;}
+.rl.w{background:var(--w);color:#1a1a1a;}.rl.r{background:var(--r);}
+.rc{flex:1;font-size:13px;}
+ul.cl{padding-left:16px;}.cl li{margin-bottom:4px;font-size:13px;}.cl li::marker{color:var(--a);}
+p.d{color:var(--td);font-size:13px;line-height:1.7;margin-bottom:7px;}
+h4.sub{font-size:13px;font-weight:700;color:var(--a);margin:10px 0 5px;}
+.diff{background:var(--bg);border:1px solid var(--b);border-radius:7px;padding:9px 12px;margin-bottom:7px;}
+.dn{font-weight:700;color:var(--a2);font-size:13px;margin-bottom:3px;}.db{color:var(--td);font-size:13px;}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:7px;margin-bottom:9px;}
+.sc{background:var(--bg);border:1px solid var(--b);border-radius:8px;padding:10px;text-align:center;}
+.sv{font-size:20px;font-weight:700;color:var(--a3);}.sl{font-size:11px;color:var(--td);margin-top:2px;}
+.tag{display:inline-block;padding:2px 7px;border-radius:10px;font-size:11px;font-weight:600;margin:2px;}
+.ta{background:rgba(88,166,255,.12);color:var(--a);}
+.tg{background:rgba(63,185,80,.12);color:var(--a3);}
+.tw{background:rgba(210,153,34,.12);color:var(--w);}
+.tr{background:rgba(248,81,73,.12);color:var(--r);}
+.tp{background:rgba(188,140,255,.12);color:var(--a2);}
+table.ct{width:100%;border-collapse:collapse;font-size:13px;}
+table.ct th{background:var(--s2);color:var(--td);font-size:11px;text-transform:uppercase;padding:6px 10px;text-align:left;border-bottom:2px solid var(--b);}
+table.ct td{padding:7px 10px;border-bottom:1px solid var(--b);vertical-align:top;}
+table.ct tr:last-child td{border-bottom:none;}.ct tr:hover td{background:var(--s2);}
+.spbox{background:rgba(88,166,255,.05);border:1px solid rgba(88,166,255,.2);border-radius:7px;padding:10px 12px;margin-bottom:7px;}
+.sptitle{font-weight:700;color:var(--a);font-size:13px;margin-bottom:3px;}
+@media(max-width:600px){.hdr{padding:11px 13px 9px;}.nav{padding:7px 10px;}.main{padding:12px 10px 40px;}.panel{padding:12px;}}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <h1>😔 DSM-5 憂鬱症 系統整理</h1>
+  <p>臨床心理師國考備考 | 診斷準則 · 鑑別診斷 · 自殺風險 · 重點比較 完整版</p>
+</div>
+
+<div class="nav">
+  <span class="pill on" onclick="fc('all',this)">全部</span>
+  <span class="pill" onclick="fc('intro',this)">本章概覽</span>
+  <span class="pill" onclick="fc('dmdd',this)">侵擾性情緒失調症</span>
+  <span class="pill" onclick="fc('mdd',this)">鬱症</span>
+  <span class="pill" onclick="fc('pdd',this)">持續性憂鬱症</span>
+  <span class="pill" onclick="fc('pmdd',this)">經前期情緒低落症</span>
+  <span class="pill" onclick="fc('sub',this)">物質引發</span>
+  <span class="pill" onclick="fc('med',this)">身體病況引起</span>
+  <span class="pill" onclick="fc('spec',this)">特別註明</span>
+  <span class="pill" onclick="fc('other',this)">其他/非特定</span>
+  <span class="pill" onclick="fc('cmp',this)">⭐ 比較與鑑別</span>
+</div>
+
+<div class="main">
+
+<!-- ── 本章概覽 ── -->
+<div class="card" data-cat="intro">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">本章導論</span><div><div class="cname">憂鬱症 — 本章概覽</div><div class="cen">Depressive Disorders Overview</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="panel on">
+      <div class="ib"><strong>本章核心特點：</strong>所有憂鬱症的共同特點是有悲傷、空虛或易怒的情緒存在，並伴隨身體和認知功能變化，顯著影響個人能力發揮。它們之間不同的地方在於持續時間、發生時間點，或假定的病因。與DSM-IV不同，本章「憂鬱症」已脫離前章「雙相情緒及其相關障礙症」。</div>
+      <div class="box a"><div class="bl">本章包含的8個診斷</div>
+        <ul class="cl">
+          <li><strong>侵擾性情緒失調症</strong>（Disruptive Mood Dysregulation Disorder, DMDD）</li>
+          <li><strong>鬱症</strong>（Major Depressive Disorder，有重鬱發作）</li>
+          <li><strong>持續性憂鬱症</strong>（輕鬱症）（Persistent Depressive Disorder, Dysthymia）</li>
+          <li><strong>經前期情緒低落症</strong>（Premenstrual Dysphoric Disorder, PMDD）</li>
+          <li><strong>物質／藥物引發的憂鬱症</strong></li>
+          <li><strong>另一身體病況引起的憂鬱症</strong></li>
+          <li>其他特定的憂鬱症</li>
+          <li>非特定的憂鬱症</li>
+        </ul>
+      </div>
+      <div class="box w"><div class="bl">⚠️ DMDD的設計目的</div>
+        為解決<strong>兒童躁鬱症過度診斷和治療</strong>的潛在問題，DSM-5新增DMDD診斷——關於兒童持續表現易怒情緒和頻繁發作極端失控行為，提供不超過12歲兒童使用，加入憂鬱性疾患診斷裡。其位置反映：當發現孩子有這種症狀模式，通常成熟到青春期和成年期時，會演變成<strong>單相憂鬱症或焦慮症，而非雙相情緒障礙症</strong>。
+      </div>
+      <div class="box p"><div class="bl">悲傷 vs 鬱症發作（重要區辨）</div>
+        喪親之痛可引起極大痛苦，但通常不會引起一次嚴重憂鬱發作。當它們一起發生，與哀慟未伴隨嚴重憂鬱症相比較，<strong>憂鬱症狀和功能障礙往往更嚴重，且預後更差</strong>。哀慟相關的憂鬱往往發生在有憂鬱症脆弱性體質的人，可透過抗憂鬱治療來促進恢復。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── 侵擾性情緒失調症 ── -->
+<div class="card" data-cat="dmdd">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">296.99 F34.8</span><div><div class="cname">侵擾性情緒失調症</div><div class="cen">Disruptive Mood Dysregulation Disorder (DMDD)</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="tabs">
+      <button class="tab k on" onclick="st(this,'dmdd-dx')">⭐ 診斷準則</button>
+      <button class="tab" onclick="st(this,'dmdd-feat')">診斷特質</button>
+      <button class="tab" onclick="st(this,'dmdd-prev')">盛行率</button>
+      <button class="tab" onclick="st(this,'dmdd-dev')">發展病程</button>
+      <button class="tab" onclick="st(this,'dmdd-risk')">風險預後</button>
+      <button class="tab" onclick="st(this,'dmdd-gender')">性別議題</button>
+      <button class="tab r" onclick="st(this,'dmdd-sui')">⚠️ 自殺風險</button>
+      <button class="tab" onclick="st(this,'dmdd-func')">功能性後果</button>
+      <button class="tab k" onclick="st(this,'dmdd-diff')">⭐ 鑑別診斷</button>
+      <button class="tab" onclick="st(this,'dmdd-comor')">共病</button>
+    </div>
+    <div class="panel on" id="dmdd-dx">
+      <div class="kbdg">⭐ 核心：反覆脾氣爆發 + 慢性持續易怒，發病於10歲前</div>
+      <div class="rr"><span class="rl">A</span><div class="rc">反覆出現語言（如罵人）和／或行為上（如攻擊人或物）<strong>嚴重的脾氣爆發</strong>，和當時情境的強度或時間長短不成比例</div></div>
+      <div class="rr"><span class="rl">B</span><div class="rc">發脾氣強烈程度和發展階段<strong>不一致</strong></div></div>
+      <div class="rr"><span class="rl">C</span><div class="rc">每週平均脾氣爆發<strong>三次或三次以上</strong></div></div>
+      <div class="rr"><span class="rl">D</span><div class="rc">幾乎每天脾氣皆爆發和情緒持續<strong>易怒或憤怒一整天</strong>，且可被別人觀察到（如家長、教師、同儕）</div></div>
+      <div class="rr"><span class="rl">E</span><div class="rc">準則症狀A-D出現<strong>十二個月或以上</strong>。在這期間，沒有連續<strong>三個月以上</strong>不出現上述這些A-D準則症狀</div></div>
+      <div class="rr"><span class="rl">F</span><div class="rc">準則A和D症狀至少出現在<strong>二種場景</strong>（家裡、學校、同儕間），且至少在其中一種場景時的症狀非常嚴重</div></div>
+      <div class="rr"><span class="rl">G</span><div class="rc"><strong>6歲以下或18歲以上</strong>初診不適用此診斷</div></div>
+      <div class="rr"><span class="rl">H</span><div class="rc">根據病史和觀察，準則A-E症狀的初發年齡於<strong>10歲以前</strong></div></div>
+      <div class="rr"><span class="rl w">I</span><div class="rc"><strong>從未</strong>出現完全符合躁症或輕躁症準則之相關症狀超過一天<br><em>注意：與發展階段一致的情緒高昂（如對高度正面事件的情緒反應）不可當成躁症或輕躁症症狀</em></div></div>
+      <div class="rr"><span class="rl w">J</span><div class="rc">行為不只在鬱症發作出現，且無法以另一精神疾病（如ASD、PTSD、分離焦慮症、持續性憂鬱症）做更好的解釋</div></div>
+      <div class="rr"><span class="rl r">⚠️</span><div class="rc"><strong>此診斷不和對立反抗症、間歇暴怒障礙症或雙相情緒障礙症共存</strong>。症狀若同時合乎DMDD和對立反抗症者，則診斷只給予DMDD。若曾有躁或輕躁症發作，就不可下此診斷</div></div>
+      <div class="rr"><span class="rl">K</span><div class="rc">症狀非因物質、另一身體病況或神經狀況影響產生之生理效應</div></div>
+    </div>
+    <div class="panel" id="dmdd-feat">
+      <p class="d">核心特徵是慢性和嚴重的持續性易怒情緒，有兩個顯著的臨床表現：</p>
+      <div class="box a"><div class="bl">兩大臨床表現</div>
+        <ul class="cl">
+          <li><strong>頻繁的脾氣爆發</strong>：通常發生在面對挫折的反應，可以是言語或行為上（後者可以是對物體、自身或他人的暴力形式）</li>
+          <li><strong>慢性、持續性煩躁或憤怒的情緒</strong>：存在於嚴重脾氣爆發之間，一定是孩子的特點，幾乎整天、每一天都存在，且明顯可被環境中其他人注意到</li>
+        </ul>
+      </div>
+      <div class="box w"><div class="bl">⚠️ DMDD設計目的：區分陣發性與非陣發性易怒</div>
+        DSM-IV和DSM-5都要求兒童和成人要有<strong>明顯躁狂或輕躁狂的不同發作</strong>，才符合第一型雙相情緒障礙症的診斷標準。在DSM-5，「躁鬱症」一詞明確保留給<strong>雙相症狀陣發性發作</strong>；DSM-5新增DMDD，為非陣發性嚴重易怒提供獨特類別。
+      </div>
+    </div>
+    <div class="panel" id="dmdd-prev">
+      <p class="d">是兒童心理衛生門診中常見的兒童症狀表現。在社區的疾病盛行率估計還不清楚。基於核心症狀（慢性、嚴重持續性易怒）的發生率，<strong>共6個月到1年的DMDD在兒童和青少年可能落在2-5%範圍內</strong>。男性和學齡兒童的發生率被預期高於女性和青少年。</p>
+    </div>
+    <div class="panel" id="dmdd-dev">
+      <p class="d">發病年齡必須在<strong>10歲之前</strong>，診斷不適用於發育年齡在6歲之前的兒童。診斷應限制於那些相似年齡層中診斷有效性已確立（<strong>6-18歲</strong>）。大約有<strong>一半</strong>表現出嚴重、慢性易怒的病童在1年後，仍持續滿足診斷條件。</p>
+      <div class="box w"><div class="bl">⚠️ 重要的發展軌跡資訊</div>
+        <ul class="cl">
+          <li>轉變成嚴重、非陣發性易怒的躁鬱症比率<strong>非常低</strong></li>
+          <li>相反，兒童的慢性易怒有<strong>發展成成人單極性憂鬱和/或焦慮症的危險</strong></li>
+          <li>躁鬱症在青春期前發生率非常低（&lt;1%），到成年早期穩定上升（1%-2%患病率）</li>
+          <li>DMDD在青春期之前比躁鬱症多見，症狀從兒童過渡到成年一般變得較少見</li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel" id="dmdd-risk">
+      <div class="box a"><div class="bl">氣質</div>慢性易怒的兒童通常表現出複雜的精神病史，常見較廣泛的慢性易怒過去史。許多DMDD兒童也會有符合<strong>ADHD和焦慮症</strong>診斷標準的症狀（往往存在於較早年齡）；有些孩童也可能滿足<strong>重度憂鬱症</strong>的診斷標準。</div>
+      <div class="box a"><div class="bl">基因和生理</div>家族叢聚性和遺傳方面，可從家族為基礎的發生風險去鑑別兒童慢性、非陣發性易怒與兒童雙相疾患。但這兩群疾患在焦慮症、單極性憂鬱症或物質濫用的家族發生率並無不同。DMDD兒童既表現出與躁鬱症兒童相同的信息處理缺損（如面部情感辨識缺陷），也表現出不同處（如評估回應情緒刺激時的注意力分布有疾病特異性功能障礙）。</div>
+    </div>
+    <div class="panel" id="dmdd-gender">
+      <p class="d">臨床上兒童呈現DMDD的特點<strong>主要是男性患者</strong>。在社區個案裡，似乎也支持男性患者為主的現象。男性和女性DMDD盛行率的差異，<strong>有別於雙相情感障礙</strong>（後者男女是相同的）。</p>
+    </div>
+    <div class="panel" id="dmdd-sui">
+      <div class="kbdg">⚠️ 自殺風險評估重點</div>
+      <p class="d">整體而言，評估兒童慢性易怒時，應注意DMDD自殺行為和暴力的紀錄，以及其他嚴重的功能性後遺症。</p>
+    </div>
+    <div class="panel" id="dmdd-func">
+      <p class="d">慢性、嚴重易怒情緒，與孩童的家庭和同儕關係<strong>顯著破壞</strong>，及在學校的表現有關。因極低的挫折容忍力，這樣的孩子在學校裡一般很難成功；常常不能參加一般健康兒童享有的活動；家庭生活因爆發和易怒而被嚴重擾亂；難以開始或維持友誼關係。</p>
+      <p class="d">兒童雙相情感障礙和DMDD的功能障礙是<strong>可以相比擬的</strong>。兩者都常見危險行為：自殺想法或自殺未遂、嚴重暴力和精神科住院治療。</p>
+    </div>
+    <div class="panel" id="dmdd-diff">
+      <div class="kbdg">⭐ 國考最重要鑑別：DMDD vs 雙相情緒障礙症</div>
+      <div class="diff"><div class="dn">⭐ 雙相情緒障礙症</div><div class="db">最主要區分牽涉到<strong>核心症狀的縱向病程</strong>。第一型/第二型雙相是<strong>陣發性疾病</strong>，有離散的情緒擾動發作，躁症發生時與孩童平時心情明顯不同，且伴隨相關認知、行為、身體症狀的發作或惡化。相反，<strong>DMDD的易怒持續存在數個月</strong>（雖可能有波動），是非陣發性的。DMDD的診斷<strong>不能下在</strong>曾經歷完整輕躁或躁狂發作（持續超過1天）的個案。另一核心差異：<strong>心情高昂或開闊、自大</strong>是躁狂的共同特點，卻非DMDD特點。</div></div>
+      <div class="diff"><div class="dn">⭐ 對立反抗症（ODD）</div><div class="db">ODD症狀一般都發生在DMDD兒童，但DMDD的情緒症狀在ODD兒童中相對較少見。DMDD需要至少在<strong>一個場合嚴重受損</strong>且第二場合輕中度受損。<strong>大多數DMDD兒童同時滿足ODD標準，但反之則不然</strong>——只有約<strong>15%</strong>的ODD個案會滿足DMDD標準。即使同時滿足兩個診斷條件，<strong>應只做DMDD這唯一診斷</strong>。</div></div>
+      <div class="diff"><div class="dn">⭐ ADHD、重度憂鬱症、焦慮症</div><div class="db">符合DMDD標準的孩童<strong>也可同時診斷</strong>ADHD、重度憂鬱症和/或焦慮症。但如果兒童的易怒情緒<strong>只存在於一次嚴重憂鬱發作或持續性憂鬱症中</strong>，應接受這些診斷而非DMDD。若煩躁不安表現<strong>只在焦慮症加重的背景下</strong>，應接受焦慮症診斷，而非DMDD。</div></div>
+      <div class="diff"><div class="dn">⭐ ASD（自閉症類群障礙症）</div><div class="db">ASD兒童經常表現脾氣爆發（如日常生活受到干擾時）。這種情況下，脾氣爆發視為<strong>次發於ASD</strong>，不應下DMDD診斷。</div></div>
+      <div class="diff"><div class="dn">⭐ 間歇暴怒障礙症</div><div class="db">表現為嚴重脾氣爆發事件，類似DMDD。但與DMDD不同的是，間歇暴怒障礙症<strong>不需要</strong>在爆發之間持續的情緒失調；且<strong>僅需3個月</strong>的活躍症狀（DMDD要求12個月）。兩個診斷<strong>不應同時下在同一個孩子身上</strong>——有情緒爆發和爆發間持續易怒者，應做DMDD唯一診斷。</div></div>
+    </div>
+    <div class="panel" id="dmdd-comor">
+      <p class="d">DMDD合併症的發生率<strong>非常高</strong>，症狀只單獨符合DMDD標準的個案是罕見的。DMDD和其他DSM定義綜合徵的共病，似乎比許多其他兒童精神疾病高；<strong>最強的重疊是對立反抗性疾患</strong>。共病範圍也顯得歧異（廣泛的破壞行為、情緒、焦慮，甚至自閉症的症狀和診斷）。</p>
+      <div class="box w"><div class="bl">⚠️ 排除性原則</div>兒童DMDD不應同時符合雙相情感障礙的診斷標準——此情況下只應下雙相情感疾患診斷。如果孩子同時符合ODD或間歇暴怒障礙症和DMDD標準症狀，應只下DMDD唯一診斷。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── 鬱症 ── -->
+<div class="card" data-cat="mdd">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">296.2x/296.3x</span><div><div class="cname">鬱症</div><div class="cen">Major Depressive Disorder (MDD)</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="tabs">
+      <button class="tab k on" onclick="st(this,'mdd-dx')">⭐ 診斷準則</button>
+      <button class="tab" onclick="st(this,'mdd-sp')">特別註明速覽</button>
+      <button class="tab" onclick="st(this,'mdd-feat')">診斷特質</button>
+      <button class="tab" onclick="st(this,'mdd-assoc')">支持診斷</button>
+      <button class="tab" onclick="st(this,'mdd-prev')">盛行率</button>
+      <button class="tab" onclick="st(this,'mdd-dev')">發展病程</button>
+      <button class="tab" onclick="st(this,'mdd-risk')">風險預後</button>
+      <button class="tab" onclick="st(this,'mdd-cult')">文化議題</button>
+      <button class="tab" onclick="st(this,'mdd-gender')">性別議題</button>
+      <button class="tab r" onclick="st(this,'mdd-sui')">⚠️ 自殺風險</button>
+      <button class="tab" onclick="st(this,'mdd-func')">功能性後果</button>
+      <button class="tab k" onclick="st(this,'mdd-diff')">⭐ 鑑別診斷</button>
+      <button class="tab" onclick="st(this,'mdd-comor')">共病</button>
+    </div>
+    <div class="panel on" id="mdd-dx">
+      <div class="kbdg">⭐ 核心：9項中≥5項（含核心症狀之一）+ 持續2週 + 從未躁/輕躁症發作</div>
+      <div class="rr"><span class="rl">A</span><div class="rc">以下<strong>五項（或更多）</strong>症狀在<strong>兩週中</strong>同時出現，造成先前功能改變；至少包含以下症狀之一：<strong>(1)憂鬱情緒</strong>或<strong>(2)失去興趣或愉悅感</strong>（注意：不包括可明顯歸因其他病況的症狀）
+        <ul class="cl" style="margin-top:5px">
+          <li>幾乎整天且每天心情憂鬱，可由主觀報告（如感到悲傷、空虛或無助）或由他人觀察（如看起來在哭）得知<em>（兒童及青少年可以是情緒易怒）</em></li>
+          <li>幾乎整天且每天明顯對所有活動降低興趣或愉悅感</li>
+          <li>體重明顯減輕或增加（一個月內體重變化超過5%）或幾乎每天食慾降低或增加<em>（兒童需考量無法達到預期體重）</em></li>
+          <li>幾乎每天都失眠或嗜眠</li>
+          <li>幾乎每天精神動作激動或遲緩（別人觀察到，不只是主觀感受不安或緩慢）</li>
+          <li>幾乎每天疲倦或無精打采</li>
+          <li>幾乎每天自我感到無價值感，或有過度或不恰當的罪惡感（可能達妄想程度；不僅是對生病自責或內疚）</li>
+          <li>幾乎每天思考能力和專注力降低，或猶豫不決（主觀報告或他人觀察）</li>
+          <li>反覆想到死亡（不只是害怕死亡）、反覆有自殺意念而無具體計畫、或有自殺舉動，或有具體的自殺計畫</li>
+        </ul>
+      </div></div>
+      <div class="rr"><span class="rl">B</span><div class="rc">這些症狀引起臨床上顯著苦惱或社交、職業或其他重要領域功能減損</div></div>
+      <div class="rr"><span class="rl w">C</span><div class="rc">這些症狀無法歸因於某一物質或另一身體病況的生理效應</div></div>
+      <div class="box w"><div class="bl">⚠️ 重大失落的判定（喪慟 vs 鬱症發作）</div>
+        重大失落（喪親、破產、天災、重病或殘障）的反應可包含強烈的悲傷，反覆想著失落、失眠、胃口差和體重減輕，可能表示鬱症發作。雖然這些對重大失落是適當的或可理解的，但<strong>除了正常反應外，得小心考量是否為鬱症發作</strong>。此診斷需根據個人病史及表達苦惱的文化常模作判定。
+      </div>
+      <div class="rr"><span class="rl">D</span><div class="rc">鬱症發作無法以情感性思覺失調症、思覺失調症、類思覺失調症、妄想症或其他特定或非特定思覺失調症和其他精神病症做更好的解釋</div></div>
+      <div class="rr"><span class="rl">E</span><div class="rc"><strong>從未有過躁症或輕躁症發作</strong>（若所有躁或輕躁症狀是由物質引發或因另一身體病況所引起，則不適用）</div></div>
+    </div>
+    <div class="panel" id="mdd-sp">
+      <p class="d">編碼依「單次或多次發作」、目前發作的嚴重度、精神病特徵及緩解狀態。完整特別註明詳見「特別註明」分類。</p>
+      <ul class="cl">
+        <li>有焦慮特徵 / 有混合型特徵 / 有憂鬱特徵 / 非典型特徵</li>
+        <li>有情緒一致性的精神病特徵 / 有情緒不一致的精神病特徵</li>
+        <li>有僵直症 / 有分娩前後發病 / 有季節性特徵（僅多次發作適用）</li>
+      </ul>
+    </div>
+    <div class="panel" id="mdd-feat">
+      <p class="d">標準症狀必須<strong>幾乎每天都存在</strong>才符合（除體重變化和自殺意念外）。心情鬱悶必須一天大部分時間都有，且幾乎每天都有。失眠或疲勞經常是病人主訴，沒探查伴隨憂鬱症狀會導致漏診。</p>
+      <div class="box a"><div class="bl">核心症狀詳解</div>
+        <ul class="cl">
+          <li><strong>憂鬱情緒</strong>：常被形容為鬱悶、悲傷、絕望、沮喪，或「像在垃圾堆裡」；兒童/青少年可能發展成易怒或暴躁情緒（需與遭遇挫折時的煩躁易怒區分）</li>
+          <li><strong>失去興趣或喜樂</strong>：至少一定程度上幾乎總是存在；家庭成員常注意到社交退縮、忽略令其愉快的業餘愛好</li>
+          <li><strong>食慾/體重變化</strong>：可能減少或增加；兒童可能注意到非預期的體重增加</li>
+          <li><strong>睡眠障礙</strong>：失眠通常是中間型（夜間醒來後難以再入睡）或終端型（過早醒來無法再入睡）；初始型也可能發生</li>
+          <li><strong>精神動作變化</strong>：激躁（坐不住、踱步、絞手）或遲滯（放慢講話/思想/身體動作）；必須嚴重到可由他人觀察到</li>
+          <li><strong>無價值感/罪惡感</strong>：可能達妄想程度（如相信自己必須對全球貧困負責）；除非妄想性，否則責備自己未盡職責通常不被認為足以滿足此準則</li>
+          <li><strong>認知功能障礙</strong>：在老年人可能被誤認為失智症早期徵兆（「<strong>假性癡呆 pseudodementia</strong>」）；治療成功後記憶問題通常完全消失，但少數老年個案可能是不可逆失智症的初期表現</li>
+        </ul>
+      </div>
+      <div class="box w"><div class="bl">⚠️ 共病一般醫療狀況時的特別評估</div>
+        某些標準症狀和徵象與一般醫療狀況相同（如體重減輕與未治療糖尿病；疲勞與癌症；嗜睡在懷孕早期；失眠在妊娠後或產後）。除非明確且全部可歸因於一般醫學病症，否則此類症狀都算在憂鬱診斷裡。需特別仔細評估<strong>非植物性症狀</strong>（不悅、無趣感、罪惡感、無價值感、專注力受損、自殺想法）。
+      </div>
+    </div>
+    <div class="panel" id="mdd-assoc">
+      <p class="d">死亡率高，自殺占絕大多數；但這不是唯一原因（如住進養老院第一年有顯著死亡增加的可能性）。個案常表現哭泣、易怒、憂鬱、強迫性思考反芻、焦慮、恐懼、過度憂慮身體健康，以及抱怨疼痛。在兒童中，可能出現分離焦慮。</p>
+      <p class="d">下視丘-腦下垂體-腎上腺軸的亢進與重鬱發作有關，似乎與憂鬱病性、精神病性特質、最終自殺風險相關聯。功能性核磁共振影像研究支持特定的情感處理、獎勵尋求和情緒調節的神經系統異常。</p>
+    </div>
+    <div class="panel" id="mdd-prev">
+      <div class="sg">
+        <div class="sc"><div class="sv">7%</div><div class="sl">美國12個月盛行率</div></div>
+        <div class="sc"><div class="sv">3倍</div><div class="sl">18-29歲患病率為60歲以上的倍數</div></div>
+        <div class="sc"><div class="sv">1.5-3倍</div><div class="sl">青春期早期女性是男性的倍數</div></div>
+      </div>
+    </div>
+    <div class="panel" id="mdd-dev">
+      <p class="d">可能初發在任何年齡，但發病可能性在青春期顯著增加。在美國，發生率在<strong>20多歲達到頂峰</strong>，但晚年首次發病並不少見。</p>
+      <div class="box a"><div class="bl">病程模式</div>
+        <ul class="cl">
+          <li>有些人很少有緩解；其他在不連續發作之間可能經歷多年很少或沒有任何症狀</li>
+          <li><strong>2/5的人</strong>通常在發病後<strong>3個月之內</strong>開始恢復，<strong>4/5的人</strong>則是在<strong>1年內</strong></li>
+          <li>潛在性格、焦慮和物質使用障礙將大大增加憂鬱症狀慢性化的可能性</li>
+        </ul>
+      </div>
+      <div class="box w"><div class="bl">⚠️ 復發與轉變風險</div>
+        <ul class="cl">
+          <li>復發風險隨緩解時間增加而變得更低；前次發作嚴重、年輕者、經歷過多次發作者復發風險較高</li>
+          <li>許多雙相情感性疾患開始會先有一次或多次<strong>憂鬱發作</strong>——青春期發病、有精神病特徵、有雙極情感性疾患家族史者更可能如此</li>
+          <li>「混合發作特質」的存在，增加未來躁狂或輕躁診斷的風險</li>
+          <li>重鬱症（特別是有精神病特徵）<strong>也可轉變成思覺失調症</strong>，這比思覺失調症轉變成重鬱症來得頻繁</li>
+        </ul>
+      </div>
+      <p class="d">儘管盛行率有性別差異，現象學、病程及治療反應上似乎沒有明顯性別差異。嗜睡和嗜吃在年輕個案較常出現；憂鬱特徵（尤其精神運動障礙）在老人個案較多見。早發性憂鬱更可能涉及家族性及人格障礙。</p>
+    </div>
+    <div class="panel" id="mdd-risk">
+      <div class="box a"><div class="bl">氣質</div>神經質（負向情感）是鬱症發病的明確危險因子，神經質症狀較嚴重的個案，面對生活壓力事件時更可能發展成鬱症發作期。</div>
+      <div class="box a"><div class="bl">環境</div>不良的童年經歷（尤其多個不同類型的負面經歷）構成鬱症強有力的危險因素。生活壓力事件被視為誘發因素，但發作時間點附近的負向生活事件有無，似乎與疾病預後或治療選擇無關。</div>
+      <div class="box a"><div class="bl">基因和生理</div>鬱症患者的一等親家屬罹患鬱症的機率是一般族群的<strong>2到4倍</strong>。早發或反覆發作患者相對風險更高。<strong>遺傳約佔40%</strong>，神經質的人格特質佔有其中很大成分。</div>
+      <div class="box p"><div class="bl">病程修飾因子</div>所有主要的非情緒疾病皆會增加憂鬱風險。物質使用、焦慮和邊緣性人格障礙症是最常見的共存情形，憂鬱症狀可能掩蓋這些疾病而使其較晚被發現。慢性或失能的身體狀況（如糖尿病、病態肥胖、心血管疾病）也會增加憂鬱風險，且這些憂鬱發作更可能走向慢性化。</div>
+    </div>
+    <div class="panel" id="mdd-cult">
+      <p class="d">不同文化的鬱症調查顯示，12個月盛行率可相差到<strong>7倍</strong>，但不同文化間的男女罹病比、平均發病年齡及共病物質濫用的程度則相對一致。臨床醫生應注意，在大多數國家，多數憂鬱症病例並未被辨識出，許多文化中身體症狀很可能構成病人主訴。準則A的症狀中，<strong>失眠和失去精力</strong>是最常被提及的。</p>
+    </div>
+    <div class="panel" id="mdd-gender">
+      <p class="d">雖然大部份流行病學調查皆一致發現<strong>女性盛行率較高</strong>，但症狀、病程、治療反應或功能性後遺症方面，男女之間無明顯差異。<strong>女性的自殺企圖風險較高，但自殺死亡的風險較低</strong>。鬱症患者性別上的自殺率差異性，小於鬱症和一般族群之間的自殺率差異性。</p>
+    </div>
+    <div class="panel" id="mdd-sui">
+      <div class="kbdg">⚠️ 自殺風險評估重點</div>
+      <p class="d">自殺行為的可能性存在於鬱症發作的任何時候。<strong>最一致性的危險因子是曾有自殺企圖或自殺威脅的過去紀錄</strong>，但應記住，大部份自殺死亡案例之前都未有自殺企圖。</p>
+      <div class="box r"><div class="bl">其他增加自殺死亡風險的特徵</div>
+        <ul class="cl">
+          <li>男性</li>
+          <li>單身或獨居</li>
+          <li>具有顯著的無望感</li>
+          <li>邊緣型人格障礙症的存在（也顯著增加未來自殺企圖風險）</li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel" id="mdd-func">
+      <p class="d">許多功能性後遺症源自個案症狀。功能減損可能非常輕微（許多人互動時不會意識到鬱症症狀），但也可能嚴重到<strong>完全失能</strong>，使患者無法自我照顧和維持基本需要，或呈現靜默或僵直。一般醫療機構中，鬱症患者有更多疼痛症狀和身體疾病，以及身體、社交和角色功能上的明顯減損。</p>
+    </div>
+    <div class="panel" id="mdd-diff">
+      <div class="kbdg">⭐ 鑑別重點</div>
+      <div class="diff"><div class="dn">⭐ 躁症發作合併易怒情緒或混合發作</div><div class="db">鬱症發作合併顯著易怒情緒可能很難與躁症發作合併易怒情緒或混合發作區別，這些區別需要針對躁症症狀作仔細的臨床評估。</div></div>
+      <div class="diff"><div class="dn">⭐ 另一身體病況引起的情緒障礙症</div><div class="db">若依病史、身體檢查及實驗室檢驗，可排除情緒障礙是特定身體病況（如多發性硬化症、中風、甲狀腺功能低下）的直接病理或生理結果，則給予鬱症診斷才是適當的。</div></div>
+      <div class="diff"><div class="dn">⭐ 物質/醫藥引發的憂鬱症或雙相情緒障礙症</div><div class="db">差別在於物質（醫藥或毒物濫用）似乎是情緒障礙的成因。例如，憂鬱情緒若只在古柯鹼戒斷期間發生，則應診斷為古柯鹼引發的憂鬱症。</div></div>
+      <div class="diff"><div class="dn">⭐ ADHD</div><div class="db">分心和低挫折容忍度可發生在ADHD和憂鬱症中，可同時給予兩種診斷。但臨床醫生必須謹慎，<strong>不要過度診斷</strong>鬱症發作於ADHD兒童，因這些兒童的情緒障礙特點是易怒，而非悲傷或失去興趣。</div></div>
+      <div class="diff"><div class="dn">⭐ 適應障礙症合併憂鬱情緒</div><div class="db">因心理社會壓力源引發的鬱症發作，可與適應障礙症合併憂鬱情緒區別，因為適應障礙症的病患<strong>不會完全符合</strong>鬱症發作的診斷準則。</div></div>
+      <div class="diff"><div class="dn">⭐ 悲傷（正常喪慟反應）</div><div class="db">悲傷時期不應被診斷為鬱症發作，除非診斷準則的嚴重度（9項症狀至少符合5項）、期間（一天中大部分時間，幾乎每天，持續至少2週）及臨床顯著苦惱或功能減損皆符合。若不完全符合，則憂鬱情緒診斷為<strong>其他特定的憂鬱症</strong>較為適當。</div></div>
+    </div>
+    <div class="panel" id="mdd-comor">
+      <p class="d">與鬱症經常共同發生的疾病包括：<strong>物質相關障礙症、恐慌症、強迫症、神經性厭食症、神經性暴食症及邊緣型人格障礙症</strong>。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── 持續性憂鬱症 ── -->
+<div class="card" data-cat="pdd">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">300.4 F34.1</span><div><div class="cname">持續性憂鬱症（輕鬱症）</div><div class="cen">Persistent Depressive Disorder (Dysthymia)</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="tabs">
+      <button class="tab k on" onclick="st(this,'pdd-dx')">⭐ 診斷準則</button>
+      <button class="tab" onclick="st(this,'pdd-sp')">特別註明</button>
+      <button class="tab" onclick="st(this,'pdd-feat')">診斷特質</button>
+      <button class="tab" onclick="st(this,'pdd-prev')">盛行率</button>
+      <button class="tab" onclick="st(this,'pdd-dev')">發展病程</button>
+      <button class="tab" onclick="st(this,'pdd-risk')">風險預後</button>
+      <button class="tab" onclick="st(this,'pdd-func')">功能性後果</button>
+      <button class="tab k" onclick="st(this,'pdd-diff')">⭐ 鑑別診斷</button>
+      <button class="tab" onclick="st(this,'pdd-comor')">共病</button>
+    </div>
+    <div class="panel on" id="pdd-dx">
+      <div class="kbdg">⭐ 核心：心情憂鬱≥2年（兒童≥1年）+ 6項中≥2項，無症狀期不超過2個月</div>
+      <div class="ib">此疾病是DSM-IV中定義的<strong>慢性鬱症</strong>和<strong>輕鬱症</strong>兩者的合併現象（consolidation）。</div>
+      <div class="rr"><span class="rl">A</span><div class="rc">一天之中大部分時間都覺得心情憂鬱，至少持續<strong>兩年</strong>（主觀報告或他人觀察得知）<em>（兒童和青少年心情可以是易怒，必須至少為期一年）</em></div></div>
+      <div class="rr"><span class="rl">B</span><div class="rc">感到憂鬱時，同時出現下列<strong>兩項（或更多）</strong>症狀：
+        <ul class="cl" style="margin-top:5px">
+          <li>食慾變差或吃太多</li>
+          <li>失眠或嗜眠</li>
+          <li>無精打采或疲勞</li>
+          <li>自卑</li>
+          <li>專注力差或難以做決定</li>
+          <li>無望感</li>
+        </ul>
+      </div></div>
+      <div class="rr"><span class="rl">C</span><div class="rc">在出現困擾的兩年間（兒童/青少年為一年），沒有症狀（準則A和B）的期間不超過<strong>兩個月</strong></div></div>
+      <div class="rr"><span class="rl">D</span><div class="rc">符合鬱症的準則症狀可能會連續出現兩年</div></div>
+      <div class="rr"><span class="rl">E</span><div class="rc">不曾出現躁症發作或輕躁症發作，從未達到循環型情緒障礙症的準則</div></div>
+      <div class="rr"><span class="rl">F</span><div class="rc">無法以情感性思覺失調症、思覺失調症、妄想症或其他特定或非特定思覺失調類群和其他精神病症做更好的解釋</div></div>
+      <div class="rr"><span class="rl w">G</span><div class="rc">症狀無法歸因為使用物質或另一身體病況的生理作用（如甲狀腺功能低下）所致</div></div>
+      <div class="rr"><span class="rl">H</span><div class="rc">這些症狀引起臨床上顯著苦惱或社交、職業或其他重要領域功能減損</div></div>
+    </div>
+    <div class="panel" id="pdd-sp">
+      <h4 class="sub">最近兩年有持續性憂鬱症之特別註明</h4>
+      <table class="ct">
+        <tr><th>特別註明</th><th>定義</th></tr>
+        <tr><td>純粹的輕鬱症</td><td>至少過去兩年，未符合鬱症發作的準則症狀</td></tr>
+        <tr><td>持續的鬱症發作</td><td>過去兩年期間，發病症狀完全符合鬱症發作準則</td></tr>
+        <tr><td>曾有間歇性鬱症發作，且目前有鬱症發作</td><td>目前完全符合鬱症發作準則，但過去兩年內至少有為期8週的時間，症狀並未完全達到鬱症發作準則</td></tr>
+        <tr><td>曾有鬱症間歇性發作，但目前沒有鬱症發作</td><td>目前沒有完全符合鬱症發作的症狀出現，但過去兩年內至少曾發作一次或超過一次</td></tr>
+      </table>
+      <h4 class="sub">病程及嚴重度特別註明</h4>
+      <ul class="cl"><li>部分緩解 / 完全緩解</li><li>早期發病（21歲之前）/ 晚期發病（21歲或之後）</li><li>嚴重度：輕度/中度/重度</li></ul>
+    </div>
+    <div class="panel" id="pdd-feat">
+      <p class="d">基本特徵是情緒低落發生於一天中的大部分時間，有症狀的日子比沒有症狀的日子多，至少2年（或至少1年於兒童和青少年）。鬱症可在持續性憂鬱症之前先發生，也可於其發病過程中發生。<strong>若症狀符合鬱症準則達2年，則可同時給予持續性憂鬱症和鬱症的診斷</strong>。</p>
+      <p class="d">病患會描述自己的心情「悲傷」或「向下沈淪」。情緒低落時期，準則B的6個症狀至少要有2個存在。因這些症狀已成為病患每天生活的一部分經歷（特別是早期發病情況），除非直接詢問，否則病患可能不會主動提及。</p>
+    </div>
+    <div class="panel" id="pdd-prev">
+      <div class="sg">
+        <div class="sc"><div class="sv">0.5%</div><div class="sl">美國持續性憂鬱症12個月盛行率</div></div>
+        <div class="sc"><div class="sv">1.5%</div><div class="sl">慢性鬱症12個月盛行率</div></div>
+      </div>
+    </div>
+    <div class="panel" id="pdd-dev">
+      <p class="d">往往是<strong>早期且隱伏</strong>的發病（兒童期、青春期或成年早期），根據定義，會有<strong>慢性病程</strong>。在患有持續性憂鬱症和邊緣型人格障礙症的患者中，隨病程時間會有對應的共同特徵，代表兩者可能有共同的致病機轉。<strong>早期發病（21歲前）</strong>會有更高的人格障礙症或物質使用障礙症的共病機率。</p>
+      <p class="d">當症狀達到鬱症發作程度，隨後便會恢復到較低程度水平。然而，與鬱症發作相比，持續性憂鬱症發病期間，憂鬱症狀<strong>不太可能持續緩解一段時間</strong>。</p>
+    </div>
+    <div class="panel" id="pdd-risk">
+      <div class="box a"><div class="bl">氣質</div>預測長期預後較差的因子：較嚴重的神經質、較嚴重的症狀、較差的整體功能，以及合併焦慮症或行為規範障礙症。</div>
+      <div class="box a"><div class="bl">環境</div>童年危險因子包括雙親過世或分離。</div>
+      <div class="box a"><div class="bl">基因和生理</div>DSM-IV的輕鬱症和慢性鬱症，在疾病發展、病程和家族史方面沒有明顯差異。<strong>相比鬱症，持續性憂鬱症病患的一等親屬有較高比率也會有持續性憂鬱症</strong>。前額葉皮質、前扣帶迴、杏仁核、海馬迴等腦區可能與此疾病有關。</div>
+    </div>
+    <div class="panel" id="pdd-func">
+      <p class="d">對社交和職業功能影響的程度變異很大，但影響程度<strong>有可能與鬱症相當甚至比鬱症還嚴重</strong>。</p>
+    </div>
+    <div class="panel" id="pdd-diff">
+      <div class="kbdg">⭐ 鑑別重點</div>
+      <div class="diff"><div class="dn">⭐ 鬱症</div><div class="db">若憂鬱情緒合併持續性憂鬱症準則中兩項以上症狀且持續2年以上，可給予持續性憂鬱症診斷。<strong>持續性憂鬱症的診斷須依據2年的期間</strong>，與鬱症發作（單次發作不超過2年）區別。若發作期間任何時間症狀符合鬱症發作準則，則應做出鬱症診斷，以持續性憂鬱症的特別註明方式呈現。</div></div>
+      <div class="diff"><div class="dn">⭐ 精神病症</div><div class="db">憂鬱症狀是慢性精神病症（如情感性思覺失調症、思覺失調症、妄想症）的常見相關特徵。若憂鬱症狀只出現在精神病症的病程中（包括殘存期），則<strong>不另外給予持續性憂鬱症的單獨診斷</strong>。</div></div>
+      <div class="diff"><div class="dn">⭐ 另一身體病況引起的憂鬱或雙相情緒及相關障礙症</div><div class="db">根據病史、理學檢查或實驗室檢驗結果，若判斷情緒困擾歸因於特定（通常是慢性）身體病況的直接病生理影響，則診斷為另一身體病況引起者。若無法歸因，應記錄為原發精神障礙症（持續性憂鬱症），身體病況記錄為伴隨身體病況。</div></div>
+      <div class="diff"><div class="dn">物質/醫藥引發的憂鬱症或雙相情緒障礙症</div><div class="db">差別在於判斷物質（醫藥或毒物濫用）是否為情緒障礙的成因。</div></div>
+      <div class="diff"><div class="dn">人格障礙症</div><div class="db">通常合併人格障礙症時會有相關症狀作為證據。當臨床症狀符合持續性憂鬱症和人格障礙症的診斷時，<strong>可同時給予兩種診斷</strong>。</div></div>
+    </div>
+    <div class="panel" id="pdd-comor">
+      <p class="d">相較於鬱症病患，持續性憂鬱症病患有較高機率會合併其他精神疾病，尤其是<strong>焦慮症和物質使用障礙症</strong>。早發的持續性憂鬱症與DSM-IV中的<strong>B型和C型人格障礙症</strong>有強烈相關。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── 經前期情緒低落症 ── -->
+<div class="card" data-cat="pmdd">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">625.4 F32.81</span><div><div class="cname">經前期情緒低落症</div><div class="cen">Premenstrual Dysphoric Disorder (PMDD)</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="tabs">
+      <button class="tab k on" onclick="st(this,'pmdd-dx')">⭐ 診斷準則</button>
+      <button class="tab" onclick="st(this,'pmdd-feat')">診斷特質</button>
+      <button class="tab" onclick="st(this,'pmdd-assoc')">支持診斷</button>
+      <button class="tab" onclick="st(this,'pmdd-prev')">盛行率</button>
+      <button class="tab" onclick="st(this,'pmdd-dev')">發展病程</button>
+      <button class="tab" onclick="st(this,'pmdd-risk')">風險預後</button>
+      <button class="tab" onclick="st(this,'pmdd-cult')">文化議題</button>
+      <button class="tab" onclick="st(this,'pmdd-marker')">診斷標記</button>
+      <button class="tab" onclick="st(this,'pmdd-func')">功能性後果</button>
+      <button class="tab k" onclick="st(this,'pmdd-diff')">⭐ 鑑別診斷</button>
+      <button class="tab" onclick="st(this,'pmdd-comor')">共病</button>
+    </div>
+    <div class="panel on" id="pmdd-dx">
+      <div class="kbdg">⭐ 核心：A項症狀5項以上（含B類≥1項+C類補滿至5項）+ 月經前出現，經期內緩解</div>
+      <div class="rr"><span class="rl">A</span><div class="rc">大部分月經週期中，需在月經開始的前一週，出現<strong>五項以上</strong>的症狀，而在經期開始後的幾天內開始改善，且在經期結束後症狀轉為輕微或消失</div></div>
+      <div class="rr"><span class="rl">B</span><div class="rc">一項（或多項）以下症狀必須存在：
+        <ul class="cl" style="margin-top:5px">
+          <li>明顯的情緒不穩（如：情緒波動、突然感覺悲傷或容易流淚、或對於人際被拒絕的敏感變高）</li>
+          <li>顯著易怒、憤怒或人際衝突增多</li>
+          <li>明顯的情緒憂鬱、無望感，或有自我貶抑的想法</li>
+          <li>明顯的焦慮、緊張和／或激動的感覺</li>
+        </ul>
+      </div></div>
+      <div class="rr"><span class="rl">C</span><div class="rc">一項（或多項）以下症狀必須同時存在，且和符合準則B的症狀加起來必須有<strong>5個</strong>：
+        <ul class="cl" style="margin-top:5px">
+          <li>對日常活動的興趣降低（工作、學校、朋友、嗜好）</li>
+          <li>專注力主觀報告降低</li>
+          <li>沒精神想睡、容易疲勞或明顯缺乏元氣精力</li>
+          <li>食慾明顯變化；吃太多；或對特定食物的渴望</li>
+          <li>嗜睡或失眠</li>
+          <li>快崩潰或失去控制的感覺</li>
+          <li>身體症狀，如：乳房觸痛或腫脹、關節或肌肉疼痛、覺得全身「腫脹」或體重增加</li>
+        </ul>
+        <em>（注意：過去一年內，大部分經期症狀必須符合準則A-C）</em>
+      </div></div>
+      <div class="rr"><span class="rl">D</span><div class="rc">這些症狀引起臨床上顯著苦惱或職業、學校、平日社會活動或與他人關係受到干擾</div></div>
+      <div class="rr"><span class="rl">E</span><div class="rc">這些困擾<strong>不僅僅是</strong>另一精神疾病的症狀惡化，例如：鬱症、恐慌症、持續性憂鬱症（輕鬱症）、人格障礙症（雖然PMDD可能與這些疾病共同出現）</div></div>
+      <div class="rr"><span class="rl">F</span><div class="rc">在兩個症狀週期之間，應藉由<strong>日常評估（prospective daily ratings）</strong>以確認是否符合準則A（診斷可在此確認前作出<strong>暫時性diagnosis</strong>）</div></div>
+      <div class="rr"><span class="rl w">G</span><div class="rc">症狀無法歸因於使用物質或另一身體病況（如甲狀腺機能亢進）而產生的生理效應</div></div>
+      <div class="box w"><div class="bl">⚠️ 記錄程序</div>若透過至少兩個症狀週期之間的日常評估仍無法確認症狀，應在診斷名詞後加上「<strong>暫時性（provisional）</strong>」（如：PMDD，暫時性）。</div>
+    </div>
+    <div class="panel" id="pmdd-feat">
+      <p class="d">基本特徵是反覆在經期前出現情緒不穩、易怒、不悅和焦慮的症狀，在經期開始或不久後緩解。可能伴隨行為和身體症狀。症狀過去一年中必須發生在大部分月經週期，且必須在職業或社會功能方面產生負面影響。</p>
+      <p class="d">通常情況下，症狀高峰會出現在月經剛開始時。在月經開始後的<strong>濾泡期</strong>，必須要有一段無症狀的期間。雖然核心症狀包括情緒和焦慮症狀，行為和身體症狀也常出現。<strong>但若只有身體和/或行為症狀而不存在情緒和/或焦慮症狀，是不足夠下診斷的</strong>。症狀嚴重程度（但非持續時間）可能和另一精神疾病相當，如鬱症發作或廣泛性焦慮症。</p>
+    </div>
+    <div class="panel" id="pmdd-assoc">
+      <p class="d">妄想和幻覺都曾在月經週期的<strong>黃體後期</strong>被描述過，但很少見。<strong>經前期被認為是自殺的一個危險時期</strong>。</p>
+    </div>
+    <div class="panel" id="pmdd-prev">
+      <div class="sg">
+        <div class="sc"><div class="sv">1.8-5.8%</div><div class="sl">有經期婦女的12個月盛行率</div></div>
+        <div class="sc"><div class="sv">1.8%</div><div class="sl">符合診斷準則但無功能減損</div></div>
+        <div class="sc"><div class="sv">1.3%</div><div class="sl">符合診斷準則且有功能減損</div></div>
+      </div>
+      <p class="d">若統計基於回溯性報告而非日常評估，此比率會更明顯增加。基於1-2個月每日症狀記錄所估計的盛行率可能不足以作為代表性（因症狀最嚴重時，病患可能無法維持每日評估程序）。</p>
+    </div>
+    <div class="panel" id="pmdd-dev">
+      <p class="d">可在初經後的任何時候發生。在40個月的觀察期間，新發生病例的盛行率約為2.5%。許多人接近<strong>更年期</strong>時症狀會惡化。症狀在<strong>停經後會停止</strong>，週期性的賀爾蒙替代治療可以誘發症狀的再現。</p>
+    </div>
+    <div class="panel" id="pmdd-risk">
+      <div class="box a"><div class="bl">環境</div>相關環境因素：壓力、人際互動上創傷史、季節變化、一般對於女性性行為（特別是針對女性性別角色）的社會文化觀點。</div>
+      <div class="box a"><div class="bl">基因和生理</div>遺傳因子未知。對於經期前症狀，遺傳性比率為<strong>30%到80%</strong>之間，最常見組成症狀的遺傳性為<strong>50%</strong>。</div>
+      <div class="box p"><div class="bl">病程修飾因子</div>相比不使用口服避孕藥的婦女，使用口服避孕藥的婦女有較少的經期前症狀抱怨。</div>
+    </div>
+    <div class="panel" id="pmdd-cult">
+      <p class="d">PMDD並非侷限於特定文化的症候群，可在美國、歐洲、印度和亞洲的族群中觀察到。目前尚不清楚罹病率是否會因種族而異。然而，症狀的頻率、強度、表現程度和尋求協助的模式可能受文化因素的顯著影響。</p>
+    </div>
+    <div class="panel" id="pmdd-marker">
+      <p class="d">診斷大約需要2個月的日常症狀評估才能確立。常用評估工具：每日問題嚴重度評估、經期前情緒症狀視覺化量表、經前期緊張症候群評估量表（具自我報告和觀察者版本）。</p>
+    </div>
+    <div class="panel" id="pmdd-func">
+      <p class="d">症狀必須在月經來前有臨床顯著的苦惱和/或有明顯且嚴重的社會或職業功能減損。社會功能受損方面，可能由<strong>夫妻關係不順</strong>和與孩子、其他家庭成員或朋友相處問題來表現。長期婚姻或工作的問題不應與僅跟PMDD相關連的功能障礙發生混淆。</p>
+    </div>
+    <div class="panel" id="pmdd-diff">
+      <div class="kbdg">⭐ 鑑別重點</div>
+      <div class="diff"><div class="dn">⭐ 經前期症候群（PMS）</div><div class="db">PMS不需要符合至少5項症狀的要求，並不一定要有情緒症狀。PMS比PMDD更常見，一般視為較輕微的症狀表現。若經期前期有身體或行為症狀但<strong>沒有情緒症狀</strong>，則較可能符合PMS，而非PMDD。</div></div>
+      <div class="diff"><div class="dn">⭐ 經痛</div><div class="db">經痛是月經疼痛的症候群，不同於以情緒變化為特徵的其他症候群。經痛症狀<strong>始於月經開始時</strong>，而PMDD症狀根據定義<strong>會在月經來臨前便已開始</strong>，即使持續到月經後的幾天內。</div></div>
+      <div class="diff"><div class="dn">⭐ 雙相情緒障礙症、鬱症及持續性憂鬱症</div><div class="db">許多患有這些疾病的女性認為自己有PMDD，但描述症狀時會發現<strong>並未有經期前的模式</strong>。因月經開始相對有記憶性，病患可能提出症狀只在月經前期發生或惡化——這也是為何要求<strong>每日症狀評估</strong>來確診的理由之一。與一般族群相比，PMDD患者<strong>人格障礙症的比率並沒有比較高</strong>。</div></div>
+      <div class="diff"><div class="dn">⭐ 使用賀爾蒙治療</div><div class="db">若在外源性賀爾蒙使用後症狀才開始出現，可能是由於使用賀爾蒙造成，而非PMDD本身。如果女性停止賀爾蒙且症狀也跟著消失，這與<strong>物質/醫藥引發的憂鬱症</strong>一致。</div></div>
+    </div>
+    <div class="panel" id="pmdd-comor">
+      <p class="d"><strong>鬱症</strong>是PMDD病患發病前最常見的疾病。各種身體（偏頭痛、氣喘、過敏症、癲癇症）或其他精神疾病（憂鬱和雙相情緒障礙症、焦慮症、神經性暴食症、物質使用障礙症）可能在月經前期惡化；然而這些疾病<strong>在月經後的期間並不會有症狀的完全緩解</strong>，可藉此排除PMDD的診斷。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── 物質/醫藥引發的憂鬱症 ── -->
+<div class="card" data-cat="sub">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">各物質別碼</span><div><div class="cname">物質／醫藥引發的憂鬱症</div><div class="cen">Substance/Medication-Induced Depressive Disorder</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="tabs">
+      <button class="tab k on" onclick="st(this,'sub-dx')">⭐ 診斷準則</button>
+      <button class="tab" onclick="st(this,'sub-sp')">特別註明</button>
+      <button class="tab" onclick="st(this,'sub-feat')">診斷特質</button>
+      <button class="tab" onclick="st(this,'sub-prev')">盛行率</button>
+      <button class="tab" onclick="st(this,'sub-dev')">發展病程</button>
+      <button class="tab" onclick="st(this,'sub-risk')">風險預後</button>
+      <button class="tab" onclick="st(this,'sub-marker')">診斷標記</button>
+      <button class="tab r" onclick="st(this,'sub-sui')">⚠️ 自殺風險</button>
+      <button class="tab k" onclick="st(this,'sub-diff')">⭐ 鑑別診斷</button>
+      <button class="tab" onclick="st(this,'sub-comor')">共病</button>
+    </div>
+    <div class="panel on" id="sub-dx">
+      <div class="rr"><span class="rl">A</span><div class="rc">顯著和持續的情緒困擾，在臨床上佔主導地位，特色是由情緒憂鬱或明顯地減少在對所有事情或幾乎所有活動的興趣或愉悅感</div></div>
+      <div class="rr"><span class="rl">B</span><div class="rc">有病史、體檢或實驗室檢查結果證據發現<strong>(1)和(2)</strong>：<ul class="cl" style="margin-top:5px"><li>符合準則A的症狀，在物質中毒或戒斷期間或之後、或在使用醫藥之後</li><li>所使用的物質/醫藥能夠產生準則A的症狀</li></ul></div></div>
+      <div class="rr"><span class="rl">C</span><div class="rc">此困擾無法以不是物質/醫藥引起的憂鬱症做更好的解釋。這種證據可能包括：<ul class="cl" style="margin-top:5px"><li>症狀發病在使用物質/醫藥之前</li><li>在急性戒斷後或嚴重中毒症狀後持續一段相當長的時間（如約一個月）</li><li>有其他證據顯示存在一個獨立的非物質/醫藥引發的憂鬱症（如有反覆發作病史）</li></ul></div></div>
+      <div class="rr"><span class="rl">D</span><div class="rc">此困擾不會只發生在譫妄的病程中</div></div>
+      <div class="rr"><span class="rl w">E</span><div class="rc">此困擾引起臨床上顯著苦惱或在社交、職業或其他重要領域功能減損</div></div>
+      <div class="box w"><div class="bl">⚠️ 重要</div>當準則A的症狀佔主導地位，十分嚴重而且值得臨床重視時，應該不僅對藥物中毒或藥物戒斷的症狀進行診斷。</div>
+    </div>
+    <div class="panel" id="sub-sp">
+      <div class="spbox"><div class="sptitle">中毒時發病</div>如果準則符合物質引起的中毒，且症狀在中毒期間形成</div>
+      <div class="spbox"><div class="sptitle">戒斷時發病</div>如果符合物質戒斷的準則，且症狀是在停用期間或不久之後形成</div>
+    </div>
+    <div class="panel" id="sub-feat">
+      <p class="d">診斷特徵包括憂鬱症的症狀，如鬱症；然而，憂鬱症狀與物質（濫用藥物、毒物、精神科藥物或其他醫藥）的攝取、注射或吸入相關，且<strong>持續超過物質中毒或戒斷所預期的生理效應長度</strong>。相關憂鬱症狀，應在使用物質當下或使用物質後<strong>1個月內發生</strong>。</p>
+      <div class="box a"><div class="bl">常見誘發藥物</div>興奮劑、類固醇、左旋多巴（L-dopa）、抗生素、中樞神經系統藥物、皮膚科藥物、化療藥物、免疫製劑、抗病毒藥物（efavirenz）、心血管藥物（clonidine、guanethidine、methyldopa、reserpine）、視黃酸衍伸藥物（isotretinoin）、抗憂鬱藥物、抗痙攣藥物、抗偏頭痛藥物（triptans）、抗精神病藥物、賀爾蒙藥物（corticosteroids、口服避孕藥、GnRH激動劑、tamoxifen）、戒菸藥物（varenicline）、干擾素</div>
+      <p class="d">需區別是否藥物真的與引發憂鬱症相關，還是原發性憂鬱症碰巧病人正在接受其他藥物治療——臨床判斷在此十分重要。</p>
+    </div>
+    <div class="panel" id="sub-prev">
+      <p class="d">在具有全國代表性的美國成人人口中，物質/醫藥引發的憂鬱症的<strong>終生盛行率是0.26%</strong>。</p>
+    </div>
+    <div class="panel" id="sub-dev">
+      <p class="d">發病時間點必須是在病人正在使用物質或正在戒斷時期。大多數情況下，憂鬱症會在使用物質的前幾週或第一個月內發生。一旦停止使用該物質，憂鬱症狀通常會在<strong>幾天到幾週內緩解</strong>，這取決於物質/醫藥的半衰期以及是否有戒斷症狀。如果症狀持續<strong>超過特定物質/醫藥所預期的戒斷期長度4週</strong>，則應考慮其他原因引起的憂鬱情緒症狀。</p>
+    </div>
+    <div class="panel" id="sub-risk">
+      <div class="box a"><div class="bl">氣質</div>危險因子包括有鬱症病史、有藥物引發憂鬱症的病史、或本身有心理社會壓力源。</div>
+      <div class="box a"><div class="bl">環境</div>特定類型藥物有相關危險因子（如治療C型肝炎前免疫活性增加與interferon-alfa引發的憂鬱症有關；高劑量類固醇或高血濃度efavirenz；口服避孕藥中高雌激素和黃體素含量）。</div>
+      <div class="box p"><div class="bl">病程修飾因子</div>與沒有物質使用障礙症的鬱症病患相比，物質引發的憂鬱症病患較可能為男性、黑人、最高學歷高中、缺乏保險、家庭收入較低。也較可能有物質使用障礙症和反社會行為的家族史。</div>
+    </div>
+    <div class="panel" id="sub-marker">
+      <p class="d">要確認是否有使用物質，有時可透過實驗室檢驗進行可疑物質的血液或尿液篩檢，來證實診斷。</p>
+    </div>
+    <div class="panel" id="sub-sui">
+      <div class="kbdg">⚠️ 治療後出現的自殺（Treatment-emergent suicidality）</div>
+      <p class="d">代表從病患基本狀態有了思想和行為明顯的變化，通常與物質的使用有時間上的關係，必須與原發精神障礙症區分開來。</p>
+      <div class="box r"><div class="bl">FDA抗憂鬱藥物統合分析重點</div>
+        <ul class="cl">
+          <li>納入372個臨床試驗、99839個樣本數</li>
+          <li>橫跨所有成人年齡族群時，<strong>自殺行為或意念的風險沒有明顯增加</strong></li>
+          <li>但<strong>18-24歲</strong>族群風險升高（雖不顯著，OR=1.55）</li>
+          <li>接受研究性抗憂鬱藥物的病患自殺絕對風險為0.01%</li>
+          <li>FDA於2007年擴大黑框警告，強調需小心監控治療後出現的自殺意念</li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel" id="sub-diff">
+      <div class="kbdg">⭐ 鑑別重點</div>
+      <div class="diff"><div class="dn">⭐ 物質中毒和戒斷</div><div class="db">憂鬱症狀常發生在物質中毒和戒斷期，特定的物質中毒和戒斷診斷通常就足夠歸類。只有當情緒障礙明顯比一般戒斷所會出現的情緒障礙<strong>更加強烈或持久</strong>，且嚴重到足以單獨引起關注或治療考量時，物質/醫藥引發的憂鬱症才可取代物質中毒/戒斷的診斷。</div></div>
+      <div class="diff"><div class="dn">⭐ 原發性憂鬱症</div><div class="db">主要透過判斷該物質在成因上與症狀相關來作鑑別。</div></div>
+      <div class="diff"><div class="dn">⭐ 另一身體病況引發的憂鬱症</div><div class="db">需考慮情緒症狀是否可能是身體病況的生理效應而非醫藥造成。有時需更動其他身體病況的藥物治療（換藥或停藥）以確定。若已確定身體病況和物質使用/戒斷同時造成，<strong>可同時給予兩種診斷</strong>。</div></div>
+    </div>
+    <div class="panel" id="sub-comor">
+      <p class="d">相較於沒有合併物質使用障礙症的鬱症病患，物質/醫藥引發的憂鬱症病患有較高機率會合併任何精神疾病，尤其是<strong>病態性賭博、妄想型、自戀型和反社會型人格障礙症</strong>；比較不會合併持續性憂鬱症（輕鬱症）。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── 另一身體病況引起的憂鬱症 ── -->
+<div class="card" data-cat="med">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">293.83</span><div><div class="cname">另一身體病況引起的憂鬱症</div><div class="cen">Depressive Disorder Due to Another Medical Condition</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="tabs">
+      <button class="tab k on" onclick="st(this,'medd-dx')">⭐ 診斷準則</button>
+      <button class="tab" onclick="st(this,'medd-sp')">特別註明</button>
+      <button class="tab" onclick="st(this,'medd-feat')">診斷特質</button>
+      <button class="tab" onclick="st(this,'medd-assoc')">支持診斷</button>
+      <button class="tab" onclick="st(this,'medd-dev')">發展病程</button>
+      <button class="tab" onclick="st(this,'medd-risk')">風險預後</button>
+      <button class="tab" onclick="st(this,'medd-gender')">性別議題</button>
+      <button class="tab" onclick="st(this,'medd-marker')">診斷標記</button>
+      <button class="tab r" onclick="st(this,'medd-sui')">⚠️ 自殺風險</button>
+      <button class="tab" onclick="st(this,'medd-func')">功能性後果</button>
+      <button class="tab k" onclick="st(this,'medd-diff')">⭐ 鑑別診斷</button>
+      <button class="tab" onclick="st(this,'medd-comor')">共病</button>
+    </div>
+    <div class="panel on" id="medd-dx">
+      <div class="rr"><span class="rl">A</span><div class="rc">臨床上發現，有顯著和持久的情緒憂鬱，或顯著減少對所有事情或幾乎所有事情或活動的興趣或愉悅感</div></div>
+      <div class="rr"><span class="rl">B</span><div class="rc">從病史、體檢或實驗室檢查結果獲得證據顯示：此困擾是另一身體病況的<strong>直接病生理</strong>所造成</div></div>
+      <div class="rr"><span class="rl">C</span><div class="rc">此困擾無法以另一精神疾病做更好的解釋（如適應障礙、壓力源是嚴重身體病況所引起的情緒低落）</div></div>
+      <div class="rr"><span class="rl">D</span><div class="rc">此困擾不是特別發生在譫妄的病程中</div></div>
+      <div class="rr"><span class="rl w">E</span><div class="rc">此困擾引起臨床上顯著苦惱或社交、職業或其他重要領域功能減損</div></div>
+    </div>
+    <div class="panel" id="medd-sp">
+      <table class="ct">
+        <tr><th>編碼</th><th>特別註明</th><th>說明</th></tr>
+        <tr><td>F06.31</td><td>有憂鬱症特徵</td><td>不能完全符合鬱症發作的準則</td></tr>
+        <tr><td>F06.32</td><td>有類似鬱症發作</td><td>除準則C外，症狀完全符合鬱症發作準則</td></tr>
+        <tr><td>F06.34</td><td>有混合型特徵</td><td>躁或輕躁的症狀也存在，但在臨床上並不佔優勢</td></tr>
+      </table>
+      <p class="d">編碼註：在精神疾病名稱內包括其他身體病況的名稱（如：甲狀腺功能低下引起的憂鬱症，有憂鬱症特徵）。其他身體病況也應單獨在前面編碼和列出。</p>
+    </div>
+    <div class="panel" id="medd-feat">
+      <p class="d">基本特徵是臨床上發現顯著和持久的情緒憂鬱，或顯著減少對所有事情或活動的興趣或愉悅感，而此困擾被認為是身體病況的直接病生理所造成。</p>
+      <div class="box a"><div class="bl">確認病因關係的考量</div>
+        <ul class="cl">
+          <li>身體病況和情緒障礙之間，於發病、惡化或緩解有<strong>時序上的關聯性</strong></li>
+          <li>存有原發性情緒障礙症不典型的特徵（不典型的發病年齡或病程、或沒有家族病史）</li>
+          <li>文獻上的證據支持身體病況和情緒症狀的發展之間有直接的關聯性</li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel" id="medd-assoc">
+      <p class="d">病因（基於最佳臨床證據，與另一身體病況有因果關係）是關鍵。</p>
+      <div class="box a"><div class="bl">常見相關身體病況</div>
+        <ul class="cl">
+          <li>明確相關且有神經解剖學關聯：<strong>中風、亨廷頓氏症、帕金森氏症、創傷性腦損傷</strong></li>
+          <li>神經內分泌疾病中最相關：<strong>庫欣氏症</strong>和<strong>甲狀腺功能低下</strong></li>
+          <li>其他考慮：多發性硬化症（需考量適應障礙症合併憂鬱情緒的鑑別診斷）</li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel" id="medd-dev">
+      <p class="d">根據最大型系列病例報告，<strong>中風後憂鬱通常很快發生</strong>，會在腦血管病變後的一天內或數天內出現（也有在數週至數月才發生者）。最大型系列病例報告中，中風後鬱症發作期間平均為<strong>9至11個月</strong>。</p>
+      <p class="d">在亨廷頓氏症中，憂鬱狀態會在病程相對早期時即出現。在帕金森氏症和亨廷頓氏症中，<strong>憂鬱往往會比相關的主要運動障礙和認知障礙還要早出現</strong>。這在亨廷頓氏症中尤為明顯，其憂鬱甚至被認為是首先出現的神經精神症狀。有觀察證據顯示，當亨廷頓氏症的失智問題惡化時，憂鬱會變得較不常見。</p>
+    </div>
+    <div class="panel" id="medd-risk">
+      <div class="box a"><div class="bl">病程修飾因子</div>腦血管病變後的急性鬱症發作（1天到1週內發生）的風險似乎與<strong>病變位置密切相關</strong>：中風後數天內病患憂鬱發作以<strong>左額葉中風</strong>的風險最高，<strong>右額葉病灶</strong>風險最低。中風後2-6個月內才發生的憂鬱狀態則未觀察到與額葉區病灶和偏側的關聯。</div>
+    </div>
+    <div class="panel" id="medd-gender">
+      <p class="d">性別差異涉及到相關的身體病況（例如，<strong>全身紅斑性狼瘡多見於女性；中風於中年男性比女性較為常見</strong>）。</p>
+    </div>
+    <div class="panel" id="medd-marker">
+      <p class="d">診斷標記涉及相關身體病況（例如，類固醇在血液或尿中的含量可幫助庫欣氏症的診斷，而庫欣氏症可能與躁症或鬱症症狀有關）。</p>
+    </div>
+    <div class="panel" id="medd-sui">
+      <div class="kbdg">⚠️ 自殺風險</div>
+      <p class="d">流行病學研究中，此疾病的自殺風險與一般鬱症發作的自殺風險之間並無差異上的證據。有病例報告指出自殺與此疾病的關聯性。嚴重身體疾病和自殺之間有明確的關聯性，<strong>特別是在病情發作或確診後不久</strong>。因此可審慎假設，身體病況相關的憂鬱症之自殺風險並不小於其它形式的鬱症發作，甚至可能風險更高。</p>
+    </div>
+    <div class="panel" id="medd-func">
+      <p class="d">功能性後遺症涉及相關身體病況。雖未被證實，一般會認為當庫欣氏症治癒或緩解後，其引起的憂鬱症不會再復發。也一般認為腦傷或其他中樞神經系統疾病患者，其情緒症狀（憂鬱和躁症/輕躁症狀）可能會間歇性發作（即復發）。</p>
+    </div>
+    <div class="panel" id="medd-diff">
+      <div class="kbdg">⭐ 鑑別重點</div>
+      <div class="diff"><div class="dn">⭐ 非另一身體病況引起的憂鬱症</div><div class="db">確定身體病況是否為成因，取決於：a) 在身體病況發生之前並無憂鬱症發作過；b) 相關身體病況的確有可能促使或導致憂鬱症的可能性；c) 身體病況發生或惡化後憂鬱症狀的病程，是否當身體疾病有效治療或緩解後不久，憂鬱症狀也隨之緩解。</div></div>
+      <div class="diff"><div class="dn">⭐ 醫藥引發的憂鬱症</div><div class="db">一些治療身體病況的醫藥（如類固醇或alpha-interferon）可引發憂鬱或躁症症狀。臨床判斷需試圖區分最有可能的兩種病因（身體病況相關 vs. 物質引發的症候群）。</div></div>
+      <div class="diff"><div class="dn">⭐ 適應障礙症</div><div class="db">身體疾病的發生本身就是一種生活壓力，可能導致適應障礙症或憂鬱症發作。主要鑑別重點在於普遍存在的憂鬱情形和憂鬱症狀的數量和程度。</div></div>
+    </div>
+    <div class="panel" id="medd-comor">
+      <p class="d">合併症是指那些與身體病況的病因相關的問題。已知在患有各種身體病況的病人中（如庫欣氏症），<strong>譫妄可在憂鬱症狀之前發生或伴隨發生</strong>。不論憂鬱的成因為何，<strong>焦慮症狀</strong>常常與憂鬱症有關。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── 特別註明（詳細） ── -->
+<div class="card" data-cat="spec">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">特別註明</span><div><div class="cname">憂鬱症特性說明（詳細整理）</div><div class="cen">Specifiers for Depressive Disorder</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="tabs">
+      <button class="tab k on" onclick="st(this,'sp-anx')">⭐ 焦慮特徵</button>
+      <button class="tab k" onclick="st(this,'sp-mix')">⭐ 混合型特徵</button>
+      <button class="tab k" onclick="st(this,'sp-mel')">⭐ 憂鬱特徵</button>
+      <button class="tab" onclick="st(this,'sp-aty')">非典型特徵</button>
+      <button class="tab" onclick="st(this,'sp-psy')">精神病特徵</button>
+      <button class="tab" onclick="st(this,'sp-peri')">分娩前後發病</button>
+      <button class="tab" onclick="st(this,'sp-sea')">季節性特徵</button>
+      <button class="tab" onclick="st(this,'sp-rem')">緩解/嚴重度</button>
+    </div>
+    <div class="panel on" id="sp-anx">
+      <div class="kbdg">⭐ 有焦慮特徵（with anxious distress）</div>
+      <p class="d">在患有重度憂鬱症或持續性憂鬱症大部分期間，出現至少<strong>2個</strong>下列症狀：</p>
+      <ul class="cl">
+        <li>激動或緊繃</li>
+        <li>感覺到不尋常的不安</li>
+        <li>因為擔心而無法專心</li>
+        <li>害怕可怕的事情發生</li>
+        <li>覺得自己可能會無法自我控制</li>
+      </ul>
+      <h4 class="sub">嚴重度</h4>
+      <table class="ct">
+        <tr><th>嚴重度</th><th>症狀數</th></tr>
+        <tr><td>輕度</td><td>2個症狀</td></tr>
+        <tr><td>中度</td><td>3個症狀</td></tr>
+        <tr><td>中重度</td><td>4或5個症狀</td></tr>
+        <tr><td>重度</td><td>4或5個症狀及合併精神動作激動</td></tr>
+      </table>
+      <div class="box w"><div class="bl">臨床意義</div>在主要醫療和特殊精神心理照護上，焦慮症被認為是躁鬱症和重度憂鬱症的主要特徵。<strong>焦慮程度高可能有較高的自殺率、發病時間增加</strong>，雖然接受治療的可能性較高但病情卻仍無起色。</div>
+    </div>
+    <div class="panel" id="sp-mix">
+      <div class="kbdg">⭐ 有混合型特徵（with mixed features）</div>
+      <p class="d">A. 完全符合鬱症發作準則，且最近鬱症發作中，至少出現以下<strong>三項</strong>躁/輕躁症狀：</p>
+      <ul class="cl">
+        <li>情緒高昂和開闊</li>
+        <li>自尊膨脹或自誇</li>
+        <li>比平常更多話或滔滔不絕講不停</li>
+        <li>思緒飛躍或主觀感受想法洶湧不止</li>
+        <li>增加精力或目標導向的活動（社交、職場或學校、或性方面）</li>
+        <li>過度參與可能有痛苦結果的活動（如不停採購、隨意的性行為或貿然投資）</li>
+        <li>睡眠需求降低（比平常睡得少卻覺得休息足夠；和失眠相反）</li>
+      </ul>
+      <p class="d">B. 別人看到混合症狀，不同於平常行為的改變。<br>
+      C. 病人症狀若同時完全符合躁和輕躁發作準則，診斷應給予第一型或第二型雙相情緒障礙症。<br>
+      D. 混合症狀無法歸因某一物質的生理效應。</p>
+      <div class="box w"><div class="bl">臨床意義</div>鬱症發作有混合特徵的患者，被發現是<strong>第一型或第二型雙相情緒障礙症的高危險因子</strong>。臨床上注意這個特別註記有助於治療計劃和監測。</div>
+    </div>
+    <div class="panel" id="sp-mel">
+      <div class="kbdg">⭐ 有憂鬱特徵（with melancholic features）</div>
+      <p class="d">A. 最近發作最嚴重時出現以下一種症狀：</p>
+      <ul class="cl">
+        <li>對所有，或幾乎所有活動失去樂趣感受</li>
+        <li>對通常快樂刺激缺乏反應（好事發生時，也不覺得更好）</li>
+      </ul>
+      <p class="d">B. 有以下三種（或更多）症狀：</p>
+      <ul class="cl">
+        <li>明顯的憂鬱情緒，包括極度的沮喪、絕望和/或壞脾氣，或感受到所謂的空虛感</li>
+        <li>憂鬱情緒在早上規律地覺得比較糟</li>
+        <li>早醒（比平常起床時間早醒2個小時）</li>
+        <li>顯著的精神動作激動或遲緩</li>
+        <li>顯著的厭食或體重減少</li>
+        <li>過度或不適當的罪惡感</li>
+      </ul>
+      <div class="box w"><div class="bl">⚠️ 「明顯的特質」的判斷</div>
+        「有憂鬱特徵」的明顯特質指與「非憂鬱特徵」期相比，<strong>在經歷上可以有質性上的差異</strong>；僅僅是更嚴重、持續更久、或沒有原因來形容心情憂鬱，<strong>並不算是其明顯特質</strong>。心情缺乏回應的評估原則：對高度想要的事情缺乏雀躍的心情（心情一點都不雀躍，或僅一部分，如最多只有平常的20%-40%且只持續一下子）。
+      </div>
+      <p class="d">「有憂鬱特徵」有中度傾向會在同一病人中重複出現；<strong>住院病人比門診病人更常發生</strong>；重度鬱症患者比輕度更有可能發生；精神病特徵者更可能出現。</p>
+    </div>
+    <div class="panel" id="sp-aty">
+      <div class="kbdg">有非典型特徵（with atypical features）</div>
+      <p class="d">A. 有情緒反應（對實際或有可能正面事情時，心情雀躍）<br>
+      B. 有以下二項（或更多）特點：</p>
+      <ul class="cl">
+        <li>明顯的體重增加或食慾增加</li>
+        <li>嗜睡（夜晚睡眠時間延長或白天至少每天10小時，或比不憂鬱時至少多2小時）</li>
+        <li>鉛性麻痺（感覺手腳像鉛般沉重，通常一天至少出現1小時）</li>
+        <li>經常（不限於發作時候）人際互動排斥的敏感而引起社交或職業功能減損</li>
+      </ul>
+      <p class="d">C. 同一次發作時，不符合「有憂鬱特徵」或「有僵直特徵」。</p>
+      <div class="box a"><div class="bl">歷史背景</div>「非典型憂鬱」具有歷史意義（相對於典型的「內源憂鬱症」）。當時門診患者很少被診斷此特徵，現在此詞不暗示不常見或不尋常的意思。人際互動拒絕的病態敏感是<strong>早期出現在成人生活並持續著的特質</strong>，且不論憂鬱與否皆出現，雖在憂鬱期可能加劇。</div>
+    </div>
+    <div class="panel" id="sp-psy">
+      <div class="kbdg">有精神病特徵（with psychotic features）</div>
+      <p class="d">妄想和/或幻覺出現。</p>
+      <div class="spbox"><div class="sptitle">情緒一致的精神病特徵</div>妄想和幻覺內容是典型的憂鬱主題，包含個人的不足之處、內疚、疾病、死亡、虛無或應得的懲罰</div>
+      <div class="spbox"><div class="sptitle">情緒不一致的精神病特徵</div>妄想或幻覺內容不牽涉到一般典型憂鬱主題；內容也可能混合著情緒不一致及情緒一致性的主題</div>
+      <div class="spbox"><div class="sptitle">有僵直症</div>若僵直症的特徵在大部分憂鬱發作時出現，可適用此特別註記</div>
+    </div>
+    <div class="panel" id="sp-peri">
+      <div class="kbdg">有分娩前後發病（peripartum onset）</div>
+      <div class="ib">若最近發作不完全符合第一型與第二型雙相情緒障礙症的躁、輕躁或鬱症發作準則，但在<strong>懷孕期或產後四週</strong>有情緒發作，則適用此特別註記。</div>
+      <ul class="cl">
+        <li>情緒發作症狀可在懷孕期或產後發作；<strong>3%-6%</strong>婦女有此狀況</li>
+        <li><strong>50%「產後」憂鬱症實際上在產前發生</strong>，因此集體稱之為「分娩前後」發病</li>
+        <li>具分娩前後憂鬱症的婦女常遭受嚴重焦慮，甚至達恐慌症發作</li>
+        <li>研究顯示懷孕期的情緒和焦慮症狀和「baby blues」一樣，會增加產後憂鬱症的風險</li>
+      </ul>
+      <div class="box r"><div class="bl">⚠️ 殺嬰行為與精神病症狀風險</div>
+        <ul class="cl">
+          <li>殺嬰行為經常和產後精神障礙症發作有關，特徵是收到下令殺嬰的聽幻覺或妄想嬰兒被附身</li>
+          <li>產後情緒（重鬱或躁）合併精神病症狀者每<strong>500到1000次分娩有1人</strong>，更常見於初產婦</li>
+          <li>婦女有過產後情緒發作、有憂鬱症或雙相情緒障礙症病史（特別是第一型）以及有雙相情緒障礙症家族史者，風險更高</li>
+          <li>一旦患產後情緒發作具精神病特徵者，日後復發風險介於<strong>30%和50%</strong></li>
+        </ul>
+      </div>
+      <p class="d">產後情緒發作務必與譫妄鑑別區分。產後期是很特別的，關係到神經內分泌改變、心理社會調適、餵母乳對治療計畫的影響，以及對日後家庭計畫的長期影響。</p>
+    </div>
+    <div class="panel" id="sp-sea">
+      <div class="kbdg">伴隨季節性特徵（with seasonal pattern）—— 適用於鬱症復發</div>
+      <p class="d">A. 鬱症發病和一年中的特定期間有規則性時序性的關係（如：在秋季或冬季）<em>（不包括有明顯季節性心理社會壓力因素的病患，如每年冬季都失業）</em><br>
+      B. 完全緩解也可能發生在一年的特定某個時間（如：春天時，憂鬱症消失）<br>
+      C. 過去兩年中，兩次鬱症發作顯示了上述定義的季節性關係，同時此期間沒有非季節性憂鬱症發作<br>
+      D. 病人一生發作次數中，季節性鬱症發作的次數顯著超過非季節性鬱症次數</p>
+      <div class="box p"><div class="bl">臨床特徵</div>大多數情況下，發作開始在秋季或冬季，在春季緩解。<strong>季節性鬱症發作特徵</strong>：缺乏精力、嗜睡、吃太多、體重增加、愛吃碳水化合物。<strong>就雙相情緒障礙症而言，季節性較可能發生於第二型</strong>。</div>
+      <p class="d">冬季發作型的盛行率顯然隨緯度、年齡及性別有所變化。<strong>在高緯度的地方有更多案例</strong>。年齡是良好預測指標，年輕人對冬天鬱症發作有較高風險。</p>
+    </div>
+    <div class="panel" id="sp-rem">
+      <h4 class="sub">緩解特別註明</h4>
+      <table class="ct">
+        <tr><th>緩解類型</th><th>定義</th></tr>
+        <tr><td>部分緩解</td><td>不久之前鬱症發作的症狀仍有出現，但不完全符合鬱症發作準則；或此次發作完之後有一段持續不到兩個月的時間內，沒有任何明顯的鬱症發作情況</td></tr>
+        <tr><td>完全緩解</td><td>過去的兩個月內，沒有明顯的鬱症困擾的徵兆出現</td></tr>
+      </table>
+      <h4 class="sub">嚴重度</h4>
+      <table class="ct">
+        <tr><th>嚴重度</th><th>判定依據</th></tr>
+        <tr><td>輕度</td><td>超過需要做出診斷的症狀很少，這些症狀令人困擾但可控制，導致輕微社交或職業功能減損</td></tr>
+        <tr><td>中度</td><td>症狀數、強度和/或功能障礙，介於輕度和重度之間</td></tr>
+        <tr><td>重度</td><td>症狀數量遠超過診斷所需，症狀嚴重造成困擾和難以控制，明顯干擾社會和職業功能</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ── 其他特定/非特定 ── -->
+<div class="card" data-cat="other">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">311 F32.89/F32.9</span><div><div class="cname">其他特定的 / 非特定的憂鬱症</div><div class="cen">Other Specified / Unspecified Depressive Disorder</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="panel on">
+      <div class="box a"><div class="bl">其他特定的憂鬱症（311 F32.89）</div>
+        <p class="d">適用於因憂鬱症造成臨床上顯著苦惱或社交、職業或其他重要領域功能減損；憂鬱症狀雖佔主導地位，但<strong>不完全符合任何憂鬱症類別疾病</strong>的診斷準則。臨床醫師選擇此診斷時，記錄特定原因（如：「短時間的憂鬱症狀」）。</p>
+        <h4 class="sub">包含的例子</h4>
+        <ul class="cl">
+          <li><strong>一再出現短暫的憂鬱症（Recurrent brief depression）</strong>：每個月同時出現憂鬱情緒和至少4種其他憂鬱症狀<strong>2至13天</strong>，每個月至少一次（與月經週期無關），至少為期連續<strong>12個月</strong>，不符合任何其他憂鬱或躁鬱症準則</li>
+          <li><strong>短時間的憂鬱症發作（4-13天）</strong>：憂鬱情緒合併至少其他8項症狀中的4項，有臨床顯著苦惱及減損，持續<strong>4天以上但少於14天</strong></li>
+          <li><strong>不足夠症狀的憂鬱發作</strong>：憂鬱情緒合併至少其他8項症狀中的<strong>1項</strong>症狀，造成臨床顯著苦惱及減損，<strong>為期至少兩週</strong></li>
+        </ul>
+      </div>
+      <div class="box p"><div class="bl">非特定的憂鬱症（311 F32.9）</div>
+        <p class="d">適用於因憂鬱症造成臨床上顯著苦惱或社交、職業或其他重要領域功能減損，但不符合任何憂鬱症類別疾病的診斷準則。臨床專家<strong>選擇不要說明</strong>此不符合特定憂鬱症準則的病症原因，包括因沒有足夠資訊得以更確切診斷時（如急診室裡）。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ⭐ 比較與鑑別 ── -->
+<div class="card" data-cat="cmp">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">⭐ 速查</span><div><div class="cname">五大憂鬱症速查總表</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="panel on">
+      <div class="kbdg">⭐ 國考速查：持續時間 × 年齡限制 × 核心特徵</div>
+      <table class="ct">
+        <tr><th>疾病</th><th>核心特徵</th><th>持續時間</th><th>年齡限制</th><th>性別差異</th></tr>
+        <tr><td>侵擾性情緒失調症</td><td>慢性易怒+反覆嚴重脾氣爆發</td><td>≥12個月（無3個月以上無症狀）</td><td>發病於10歲前，診斷限6-18歲</td><td>男性為主</td></tr>
+        <tr><td>鬱症</td><td>9項中≥5項，含核心症狀</td><td>≥2週</td><td>無限制</td><td>女性盛行率較高（1.5-3倍）</td></tr>
+        <tr><td>持續性憂鬱症</td><td>慢性情緒低落+6項中≥2項</td><td>≥2年（兒童≥1年）</td><td>無限制（常早發）</td><td>無特殊性別差異記載</td></tr>
+        <tr><td>經前期情緒低落症</td><td>經前出現5項以上症狀</td><td>每月經期前1週，經期後緩解</td><td>初經後任何時候至停經</td><td>限女性</td></tr>
+        <tr><td>物質/醫藥引發</td><td>與物質使用時序相關的憂鬱症狀</td><td>使用後1個月內發生，戒斷後1個月內緩解</td><td>無限制</td><td>男性、黑人較多見</td></tr>
+      </table>
+      <div class="box w" style="margin-top:10px"><div class="bl">⚠️ 持續時間記憶口訣</div>
+        <strong>2週（鬱症）→ 1年（DMDD/兒童PDD）→ 2年（成人PDD）</strong><br>
+        DMDD和PDD都需要「幾乎每天」且「無症狀期不超過特定長度」（DMDD不超過3個月；PDD不超過2個月）
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-cat="cmp">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">⭐ 易混淆</span><div><div class="cname">易混淆疾病深度鑑別比較</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="tabs">
+      <button class="tab k on" onclick="st(this,'cf-dmddbp')">⭐ DMDD vs 雙相情緒障礙症</button>
+      <button class="tab k" onclick="st(this,'cf-mddpdd')">⭐ 鬱症 vs 持續性憂鬱症</button>
+      <button class="tab k" onclick="st(this,'cf-pmdds')">⭐ PMDD vs PMS</button>
+      <button class="tab k" onclick="st(this,'cf-griefmdd')">⭐ 正常悲傷 vs 鬱症發作</button>
+      <button class="tab" onclick="st(this,'cf-substmdd')">⭐ 原發憂鬱症 vs 物質引發</button>
+      <button class="tab" onclick="st(this,'cf-mddadj')">鬱症 vs 適應障礙症</button>
+      <button class="tab" onclick="st(this,'cf-mddadhd')">鬱症/DMDD vs ADHD</button>
+    </div>
+    <div class="panel on" id="cf-dmddbp">
+      <div class="kbdg">⭐ 國考最常考：陣發性 vs 非陣發性</div>
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>侵擾性情緒失調症(DMDD)</th><th>雙相情緒障礙症</th></tr>
+        <tr><td><strong>病程性質</strong></td><td><span class="tag tg">非陣發性</span>：易怒持續存在數個月</td><td><span class="tag tr">陣發性</span>：有離散的情緒擾動發作</td></tr>
+        <tr><td><strong>情緒基準</strong></td><td>嚴重易怒是慢性、持續特徵</td><td>躁症發生時與平時心情明顯不同</td></tr>
+        <tr><td><strong>心情高昂/自大</strong></td><td><span class="tag tg">非DMDD特點</span></td><td><span class="tag tr">躁狂共同特點</span></td></tr>
+        <tr><td><strong>持續時間要求</strong></td><td>≥12個月（不能曾有完整輕躁/躁狂發作超過1天）</td><td>躁症≥1週，輕躁症≥4天</td></tr>
+        <tr><td><strong>診斷年齡</strong></td><td>限6-18歲</td><td>無年齡限制</td></tr>
+        <tr><td><strong>共存規則</strong></td><td><span class="tag tr">不可同時診斷雙相情緒障礙症</span></td><td>—</td></tr>
+      </table>
+    </div>
+    <div class="panel" id="cf-mddpdd">
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>鬱症（單次發作）</th><th>持續性憂鬱症</th></tr>
+        <tr><td><strong>持續時間</strong></td><td>≥2週（單次發作不超過2年）</td><td><span class="tag tr">≥2年</span>（兒童≥1年）</td></tr>
+        <tr><td><strong>症狀數要求</strong></td><td>9項中≥5項</td><td>6項中≥2項（較寬鬆）</td></tr>
+        <tr><td><strong>嚴重度</strong></td><td>可能較急性、嚴重</td><td>通常較輕但<strong>慢性化</strong>，功能影響可能更大</td></tr>
+        <tr><td><strong>共存可能性</strong></td><td colspan="2"><span class="tag tg">可同時診斷</span>——若鬱症狀符合PDD準則達2年，可同時給予兩個診斷</td></tr>
+      </table>
+      <div class="box a"><div class="bl">PDD病程特別註明的臨床意義</div>
+        PDD有四種子分類，用來描述鬱症發作與持續性憂鬱症的時序關係：純粹輕鬱症、持續的鬱症發作、曾有間歇性鬱症發作且目前有鬱症發作、曾有鬱症間歇性發作但目前沒有。
+      </div>
+    </div>
+    <div class="panel" id="cf-pmdds">
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>PMDD</th><th>PMS（經前期症候群）</th></tr>
+        <tr><td><strong>症狀數要求</strong></td><td><span class="tag tr">≥5項</span>（B類≥1+C類補滿）</td><td><span class="tag tg">不需符合5項</span></td></tr>
+        <tr><td><strong>情緒症狀</strong></td><td><span class="tag tr">必要</span></td><td><span class="tag tg">不一定要有</span></td></tr>
+        <tr><td><strong>嚴重度</strong></td><td>較嚴重，明顯功能減損</td><td>較輕微</td></tr>
+        <tr><td><strong>盛行率</strong></td><td>1.8-5.8%</td><td>更常見（但估計不一）</td></tr>
+      </table>
+      <div class="box w"><div class="bl">⚠️ 快速判斷法</div>若經期前期<strong>只有身體或行為症狀而無情緒症狀</strong> → 較可能是PMS而非PMDD。</div>
+    </div>
+    <div class="panel" id="cf-griefmdd">
+      <div class="kbdg">⭐ 國考經典考點：正常悲傷反應 vs 鬱症發作</div>
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>正常悲傷（喪慟）</th><th>鬱症發作（MDE）</th></tr>
+        <tr><td><strong>主要情緒</strong></td><td>空虛與失落</td><td>持續的憂鬱心情及無法體會快樂</td></tr>
+        <tr><td><strong>情緒起伏</strong></td><td>可在數天到數週內減輕；情緒起伏，可伴隨正面情緒和幽默感</td><td>持續更久，無關特定的思緒或心事</td></tr>
+        <tr><td><strong>自我價值感</strong></td><td>存有自尊（self-esteem）</td><td>覺得自己毫無價值、討厭自己</td></tr>
+        <tr><td><strong>自責內容</strong></td><td>通常是因有愧死者（如沒及時告訴他/她有多愛死者）</td><td>對個人價值不切實際的負面評價，誇張地要對不良事件負責</td></tr>
+        <tr><td><strong>死亡想法</strong></td><td>想到死亡時多針對逝者，可能想和逝者「一起走」</td><td>想結束自己的生命，因自覺毫無價值、不值得活下去</td></tr>
+        <tr><td><strong>診斷判定原則</strong></td><td>不應被診斷為鬱症發作</td><td>除非診斷準則嚴重度（5/9項）、期間（≥2週）及功能減損皆符合</td></tr>
+      </table>
+    </div>
+    <div class="panel" id="cf-substmdd">
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>原發性憂鬱症</th><th>物質/醫藥引發的憂鬱症</th></tr>
+        <tr><td><strong>時序關係</strong></td><td>症狀<strong>先於</strong>物質使用，或停用後仍持續</td><td>症狀在物質使用/戒斷<strong>1個月內</strong>出現</td></tr>
+        <tr><td><strong>停藥後表現</strong></td><td>症狀持續不消失</td><td>多數在<strong>停用後幾天到幾週內緩解</strong>（視半衰期）</td></tr>
+        <tr><td><strong>症狀持續超過戒斷期</strong></td><td>—</td><td>若超過預期戒斷期<strong>4週</strong> → 考慮其他原因</td></tr>
+        <tr><td><strong>嚴重度比較（vs物質戒斷症候群）</strong></td><td>—</td><td>症狀需<strong>明顯比一般戒斷更強烈或持久</strong>才取代物質中毒/戒斷診斷</td></tr>
+      </table>
+    </div>
+    <div class="panel" id="cf-mddadj">
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>鬱症發作</th><th>適應障礙症合併憂鬱情緒</th></tr>
+        <tr><td><strong>準則符合度</strong></td><td><span class="tag tr">完全符合</span>鬱症發作的診斷準則</td><td><span class="tag tg">不會完全符合</span>鬱症發作的診斷準則</td></tr>
+        <tr><td><strong>誘發因子</strong></td><td>可能由心理社會壓力源引發，但症狀嚴重度更高</td><td>明確由心理社會壓力源引發，症狀較輕</td></tr>
+      </table>
+    </div>
+    <div class="panel" id="cf-mddadhd">
+      <table class="ct">
+        <tr><th>鑑別要點</th><th>鬱症/DMDD</th><th>ADHD</th></tr>
+        <tr><td><strong>核心情緒/行為</strong></td><td>悲傷或失去興趣（鬱症）；慢性易怒（DMDD）</td><td>分心、低挫折容忍度</td></tr>
+        <tr><td><strong>共病可能性</strong></td><td colspan="2"><span class="tag tg">可同時診斷</span>，但需謹慎評估</td></tr>
+        <tr><td><strong>常見誤診方向</strong></td><td colspan="2">ADHD兒童的情緒障礙特點是<strong>易怒而非悲傷或失去興趣</strong>——避免過度診斷鬱症</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-cat="cmp">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">⭐ 自殺風險</span><div><div class="cname">各疾病自殺風險比較總覽</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="panel on">
+      <table class="ct">
+        <tr><th>疾病</th><th>自殺風險特點</th><th>關鍵風險因子</th></tr>
+        <tr><td>侵擾性情緒失調症</td><td>需特別評估兒童自殺行為和暴力紀錄</td><td>慢性易怒、複雜病史</td></tr>
+        <tr><td>鬱症</td><td>自殺行為可能存在於發作任何時候</td><td>過去自殺企圖史（最一致）、男性、單身/獨居、顯著無望感、邊緣型人格障礙症</td></tr>
+        <tr><td>持續性憂鬱症</td><td>無特別獨立數據（依共病風險評估）</td><td>—</td></tr>
+        <tr><td>經前期情緒低落症</td><td>經前期被認為是自殺的危險時期</td><td>黃體後期</td></tr>
+        <tr><td>物質/醫藥引發</td><td>治療後出現的自殺需特別注意（抗憂鬱藥黑框警告）</td><td>18-24歲族群風險較高</td></tr>
+        <tr><td>另一身體病況引起</td><td>風險與一般鬱症發作無差異，可能更高</td><td>病情發作或確診後不久</td></tr>
+      </table>
+      <div class="box w" style="margin-top:10px"><div class="bl">⚠️ 鬱症自殺風險核心記憶點</div>
+        <strong>最一致性危險因子</strong>：曾有自殺企圖或自殺威脅的過去紀錄。但<strong>大部份自殺死亡案例之前都未有自殺企圖</strong>——這提醒臨床評估不能只依賴過去史。
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-cat="cmp">
+  <div class="chdr" onclick="td(this)">
+    <div class="chl"><span class="code">⭐ 決策流程</span><div><div class="cname">憂鬱症診斷決策流程</div></div></div>
+    <span class="chev o">▾</span>
+  </div>
+  <div class="cbody">
+    <div class="panel on">
+      <div class="kbdg">⭐ 國考臨床推理流程</div>
+      <div class="box a"><div class="bl">Step 1 — 排除物質/身體病況</div>
+        <ul class="cl">
+          <li>症狀是否因物質（興奮劑、類固醇、interferon等）引發？是否在物質使用/戒斷1個月內發生？</li>
+          <li>是否有身體病況（中風、甲狀腺低下、庫欣氏症、帕金森氏症）的直接病生理後果？</li>
+          <li>→ 是：診斷「物質/醫藥引發」或「另一身體病況引起的憂鬱症」</li>
+          <li>→ 否：進入Step 2</li>
+        </ul>
+      </div>
+      <div class="box a"><div class="bl">Step 2 — 排除正常反應與其他精神疾病</div>
+        <ul class="cl">
+          <li>是否為正常悲傷反應（喪慟）？是否更符合適應障礙症（不完全符合鬱症發作準則）？</li>
+          <li>從未有躁症或輕躁症發作？（若有 → 考慮雙相情緒障礙症）</li>
+          <li>→ 排除後進入Step 3</li>
+        </ul>
+      </div>
+      <div class="box a"><div class="bl">Step 3 — 評估年齡與特殊族群（兒童/女性）</div>
+        <ul class="cl">
+          <li>是否為10歲前發病兒童的慢性易怒+反覆脾氣爆發（≥12個月）？→ <strong>DMDD</strong>（注意排除雙相情緒障礙症）</li>
+          <li>是否為女性，症狀與月經週期相關（經前1週出現，經期後緩解）？→ <strong>PMDD</strong>（需2個月日常評估確認）</li>
+        </ul>
+      </div>
+      <div class="box a"><div class="bl">Step 4 — 評估持續時間與症狀數</div>
+        <ul class="cl">
+          <li>9項中≥5項症狀，持續≥2週 → <strong>鬱症</strong>（單次或多次發作）</li>
+          <li>6項中≥2項症狀，持續≥2年（兒童≥1年），無症狀期不超過2個月 → <strong>持續性憂鬱症</strong></li>
+          <li>若鬱症準則在持續性憂鬱症病程中被滿足達2年 → <strong>可同時診斷兩者</strong></li>
+        </ul>
+      </div>
+      <div class="box a"><div class="bl">Step 5 — 評估是否需加註特別註明</div>
+        <ul class="cl">
+          <li>焦慮症狀（≥2項）→ 有焦慮特徵</li>
+          <li>躁/輕躁症狀（≥3項但不滿足完整發作）→ 有混合型特徵（提高未來轉躁風險）</li>
+          <li>失樂感+對快樂刺激無反應+≥3項B症狀 → 有憂鬱特徵</li>
+          <li>情緒反應性+體重增加+嗜睡+鉛性麻痺 → 非典型特徵</li>
+          <li>懷孕期或產後4週發作 → 分娩前後發病（評估精神病特徵和殺嬰風險）</li>
+          <li>季節性規律發作模式（≥2年）→ 季節性特徵</li>
+        </ul>
+      </div>
+      <div class="box w"><div class="bl">⚠️ 貫穿全程的自殺風險評估</div>
+        無論處於診斷流程哪個階段，皆需評估自殺風險——過去自殺企圖史是最一致的危險因子，但大部分自殺死亡案例之前並無企圖史，需保持高度警覺。
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end main -->
+
+<script>
+function td(h){const b=h.nextElementSibling;const c=h.querySelector('.chev');const hid=b.classList.contains('h');b.classList.toggle('h',!hid);c.classList.toggle('o',hid);}
+function st(btn,pid){const sec=btn.closest('.card');sec.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));sec.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));btn.classList.add('on');const p=sec.querySelector('#'+pid);if(p)p.classList.add('on');}
+function fc(cat,btn){document.querySelectorAll('.pill').forEach(p=>p.classList.remove('on'));btn.classList.add('on');document.querySelectorAll('.card').forEach(c=>{c.style.display=(cat==='all'||c.dataset.cat===cat)?'':'none';});}
+</script>
+</body>
+</html>
