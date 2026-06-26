@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSM-5-TR 創傷及壓力相關障礙症 權威系統整理</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --s1: #161b22;
+  --s2: #21262d;
+  --b: #30363d;
+  --a: #58a6ff;    /* 藍色：診斷準則、核心特徵 */
+  --a2: #bc8cff;   /* 紫色：特別註明、分型 */
+  --a3: #3fb950;   /* 綠色：盛行率、發展與病程 */
+  --w: #d29922;    /* 黃色：風險預後、鑑別診斷 */
+  --r: #f85149;    /* 紅色：自殺風險、功能後果、警告 */
+  --t: #e6edf3;
+  --td: #8b949e;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  background: var(--bg);
+  color: var(--t);
+  font-size: 14px;
+  line-height: 1.7;
+  padding-bottom: 60px;
+}
+.hdr {
+  background: linear-gradient(135deg, #161b22, #0d1117);
+  border-bottom: 1px solid var(--b);
+  padding: 20px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.hdr h1 { font-size: 22px; font-weight: 700; color: var(--a); display: flex; align-items: center; gap: 10px; }
+.hdr p { font-size: 13px; color: var(--td); margin-top: 4px; }
+.nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.nav a {
+  text-decoration: none;
+  color: var(--t);
+  background: var(--s2);
+  border: 1px solid var(--b);
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+.nav a:hover { background: var(--a); border-color: var(--a); color: var(--bg); }
+.main { max-width: 1400px; margin: 0 auto; padding: 24px; }
+
+/* 時序軸圖解 */
+.overview-panel {
+  background: var(--s1);
+  border: 1px solid var(--b);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+.overview-title { font-size: 16px; font-weight: 700; margin-bottom: 15px; color: var(--a); }
+.timeline { display: flex; flex-direction: column; gap: 12px; position: relative; padding-left: 20px; border-left: 2px solid var(--b); }
+.tl-item { position: relative; }
+.tl-item::before {
+  content: ''; position: absolute; left: -26px; top: 6px; 
+  width: 10px; height: 10px; border-radius: 50%; background: var(--td);
+}
+.tl-item.alert-asd::before { background: var(--w); }
+.tl-item.alert-ptsd::before { background: var(--r); }
+.tl-item.alert-pgd::before { background: var(--a2); }
+.tl-time { font-weight: 700; font-size: 13px; color: var(--td); }
+.tl-desc { font-size: 14px; margin-top: 2px; }
+
+/* 疾病區塊 */
+.disorder-section { margin-bottom: 45px; border-top: 2px solid var(--b); padding-top: 25px; }
+.disorder-title { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 15px; display: flex; align-items: center; gap: 8px; }
+.disorder-title span { font-size: 13px; color: var(--td); font-weight: normal; }
+
+.grid-layout { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+.col-12 { grid-column: span 12; }
+.col-6 { grid-column: span 6; }
+@media (max-width: 992px) { .col-6 { grid-column: span 12; } }
+
+/* 卡片樣式 */
+.box { background: var(--s1); border: 1px solid var(--b); border-radius: 6px; padding: 16px; height: 100%; transition: transform 0.2s; }
+.box:hover { transform: translateY(-2px); }
+.box.a { border-left: 4px solid var(--a); }
+.box.a2 { border-left: 4px solid var(--a2); }
+.box.a3 { border-left: 4px solid var(--a3); }
+.box.w { border-left: 4px solid var(--w); background: linear-gradient(to right, #221f18, var(--s1)); }
+.box.r { border-left: 4px solid var(--r); background: linear-gradient(to right, #251a1a, var(--s1)); }
+
+.bl { font-weight: 700; font-size: 15px; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+.box.a .bl { color: var(--a); }
+.box.a2 .bl { color: var(--a2); }
+.box.a3 .bl { color: var(--a3); }
+.box.w .bl { color: var(--w); }
+.box.r .bl { color: var(--r); }
+
+.cl { list-style: none; }
+.cl li { margin-bottom: 8px; position: relative; padding-left: 14px; }
+.cl li::before { content: "•"; position: absolute; left: 0; color: var(--td); }
+.cl li strong { color: #fff; }
+
+/* 內部巢狀清單 */
+.sub-cl { list-style: none; margin: 4px 0 8px 14px; border-left: 1px dashed var(--b); padding-left: 10px; }
+.sub-cl li::before { content: "-"; }
+
+/* 表格樣式 */
+.table-responsive { width: 100%; overflow-x: auto; margin-top: 15px; }
+table { width: 100%; border-collapse: collapse; text-align: left; margin-bottom: 20px; font-size: 13px; }
+th, td { padding: 12px; border: 1px solid var(--b); vertical-align: top; }
+th { background: var(--s2); color: var(--a); font-weight: 700; }
+tr:nth-child(even) td { background: #161b2240; }
+.badge { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 700; }
+.badge.a { background: #388bfd26; color: var(--a); border: 1px solid #388bfd4d; }
+.badge.a2 { background: #8957e526; color: var(--a2); border: 1px solid #8957e54d; }
+.badge.w { background: #bb801726; color: var(--w); border: 1px solid #bb80174d; }
+.badge.r { background: #f8514926; color: var(--r); border: 1px solid #f851494d; }
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <h1>🧠 DSM-5-TR 創傷及壓力相關障礙症 權威系統圖鑑</h1>
+  <p>根據 2022 年美國精神醫學學會 (APA) 最新文本修訂版 (Text Revision) 深度建構</p>
+  <div class="nav">
+    <a href="#rad">1. 反應性依附障礙症 (RAD)</a>
+    <a href="#dsed">2. 脫抑制社交參與障礙症 (DSED)</a>
+    <a href="#ptsd">3. 創傷後壓力症 (PTSD)</a>
+    <a href="#asd">4. 急性壓力症 (ASD)</a>
+    <a href="#ad">5. 適應障礙症 (AD)</a>
+    <a href="#pgd">6. 持續性哀慟障礙症 (PGD)</a>
+    <a href="#horizontal-compare">🌐 橫向重點對比表</a>
+    <a href="#differential-compare">🔍 易混淆疾病辨析表</a>
+  </div>
+</div>
+
+<div class="main">
+
+  <div class="overview-panel">
+    <div class="overview-title">⏱️ 創傷與社會喪失之臨床病程時序演進軸 (Clinical Timeline)</div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-time">事件發生後 0 - 3 天</div><div class="tl-desc"><strong>正常急性壓力反應 (Normal Acute Stress Reaction)</strong>。此時不進行病理診斷，給予危機干預與心理急救。</div></div>
+      <div class="tl-item alert-asd"><div class="tl-time">事件發生後 3 天 - 1 個月</div><div class="tl-desc">滿足 ≥9 項跨範疇症狀 → <strong>急性壓力症 (ASD)</strong>。著重於早期的解離與激越表現，為 PTSD 的高危預測期。</div></div>
+      <div class="tl-item alert-ptsd"><div class="tl-time">事件發生後 超過 1 個月</div><div class="tl-desc">症狀延續或於創傷後延遲顯現 → <strong>創傷後壓力症 (PTSD)</strong>。必須滿足四大核心症狀集群（侵入、迴避、負面認知/情緒、激越）。</div></div>
+      <div class="tl-item alert-pgd"><div class="tl-time">親友喪生後 超過 12 個月（兒童為 6 個月）</div><div class="tl-desc">持續性的強烈思念與身分認同解體 → <strong>持續性哀慟障礙症 (Prolonged Grief Disorder, PGD)</strong>。<span class="badge a2">DSM-5-TR 全新重磅新增</span></div></div>
+    </div>
+  </div>
+
+  <div class="disorder-section" id="rad">
+    <div class="disorder-title">1. 反應性依附障礙症 <span>Reactive Attachment Disorder (RAD)</span></div>
+    <div class="grid-layout">
+      <div class="col-12">
+        <div class="box a">
+          <div class="bl">📌 核心診斷準則 (Diagnostic Criteria)</div>
+          <ul class="cl">
+            <li><strong>A. 情感退縮模式</strong>：兒童表現出對成人照顧者退縮、情緒抑制行為的持續模式，表現為以下兩者：
+              <ul class="sub-cl">
+                <li>1. 受挫時<strong>很少或極少主動尋求安慰</strong>。</li>
+                <li>2. 受挫時<strong>對安慰很少或極少有反應/接受</strong>。</li>
+              </ul>
+            </li>
+            <li><strong>B. 持續的社交與情緒困擾</strong>：特徵為以下至少兩項：
+              <ul class="sub-cl">
+                <li>1. 對他人只有極少的社交與情緒反應。</li>
+                <li>2. 局限的正向情感 (Limited positive affect)。</li>
+                <li>3. 即使在與成人照顧者進行非威脅性的常規互動中，也會出現不明原因的<strong>易怒、悲傷或害怕</strong>。</li>
+              </ul>
+            </li>
+            <li><strong>C. 經歷極端的照顧不足（社交忽視）</strong>：被推斷為準則 A 的主因，表現為以下至少一項：
+              <ul class="sub-cl">
+                <li>1. 社交忽視或剝奪：基本情緒需求（安慰、刺激和關愛）長期無法由照顧成人滿足。</li>
+                <li>2. 頻繁更換主要照顧者：導致無法形成穩定依附關係（如頻繁更換寄養家庭）。</li>
+                <li>3. 養育於特殊不尋常環境：如照顧者比例極低的集體機構，嚴重限制選擇性依附的建立。</li>
+              </ul>
+            </li>
+            <li><strong>D. 因果推斷</strong>：準則 C 的照顧被判定為造成準則 A 異常行為的要因。</li>
+            <li><strong>E. 排除標準</strong>：排除自閉症類群障礙症 (Autism Spectrum Disorder, ASD)。</li>
+            <li><strong>F. 發病年齡</strong>：症狀在 <strong>5 歲前</strong> 即顯現。</li>
+            <li><strong>G. 發展年齡</strong>：兒童的發展年齡必須 <strong>至少 9 個月</strong>。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="box a2">
+          <div class="bl">🔍 特別註明 (Specifiers)</div>
+          <ul class="cl">
+            <li><strong>持續性 (Persistent)</strong>：此障礙症已存在超過 12 個月。</li>
+            <li><strong>重度 (Severe)</strong>：個體展現出該障礙症的所有症狀，且每項症狀均達到極高嚴重度。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="box a3">
+          <div class="bl">📊 盛行率、發展與病程 (Prevalence & Course)</div>
+          <ul class="cl">
+            <li><strong>盛行率</strong>：在一般人群中極罕見（&lt;1%）。在遭遇嚴重忽視或機構內養育的高風險兒少樣本中亦不普遍（約 10%）。</li>
+            <li><strong>發展與病程</strong>：在 9 個月至 5 歲之間起病。若在早期獲得高質量的補償性照顧，症狀可能顯著緩解；若持續忽視，則可能延伸為長期的社交損害。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="box w">
+          <div class="bl">⚡ 臨床特質與風險因子 (Features & Risks)</div>
+          <ul class="cl">
+            <li><strong>診斷特質</strong>：核心在於<strong>「選擇性依附關係的完全缺失」</strong>。個體在面臨困境時，無法向熟悉照顧者發出尋求安慰的訊號，也無法對安慰產生情緒共鳴。</li>
+            <li><strong>支持診斷特質</strong>：常伴隨嚴重發展遲緩、語言落後、營養不良或因虐待導致的身體發育不全。</li>
+            <li><strong>風險與預後因子</strong>：嚴重的社交忽視是唯一的絕對風險因子。環境的及時改善是最強的預後指標。</li>
+            <li><strong>文化與性別</strong>：文化養育習慣（如集體托育）會影響依附表達，但病理反應跨文化一致。臨床樣本中男女比例相當。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="box r">
+          <div class="bl">⚠️ 鑑別診斷、共病與自殺風險 (Differential, Comorbidity & Suicide)</div>
+          <ul class="cl">
+            <li><strong>鑑別診斷 (極重要)</strong>：
+              <ul class="sub-cl">
+                <li><strong>自閉症類群障礙症 (ASD)</strong>：ASD 有局限、重複的行為模式與興趣，且 RAD 兒童在環境大幅改善後可展現出正常的溝通潛能。</li>
+                <li><strong>智能障礙 (ID)</strong>：ID 兒童的依附能力應與其整體智力年齡相符，RAD 則是社交依附特異性受損。</li>
+              </ul>
+            </li>
+            <li><strong>共病</strong>：高度共病認知及語言遲緩、嚴重營養不良、注意力缺陷/過動症 (ADHD)。</li>
+            <li><strong>自殺風險</strong>：嬰幼兒期難以評估，但長期的情緒不穩可能增加學齡期後的自傷風險。</li>
+            <li><strong>功能性後果</strong>：嚴重干預早期的情緒調節發展，導致同儕關係破裂與社會適應困難。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="disorder-section" id="dsed">
+    <div class="disorder-title">2. 脫抑制社交參與障礙症 <span>Disinhibited Social Engagement Disorder (DSED)</span></div>
+    <div class="grid-layout">
+      <div class="col-12">
+        <div class="box a">
+          <div class="bl">📌 核心診斷準則 (Diagnostic Criteria)</div>
+          <ul class="cl">
+            <li><strong>A. 脫抑制社交行為模式</strong>：兒童主動接近不熟悉成人並與其互動的行為模式，表現為以下至少兩項：
+              <ul class="sub-cl">
+                <li>1. 接近和與不熟悉成人互動時，<strong>警覺性顯著降低或消失</strong>。</li>
+                <li>2. 言語或身體行為<strong>過於親密</strong>（不符合文化規範且不符合年齡適當的社交界線）。</li>
+                <li>3. 即使在不熟悉的環境中冒險遠離，也<strong>極少或不回頭查看/確認照顧者</strong>。</li>
+                <li>4. 願意<strong>毫無保留、毫不猶豫地隨不熟悉成人離去</strong>。</li>
+              </ul>
+            </li>
+            <li><strong>B. 非衝動性限定</strong>：準則 A 的行為不限於注意力缺陷/過動症 (ADHD) 的衝動性，而是包含實質的<strong>社交脫抑制 (Socially Disinhibited)</strong>。</li>
+            <li><strong>C. 經歷極端的照顧不足（社交忽視）</strong>：標準同 RAD 準則 C（基本需求未滿足、頻繁換主要照顧者、特殊機構養育）。</li>
+            <li><strong>D. 因果推斷</strong>：準則 C 的照顧被判定為造成準則 A 異常行為的要因。</li>
+            <li><strong>E. 發展年齡</strong>：兒童的發展年齡必須 <strong>至少 9 個月</strong>。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="box a2">
+          <div class="bl">🔍 特別註明 (Specifiers)</div>
+          <ul class="cl">
+            <li><strong>持續性 (Persistent)</strong>：此障礙症已存在超過 12 個月。</li>
+            <li><strong>重度 (Severe)</strong>：所有症狀均存在且嚴重度極高。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="box a3">
+          <div class="bl">📊 盛行率、發展與病程 (Prevalence & Course)</div>
+          <ul class="cl">
+            <li><strong>盛行率</strong>：一般大眾中極罕見。但在高風險機構（如大型孤兒院）或受頻繁忽視轉介的兒童中，盛行率可高達 <strong>20%</strong>。</li>
+            <li><strong>發展與病程</strong>：通常在嬰兒期後起病。幼兒期表現為不分彼此的過度熱情；到了學齡期和青春期，轉變為過度尋求注意、邊界模糊、以及膚淺的人際關係。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="box w">
+          <div class="bl">⚡ 臨床特質與風險因子 (Features & Risks)</div>
+          <ul class="cl">
+            <li><strong>診斷特質</strong>：核心為<strong>「無選擇性社交邊界的缺失」</strong>。即使對完全陌生的路人，也展現出理應只保留給核心親友的親密與信任。</li>
+            <li><strong>風險與預後因子</strong>：起因於早期嚴重的制度化管理或忽視。<strong>與 RAD 不同</strong>，即使更換為高質量的寄養或收養家庭，DSED 的症狀通常仍會表現出高度的頑固性與持續性。</li>
+            <li><strong>文化與性別</strong>：需考量文化對陌生人社交距離的定義（例如某些文化本就較熱情）。無顯著性別差異。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="box r">
+          <div class="bl">⚠️ 鑑別診斷、共病與自殺風險 (Differential, Comorbidity & Suicide)</div>
+          <ul class="cl">
+            <li><strong>鑑別診斷 (極重要)</strong>：
+              <ul class="sub-cl">
+                <li><strong>注意力缺陷/過動症 (ADHD)</strong>：ADHD 的衝動可能導致莽撞接近陌生人，但 ADHD 兒童在陌生環境中，仍會保持對主要照顧者的依附與確認行為。</li>
+                <li><strong>反應性依附障礙症 (RAD)</strong>：病因雖同為忽視，但表現光譜相反（RAD 冷漠退縮；DSED 過度脫抑制）。</li>
+              </ul>
+            </li>
+            <li><strong>共病</strong>：ADHD、認知遲緩、語言障礙、創傷後壓力症狀。</li>
+            <li><strong>功能性後果 & 自殺</strong>：極易面臨受騙、遭受不法分子性剝削或身體侵害的高風險。青少年期後易因同儕衝突和人際創傷導致情緒崩潰與自傷。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="disorder-section" id="ptsd">
+    <div class="disorder-title">3. 創傷後壓力症 <span>Posttraumatic Stress Disorder (PTSD)</span></div>
+    <div class="grid-layout">
+      <div class="col-12">
+        <div class="box a">
+          <div class="bl">📌 核心診斷準則 (Diagnostic Criteria) —— 適用於大於 6 歲、青少年及成人</div>
+          <ul class="cl">
+            <li><strong>A. 創傷暴露</strong>：暴露於真實或具威脅性的<strong>死亡、嚴重受傷或性暴力</strong>，經由以下至少一種方式：
+              <ul class="sub-cl">
+                <li>1. <strong>直接經歷</strong>該創傷事件。</li>
+                <li>2. <strong>親眼目睹</strong>事件發生在他人身上。</li>
+                <li>3. <strong>得知</strong>事件發生在親近的家人或朋友身上（若是死亡，必須是暴力的或意外的）。</li>
+                <li>4. <strong>經歷重複或極端的創傷痛苦細節暴露</strong>：如第一線搜救員處理遺體、警員重複接觸兒虐案件。*（註：不包含透過電視、電影或圖片的暴露，除非與工作直接相關）*</li>
+              </ul>
+            </li>
+            <li><strong>B. 侵入症狀 (Intrusion Symptoms)</strong>：事件後出現以下 <strong>≥1 項</strong> 症狀：
+              <ul class="sub-cl">
+                <li>1. 重復、非自願且侵入性的痛苦創傷記憶。</li>
+                <li>2. 重複且內容/情感與創傷密切相關的痛苦夢境。</li>
+                <li>3. <strong>解離反應（如閃回 Flashbacks）</strong>：個體感覺或行動像創傷事件正在重演（可從短暫失神到完全喪失現實覺察）。</li>
+                <li>4. 面對象徵或類似創傷的內外部線索時，產生強烈或持久的<strong>精神痛苦</strong>。</li>
+                <li>5. 面對創傷提醒物時產生顯著的<strong>生理反應</strong>（如心悸、盜汗）。</li>
+              </ul>
+            </li>
+            <li><strong>C. 持續迴避 (Avoidance)</strong>：事件後出現以下 <strong>≥1 項</strong> 症狀：
+              <ul class="sub-cl">
+                <li>1. 迴避或努力迴避關於創傷事件的痛苦記憶、想法或感覺。</li>
+                <li>2. 迴避或努力迴避會引發創傷回憶的<strong>外部提醒物</strong>（人、地方、對話、活動、情境）。</li>
+              </ul>
+            </li>
+            <li><strong>D. 認知與情緒的負面轉變 (Negative Alterations in Cognition & Mood)</strong>： <strong>≥2 項</strong> 症狀：
+              <ul class="sub-cl">
+                <li>1. <strong>解離性失憶</strong>：無法記起創傷事件的重要部分（非因腦傷或物質所致）。</li>
+                <li>2. 對自己、他人或世界產生持續且誇大的<strong>負面信念</strong>（如「我是壞人」、「沒人可信」、「世界徹底危險」）。</li>
+                <li>3. 扭曲的因果認知：導致不合理地<strong>歸咎自己或他人</strong>（過度自責）。</li>
+                <li>4. 持續的負面情緒狀態（如恐懼、恐慌、憤怒、罪惡感、羞愧）。</li>
+                <li>5. 顯著減少對重要活動的興趣或參與。</li>
+                <li>6. 產生與他人<strong>疏離、隔閡</strong>的感覺。</li>
+                <li>7. 持續<strong>無法體驗正向情緒</strong>（無法感受快樂、滿足或愛意）。</li>
+              </ul>
+            </li>
+            <li><strong>E. 警覺性與反應性的顯著改變 (Alterations in Arousal & Reactivity)</strong>： <strong>≥2 項</strong> 症狀：
+              <ul class="sub-cl">
+                <li>1. 易怒行為與憤怒爆發（通常表現為對人或物的言語或身體攻擊）。</li>
+                <li>2. <strong>魯莽或自我毀滅的行為</strong> (Reckless or self-destructive behavior)。</li>
+                <li>3. 過度警覺 (Hypervigilance)。</li>
+                <li>4. 誇張的驚嚇反應 (Exaggerated startle response)。</li>
+                <li>5. 注意力集中困難。</li>
+                <li>6. 睡眠障礙。</li>
+              </ul>
+            </li>
+            <li><strong>F. 病程要求</strong>：準則 B、C、D、E 的症狀持續 <strong>超過 1 個月</strong>。</li>
+            <li><strong>G. 功能受損</strong>：引起臨床上顯著的精神痛苦，或損害社交、職業等重要領域功能。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="box a2">
+          <div class="bl">🔍 兒童型特別標準、亞型與特別註明 (Specifiers)</div>
+          <ul class="cl">
+            <li><strong>6 歲及以下兒童的 PTSD 特異標準</strong>：
+              <ul class="sub-cl">
+                <li>侵入性記憶可能表現為<strong>重複性創傷主題遊戲</strong>；夢境可能只是普遍恐怖夢而無明確內容。</li>
+                <li><strong>迴避 (C) 與負面認知 (D) 合併為同一個集群</strong>，僅需滿足 1 項以上即可（因幼童較難精確口述複雜信念）。</li>
+              </ul>
+            </li>
+            <li><strong>伴隨解離症狀 (With dissociative symptoms)</strong>：滿足 PTSD 標準，且高頻率出現以下任一者：
+              <ul class="sub-cl">
+                <li><strong>自我感喪失 (Depersonalization)</strong>：感覺自己像個局外人在觀察自己的心智或身體（如不真實感、時間變慢）。</li>
+                <li><strong>現實感喪失 (Derealization)</strong>：感覺周圍環境不真實、像在做夢、遙遠或扭曲。</li>
+              </ul>
+            </li>
+            <li><strong>伴隨延遲顯現 (With delayed expression)</strong>：在創傷事件後<strong>至少 6 個月</strong>才滿足完整診斷標準（部分症狀可能即刻出現）。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="box a3">
+          <div class="bl">📊 盛行率、發展與病程 (Prevalence & Course)</div>
+          <ul class="cl">
+            <li><strong>盛行率</strong>：美國成人終生盛行率約為 <strong>8.7%</strong>，12 個月盛行率約 3.5%。在軍人、強暴倖存者、戰區難民等高風險群體中，盛行率可高達 <strong>30% 至 50%</strong>。</li>
+            <li><strong>發展與病程</strong>：可在創傷後的任何年齡發生（包括 3 歲以下幼童）。通常在創傷後 3 個月內發病。約有 50% 的成人在 3 個月內完全康復，但部分患者症狀遷延數年、數十年甚至終生，呈現慢性波動。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="box w">
+          <div class="bl">⚡ 臨床特質與多維度風險因子 (Risks & Contexts)</div>
+          <ul class="cl">
+            <li><strong>支持診斷特質</strong>：常伴隨生存內疚（Survival guilt）、劇烈恐慌發作、嚴重的軀體化症狀（如慢性疼痛）及人際崩潰。</li>
+            <li><strong>創傷前風險因子</strong>：既往精神病史、低社經地位、童年創傷史、低智力、女性、基因易感性。</li>
+            <li><strong>創傷中風險因子</strong>：創傷嚴重度、感知生命威脅、<strong>人為惡意傷害（如性侵、虐待、酷刑，其致病風險遠高於天然災害）</strong>、創傷中解離。</li>
+            <li><strong>創傷後風險因子</strong>：缺乏社會支持、面臨次級生活壓力、採取消極應對策略（如酗酒迴避）。</li>
+            <li><strong>文化與性別</strong>：女性盛行率約為男性的兩倍（2:1），且病程更長，主因是女性更容易暴露於高威脅性的人際創傷（如家暴、性侵害）。文化會顯著影響軀體化或靈魂游離（如 Susto）等特殊文化症候群的表達。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="box r">
+          <div class="bl">⚠️ 貫穿病程的自殺風險、功能後果與鑑別診斷</div>
+          <ul class="cl">
+            <li><strong style="color: var(--r);">☠️ 自殺風險：極高！</strong> PTSD 與自殺意念、自殺企圖和自殺死亡具有高度且獨立的因果相關性。當個體伴隨<strong>解離特徵、嚴重的生存內疚、或共病 MDD/物質濫用</strong>時，自殺風險會呈幾何級數飆升。</li>
+            <li><strong>功能性後果</strong>：全面摧毀個體健康、社會關係、職業穩定度及學業，導致極高的醫療資源耗用率。</li>
+            <li><strong>鑑別診斷 (極重要)</strong>：
+              <ul class="sub-cl">
+                <li><strong>急性壓力症 (ASD)</strong>：症狀群高度重疊，但 ASD 的病程限定在創傷後 <strong>3 天至 1 個月內</strong>。超過 1 個月則必須變更診斷為 PTSD。</li>
+                <li><strong>適應障礙症 (AD)</strong>：AD 的壓力源可以是一般生活事件（如失業、失戀），不需達到 Criterion A 的致命創傷等級，且不具備 PTSD 特有的完整四大症狀群。</li>
+                <li><strong>強迫症 (OCD)</strong>：OCD 的侵入性想法是自發、荒謬且不限於過往創傷事件的真實記憶，且無創傷暴露史。</li>
+              </ul>
+            </li>
+            <li><strong>共病</strong>：高度共病重度憂鬱症 (MDD)、焦慮障礙症、物質使用障礙症（常作為自我醫療消愁）、邊緣性人格障礙 (BPD)。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="disorder-section" id="asd">
+    <div class="disorder-title">4. 急性壓力症 <span>Acute Stress Disorder (ASD)</span></div>
+    <div class="grid-layout">
+      <div class="col-12">
+        <div class="box a">
+          <div class="bl">📌 核心診斷準則 (Diagnostic Criteria)</div>
+          <ul class="cl">
+            <li><strong>A. 創傷暴露</strong>：完全等同於 PTSD 準則 A 的標準（直接經歷、目睹、親近者遭意外/暴力、職業暴露）。</li>
+            <li><strong>B. 臨床症狀（跨範疇總數制）</strong>：創傷發生後，出現以下 5 大範疇中 <strong>任何 9 項（含）以上</strong> 的症狀（無論群組分配）：
+              <ul class="sub-cl">
+                <li><strong>侵入範疇</strong>：1. 痛苦記憶、2. 創傷夢境、3. 解離閃回、4. 接觸線索時的劇烈身心痛苦。</li>
+                <li><strong>負面情緒範疇</strong>：5. 持續且完全無法體驗正向情緒（如幸福、愛意）。</li>
+                <li><strong>解離範疇</strong>：6. 現實感/自我感喪失（如神情恍惚、感覺時間變慢）、7. 解離性失憶（無法記起關鍵情節）。</li>
+                <li><strong>迴避範疇</strong>：8. 迴避創傷思緒/情感、9. 迴避外部 reminders（人、地、事物）。</li>
+                <li><strong>激越警覺範疇</strong>：10. 睡眠障礙、11. 憤怒爆發/易怒、12. 過度警覺、13. 注意力渙散、14. 誇張驚嚇反應。</li>
+              </ul>
+            </li>
+            <li><strong>C. 病程時間</strong>：症狀必須在創傷後立即發生，且持續 <strong>3 天至 1 個月</strong>。</li>
+            <li><strong>D. 功能受損</strong>：引起臨床上顯著的痛苦，或損害社交、職業等重要功能。</li>
+            <li><strong>E. 排除標準</strong>：非物質、非醫療狀況、亦不能以短暫精神病障礙症給予更佳解釋。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="box a3">
+          <div class="bl">📊 盛行率、發展與病程 (Prevalence & Course)</div>
+          <ul class="cl">
+            <li><strong>盛行率</strong>：視創傷類型而有極大波動。非人為天災通常 &lt;10%；但人為暴力創傷（如強暴、大規模屠殺、劫持）的盛行率高達 <strong>20% 至 50%</strong>。</li>
+            <li><strong>發展與病程</strong>：限定在創傷後 1 個月內。約有一半以上的 ASD 患者在後續會惡化並全面演變成 PTSD。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="box w">
+          <div class="bl">⚡ 臨床特質與風險因子 (Features & Risks)</div>
+          <ul class="cl">
+            <li><strong>診斷特質</strong>：在創傷早期提供一個靈活的精神診斷窗口。其標準不要求每個範疇都滿足特定件數，而是只要<strong>症狀總數達到 9/14</strong> 即可，高度強調早期的解離反應。</li>
+            <li><strong>風險因子</strong>：與 PTSD 高度重疊，特別是創傷前有精神病史、過往創傷史、女性，以及在創傷進行中出現劇烈的解離與恐慌發作。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="box r">
+          <div class="bl">⚠️ 自殺風險與重要鑑別診斷</div>
+          <ul class="cl">
+            <li><strong style="color: var(--r);">☠️ 自殺風險：高。</strong> 由於急性期內閃回劇烈、缺乏心理防禦，且可能伴隨劇烈的驚恐，患者極易出現衝動性的自傷或自殺意念。</li>
+            <li><strong>鑑別診斷</strong>：
+              <ul class="sub-cl">
+                <li><strong>短暫精神病障礙症 (Brief Psychotic Disorder)</strong>：若創傷引發的是幻覺、妄想或言語行為錯亂，且缺乏 ASD 的特異性迴避與侵入症狀，應診斷短暫精神病。</li>
+                <li><strong>輕度創傷性腦損傷 (mTBI)</strong>： mTBI（如車禍撞擊後）常見注意力差、失眠、頭暈，需透過神經學檢查與症狀時序細心鑑別。</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="disorder-section" id="ad">
+    <div class="disorder-title">5. 適應障礙症 <span>Adjustment Disorders (AD)</span></div>
+    <div class="grid-layout">
+      <div class="col-12">
+        <div class="box a">
+          <div class="bl">📌 核心診斷準則 (Diagnostic Criteria)</div>
+          <ul class="cl">
+            <li><strong>A. 壓力源與起病時限</strong>：在可辨識的<strong>生活壓力源</strong>（如失業、離婚、破產、罹患疾病）出現後 <strong>3 個月內</strong>，發展出情緒或行為症狀。</li>
+            <li><strong>B. 臨床顯著性</strong>：表現為以下一或兩者：
+              <ul class="sub-cl">
+                <li>1. <strong>精神痛苦不成比例</strong>：精神痛苦的程度遠遠超出了該壓力源預期的常態反應（必須考量文化脈絡與外部情境）。</li>
+                <li>2. <strong>功能顯著損害</strong>：社交、職業或學業等重要功能領域發生嚴重癱瘓。</li>
+              </ul>
+            </li>
+            <li><strong>C. 排除其他障礙</strong>：這種壓力困擾不符合另一種精神障礙症的準則，也不僅是既有精神障礙症的惡化。</li>
+            <li><strong>D. 非正常悲傷</strong>：症狀不代表正常的哀慟（Bereavement）。</li>
+            <li><strong>E. 症狀消退時限</strong>：一旦壓力源或其後果結束，症狀<strong>不會持續超過額外的 6 個月</strong>。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="box a2">
+          <div class="bl">🔍 臨床亞型分型特別註明 (Subtypes Specifiers)</div>
+          <table style="margin-top: 10px;">
+            <thead>
+              <tr><th>亞型註明</th><th>主要臨床特徵與表現</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>伴隨憂鬱心情 (With depressed mood)</strong></td><td>主導症狀為情緒低落、容易流淚、或深沉的無望感。</td></tr>
+              <tr><td><strong>伴隨焦慮 (With anxiety)</strong></td><td>主導症狀為神經緊張、過度擔憂、 jitteriness 或兒童的分離焦慮。</td></tr>
+              <tr><td><strong>伴隨混合性焦慮與憂鬱心情</strong></td><td>同時存在實質的焦慮症狀與憂鬱心情，且皆未達獨立診斷標準。</td></tr>
+              <tr><td><strong>伴隨品行障礙 (With disturbance of conduct)</strong></td><td>主導症狀為行為違規、侵犯他人權利、打破社會規範（如逃學、破壞公物、打架）。</td></tr>
+              <tr><td><strong>伴隨情緒與品行混合障礙</strong></td><td>同時出現顯著的情緒症狀（憂鬱/焦慮）以及品行失控行為。</td></tr>
+              <tr><td><strong>未註明 (Unspecified)</strong></td><td>對壓力源產生臨床顯著的失調反應，但不符合上述任何特定特定亞型。</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="box a3">
+          <div class="bl">📊 盛行率、發展與病程 (Prevalence & Course)</div>
+          <ul class="cl">
+            <li><strong>盛行率</strong>：極為普遍。在精神科門診中約佔 <strong>10% 至 30%</strong>，在精神科會診（聯絡會診精神醫學）中高達 <strong>50%</strong>。</li>
+            <li><strong>發展與病程</strong>：起病迅速（3 個月內）。若壓力源是急性的，症狀消退也快。若壓力源是慢性的（如長期的法律訴訟、慢性疾病），適應障礙症可以變成<strong>持續性（持續超過 6 個月）</strong>，但只要壓力源或其後果撤除，症狀便不能再延長超過 6 個月。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="box w">
+          <div class="bl">⚡ 鑑別診斷與排除性定位 (Differential Diagnosis)</div>
+          <ul class="cl">
+            <li><strong> residual category（排除性餘數診斷）</strong>：適應障礙症在精神醫學上屬於排除性診斷。如果個體表現出的症狀完全符合重度憂鬱症 (MDD)、焦慮症或 PTSD 的完整標準，則<strong>應優先診斷那些疾病，而非適應障礙症</strong>。</li>
+            <li><strong>與 PTSD/ASD 鑑別</strong>：AD 的壓力源可以是日常任何級別（如搬家），不需要符合 Criterion A 的致命與肉體摧毀性創傷；且 AD 缺乏侵入性閃回與系統性外部迴避等病理特徵。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="box r">
+          <div class="bl">⚠️ 自殺風險與功能後果</div>
+          <ul class="cl">
+            <li><strong style="color: var(--r);">☠️ 自殺風險：中至高！</strong> 適應障礙症雖然在嚴重度上常被視為較輕微，但在臨床上卻是<strong>青少年和青年因急性生活挫折（如失戀、考試失敗）引發突發性自殺企圖</strong>的最常見診斷，絕不可掉以輕心。</li>
+            <li><strong>功能性後果</strong>：常引致學業退步、頻繁請假、工作效率驟降以及人際衝突增加。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="disorder-section" id="pgd">
+    <div class="disorder-title">6. 持續性哀慟障礙症 <span>Prolonged Grief Disorder (PGD) —— DSM-5-TR 全新重磅新增</span></div>
+    <div class="grid-layout">
+      <div class="col-12">
+        <div class="box a">
+          <div class="bl">📌 核心診斷準則 (Diagnostic Criteria)</div>
+          <ul class="cl">
+            <li><strong>A. 喪親事件與基本時限</strong>：個體經歷了與其關係密切者的死亡。該事件發生至今 <strong>至少已滿 12 個月</strong>（兒童與青少年則為 <strong>至少已滿 6 個月</strong>）。</li>
+            <li><strong>B. 持續且廣泛的哀慟反應</strong>：自死亡發生以來，發展出持續的哀慟反應，特徵為以下一或兩者，且在<strong>大多數日子裡達到臨床顯著程度</strong>，並延續至今：
+              <ul class="sub-cl">
+                <li>1. 對逝者產生<strong>強烈的渴望、思念 (Intense longing/yearning)</strong>。</li>
+                <li>2. 持續專注、沉溺於關於逝者的想法或記憶 (Preoccupation)。*（註：兒童與青少年可能更專注於死亡當時的慘狀或情境）*</li>
+              </ul>
+            </li>
+            <li><strong>C. 伴隨心理特徵</strong>：自死亡發生以來，在大多數日子裡達到臨床顯著程度，出現以下 <strong>至少 3 項</strong> 症狀：
+              <ul class="sub-cl">
+                <li>1. <strong>身分認同障礙</strong>：感覺自己的一部分隨逝者一同死去了、自我概念迷失。</li>
+                <li>2. 對於死亡感到<strong>顯著的不置信、不願接受</strong>。</li>
+                <li>3. <strong>系統性迴避</strong>：刻意迴避任何會提醒自己逝者已逝的物品、地方、對話或想法。</li>
+                <li>4. 與死亡相關的<strong>強烈情緒痛苦</strong>（如極度憤怒、悲痛、罪惡感、怨恨）。</li>
+                <li>5. <strong>難以重新融入生活</strong>：無法與朋友社交、無法培養新興趣或規劃未來，感覺生活停滯。</li>
+                <li>6. <strong>情緒麻木 (Emotional numbness)</strong>：情感體驗顯著減少或完全缺失。</li>
+                <li>7. 感覺生活空虛、不充實或毫無意義。</li>
+                <li>8. <strong>強烈的孤獨感</strong>：感覺與他人徹底隔絕或疏離。</li>
+              </ul>
+            </li>
+            <li><strong>D. 功能受損</strong>：該干擾導致社交、職業或其他重要功能領域的臨床顯著痛苦或損害。</li>
+            <li><strong>E. 文化規範排除</strong>：哀慟反應的持續時間和嚴重程度，<strong>顯著超過了個體文化、宗教或社會背景所預期的常態常模</strong>。</li>
+            <li><strong>F. 排除標準</strong>：無法以重度憂鬱症 (MDD) 或 PTSD 給予更好的解釋。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="box a3">
+          <div class="bl">📊 盛行率、發展與病程 (Prevalence & Course)</div>
+          <ul class="cl">
+            <li><strong>盛行率</strong>：在經歷喪親的一般人群中，約有 <strong>10%</strong> 左右會跨越病理門檻發展出 PGD。</li>
+            <li><strong>發展與病程</strong>：可在任何年齡發生。成人的 12 個月時限是為了提供一個充分的「文化與生理適應緩衝期」。若缺乏專業的悲傷輔導或心理治療，PGD 通常呈現極為慢性且逐步惡化的病程。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="box w">
+          <div class="bl">⚡ 支持特質與高危風險因子 (Risks & Vulnerabilities)</div>
+          <ul class="cl">
+            <li><strong>支持診斷特質</strong>：常伴隨強烈的「想死以與逝者重逢」的願望。可能出現短暫的幻覺（如感覺聽到或看到逝者），需注意這與精神病性妄想不同。</li>
+            <li><strong>風險與預後因子</strong>：與逝者有極度依附或共生關係、<strong>驟逝、暴力死亡（如自殺、他殺、意外）</strong>、喪失的是自己的子女或配偶、缺乏社會支持系統、過往有創傷暴露史。</li>
+            <li><strong>文化考量 (極關鍵)</strong>：不同文化有其獨特的哭靈、守喪期，診斷時必須由熟悉該文化的專家判定其反應是否「顯著超標」。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="box r">
+          <div class="bl">⚠️ 自殺風險、功能後果與共病對抗</div>
+          <ul class="cl">
+            <li><strong style="color: var(--r);">☠️ 自殺風險：極高！</strong> 患者常因為生活意義感的徹底抽空，以及<strong>「追隨逝者、重逢」的強烈內在渴望</strong>，而面臨極高的主動自殺意念與自殺行為風險。</li>
+            <li><strong>功能性後果 & 共病</strong>：導致全面的社交撤退、無法維持既有工作。生理上伴隨極高的心血管疾病風險（「心碎症候群」）和免疫力下降。高度共病 MDD、PTSD 和物質使用障礙症。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="disorder-section" id="horizontal-compare">
+    <div class="disorder-title">🌐 創傷及壓力相關障礙症之橫向重點比較表</div>
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>障礙症名稱</th>
+            <th>核心壓力源類型</th>
+            <th>核心時限要求</th>
+            <th>最特異性臨床核心表現</th>
+            <th>主要防禦/應對機制</th>
+            <th>年齡限制 / 特殊門檻</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>反應性依附障礙症<br>(RAD)</strong></td>
+            <td>極端的社交忽視、虐待、缺乏穩定照顾者</td>
+            <td>5歲前顯現</td>
+            <td>對成人照顧者高度情感退縮，受挫時不尋求、亦不接受安慰。</td>
+            <td>情感抑制、社交撤退</td>
+            <td>發展年齡必須 ≥ 9 個月</td>
+          </tr>
+          <tr>
+            <td><strong>脫抑制社交參與障礙症<br>(DSED)</strong></td>
+            <td>極端的社交忽視、集體機構養育</td>
+            <td>無上限限制</td>
+            <td>接近陌生路人時缺乏邊界與文化警覺，呈現不分彼此的過度親暱。</td>
+            <td>社交脫抑制、邊界缺失</td>
+            <td>發展年齡必須 ≥ 9 個月</td>
+          </tr>
+          <tr>
+            <td><strong>急性壓力症<br>(ASD)</strong></td>
+            <td>Criterion A 等級創傷（真實或具威脅性的死亡、性暴力等）</td>
+            <td>創傷後 3天 至 1個月</td>
+            <td>跨範疇症狀總數制。跨越侵入、解離、迴避、激越，滿足任何 9/14 項。</td>
+            <td>急性解離、主動迴避</td>
+            <td>無年齡限制（區分成人型/幼童型）</td>
+          </tr>
+          <tr>
+            <td><strong>創傷後壓力症<br>(PTSD)</strong></td>
+            <td>Criterion A 等級創傷（直接、目睹、親近者暴斃、職業暴露）</td>
+            <td>持續超過 1 個月</td>
+            <td>四大症狀集群完整並存：侵入記憶、特定迴避、認知/情緒陰霾、生理激越。</td>
+            <td>系統性迴避、解離性閃回</td>
+            <td>分 &gt;6歲成人型 與 ≤6歲幼童型標準</td>
+          </tr>
+          <tr>
+            <td><strong>適應障礙症<br>(AD)</strong></td>
+            <td>一般日常可辨識壓力源（失戀、失業、疾病等）</td>
+            <td>壓力源後3個月內起病，結束後不超6個月</td>
+            <td>精神痛苦與壓力源完全不成比例，或引發嚴重的短期功能失調。排除性診斷。</td>
+            <td>情緒化反應、品行失控</td>
+            <td>無限制，亞型多樣</td>
+          </tr>
+          <tr>
+            <td><strong>持續性哀慟障礙症<br>(PGD)</strong></td>
+            <td>關係密切之親友喪生/死亡</td>
+            <td>喪親後超過 12 個月</td>
+            <td>對逝者產生跨越時限的強烈思念、渴望，伴隨身分認同解體與生活停滯。</td>
+            <td>喪親提醒物全面迴避、情緒麻木</td>
+            <td>成人需滿 12 個月；兒童青少年滿 6 個月</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="disorder-section" id="differential-compare">
+    <div class="disorder-title">🔍 易混淆疾病之縱向權威鑑別辨析表</div>
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>臨床鑑別組別</th>
+            <th>疾病 A</th>
+            <th>疾病 B</th>
+            <th>黃金鑑別診斷關鍵心法</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:700; color:var(--a);">依附 vs 自閉<br>社交障礙鑑別</td>
+            <td><span class="badge a">反應性依附障礙症 (RAD)</span></td>
+            <td><span class="badge w">自閉症類群障礙症 (ASD)</span></td>
+            <td>
+              1. <strong>病史背景</strong>：RAD 必須有明確的嚴重忽視/機構史；ASD 則不一定。<br>
+              2. <strong>局限重複行為</strong>：ASD 具備特異性的刻板重複行為、興趣局限，RAD 則無。<br>
+              3. <strong>環境改善效應</strong>：RAD 兒童在換到高質量溫暖環境後，社交溝通與依附潛能會迅速恢復正常；ASD 兒童的溝通特徵則跨情境持續存在。
+            </td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; color:var(--a2);">脫抑制 vs 過動<br>衝動行為鑑別</td>
+            <td><span class="badge a2">脫抑制社交參與障礙症 (DSED)</span></td>
+            <td><span class="badge w">注意力缺陷/過動症 (ADHD)</span></td>
+            <td>
+              1. <strong>社交邊界特異性</strong>：DSED 的核心是「社交邊界的瓦解」，對陌生路人極度親暱、主動跟走；ADHD 雖因衝動而莽撞，但在陌生環境仍會保持對主要照顧者的強烈依附與回頭確認。<br>
+              2. <strong>衝動光譜</strong>：ADHD 的衝動是全面性的（如上課亂跑、插嘴、學業粗心）；DSED 則是特異性聚焦於「人際互動的社交脫抑制」。
+            </td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; color:var(--r);">創傷 vs 憂鬱<br>負面情緒鑑別</td>
+            <td><span class="badge r">創傷後壓力症 (PTSD)</span></td>
+            <td><span class="badge w">重度憂鬱症 (MDD)</span></td>
+            <td>
+              1. <strong>創傷暴露</strong>：PTSD 要求符合 Criterion A 的肉體毀滅性創傷，MDD 則無此限制。<br>
+              2. <strong>侵入與迴避</strong>：PTSD 具有特異性的「解離閃回、創傷夢境」以及「對創傷線索的主動系統性迴避」；MDD 的思緒多為整體的消極、無價值感與普遍性失樂，缺乏創傷再現。<br>
+              *（註：兩者高度共病，若同時符合標準，應並列診斷）*
+            </td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; color:var(--w);">哀傷病理化鑑別</td>
+            <td><span class="badge a2">持續性哀慟障礙症 (PGD)</span></td>
+            <td><span class="badge a">正常哀慟反應 (Normal Grief)</span></td>
+            <td>
+              1. <strong>時間分水嶺</strong>：正常哀傷在喪親 1 年內會經歷波浪式減輕並逐步適應；PGD 必須跨越 12 個月（兒童 6 個月）的常態緩衝期。<br>
+              2. <strong>身分認同與生活</strong>：正常悲傷者仍能維持部分社會功能與未來規劃；PGD 患者則出現嚴重的身分瓦解（感覺自己也死去了）、情緒麻木，且在大多數日子裡生活陷入完全停滯。
+            </td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; color:var(--td);">創傷急性期對決</td>
+            <td><span class="badge w">急性壓力症 (ASD)</span></td>
+            <td><span class="badge r">創傷後壓力症 (PTSD)</span></td>
+            <td>
+              1. <strong>唯一的黃金分水嶺：時間。</strong><br>
+              - 創傷後 3 天至 1 個月內 → 診斷為 ASD。<br>
+              - 創傷後 超過 1 個月 → 變更診斷為 PTSD。<br>
+              2. <strong>評分機制</strong>：ASD 採跨範疇總數制（滿足 9/14 項）；PTSD 採嚴格的集群過關制（四大集群皆需滿足特定件數）。
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
