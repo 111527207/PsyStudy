@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSM-5-TR 解離症 系統性極致精細整理</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --s1: #161b22;
+  --s2: #21262d;
+  --b: #30363d;
+  --a: #58a6ff;
+  --a2: #bc8cff;
+  --a3: #3fb950;
+  --w: #d29922;
+  --r: #f85149;
+  --t: #e6edf3;
+  --td: #8b949e;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  background: var(--bg);
+  color: var(--t);
+  font-size: 14px;
+  line-height: 1.65;
+  padding-bottom: 60px;
+}
+.hdr {
+  background: linear-gradient(135deg, #161b22, #0d1117);
+  border-bottom: 1px solid var(--b);
+  padding: 24px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.hdr h1 { font-size: 22px; font-weight: 700; color: var(--a); }
+.hdr p { font-size: 13px; color: var(--td); margin-top: 4px; }
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+.nav a {
+  color: var(--t);
+  background: var(--s2);
+  border: 1px solid var(--b);
+  padding: 5px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+.nav a:hover {
+  background: var(--a);
+  color: var(--bg);
+  border-color: var(--a);
+}
+.main { max-width: 1300px; margin: 20px auto; padding: 0 20px; }
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 35px 0 15px;
+  color: var(--a2);
+  border-left: 4px solid var(--a2);
+  padding-left: 10px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 20px;
+  margin-bottom: 15px;
+}
+.box {
+  background: var(--s1);
+  border: 1px solid var(--b);
+  border-radius: 6px;
+  padding: 18px;
+  margin-bottom: 15px;
+}
+.box.a { border-left: 4px solid var(--a); }
+.box.a2 { border-left: 4px solid var(--a2); }
+.box.a3 { border-left: 4px solid var(--a3); }
+.box.w { border-left: 4px solid var(--w); }
+.box.r { border-left: 4px solid var(--r); }
+.bl {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 12px;
+  color: var(--t);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.cl { list-style-type: none; padding-left: 2px; }
+.cl li { margin-bottom: 8px; position: relative; padding-left: 18px; text-align: justify; }
+.cl li::before {
+  content: "•";
+  position: absolute;
+  left: 3px;
+  color: var(--a);
+  font-weight: bold;
+}
+.cl.danger li::before { color: var(--r); }
+.cl.warning li::before { color: var(--w); }
+.cl.success li::before { color: var(--a3); }
+.criteria-block {
+  background: rgba(88, 166, 255, 0.05);
+  border: 1px dashed var(--a);
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+.criteria-title { font-weight: 700; color: var(--a); margin-bottom: 10px; font-size: 14px; }
+.sub-note {
+  font-size: 12px;
+  color: var(--td);
+  background: var(--s2);
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-top: 10px;
+  border: 1px solid var(--b);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0 40px;
+  background: var(--s1);
+  border: 1px solid var(--b);
+  border-radius: 6px;
+  overflow: hidden;
+}
+th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid var(--b); vertical-align: top; }
+th { background: var(--s2); font-weight: 700; color: var(--a); font-size: 14px; }
+td { font-size: 13px; color: var(--t); line-height: 1.6; text-align: justify; }
+tr:hover { background: rgba(255,255,255,0.02); }
+.highlight-r { color: var(--r); font-weight: 700; }
+.highlight-w { color: var(--w); font-weight: 700; }
+.highlight-a { color: var(--a); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <h1>DSM-5-TR 解離症章節（Dissociative Disorders）系統性臨床大綱</h1>
+  <p>Diagnostic and Statistical Manual of Mental Disorders, Fifth Edition, Text Revision</p>
+  <div class="nav">
+    <a href="#intro">核心概述</a>
+    <a href="#did">解離性身分疾患 (DID)</a>
+    <a href="#da">解離性失憶症 (DA)</a>
+    <a href="#ddd">去人格化/去現實化疾患 (DDD)</a>
+    <a href="#osdd">其他特定/未特定解離疾患</a>
+    <a href="#comp">疾患重點橫向比較</a>
+    <a href="#diff">易混淆精神疾病鑑別</a>
+  </div>
+</div>
+
+<div class="main">
+
+  <div id="intro" class="section-title">解離症章節核心概念定義</div>
+  <div class="box w">
+    <div class="bl">⚠️ 解離症的病理本質與共同特徵</div>
+    <ul class="cl warning">
+      <li><strong>定義本質：</strong>解離症的核心特徵為意識（consciousness）、記憶（memory）、身分認同（identity）、情感（emotion）、知覺（perception）、身體表徵（body representation）、運動控制（motor control）及行為（behavior）正常整合機能的瓦解和/或中斷。</li>
+      <li><strong>創傷關聯性：</strong>解離症狀通常高頻率出現在兒童、青少年及成人經歷多種心理創傷事件（Psychologically traumatic experiences）的後果中。本章所稱創傷係指帶來精神後遺症者，與造成創傷性腦損傷（TBI）的物理撞擊不同。</li>
+      <li><strong>手冊編排架構：</strong>在 DSM-5-TR 中，解離症章節被刻意緊鄰放置於「創傷及壓力相關障礙症（Trauma- and stressor-related disorders）」之後，以反映這兩類疾病之間極高的臨床緊密關聯性，唯解離症未直接歸於該章之內。</li>
+    </ul>
+  </div>
+
+  <div id="did" class="section-title">1. 解離性身分疾患（Dissociative Identity Disorder, DID）</div>
+  <div class="criteria-block">
+    <div class="criteria-title">📋 DSM-5-TR 核心診斷準則</div>
+    <ul class="cl">
+      <li><strong>A. 身分認同的瓦解（Disruption of identity）：</strong>特徵為存在兩個或更多個截然不同的性格狀態（distinct personality states），在某些文化中可能被描述為一種被附身（possession）的經驗。身分認同的瓦解涉及自我感（sense of self）與自主感（sense of agency）的明顯不連續性，並伴隨與情感、行為、意識、記憶、知覺、認知和/或感覺運動功能相關的改變。這些表徵和症狀可由他人觀察到或由個體自身報告。</li>
+      <li><strong>B. 反覆的記憶空缺（Recurrent gaps）：</strong>對於日常事件、重要個人資訊和/或創傷事件的記憶出現反覆的空缺，這與一般的遺忘（ordinary forgetting）不相符。</li>
+      <li><strong>C. 臨床顯著苦惱與損害：</strong>這些症狀引起臨床上顯著的苦惱，或導致社交、職業或其他重要功能領域的損害。</li>
+      <li><strong>D. 非正常文化/宗教實踐：</strong>此障礙不是廣泛接受的文化或宗教實踐的正常部分。<span class="highlight-w">【兒童註記】</span>：在兒童中，這些症狀不能以幻想伴侶（imaginary playmates）或其他幻想遊戲來做更好的解釋。</li>
+      <li><strong>E. 排他準則：</strong>這些症狀不能歸因於 substances（例如：酒精急性中毒期間的記憶黑幕 blackout 或混亂行為）或其他醫療狀況（例如：複雜部分性癲癇發作 complex partial seizures）的生理效應。</li>
+    </ul>
+    <div class="sub-note"><strong>特別註明（Specifiers）：</strong>DSM-5-TR 未對 DID 設定特定的編碼亞型。但在內文中強調臨床表現可區分為「非附身型（Non-possession form，主要表現為自我感的突發分裂闖入）」與「附身型（Possession form，身分被外部神靈、鬼怪或外力完全接管，且常與特定文化高度掛鉤）」。</div>
+  </div>
+
+  <div class="grid">
+    <div class="box a">
+      <div class="bl">🔍 診斷特質與支持特質</div>
+      <ul class="cl">
+        <li><strong>診斷特質：</strong>自主感破裂（感覺自己的言語、行動非自己控制）與自我連續性中斷（多重性格切換）。日常記憶空缺包含三個層面：遠期人生創傷遺忘、近期日常技能/事件空缺、以及發現自己做完某些行為後的「時間遺失」。</li>
+        <li><strong>支持診斷相關特質：</strong>患者通常具有高度的被催眠敏感度（high hypnotizability）。臨床常高度伴隨嚴重的身體症狀（如慢性疼痛）、轉化症狀（如非癲癇性抽搐、非器質性癱瘓）以及嚴重的自傷行為。</li>
+      </ul>
+    </div>
+    <div class="box a2">
+      <div class="bl">📊 盛行率、發展與病程</div>
+      <ul class="cl">
+        <li><strong>盛行率：</strong>大型社區研究顯示，其年盛行率約為 <span class="highlight-a">1.5%</span>（其中男性為 1.6%，女性為 1.4%，兩性在社區盛行率無大差異）。</li>
+        <li><strong>發展與病程：</strong>可在任何年齡（從童年到老年）爆發。童年期的身分破裂多以遊戲劇烈轉變、想像玩伴行為異常或極端情感波動隱蔽呈現。病程多呈慢性、波動性。急性失代償（Decompensation）多被帶離創傷環境、親歷新壓力事件、或面臨子女重演自身童年創傷年齡時誘發。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="box a3">
+      <div class="bl">🌍 風險預後與文化/性別議題</div>
+      <ul class="cl">
+        <li><strong>風險和預後因子：</strong>環境因子為最核心，高達 <span class="highlight-a">90%</span> 的美國、加拿大及歐洲個案報告具有極端嚴重的、慢性的童年虐待（身體與性虐待）或嚴重的早期醫療創傷史。遺傳與生理因子方面，解離能力具高度遺傳傾向。</li>
+        <li><strong>文化相關診斷議題：</strong>在鄉村或中低收入國家，身分分裂多以文化可接受的「附身狀態」顯現。區分病理與常態之關鍵在於：DID 的附身是<span class="highlight-r">非自願的、會帶來劇烈痛苦/損害的、且不可控的</span>，常伴隨個體內部的身分衝突與長期的日常解離遺忘。</li>
+        <li><strong>性別相關診斷議題：</strong>在臨床醫療體系中，女性診斷率顯著高於男性（女性更易因急性解離、抑鬱、自傷就醫）。男性個案極易隱瞞症狀，常表現出外顯化行為（如犯罪、暴力傾向、物質濫用、戰鬥創傷等），進而大量流向司法或成癮戒治系統，導致臨床漏診。</li>
+      </ul>
+    </div>
+    <div class="box r">
+      <div class="bl">💥 功能後果、自殺風險與共病</div>
+      <ul class="cl danger">
+        <li><strong>功能性後果：</strong>損害呈極端兩極化。部分高功能個案能維持高階職業與社交；但大量嚴重個案在全生活領域嚴重失能，功能等同於慢性重大精神疾病。</li>
+        <li><strong>自殺風險：</strong><span class="highlight-r">極端高危！超過 70% 的 DID 門診個案具有自殺企圖史</span>，且多數個案伴隨非常頻繁、反覆的非自殺性自傷行為（NSSI），需隨時保持最高警戒。</li>
+        <li><strong>核心共病：</strong>創傷後壓力症（PTSD，幾乎必然共病）、重度憂鬱症（MDD）、物質使用障礙症、邊緣型人格障礙症（BPD）、飲食障礙症、轉換障礙症、睡眠障礙症。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="da" class="section-title">2. 解離性失憶症（Dissociative Amnesia, DA）</div>
+  <div class="criteria-block">
+    <div class="criteria-title">📋 DSM-5-TR 核心診斷準則</div>
+    <ul class="cl">
+      <li><strong>A. 無法回憶個人重要自傳式資訊：</strong>無法回憶重要的自傳式資訊（autobiographical information），通常屬於創傷或壓力性質（traumatic or stressful nature），這與一般的遺忘不相符。</li>
+      <li><strong>B. 臨床顯著苦惱與損害：</strong>症狀引起臨床上顯著的苦惱，或導致社交、職業或其他重要功能領域的損害。</li>
+      <li><strong>C. 排他準則（物質與神經醫療）：</strong>此障礙不能歸因於物質的生理效應（例如：酒精或其他藥物濫用、藥物治療引起的遺忘），亦不能歸因於神經系統或其他醫療狀況（例如：部分複雜性癲癇、暫時性全盤失憶症 TGA、閉合性顱腦損傷/創傷性腦損傷 TBI 的後遺症）。</li>
+      <li><strong>D. 排他準則（精神疾患）：</strong>此障礙不能以解離性身分疾患（DID）、創傷後壓力症（PTSD）、急性壓力症（ASD）、身體症狀疾患（Somatic Symptom Disorder）、或重大/輕度神經認知障礙症做更好的解釋。</li>
+    </ul>
+    <div class="sub-note"><strong>💡 核心特別註明編碼（Specifier）：</strong><br>
+    <strong>F44.1 伴隨解離性迷遊（With dissociative fugue）：</strong>伴隨有身分認同或重要自傳式資訊失憶的、顯然有目的的旅行（purposeful travel）或茫然漫遊（bewildered wandering）。</div>
+  </div>
+
+  <div class="grid">
+    <div class="box a">
+      <div class="bl">🔍 診斷特質（五大失憶分型）</div>
+      <ul class="cl">
+        <li><strong>1. 局部性失憶（Localized amnesia）：</strong>無法回憶某一明確限定時間段內的所有事件（最常見的分型）。</li>
+        <li><strong>2. 選擇性失憶（Selective amnesia）：</strong>個體可以回憶特定時間段內的部分事件，但無法回憶其餘事件。</li>
+        <li><strong>3. 廣泛性失憶（Generalized amnesia）：</strong>完全忘記自己的個人身分認同以及全部的人生歷史（極其罕見，通常突然急性發作）。</li>
+        <li><strong>4. 系統性失憶（Systematized amnesia）：</strong>個體對特定類別的資訊喪失記憶（例如：完全不記得某個特定家人的一切，或不記得某個特定房間發生的事）。</li>
+        <li><strong>5. 連續性失憶（Continuous amnesia）：</strong>每當一項新的日常事件發生，個體隨即將其遺忘，無法形成全新記憶（極罕見）。</li>
+      </ul>
+    </div>
+    <div class="box a2">
+      <div class="bl">🔍 支持特質與「美麗的漠不關心」</div>
+      <ul class="cl">
+        <li><strong>支持診斷相關特質：</strong>許多個案最初根本未意識到自己有失憶（直到被證據或他人告知）。可能伴隨去人格化體驗、身體痛覺喪失（Analgesia）及強烈自動催眠狀態。</li>
+        <li><strong>美麗的漠不關心（La belle indifférence）：</strong>部分個案對自己喪失重大人生遺忘或身分遺失的現象，表現出異常的、令人費解的冷淡、漠不關心或合理化，這是高度支持解離症診斷的古典線索。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="box w">
+      <div class="bl">📊 盛行、發展 course 與風險</div>
+      <ul class="cl warning">
+        <li><strong>盛行率：</strong>某一美國大型社區研究顯示其一年盛行率約為 <span class="highlight-w">1.8%</span>（其中男性 1.0%，女性 2.6%）。</li>
+        <li><strong>發展和病程：</strong>可見於所有年齡層，唯兒童失憶（<12歲）極難評估，極易被誤診為分心、沉迷幻想或對抗行為。廣泛性失憶與解離性迷遊通常是突然、急性發作的。失憶的緩解通常是突然的，但也可能逐步恢復。</li>
+        <li><strong>風險和預後因子：</strong>環境因子為決定性關鍵，高度與極端的創傷經驗（如軍事戰鬥、強暴、酷刑、集中營、大屠殺、嚴重的家庭暴力或重大自然災難）相關。廣泛性失憶更常出現在個案陷入無法逃脫的劇烈精神衝突環境中。</li>
+      </ul>
+    </div>
+    <div class="box r">
+      <div class="bl">💥 性別文化、功能後果、自殺與共病</div>
+      <ul class="cl danger">
+        <li><strong>文化與性別議題：</strong>女性診斷率顯著高於男性。必須排除文化特定的壓力發作（如阿摩克 Amok 狀態後的記憶空缺）。</li>
+        <li><strong>功能性後果：</strong>局部性失憶損害可能侷限於親密關係中；而廣泛性失憶或迷遊狀態會導致完全的社會失能、無法維持工作與自理能力。</li>
+        <li><strong>自殺風險：</strong><span class="highlight-r">危機時刻點！當失憶症突然完全解除，個體被猛烈重現的創傷性、壓迫性記憶全面吞噬、淹沒時，自殺與自傷自殘的風險會急劇飆升</span>，臨床上必須在此階段進行最高級別的防範。</li>
+        <li><strong>核心共病：</strong>重度憂鬱症、持續性憂鬱症（Dysthymia）、創傷後壓力症（PTSD）、焦慮疾患、人格障礙症。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="ddd" class="section-title">3. 去人格化/去現實化疾患（Depersonalization/Derealization Disorder, DDD）</div>
+  <div class="criteria-block">
+    <div class="criteria-title">📋 DSM-5-TR 核心診斷準則</div>
+    <ul class="cl">
+      <li><strong>A. 持續或反覆出現下列去人格化、去現實化或兩者兼具的體驗：</strong>
+        <br><strong>1. 去人格化（Depersonalization）：</strong>對自己的思想、情感、感覺、身體或行為感到不真實、疏離（unreality, detachment）或成為一個外部觀察者（例如：知覺改變、時間感嚴重扭曲、自我感不真實或缺失、情感和/或身體感覺麻木）。
+        <br><strong>2. 去現實化（Derealization）：</strong>對周圍環境（surroundings）感到不真實或疏離（例如：他人或物體被體驗為不真實的、夢境般的 dreamlike、霧濛濛的 foggy、沒有生氣的 lifeless 或視覺/聽覺上嚴重扭曲）。
+      </li>
+      <li><strong>B. 現實檢驗能力保持完整（Reality testing remains intact）：</strong>在去人格化或去現實化的體驗期間，個體的現實檢驗能力保持完好（即清楚明白這種疏離只是一種「主觀感覺」，而非客觀物理現實變異）。</li>
+      <li><strong>C. 臨床顯著苦惱與損害：</strong>症狀引起臨床上顯著的苦惱，或導致社交、職業或其他重要功能領域的損害。</li>
+      <li><strong>D. 排他準則（物質與醫療）：</strong>這些症狀不能歸因於物質（如非法濫用藥物、精神科治療藥物）或其他醫療狀況（如顳葉癲癇 seizures）的生理效應。</li>
+      <li><strong>E. 排他準則（精神疾患）：</strong>此障礙不能以其他精神障礙做更好的解釋，例如思覺失調症（Schizophrenia）、恐慌症（Panic Disorder）、重度憂鬱症（MDD）、急性壓力症、創傷後壓力症（PTSD）或其他解離疾患。</li>
+    </ul>
+  </div>
+
+  <div class="grid">
+    <div class="box a">
+      <div class="bl">🔍 診斷特質與感官扭曲表現</div>
+      <ul class="cl">
+        <li><strong>去人格化表現：</strong>感到自己像個機器人或局外人，靈魂與肉體分離。顯著的特徵是情感的整體麻木（Emotional numbing）與身體知覺的喪失。</li>
+        <li><strong>去現實化與感官扭曲：</strong>感覺周圍世界像被隔著一層厚玻璃牆、面紗或濃霧。常伴隨強烈的主觀視覺扭曲：如視覺模糊、視野變寬/變窄、物體平面化（二維感）、物體尺寸改變（大視症 macropsia 或小視症 micropsia）。聽覺上，聲音也可能被主觀放大或極度沉悶、微弱。</li>
+      </ul>
+    </div>
+    <div class="box a2">
+      <div class="bl">🔍 支持特質與存在主義強迫沉思</div>
+      <ul class="cl">
+        <li><strong>支持診斷相關特質：</strong>個案主觀上常抱怨具有極度嚴重的注意力分散與記憶保留困難。</li>
+        <li><strong>存在主義沉思（Existential obsessions）：</strong>此疾病個案極常發展出強迫性的存在主義懷疑與沉思（例如：過度反覆鑽研「世界是真實的嗎？」、「我真的存在嗎？」、「大腦是怎麼運作的？」）。</li>
+        <li><strong>反差的臨床外貌：</strong>個案在臨床就診時常展現出極度冷漠、面部表情緊繃且如機器人般（Robotic demeanor）的平淡外在，然而其內心深處卻往往正承受著瀕臨崩潰的、極端劇烈的精神痛苦（極度害怕自己永久大腦損壞或瘋掉），兩者形成鮮明反差。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="box w">
+      <div class="bl">📊 盛行、時程 Course 與三種病程模式</div>
+      <ul class="cl warning">
+        <li><strong>盛行率：</strong>大眾人群中的終生盛行率約為 <span class="highlight-w">2%</span>。</li>
+        <li><strong>性別分佈：</strong>與其他解離症不同，本疾患在<span class="highlight-a">男性與女性中的分布完全相等（性別比 1:1）</span>。</li>
+        <li><strong>發展和病程：</strong>平均發病年齡為 <span class="highlight-w">16歲</span>。<span class="highlight-r">【核心警訊】</span>：超過40歲以後才初次發病的案例在臨床上極其罕見；若發現40歲後才初發的去人格化案例，必須深度且全面篩查其潛在的神經系統醫療狀況（如腦部器質性病變、睡眠呼吸中止症 sleep apnea、癲癇等）。</li>
+        <li><strong>三大核心病程分型：</strong>本病多呈高度慢性且不間斷。約 1/3 的個案表現為突發的陣發性（Discrete episodes）；1/3 的個案自始至終呈無間斷的持續性（Continuous symptoms）；另有 1/3 的個案最初呈陣發，但最終演變為完全不間斷的慢性持續狀態。</li>
+      </ul>
+    </div>
+    <div class="box a3">
+      <div class="bl">🌍 風險因子、功能後果、自殺與共病</div>
+      <ul class="cl success">
+        <li><strong>風險和預後因子：</strong>
+          <br>• <strong>氣質因子：</strong>傷害規避型人格（Harm avoidance）、使用高度不成熟的心理防衛機制。
+          <br>• <strong>環境因子：</strong><span class="highlight-w">童年期長期的精神/心理虐待（Emotional abuse）與嚴重情感忽視（Emotional neglect）為最核心的特徵</span>，遠比身體虐待更具預測性；其他包含親眼目睹家暴、至親意外暴斃等。
+          <br>• <strong>生理/誘發因子：</strong>非法物質濫用為最常見急性誘發源（尤其是施用<span class="highlight-r">大麻 cannabis、迷幻藥、K他命 ketamine</span>）；嚴重的睡眠剝奪亦為物理觸發因子。
+        </li>
+        <li><strong>文化議題：</strong>特定宗教冥想、瑜珈或恍惚儀式常包含主觀的自我疏離體驗，只要屬於文化接受的常態，絕不可診斷為本障礙。</li>
+        <li><strong>功能性後果：</strong>高度的低情感性（Hypoemotionality）常徹底摧毀其社交與親密關係；專注力缺損嚴重阻礙職業與學業發展。</li>
+        <li><strong>自殺風險與共病：</strong>無獨立的自殺風險數據，但由於極高頻率共病單相憂鬱症、多種焦慮疾患（如恐慌症、社交焦慮症）、強迫症（OCD）及畏避型人格障礙、邊緣型人格障礙，其內心痛苦往往透過共病轉化為高風險自殺危機。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="osdd" class="section-title">4. 其他特定（OSDD）與未特定解離疾患（UDD）</div>
+  <div class="box a">
+    <div class="bl">📋 其他特定解離疾患（Other Specified Dissociative Disorder, OSDD）</div>
+    <div style="margin-bottom:12px; color:var(--td); font-size:13px;">適用於具備解離症之核心臨床表徵且造成重大損害，但「未完全滿足」上述任何一項具體解離症的完整診斷準則者。臨床醫生必須在診斷後特別標明其未滿足準則的「具體臨床原因」。手冊提供之四大核心古典範例：</div>
+    <ul class="cl">
+      <li><strong>1. 慢性且反覆之混合解離症狀群（Chronic and recurrent syndromes of mixed dissociative symptoms）：</strong>個體出現長期的身分認同受損與改變，但其自我感與自主感的不連續性「未達顯著、完全的分裂瓦解」；或者，個體出現多重性格切換，但患者<span class="highlight-r">完全沒有表現出解離性失憶症</span>。</li>
+      <li><strong>2. 長期強烈高壓勸說引起之身分認同改變（Identity disturbance due to prolonged and intense coercive persuasion）：</strong>個體因長期受制於極端高壓、系統性的勸說、洗腦或灌輸（例如：戰俘思想改造、集中營洗腦、長期酷刑虐待、或被極端教派/邪教 cult /恐怖組織強行招募加入），進而對自身原有的核心身分認同產生持久性的瓦解、嚴重懷疑或徹底被迫置換。</li>
+      <li><strong>3. 對壓力事件的急性解離反應（Acute dissociative reactions to stressful events）：</strong>此類反應屬於急性、短暫性的解離發作，<span class="highlight-w">整體病程持續時間必然小於 1 個月（通常僅維持數小時至數天）</span>。臨床特徵包含嚴重的意識狹窄、去人格化、去現實化、微失憶症（micro-amnesias）、短暫的解離性木僵（stupor）以及感覺運動功能改變（如一過性局部麻木、無法發聲）。</li>
+      <li><strong>4. 解離性恍惚（Dissociative trance）：</strong>特徵為急劇的注意力狹窄，或對周圍環境刺激的完全、徹底喪失警覺與無反應。可能伴隨個體自身完全無法控制、亦未意識到的刻板小動作（如手指規律敲擊），且此恍惚狀態絕對不是廣泛接受的宗教或文化實踐的一部分。</li>
+    </ul>
+  </div>
+
+  <div class="box s2">
+    <div class="bl">📋 未特定解離疾患（Unspecified Dissociative Disorder, UDD）</div>
+    <ul class="cl">
+      <li><strong>定義與使用情境：</strong>當個體展現解離疾患之核心損害，但未達任何特定疾病準則時使用。與 OSDD 的核心分野在於：臨床醫生在 UDD 中<span class="highlight-w">選擇不寫明</span>未滿足準則的具體原因，或者處於臨床高度緊急、無法獲取足夠歷史病史資訊的特殊情境下（例如：急診室 ER 急性送醫個案）。</li>
+    </ul>
+  </div>
+
+  <div id="comp" class="section-title">核心解離疾患重點橫向對照比較</div>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 20%;">疾患名稱</th>
+        <th style="width: 25%;">身分認同與性格分裂度</th>
+        <th style="width: 25%;">解離性失憶 (Amnesia) 特性</th>
+        <th style="width: 15%;">現實檢驗能力</th>
+        <th style="width: 15%;">核心病理誘因</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>解離性身分疾患 (DID)</strong></td>
+        <td><span class="highlight-r">極高（重度破裂）</span><br>存在兩個或更多不同的性格狀態，自我感與自主感徹底不連續。</td>
+        <td><span class="highlight-r">全面且反覆</span><br>包含遠期創傷遺忘、近期日常失憶、技能波動及現時行為的「時間遺失」。</td>
+        <td>在個別性格主導期完整，但存在性格切換時的記憶屏障。</td>
+        <td>極端、慢性的早期<span class="highlight-r">童年嚴重虐待 / 嚴重創傷</span>。</td>
+      </tr>
+      <tr>
+        <td><strong>解離性失憶症 (DA)</strong></td>
+        <td><span class="highlight-w">基本完整</span><br>（僅在罕見的廣泛性失憶中會短暫遺忘個人身分認同）。</td>
+        <td><span class="highlight-w">對核心自傳式資訊喪失</span><br>最常見為局部性或選擇性失憶，核心指向心理壓力或創傷事件。</td>
+        <td>完全完好。</td>
+        <td>突發性的、不可逃脫的<span class="highlight-w">重大創傷或高壓精神衝突</span>。</td>
+      </tr>
+      <tr>
+        <td><strong>去人格化/去現實化疾患 (DDD)</strong></td>
+        <td><span class="highlight-a">無分裂（主觀主體感異化）</span><br>自我與環境出現疏離、不真實、不連續感，如機器人般。</td>
+        <td><span class="highlight-a">無失憶症狀</span><br>僅存在主觀上因注意力渙散而導致的記憶保留主觀困難。</td>
+        <td><span class="highlight-a">絕對完好</span><br>（明知只是主觀感覺，與精神病性妄想完全不同）。</td>
+        <td><span class="highlight-w">童年期精神/情感虐待與情感忽視</span>、或非法物質（大麻/K他命）急性誘發。</td>
+      </tr>
+      <tr>
+        <td><strong>其他特定解離疾患 (OSDD) - 範例一</strong></td>
+        <td>中度受損<br>性格狀態有波動與置換，但自我感未達徹底分裂；或分裂完整但完全沒有遺忘。</td>
+        <td><span class="highlight-r">無失憶症狀</span><br>這是用以與經典 DID 進行核心區分的關鍵。</td>
+        <td>基本完好。</td>
+        <td>慢性反覆之混合解離精神壓力。</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div id="diff" class="section-title">解離症與易混淆精神/神經疾病鑑別診斷對照表</div>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 22%;">易混淆疾患名稱</th>
+        <th style="width: 30%;">與解離疾患之「臨床相似/交疊點」</th>
+        <th style="width: 48%;">臨床關鍵鑑別要點（DSM-5-TR 核心診斷分野）</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>思覺失調症與精神病性障礙症</strong></td>
+        <td>都會聽到非自身發出的「聲音」（幻聽），且可能表現出身分認同紊亂或行為嚴重怪異、混亂。</td>
+        <td>
+          • <strong>幻聽本質不同：</strong>思覺失調症的幻聽源於外部力量、外在物理空間投影；而 DID 的聲音是源於<span class="highlight-r">個體內部性格狀態（Alters）之間的對話與思維闖入</span>。<br>
+          • <strong>現實檢驗與妄想：</strong>去人格化疾患（DDD）個案現實檢驗能力完全完整；而精神病患者具備怪異妄想且現實檢驗徹底瓦解。<br>
+          • 思覺失調症伴隨嚴重的陰性症狀、思考流程紊亂，且不具備解離症特有的系統性自傳式創傷失憶。
+        </td>
+      </tr>
+      <tr>
+        <td><strong>雙相情緒障礙症（Bipolar Disorders）</strong></td>
+        <td>情緒大起大落，且可能在短時間內出現截然不同的行為模式與自我人格面貌。</td>
+        <td>
+          • <strong>時間長度與核心特徵：</strong>雙相情緒障礙症的情緒波動是由躁期（Mania）或鬱期（Depression）主導，每次發作均持續數週至數月；而 DID 的性格變異是<span class="highlight-w">極速在數分鐘內切換</span>的，且核心伴隨不同性格之間的「遺忘屏障與記憶空缺」。
+        </td>
+      </tr>
+      <tr>
+        <td><strong>創傷後壓力症 (PTSD)</strong></td>
+        <td>都高度具有極端童年創傷背景、可能出現一定程度的失憶、且 PTSD 包含「解離性亞型」（去人格化/去現實化）。</td>
+        <td>
+          • <strong>解離誘發源之範圍：</strong>PTSD 解離性亞型的去人格化/去現實化，幾乎必然是在面臨<span class="highlight-w">特定創傷線索或回閃（Flashback）時被急性誘發</span>；然而去人格化疾患（DDD）或 DID 的解離症狀是在日常生活中<span class="highlight-r">廣泛、持續且無預警不間斷發生的</span>，即使在無人際創傷干擾的非壓力情境下亦然。<br>
+          • PTSD 的失憶僅限於創傷事件核心細節（局部性）；而 DID 的失憶擴及日常非創傷事件。
+        </td>
+      </tr>
+      <tr>
+        <td><strong>創傷性腦損傷 (TBI) / 神經器質病變</strong></td>
+        <td>均會表現出極度嚴重的記憶空缺、失憶、迷遊行為、以及定向感嚴重喪失。</td>
+        <td>
+          • <strong>物理證據與病程：</strong>TBI 必然伴隨明確的頭部物理撞擊史，臨床伴隨意識喪失、神經學陽性病徵，且經由神經學影像檢查（CT / MRI）可檢出實質大腦受損。<br>
+          • <strong>失憶方向：</strong>神經與腦損傷引起的失憶主要影響<span class="highlight-w">順向記憶（Anterograde，無法記住新事物）</span>，且不具備心理動力學上的「創傷選擇性防衛遺忘」。
+        </td>
+      </tr>
+      <tr>
+        <td><strong>詐病（Malingering）與做作疾患（Factitious Disorder）</strong></td>
+        <td>個案口語報告具有極度誇張的多重人格、突然大幅度的失憶或迷遊，症狀呈現高度戲劇化。</td>
+        <td>
+          • <strong>利益動機與症狀一致性：</strong>詐病個案具有明確的外部實質利益動機（例如：意圖逃避重大刑事法律審判、騙取鉅額保險金、逃避兵役）。<br>
+          • 做作疾患個案旨在獲得病人角色。這兩者在接受催眠、深度訪談或無預警長期行為觀察時，其多重性格的轉換、失憶的邊界會出現顯著的<span class="highlight-r">不一致性、漏洞與矛盾</span>（相較之下，真性解離個案通常會竭力隱瞞、合理化或淡化自身的解離症狀）。
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+</body>
+</html>
