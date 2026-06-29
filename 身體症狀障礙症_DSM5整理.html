@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSM-5-TR 身體症狀及相關障礙症 權威系統圖鑑</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --s1: #161b22;
+  --s2: #21262d;
+  --b: #30363d;
+  --a: #58a6ff;    /* 藍色：診斷準則、核心特徵 */
+  --a2: #bc8cff;   /* 紫色：特別註明、分型 */
+  --a3: #3fb950;   /* 綠色：盛行率、發展與病程 */
+  --w: #d29922;    /* 黃色：風險預後、臨床警訊 */
+  --r: #f85149;    /* 紅色：自殺風險、功能後果、鑑別診斷 */
+  --t: #e6edf3;
+  --td: #8b949e;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  background: var(--bg);
+  color: var(--t);
+  font-size: 14px;
+  line-height: 1.7;
+  padding-bottom: 60px;
+}
+.hdr {
+  background: linear-gradient(135deg, #161b22, #0d1117);
+  border-bottom: 1px solid var(--b);
+  padding: 20px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.hdr h1 { font-size: 22px; font-weight: 700; color: var(--a); display: flex; align-items: center; gap: 10px; }
+.hdr p { font-size: 13px; color: var(--td); margin-top: 4px; }
+.nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.nav a {
+  text-decoration: none;
+  color: var(--t);
+  background: var(--s2);
+  border: 1px solid var(--b);
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+.nav a:hover { background: var(--a); border-color: var(--a); color: var(--bg); }
+.main { max-width: 1400px; margin: 0 auto; padding: 24px; }
+
+/* 臨床核心思維面板 */
+.overview-panel {
+  background: var(--s1);
+  border: 1px solid var(--b);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+.overview-title { font-size: 16px; font-weight: 700; margin-bottom: 12px; color: var(--a); }
+.overview-desc { font-size: 14px; text-align: justify; color: var(--t); }
+
+/* 疾病區塊 */
+.disorder-section { margin-bottom: 45px; border-top: 2px solid var(--b); padding-top: 25px; }
+.disorder-title { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 15px; display: flex; align-items: center; gap: 8px; }
+.disorder-title span { font-size: 13px; color: var(--td); font-weight: normal; }
+
+.grid-layout { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+.col-12 { grid-column: span 12; }
+.col-6 { grid-column: span 6; }
+@media (max-width: 992px) { .col-6 { grid-column: span 12; } }
+
+/* 卡片樣式 */
+.box { background: var(--s1); border: 1px solid var(--b); border-radius: 6px; padding: 16px; height: 100%; transition: transform 0.2s; }
+.box:hover { transform: translateY(-2px); }
+.box.a { border-left: 4px solid var(--a); }
+.box.a2 { border-left: 4px solid var(--a2); }
+.box.a3 { border-left: 4px solid var(--a3); }
+.box.w { border-left: 4px solid var(--w); background: linear-gradient(to right, #221f18, var(--s1)); }
+.box.r { border-left: 4px solid var(--r); background: linear-gradient(to right, #251a1a, var(--s1)); }
+
+.bl { font-weight: 700; font-size: 15px; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+.box.a .bl { color: var(--a); }
+.box.a2 .bl { color: var(--a2); }
+.box.a3 .bl { color: var(--a3); }
+.box.w .bl { color: var(--w); }
+.box.r .bl { color: var(--r); }
+
+.cl { list-style: none; }
+.cl li { margin-bottom: 8px; position: relative; padding-left: 14px; text-align: justify; }
+.cl li::before { content: "•"; position: absolute; left: 0; color: var(--td); }
+.cl li strong { color: #fff; }
+
+/* 內部巢狀清單 */
+.sub-cl { list-style: none; margin: 4px 0 8px 14px; border-left: 1px dashed var(--b); padding-left: 10px; }
+.sub-cl li::before { content: "-"; }
+
+/* 表格樣式 */
+.table-responsive { width: 100%; overflow-x: auto; margin-top: 15px; }
+table { width: 100%; border-collapse: collapse; text-align: left; margin-bottom: 20px; font-size: 13px; }
+th, td { padding: 12px; border: 1px solid var(--b); vertical-align: top; }
+th { background: var(--s2); color: var(--a); font-weight: 700; }
+tr:nth-child(even) td { background: #161b2240; }
+.badge { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 700; }
+.badge.a { background: #388bfd26; color: var(--a); border: 1px solid #388bfd4d; }
+.badge.a2 { background: #8957e526; color: var(--a2); border: 1px solid #8957e54d; }
+.badge.w { background: #bb801726; color: var(--w); border: 1px solid #bb80174d; }
+.badge.r { background: #f8514926; color: var(--r); border: 1px solid #f851494d; }
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <h1>🧠 DSM-5-TR 身體症狀及相關障礙症 權威系統圖鑑</h1>
+  <p>根據 2022 年美國精神醫學學會 (APA) 最新文本修訂版 (Text Revision) 深度建構</p>
+  <div class="nav">
+    <a href="#ssd">1. 身體症狀障礙症 (SSD)</a>
+    <a href="#iad">2. 疾病焦慮障礙症 (IAD)</a>
+    <a href="#cd">3. 轉化症 (CD)</a>
+    <a href="#pfamc">4. 影響其他醫療狀況的心理因子</a>
+    <a href="#fd">5. 做作疾患 (FD)</a>
+    <a href="#horizontal-compare">🌐 橫向重點對比表</a>
+    <a href="#differential-compare">🔍 易混淆疾病辨析表</a>
+  </div>
+</div>
+
+<div class="main">
+
+  <div class="overview-panel">
+    <div class="overview-title">💡 DSM-5-TR 概念革命：從「無法解釋的身體症狀」到「失調的心理認知反應」</div>
+    <div class="overview-desc">
+      在舊版 DSM 中，此章節高度依賴身體症狀是否「缺乏醫學解釋（Medically Unexplained Symptoms, MUS）」。然而 DSM-5-TR 徹底修正了這項定義：<strong>醫學上是否能查出身體病因不再是診斷的唯一分水嶺。</strong> 即使患者確實患有真實的內科疾病（例如心臟病、癌症或慢性疼痛），只要他們對該疾病或症狀產生了<strong>過度、不成比例、且造成嚴重失能的負面認知、情緒、或不適當的求醫行為</strong>，即符合本章節的診斷精神。此項更動大幅減少了內外科與精神科之間的二元對立，更貼近整體醫學（Holistic Medicine）之臨床實務。
+    </div>
+  </div>
+
+  <div class="disorder-section" id="ssd">
+    <div class="disorder-title">1. 身體症狀障礙症 <span>Somatic Symptom Disorder (SSD)</span></div>
+    <div class="grid-layout">
+      <div class="col-12">
+        <div class="box a">
+          <div class="bl">📌 核心診斷準則 (Diagnostic Criteria) —— ★特別重要★</div>
+          <ul class="cl">
+            <li><strong>A. 身體症狀體驗</strong>：具有一個或多個身體症狀，且造成顯著的痛苦，或導致日常生活功能顯著受損。</li>
+            <li><strong>B. 對症狀的過度反應</strong>：針對身體症狀或與健康相關的疑慮，表現出過度的想法、感覺或行為，至少包含下列其中一項：
+              <ul class="sub-cl">
+                <li>1. 針對自身症狀的嚴重性，抱持著<strong>不成比例且持續的想法</strong>。</li>
+                <li>2. 針對健康或症狀，維持著<strong>持續的高水平焦慮</strong>。</li>
+                <li>3. 為了這些症狀或健康疑慮，耗費了<strong>過多的時間與精力</strong>。</li>
+              </ul>
+            </li>
+            <li><strong>C. 持續時間要求</strong>：雖然任何一個具體的身體症狀可能不持續存在，但處於有症狀的病態狀態是持續的（通常<strong>超過 6 個月</strong>）。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="box a2">
+          <div class="bl">🔍 特別註明與分型 (Specifiers)</div>
+          <ul class="cl">
+            <li><strong>是否伴隨疼痛 (With predominant pain)</strong>：若患者的身體症狀主要由疼痛所主導，則需加註此標記（即舊稱的疼痛障礙症）。</li>
+            <li><strong>是否為持續性 (Persistent)</strong>：其特徵為症狀嚴重、功能顯著受損，且病程持續時間極長（遠遠超過 6 個月）。</li>
+            <li><strong>目前嚴重度分級 (Current severity)</strong>：
+              <ul class="sub-cl">
+                <li><strong>輕度 (Mild)</strong>：僅滿足準則 B 中的其中一項症狀。</li>
+                <li><strong>中度 (Moderate)</strong>：滿足準則 B 中的兩項或以上症狀。</li>
+                <li><strong>重度 (Severe)</strong>：滿足準則 B 中的兩項或以上症狀，且伴隨<strong>多重身體症狀</strong>（或一項極其嚴重的身體症狀）與嚴重的臨床功能受損。</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="box a3">
+          <div class="bl">📊 盛行率、發展與病程 (Prevalence & Course)</div>
+          <ul class="cl">
+            <li><strong>盛行率</strong>：在一般成人大眾中約為 <strong>5% 至 7%</strong>。在一般內科門診或基層醫療照護體系中，其盛行率估計更高。</li>
+            <li><strong>發展與病程</strong>：可在任何年齡層起病，但最常見於成年早期。兒童時期的表現多為單一症狀（如反覆腹痛或頭痛）。老年人常因為合併真實的內科老化疾病，其不適當的心理反應容易被低估。病程多呈慢性、波動性，很少能完全自發性緩解。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="box w">
+          <div class="bl">⚡ 臨床診斷特質與風險因子 (Features & Risks)</div>
+          <ul class="cl">
+            <li><strong>診斷特質</strong>：核心不在於症狀的生理真偽，而在於<strong>「災難化思維」</strong>。患者常對自己的身體徵兆賦予最壞的疾病詮釋，反覆就醫，即使檢查報告正常，也只能獲得短暫的安心。</li>
+            <li><strong>支持診斷特質</strong>：常見對藥物副作用極度敏感、常覺得醫生不夠關心、反覆更換主治醫師（Doctor-shopping），常因過度檢查而導致次級醫療傷害。</li>
+            <li><strong>風險與預後因子</strong>：高度伴隨「神經質/負向情緒（Neuroticism）」氣質；低教育程度、低社經地位、近期經歷重大生活壓力、或童年期有嚴重的疾病史或創傷。</li>
+            <li><strong>文化與性別議題</strong>：在亞洲或非洲文化中，情緒常轉化為軀體化症狀表達（例如「神經衰弱」、「氣血不順」）。臨床上<strong>女性的診斷率顯著高於男性（男女比約為 1:2）</strong>。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="box r">
+          <div class="bl">⚠️ 自殺風險、功能後果、共病與鑑別診斷 —— ★特別重要★</div>
+          <ul class="cl">
+            <li><strong style="color: var(--r);">☠️ 自殺風險</strong>：與一般內科疾患相比，SSD 患者的自殺意念與自殺嘗試風險顯著偏高。當個體<strong>伴隨慢性、難治性疼痛</strong>，或是共病重度憂鬱症時，自殺危險度會呈現幾何級數上升。</li>
+            <li><strong>功能性後果</strong>：導致嚴重的身體失能，患者常長期請假、失業，造成極高的醫療資源耗用。</li>
+            <li><strong>核心共病</strong>：高度共病重度憂鬱症 (MDD)、廣泛性焦慮症 (GAD)、各類人格障礙症（如邊緣型或畏避型人格障礙）。</li>
+            <li><strong>鑑別診斷關鍵心法</strong>：
+              <ul class="sub-cl">
+                <li><strong>疾病焦慮障礙症 (IAD)</strong>：IAD 的核心是「只有極輕微或根本沒有身體症狀」，純粹是觀念上的焦慮；而 SSD 患者則具備<strong>實質上、明顯帶來痛苦的生理症狀</strong>。</li>
+                <li><strong>恐慌症 (Panic Disorder)</strong>：恐慌症的身體症狀是急性、陣發性且快速消退的；SSD 的症狀與焦慮則是持續存在且相對穩定的。</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="disorder-section" id="iad">
+    <div class="disorder-title">2. 疾病焦慮障礙症 <span>Illness Anxiety Disorder (IAD)</span></div>
+    <div class="grid-layout">
+      <div class="col-12">
+        <div class="box a">
+          <div class="bl">📌 核心診斷準則 (Diagnostic Criteria) —— ★特別重要★</div>
+          <ul class="cl">
+            <li><strong>A. 罹病恐懼專注</strong>：專注於自身正患有或即將罹患某種<strong>嚴重的、致命的疾病</strong>。</li>
+            <li><strong>B. 身體症狀之缺失或輕微</strong>：患者<strong>沒有身體症狀</strong>；若有症狀，其嚴重程度也僅是<strong>極其輕微</strong>。若個體已知患有另一種醫療狀況，或存在罹患該病的客觀高風險（如有明確家族癌病史），其對該疾病的關注與專注程度必須是顯著過度且不成比例的。</li>
+            <li><strong>C. 高水平健康焦慮</strong>：對健康抱持極高水平的焦慮，個體對於自身健康狀態的任何細微變化皆極易受到驚嚇（Highly alarmed）。</li>
+            <li><strong>D. 適應不良之健康行為</strong>：個體表現出過度的健康相關行為（例如：反覆檢查身體零件是否有腫塊），或表現出<strong>適應不良的迴避行為</strong>（例如：因害怕查出大病而完全拒絕就醫、拒絕健檢或看望病人）。</li>
+            <li><strong>E. 疾病專注時間要求</strong>：疾病專注的狀態已持續 <strong>至少 6 個月</strong>（這期間所恐懼的具體疾病可能會發生改變，例如前三個月怕得癌症，後三個月怕中風）。</li>
+            <li><strong>F. 排除其他精神障礙</strong>：此疾病專注無法以身體症狀障礙症、強迫症、驚恐障礙或思覺失調症等做更好的解釋。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="box a2">
+          <div class="bl">🔍 特別註明與臨床亞型 (Specifiers)</div>
+          <ul class="cl">
+            <li><strong>求醫型 (Care-seeking type)</strong>：頻繁使用醫療資源，包括看診、做昂貴的醫學影像檢查、反覆進行實驗室檢驗。</li>
+            <li><strong>避醫型 (Care-avoidant type)</strong>：極少使用醫療資源，因為看醫生或進入醫院會引發不可承受的極端焦慮。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="box a3">
+          <div class="bl">📊 盛行率、發展與病程 (Prevalence & Course)</div>
+          <ul class="cl">
+            <li><strong>盛行率</strong>：在一般社區及普通醫療環境中，其終生盛行率估計在 <strong>1.3% 至 10.0%</strong> 之間。</li>
+            <li><strong>兩性比例</strong>：與本章其他疾病不同，<strong>IAD 在男女之間的發病比例大致相等 (1:1)</strong>。</li>
+            <li><strong>發展與病程</strong>：多起病於成年早期或中期。病程多為慢性且易復發。老年患者的焦慮往往聚焦於記憶力減退（恐懼阿茲海默症）或心血管疾病。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="box w">
+          <div class="bl">⚡ 臨床診斷特質與風險因子 (Features & Risks)</div>
+          <ul class="cl">
+            <li><strong>診斷特質</strong>：患者恐懼的不是「症狀本身帶來的痛苦」，而是<strong>「症狀背後所代表的恐怖診斷標籤」</strong>。即使只是正常的生理跳動（如偶發的肌肉跳動），也會被放大解讀為運動神經元疾病（漸凍症）的先兆。</li>
+            <li><strong>風險與預後因子</strong>：童年時期曾有過嚴重的虐待或忽視史；童年期曾患過重大疾病；或者家族中父母對健康有過度病態的焦慮行為。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="box r">
+          <div class="bl">⚠️ 自殺風險、功能後果、共病與鑑別診斷 —— ★特別重要★</div>
+          <ul class="cl">
+            <li><strong>功能後果與自殺</strong>：雖然沒有像 SSD 伴隨慢性疼痛那般顯著的獨立自殺企圖率，但其引發的極端焦慮常導致人際關係破裂與嚴重的職業失能。</li>
+            <li><strong>核心共病</strong>：廣泛性焦慮症 (GAD)、強迫症 (OCD)、憂鬱障礙症。</li>
+            <li><strong>鑑別診斷關鍵心法</strong>：
+              <ul class="sub-cl">
+                <li><strong>強迫症 (OCD)</strong>：OCD 的健康恐懼通常伴隨著特定的「儀式化強迫行為」（如反覆洗手 50 次以防感染）；而 IAD 的焦慮是全身心的、對罹病觀念的廣泛反覆擔憂。</li>
+                <li><strong>身體畸形障礙症 (BDD)</strong>：BDD 患者專注的是自己的身體「外觀、長相、對稱性」是否醜陋或異常；IAD 專注的是身體內部的「器官功能是否生病或衰竭」。</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="disorder-section" id="cd">
+    <div class="disorder-title">3. 轉化症（功能性神經症狀障礙症） <span>Conversion Disorder / Functional Neurological Symptom Disorder</span></div>
+    <div class="grid-layout">
+      <div class="col-12">
+        <div class="box a">
+          <div class="bl">📌 核心診斷準則 (Diagnostic Criteria) —— ★特別重要★</div>
+          <ul class="cl">
+            <li><strong>A. 運動或感覺功能改變</strong>：具有一個或多個<strong>隨意運動 (Voluntary motor) 或感覺功能 (Sensory function)</strong> 改變的症狀。</li>
+            <li><strong>B. 醫學不相容性證據</strong>：臨床評估時，<strong>有明確的臨床證據顯示該症狀與已知的神經系統或內科解剖學/生理學疾病不相容（Incompatibility）</strong>。</li>
+            <li><strong>C. 排除其他病因</strong>：該症狀或缺陷無法以另一種內科疾病或其他精神障礙做出更佳的解釋。</li>
+            <li><strong>D. 功能受損門檻</strong>：引起臨床上顯著的痛苦，或導致社交、職業等重要領域功能受損，或需要立刻進行醫學評估。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="box a2">
+          <div class="bl">🔍 症狀類型加註特別註明 (Symptom Type Specifiers)</div>
+          <table style="margin-top: 10px;">
+            <thead>
+              <tr><th>特異性亞型標記</th><th>臨床具體神經學表現範例</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>伴隨無力或癱瘓 (With weakness or paralysis)</strong></td><td>單側肢體完全無法動彈、偏癱，但其神經反射完全正常。</td></tr>
+              <tr><td><strong>伴隨異常運動 (With abnormal movement)</strong></td><td>出現非器質性的震顫、肌張力障礙、步態異常（如拖地步態）。</td></tr>
+              <tr><td><strong>伴隨吞嚥症狀 (With swallowing symptoms)</strong></td><td>喉部出現嚴重的緊縮感、無法吞嚥固體或液體（Globus）。</td></tr>
+              <tr><td><strong>伴隨言語症狀 (With speech symptoms)</strong></td><td>完全無法發聲（Aphonia）、說話極度小聲或口齒不清。</td></tr>
+              <tr><td><strong>伴隨發作或抽搐 (With attacks or seizures)</strong></td><td>表現出類似癲癇的全身抽搐，但腦波圖 (EEG) 顯示完全正常（假性癲癇）。</td></tr>
+              <tr><td><strong>伴隨麻木或感覺喪失 (With anesthesia or sensory loss)</strong></td><td>出現不符合皮節分佈的套袖狀、襪套狀皮膚感覺完全喪失。</td></tr>
+              <tr><td><strong>伴隨特殊感官症狀 (With special sensory symptom)</strong></td><td>突然出現非器質性的完全失明、管狀視野、或突發性耳聾。</td></tr>
+              <tr><td><strong>伴隨混合症狀 (With mixed symptoms)</strong></td><td>同時跨越兩種或以上的神經功能受損表現。</td></tr>
+            </tbody>
+          </table>
+          <p style="font-size: 12px; color: var(--td); margin-top: 8px;">*時程加註：<strong>急性發作</strong>（持續 &lt; 6 個月）或 <strong>持續性</strong>（持續 ≥ 6 個月）。可加註是否伴隨特定的心理壓力源。*</p>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="box a3">
+          <div class="bl">📊 盛行率、發展與病程 (Prevalence & Course)</div>
+          <ul class="cl">
+            <li><strong>盛行率</strong>：在轉介至神經科門診的患者中，功能性神經症狀高達 <strong>5% 左右</strong>。大眾人群的年發病率約為每 10萬人中有 2 至 5 人。</li>
+            <li><strong>兩性比例</strong>：在臨床上，<strong>女性的發病率是男性的 2 到 3 倍 (2-3:1)</strong>。</li>
+            <li><strong>發展與病程</strong>：可在生命的任何階段起病，但在青春期和成年早期最為常見。通常起病極為突然。急性發作個案多在數天內自行緩解，但若演變成持續性，預後通常較差，且極易反覆復發。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="box w">
+          <div class="bl">⚡ 支持診斷之特殊神經學徵象 (Clinical Signs)</div>
+          <ul class="cl">
+            <li><strong>胡佛氏徵象 (Hoover's sign)</strong>：評估下肢無力時，當醫生將手放在患者「癱瘓側」腳跟下方，並要求患者用「健康側」大腿往下壓時，癱瘓側的腳跟會產生內科疾病無法解釋的<strong>自發性向下頂壓力量</strong>。</li>
+            <li><strong>顫抖同步化測試 (Tremor entrainment)</strong>：當患者某隻手出現無法控制的震顫時，醫生要求他用另一隻健康的手去模仿特定的規律節奏，此時原本震顫的手會突然<strong>改變震顫頻率，與健康手的模仿節奏同步</strong>，或震顫突然完全停止。</li>
+            <li><strong>美麗的漠不關心 (La belle indifférence)</strong>：古典精神醫學注意到，部分患者雖然面臨突發失明或癱瘓的重大打擊，其面部與情緒卻展現出與病情完全不相稱的平淡與冷漠。*（註：DSM-5-TR 強調這不是絕對可靠的診斷依據，但仍具參考價值）*</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="box r">
+          <div class="bl">⚠️ 自殺風險、功能後果、共病與鑑別診斷 —— ★特別重要★</div>
+          <ul class="cl">
+            <li><strong>風險與預後因子</strong>：適應不良的人格特質（如衝動性、表演性）；童年期有嚴重的虐待與忽視史；近期面臨極端摧毀性的心理重壓。<strong>關鍵共病：多發性硬化症、癲癇等真實神經系統疾病常與轉化症重疊並存。</strong></li>
+            <li><strong>鑑別診斷關鍵心法</strong>：
+              <ul class="sub-cl">
+                <li><strong>真實神經內科疾病</strong>：必須通過詳盡的神經學理學檢查（如巴賓斯基徵象 Babinski sign、腱反射、肌電圖、MRI）以排除實質病變。轉化症的症狀完全不符合解剖學神經走行的客觀規律（如襪套狀麻木）。</li>
+                <li><strong>做作疾患與詐病</strong>：轉化症的運動與感覺功能喪失是<strong>完全非自願、非蓄意偽造的</strong>，患者在主觀意識上深信自己是真的癱瘓或失明。</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="disorder-section" id="pfamc">
+    <div class="disorder-title">4. 影響其他醫療狀況的心理因子 <span>Psychological Factors Affecting Other Medical Conditions</span></div>
+    <div class="grid-layout">
+      <div class="col-12">
+        <div class="box a">
+          <div class="bl">📌 核心診斷準則 (Diagnostic Criteria) —— ★特別重要★</div>
+          <ul class="cl">
+            <li><strong>A. 實質內科疾病之存在</strong>：個體確實患有<strong>身體的、生理的內科疾病或症狀</strong>（非精神科疾患，例如：氣喘、高血壓、冠狀動脈心臟病、糖尿病、胃潰瘍）。</li>
+            <li><strong>B. 心理行為因子的不良影響</strong>：心理或行為因子（例如：焦慮、長期高壓、敵意思維、拒絕服藥、對病情否認）對該身體疾病產生了明確的負面干擾，表現為下列其中一種方式：
+              <ul class="sub-cl">
+                <li>1. <strong>影響病程</strong>：心理因子與該疾病的發生、惡化、或從中恢復的時間延遲，有著明確的<strong>時序緊密相關性</strong>。</li>
+                <li>2. <strong>干擾治療</strong>：心理因子干擾了身體疾病的常規治療（例如：嚴重的<strong>服藥順從性極差</strong>、拒絕配合洗腎、拒絕施打胰島素）。</li>
+                <li>3. <strong>增加健康風險</strong>：這些因子構成了明確且公認的額外健康風險（例如：明知有嚴重心臟病卻依然每天狂抽三包菸）。</li>
+                <li>4. <strong>加劇病理生理</strong>：心理因子直接影響了底層的生理機轉，引發或加重了症狀（例如：一與主管吵架就引發嚴重的急性氣喘大發作，或因憤怒引發心律不整）。</li>
+              </ul>
+            </li>
+            <li><strong>C. 排除標準</strong>：這些心理與行為因子無法以另一種精神障礙（如重度憂鬱症的無動力、恐慌症發作時的過度換氣）做出更好的解釋。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="box a2">
+          <div class="bl">🔍 目前臨床危險嚴重度加註 (Severity Specifiers)</div>
+          <ul class="cl">
+            <li><strong>輕度 (Mild)</strong>：心理因子增加了內科治療的醫學風險（如：偶爾忘記服用降血壓藥）。</li>
+            <li><strong>中度 (Moderate)</strong>：心理因子惡化了底層的基礎疾病狀況（如：長期的工作高壓導致高血壓控制不佳）。</li>
+            <li><strong>重度 (Severe)</strong>：心理因子導致患者必須多次頻繁進出急診室，或引發需要住院治療的醫療危機（如：氣喘患者因焦慮頻繁大發作送醫）。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="box a3">
+          <div class="bl">📊 盛行率、發展與病程 (Prevalence & Course)</div>
+          <ul class="cl">
+            <li><strong>盛行率</strong>：在全體綜合醫院及一般門診中極其普遍，其具體盛行率高於身體症狀障礙症 (SSD)，但在精神科門診中較少單獨被主訴。</li>
+            <li><strong>發展與病程</strong>：可發生於任何具有內科疾病的年齡。在兒童期，最常見的是家庭衝突導致的兒童氣喘或第一型糖尿病惡化；在成年期則常表現為 A 型人格（Type A personality，具備高敵意、時間緊迫感）與冠狀動脈硬化心臟病的病程加速。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="box r">
+          <div class="bl">⚠️ 鑑別診斷、功能後果與生命危險 —— ★特別重要★</div>
+          <ul class="cl">
+            <li><strong style="color: var(--r);">☠️ 醫療與致死風險</strong>：本疾病具有實質的<strong>肉體致死風險</strong>。例如：長期不配合血糖控制的糖尿病患會導致酮酸中毒或截肢；心臟病患因拒絕服藥而發生突發性心肌梗塞猝死。</li>
+            <li><strong>與身體症狀障礙症 (SSD) 的核心鑑別</strong>：
+              <ul class="sub-cl">
+                <li><strong>SSD</strong>：患者的核心在於對症狀產生了<strong>不成比例的、扭曲的心理認知和焦慮過度反應</strong>，重點在於心理認知的失調，且往往查不出相應的生理重症。</li>
+                <li><strong>影響其他醫療狀況的心理因子</strong>：患者確實患有客觀、嚴重的內科重症，其心理因子是作為一個<strong>「生理催化劑」或「阻礙治療的絆腳石」</strong>，直接導致了實質內科病情的物理性惡化。</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="disorder-section" id="fd">
+    <div class="disorder-title">5. 做作疾患 <span>Factitious Disorder (FD)</span></div>
+    <div class="grid-layout">
+      <div class="col-12">
+        <div class="box a">
+          <div class="bl">📌 核心診斷準則 (Diagnostic Criteria) —— ★特別重要★</div>
+          <table style="width: 100%; border: none;">
+            <tr>
+              <td style="width: 50%; border: none; padding: 0 10px 0 0;">
+                <div style="background: rgba(88, 166, 255, 0.05); padding: 12px; border: 1px dashed var(--a); border-radius: 4px;">
+                  <strong style="color: var(--a);">A. 加諸於自身的做作疾患 (Imposed on Self)</strong>
+                  <ul class="sub-cl" style="margin-top: 8px;">
+                    <li>1. <strong>蓄意偽造</strong>身體或心理的跡象或症狀，或刻意引發自己受傷或生病，且這種行為與明確的<strong>欺騙 (Deception)</strong> 密切相關。</li>
+                    <li>2. 個體向他人將自己塑造成一個<strong>生病的、失能的或受傷的病人角色</strong>。</li>
+                    <li>3. 這種欺騙行為具有明確的客觀證據，<strong>即使在完全沒有明顯外部利益/獎勵（如騙保險金、逃兵役）的情況下，這種欺騙依然存在</strong>。</li>
+                    <li>4. 行為無法以妄想或其他精神病性障礙做出更佳解釋。</li>
+                  </ul>
+                </div>
+              </td>
+              <td style="width: 50%; border: none; padding: 0 0 0 10px;">
+                <div style="background: rgba(188, 140, 255, 0.05); padding: 12px; border: 1px dashed var(--a2); border-radius: 4px;">
+                  <strong style="color: var(--a2);">B. 加諸於他人的做作疾患 (Imposed on Another)</strong>
+                  <ul class="sub-cl" style="margin-top: 8px;">
+                    <li>1. <strong>蓄意偽造他人的身體或心理跡象</strong>，或在<strong>他人（受害者，通常是自己的年幼子女）</strong>身上刻意引發受傷或疾病，與欺騙高度相關。</li>
+                    <li>2. 施害者將<strong>受害者</strong>向外人塑造成生病、失能或受傷的角色（即舊稱的代理型孟喬森症候群）。</li>
+                    <li>3. 即使在<strong>沒有明顯外部實質利益</strong>的情況下，這種欺騙與加害行為依然存在。</li>
+                    <li>4. <strong>診斷給予者：必須將此診斷下在「施害者」身上</strong>，而非無辜的被害兒童身上。</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="box a2">
+          <div class="bl">🔍 發作模式特別註明 (Specifiers)</div>
+          <ul class="cl">
+            <li><strong>單次發作 (Single episode)</strong>：臨床歷史上僅有一次蓄意偽造疾病的紀錄。</li>
+            <li><strong>反覆發作 (Recurrent episodes)</strong>：有兩次或以上獨立的、蓄意偽造或引發疾病的欺騙性事件紀錄。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="box a3">
+          <div class="bl">📊 盛行率、發展與病程 (Prevalence & Course)</div>
+          <ul class="cl">
+            <li><strong>盛行率</strong>：在綜合醫院住院患者中，估計約有 <strong>1%</strong> 的個案符合做作疾患的診斷。本病在臨床上相當罕見且極具隱蔽性。</li>
+            <li><strong>發展與病程</strong>：通常起病於成年早期，通常是在經歷一次因為真實內科疾病而住院的經驗之後。病程多呈間歇性反覆發作。在「加諸於他人」的亞型中，施害者通常為母親，而受害者多為 3 歲以下的嬰幼兒。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="box w">
+          <div class="bl">⚡ 驚人的臨床欺騙手段與心理動機 (Pathology)</div>
+          <ul class="cl">
+            <li><strong>常見手段</strong>：為了偽造血尿而將自己的血液滴入尿杯；為了製造發炎化膿假象而將糞便注入皮膚深層；反覆吞食大頭針；偷偷服用過量胰島素製造低血糖休克。</li>
+            <li><strong>支持診斷特質</strong>：患者通常對醫學術語、醫院常規操作極度熟悉（部分人本身就是護理師或低階醫療從業人員）；當一項檢查結果證實正常時，他們會立刻發展出全新的身體症狀。</li>
+            <li><strong>深層心理動機</strong>：他們不為錢、不為逃避法律。其核心動機在於滿足深層的心理需求——<strong>「獲得生病者的關注、同情、控制醫護人員、以及感受被醫療系統照顧的病態安全感」</strong>。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="box r">
+          <div class="bl">⚠️ 醫療後果、致
