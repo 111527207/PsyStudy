@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>身體症狀及相關障礙症｜國考筆記</title>
+<style>
+:root{
+  --bg:#f7f3ec; --ink:#2c2620; --paper:#fffdf9; --line:#ddd3c3;
+  --accent:#a6462c; --accent2:#6b7a5e; --muted:#8a7f6f; --tag:#e9dfcc;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Noto Serif TC","PMingLiU",serif;background:var(--bg);color:var(--ink);line-height:1.75}
+header{padding:28px 24px 18px;border-bottom:3px solid var(--ink);background:var(--paper)}
+header h1{margin:0 0 4px;font-size:1.6em;letter-spacing:.04em}
+header p{margin:0;color:var(--muted);font-size:.92em}
+nav{display:flex;flex-wrap:wrap;gap:8px;padding:14px 24px;background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+nav button{font-family:inherit;border:1px solid var(--line);background:var(--tag);color:var(--ink);
+  padding:7px 14px;border-radius:20px;cursor:pointer;font-size:.88em;transition:.15s}
+nav button.active,nav button:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+main{max-width:920px;margin:0 auto;padding:22px 20px 60px}
+section{display:none;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:24px 26px;margin-bottom:20px}
+section.active{display:block}
+h2.dx-title{font-size:1.35em;margin:0 0 2px;color:var(--accent)}
+.code{color:var(--muted);font-size:.85em;margin-bottom:14px}
+h3{font-size:1.05em;margin:22px 0 8px;padding-bottom:4px;border-bottom:2px solid var(--tag);color:var(--accent2)}
+h3::before{content:"◆ "}
+.crit-box{background:#fbf6ec;border-left:4px solid var(--accent);padding:12px 16px;border-radius:3px;margin-bottom:10px}
+.crit-box b{color:var(--accent)}
+ul{margin:6px 0;padding-left:22px}
+li{margin-bottom:4px}
+.note{background:#f1efe4;border-left:4px solid var(--accent2);padding:8px 14px;border-radius:3px;font-size:.92em;margin:8px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.9em}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--tag)}
+tr:nth-child(even) td{background:#faf7f0}
+.tag{display:inline-block;background:var(--tag);border-radius:10px;padding:2px 10px;font-size:.78em;margin-right:4px;color:var(--accent2)}
+.ddx-item{margin-bottom:10px;padding:8px 12px;background:#faf7f0;border-radius:4px;border:1px solid var(--line)}
+.ddx-item b{color:var(--accent)}
+.compare-highlight{font-weight:bold;color:var(--accent)}
+footer{text-align:center;color:var(--muted);font-size:.8em;padding:20px}
+.pill-row{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.small{font-size:.85em;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+<h1>身體症狀及相關障礙症 (Somatic Symptom and Related Disorders)</h1>
+<p>DSM-5 國考重點整理｜診斷準則與鑑別診斷為重點標記｜資料來源：DSM-5 精神疾病診斷與統計（中文版）</p>
+</header>
+
+<nav id="tabbar"></nav>
+<main id="content"></main>
+<footer>整理自 DSM-5 中文版 第七章：身體症狀及相關障礙症（p.309-329）</footer>
+
+<script>
+const disorders = [
+{
+  id:"ssd", name:"身體症狀障礙症", en:"Somatic Symptom Disorder", code:"300.82 (F45.1)",
+  criteria:[
+    "A. 一個以上令人苦惱或造成日常生活顯著困擾的<b>身體症狀</b>。",
+    "B. 此身體症狀或伴隨的健康關注導致過度想法、感覺或行為，<b>至少一項</b>：①不成比例地擔心症狀嚴重性 ②對健康/症狀持續高度焦慮 ③投入過多時間精力於症狀或健康問題。",
+    "C. 雖然單一症狀不見得持續存在，但有症狀的狀態通常持續（一般超過六個月）。"
+  ],
+  specifiers:[
+    "以疼痛症狀為主（即舊稱「疼痛障礙症」）",
+    "症狀持續（persistent）：嚴重、顯著減損、持續 6 個月以上",
+    "嚴重度：輕度(1項B)／中度(2項以上B)／重度(2項以上B+多個身體症狀或1個非常嚴重症狀)"
+  ],
+  features:"多種身體症狀造成痛苦或顯著破壞日常生活（有時僅一嚴重症狀，最常見是疼痛）。症狀可特異性（局部疼痛）或非特異性（疲勞）。<b>沒有醫學證據解釋症狀，並不足以下此診斷</b>——重點在於患者對症狀的想法/感受/行為是否「過度」，而非症狀能否被醫學解釋。與內科疾病共病並不互斥（如無併發症的心肌梗塞後仍可極度失能）。",
+  assoc:"認知：專注身體症狀、將正常身體感覺歸因為疾病（可能災難化）、擔心疾病、怕活動會傷身。行為：反覆要求檢查、反覆求醫再保證、迴避體能活動。多就診於一般醫療而非身心科；轉診精神科可能被拒絕。<b>因與憂鬱症相關而增加自殺風險</b>（但尚不確定是否獨立於憂鬱症）。",
+  prevalence:"確切盛行率未知；預估高於 DSM-IV 身體化障礙症(&lt;1%)，但低於未分化身體型疾患(≈19%)。一般成人約 <b>5-7%</b>。<b>女性 &gt; 男性</b>。",
+  course:"老年：常與內科共病重疊，準則B判斷關鍵；易被視為正常老化而低診斷。兒童：最常見反覆腹痛、頭痛、疲勞、噁心；單一突出症狀較常見；青春期前少擔心「病症」，父母反應影響病程。",
+  risk:"氣質：消極情感（神經質）人格特質。環境：低教育、低社經地位、近期生活壓力事件。病程修飾：女性、年長、低教育、失業、童年受虐/負向經驗、慢性身體疾病或精神共病（憂鬱/焦慮/恐慌）、社會壓力、疾病獲益。認知因素：疼痛致敏化、過度關注身體感受、歸因於疾病而非正常現象。",
+  culture:"見於各種「文化特定症候群」；症狀數量與病情擔憂的關聯在跨文化間相似。描述方式隨語言文化而異（如「耗竭burnout」、「氣」、精液損失semen loss）。",
+  functional:"健康相關生活品質顯著受損，嚴重者健康狀況分數低於人口常模2個標準差以上。",
+  ddx:[
+    ["其他醫療情況","單純身體症狀病因不明不足以診斷；腸躁症/纖維肌痛症患者常不符合準則B；既有醫療病症（糖尿病、心臟病）不排除SSD診斷（若其他準則滿足）。"],
+    ["恐慌症","恐慌症的身體症狀/健康焦慮多發生在<b>急性發作</b>時；SSD則<b>持續更久</b>。"],
+    ["廣泛性焦慮症","GAD 擔心多重事件/場景/活動，健康只是其一；重點不在身體症狀本身。"],
+    ["憂鬱症","以低落情緒、失去喜樂等核心症狀鑑別；憂鬱常伴身體症狀但核心不同。"],
+    ["罹病焦慮症","若廣泛擔憂健康但<b>身體症狀少或無</b>，更適合IAD而非SSD。"],
+    ["轉化症","轉化症呈現<b>功能喪失</b>（如肢體無力）；SSD重點在<b>對症狀原因的困擾</b>（準則B可資鑑別）。"],
+    ["妄想症","SSD對症狀反映嚴重疾病的信念<b>未達妄想強度</b>（可堅定但非妄想）；妄想症身體亞型信念更強烈固著。"],
+    ["身體臆形症","BDD關注感受到的<b>外觀缺陷</b>；SSD關注對<b>潛在疾病</b>的恐懼。"],
+    ["強迫症","SSD對症狀/疾病的想法較少侵入式，且無強迫症典型的重複減焦慮行為。"]
+  ],
+  comorbid:"與醫學疾病、焦慮症、憂鬱症高共病率。共病內科疾病時損害程度較單純身體疾病更明顯。"
+},
+{
+  id:"iad", name:"罹病焦慮症", en:"Illness Anxiety Disorder", code:"300.7 (F45.21)",
+  criteria:[
+    "A. 先入為主地認為自己得了或即將得<b>嚴重疾病</b>。",
+    "B. <b>身體症狀不存在，即使有也僅屬輕微</b>；若已有其他疾病/高風險家族史，此想法明顯過度或不成比例。",
+    "C. 極度擔心健康，容易覺得自己健康狀況不對勁。",
+    "D. 過度從事確認健康行為（反覆檢查身體）或適應不良的逃避行為（不看醫生/不去醫院）。",
+    "E. 擔心罹病狀態<b>至少6個月</b>，但所擔心的特定疾病可能改變。",
+    "F. 此擔心無法以另一精神疾病更好解釋（如SSD、恐慌症、GAD、身體臆形症、OCD、妄想症身體型）。"
+  ],
+  specifiers:["求醫型（care-seeking type）：經常就醫、做檢查","逃避就醫型（care-avoidant type）：很少看病"],
+  features:"執著於具有/得到某種嚴重、未確診的內科疾病（準則A）；身體症狀不存在或輕微（準則B）——這是與SSD最關鍵的鑑別點。痛苦來源主要不是身體症狀本身，而是對主訴意義/重要性/原因的<b>焦慮</b>。若有身體徵象，多為正常生理感覺（姿勢性頭暈）、良性自限（瞬間耳鳴）或不被視為疾病的不適（打嗝）。",
+  assoc:"多就診一般醫療而非精神科。醫療利用率高但心理衛生服務使用不比一般人多。反覆審視自己身體（如照鏡子檢查喉嚨）、大量網路查詢、反覆尋求再保證。可能因焦慮迴避某些場合（探病）或活動（運動）。",
+  prevalence:"以DSM-III/IV慮病症(hypochondriasis)估計外推。社區1-2年盛行率 1.3%-10%；醫療族群6個月/1年盛行率 3%-8%。<b>男女相似</b>（與SSD女性較多不同）。",
+  course:"多成人早期/中期發病，屬慢性復發型態；老年常聚焦於記憶喪失；兒童罕見。",
+  risk:"環境：重大人生壓力事件、嚴重但最終良性的健康威脅、童年受虐史。病程修飾：約1/3~1/2為暫時性形式，較少精神共病、較多醫療共病、較輕微。",
+  culture:"若信念全然被文化廣泛接受，應審慎下診斷；跨文化盛行率相似但現象學研究較少。",
+  functional:"實質功能損害；健康相關生活品質下降；干擾人際、破壞家庭、損害職業表現。",
+  ddx:[
+    ["其他醫療情況","需先排除潛在醫學情況（神經/內分泌/隱匿腫瘤等多系統疾病）；有醫學病況存在不排除IAD共病，但焦慮程度需與嚴重性不成比例。"],
+    ["適應障礙症","對嚴重疾病的健康焦慮若為正常反應且有時間性，屬適應障礙而非病態；需持續≥6個月且嚴重才可下IAD。"],
+    ["身體症狀障礙症","<b>核心鑑別</b>：SSD需有顯著身體症狀；IAD身體症狀極少，主要關心「生病」的想法本身。"],
+    ["焦慮症(GAD/恐慌症)","GAD擔心多重事件，健康僅其一；恐慌症焦慮是急性陣發，IAD則更<b>持久</b>。"],
+    ["OCD及相關障礙","IAD的執念集中於「已患病」；OCD想法為侵入性、通常聚焦「未來會得病」的擔憂，且伴其他非疾病相關的強迫意念/行為；身體臆形症侷限於外表缺陷焦慮。"],
+    ["憂鬱症","若擔憂僅發生在鬱症發作期間不需另診斷IAD；若鬱症緩解後仍持續過度擔心疾病，應考慮IAD。"],
+    ["精神病性疾患","IAD患者非妄想性，可接受疾病不存在的可能性；真正身體妄想通常更離奇（如器官正在腐爛），程度更剛性強烈。"]
+  ],
+  comorbid:"新疾病類別，確切共病未知。舊慮病症常合併焦慮障礙（GAD、恐慌症、OCD）與憂鬱症；約2/3患者至少共病一個主要精神障礙；可能與SSD及人格障礙高風險相關。"
+},
+{
+  id:"conv", name:"轉化症（功能性神經症狀障礙症）", en:"Conversion Disorder (Functional Neurological Symptom Disorder)", code:"依症狀類型編碼",
+  criteria:[
+    "A. 出現一個或多個<b>自主運動或感覺功能</b>的改變。",
+    "B. 臨床證據顯示此症狀與已知的神經或身體疾病<b>不相稱/不一致</b>。",
+    "C. 此症狀無法以另一身體或精神疾病做更好的解釋。",
+    "D. 此症狀引起臨床上顯著苦惱或社交/職業/其他重要領域功能減損，或需要醫療評估。"
+  ],
+  specifiers:[
+    "症狀類型：無力或癱瘓型／異常動作型（顫抖、肌張力障礙、肌陣攣、步態）／吞嚥症狀型／語音症狀型（發音障礙、口齒不清）／癲癇發作型／麻木或感覺喪失型／特殊感覺症狀型／混合症狀型",
+    "病程：急性發作(&lt;6個月) / 持續型(≥6個月)",
+    "有／無心理壓力源"
+  ],
+  features:"又稱「功能性」或「心因性」症狀。動作症狀：虛弱/癱瘓、震顫、肌張力異常、步態異常。感覺症狀：皮膚感覺/視力/聽力改變或喪失。可有類似癲癇的非癲癇性發作，或類似暈厥/昏迷的反應遲鈍發作。<b>診斷關鍵：需臨床檢查證據明確顯示與神經病理生理不相稱</b>，不能僅因檢查正常或症狀「離奇」而下診斷。常見不一致性檢查：胡佛徵象(Hoover's sign)、蹠屈無力但能墊腳走路、震顫夾帶測試陽性、非癲癇發作時閉眼抗拒外力打開／腦電圖正常同步、視覺症狀呈管狀視野。診斷應根據<b>整體臨床表現</b>而非單一發現。",
+  assoc:"可有類似身體症狀過去史；發病常與心理/生理壓力或創傷相關（但未發現壓力源不應保留診斷）。常與分離症狀相關（失自我感、失現實感、解離性失憶），尤其起病或發作時。<b>不需判斷症狀是否故意產生</b>（無法可靠判斷是否假裝）。拉貝爾冷漠(la belle indifférence)與次要獲益皆非轉化症專屬特徵，不應用來下診斷；若有明確假裝證據應考慮人為障礙症或詐病。",
+  prevalence:"暫時性轉化症狀常見，確切盛行率未知（因常需其他照顧評估）；約5%轉介至神經內科；持續性轉化症狀估計每年25/10萬人。",
+  course:"發病可在人生任何時間點；<b>非癲癇性發作高峰21-30歲</b>，<b>動作症狀高峰31-40歲</b>。可短暫或持續。年幼兒童預後優於青少年/成人。",
+  risk:"氣質：適應不良人格特質。環境：童年受虐/忽視史；常有生活壓力事件（非必要）。基因生理：存在神經系統疾病（如癲癇病史使非癲癇樣發作更常見）為危險因子。病程修飾：症狀短暫、可接受診斷→正向預後；適應不良性格、身體共病、可獲殘疾津貼→負向預後。",
+  gender:"<b>女性常見，約為男性2-3倍</b>。",
+  culture:"類似轉化(及解離)症狀變化常見於某些文化認可儀式；若症狀完全可用特定文化背景解釋且不致臨床顯著痛苦/失能，不應診斷。",
+  functional:"可能嚴重殘疾，程度可類似相對應內科疾病患者。",
+  ddx:[
+    ["神經系統疾病","主要鑑別；需徹底神經評估。經評估後很少於追蹤中發現意外神經病因，但症狀持續進展需重新評估；<b>可與神經疾病並存</b>。"],
+    ["身體症狀障礙症","轉化症需證明症狀與病理生理明確不相稱；SSD多數症狀（疼痛、疲勞）無法如此明確證明不相稱；SSD特色的過度思想/感受/行為在轉化症不常見；<b>兩者可同時診斷</b>。"],
+    ["人為障礙症與詐病","有意識意圖評估不可靠，故轉化症不需判斷是否假裝；若佯裝證據確鑿（如功能喪失僅在被觀察時出現）→提示人為障礙症；若目的為扮演病人角色或獲得如金錢報酬→詐病。"],
+    ["解離症","解離症狀常見於轉化症；若兩者皆存在，應<b>兩者都下診斷</b>。"],
+    ["身體臆形症","BDD關心感知的身體特徵缺陷，不會抱怨受影響部位的感覺/運動功能症狀。"],
+    ["憂鬱症","憂鬱症患者可能報告四肢廣泛性沉重；轉化症的無力更<b>局部、明顯</b>；憂鬱症以核心症狀鑑別。"],
+    ["恐慌症","陣發性神經症狀（震顫、感覺異常）可見於兩者；恐慌發作的神經症狀通常短暫、伴心肺症狀；非癲癇樣發作可有意識喪失/失憶/暴力性肢體動作，恐慌發作不會出現。"]
+  ],
+  comorbid:"焦慮症（尤其恐慌症）與憂鬱症常共同出現；SSD也可能共存。精神病、物質使用障礙、酒精濫用<b>罕見</b>。人格障礙較普通人群更常見。神經學或其他醫學情況常共存。"
+},
+{
+  id:"pfamc", name:"受心理因素影響的其他身體病況", en:"Psychological Factors Affecting Other Medical Conditions", code:"316 (F54)",
+  criteria:[
+    "A. 病人已出現需醫療的症狀或狀況（<b>非精神疾病</b>）。",
+    "B. 該醫療症狀受到心理或行為因素<b>負面影響</b>，以下列方式之一：①影響病程進展、加重病情或延宕恢復 ②干擾醫療狀況的治療（如不遵醫囑）③已被證實造成個人更大健康風險 ④影響病理生理，進而促發/加重症狀或需要就醫。",
+    "C. 準則B之心理行為因素無法以另一精神疾病更好解釋（如恐慌症、鬱症、PTSD）。"
+  ],
+  specifiers:["嚴重度：輕度（提高醫療風險，如降壓藥不規則使用）／中度（加重潛在疾病，如焦慮加重氣喘）／重度（導致住院或急診）／極重度（造成危及生命的風險，如忽略心臟病發作症狀）"],
+  features:"基本特徵：存在一種或多種臨床上顯著心理/行為因素，透過增加痛苦、死亡或殘疾風險，對醫學情況產生不利影響。可經由影響病程/治療、附加健康風險因素、或影響基本病理生理而促發或加劇症狀。常見心理行為因素：心理困擾、人際互動模式、應對方式、適應不良健康行為（拒絕症狀、遵囑性差）。例：焦慮加劇氣喘、拒絕治療急性胸痛、糖尿病患者為減肥操控胰島素劑量。範圍可從急性立即（心碎症候群Takotsubo cardiomyopathy）到慢性經時間累積（慢性職業壓力增加高血壓風險）。受影響情況可為病理生理明確者（糖尿病、癌症、冠心病）、功能症候群（偏頭痛、腸躁症、纖維肌痛），或病因不明症狀（疼痛、乏力、頭暈）。<b>此診斷應保留在心理因素對身體病況有臨床顯著影響時</b>，須有合理證據表明兩者關聯（雖不一定能證明直接因果機轉）。",
+  prevalence:"確切盛行率未知；在美國私人保險計費資料中，<b>比身體症狀障礙症更常見</b>。",
+  course:"可在整個生命週期發生；年幼兒童常需家長/學校提供過去史協助評估；某些情形與特定人生階段相關（如老年患者作為配偶照顧者的壓力）。",
+  culture:"文化差異影響心理因素及對醫學情況的影響（語言溝通、疾病解釋模式、求醫方式、服務可用性、醫病關係、家庭性別角色、面對痛苦死亡態度）；需與文化特定行為（信仰/靈性治療）區別——若這些當地做法未產生不利結果，不應被病理化為此診斷。",
+  ddx:[
+    ["另一身體病況造成的精神疾病","方向相反：此類為身體病況經生理機制<b>直接導致</b>精神障礙；PFAMC則是心理/行為因素<b>影響</b>醫學狀況的病程。"],
+    ["適應障礙症","異常心理/行為症狀是對身體病況的<b>反應</b>時，更適合診斷適應障礙（對可辨識壓力源的臨床顯著心理反應）；例：心絞痛患者因生氣而發作→PFAMC；因預期性焦慮而適應不良→適應障礙合併焦慮。臨床上兩者常互相加劇，區別具主觀性。"],
+    ["身體症狀障礙症","<b>核心鑑別</b>：SSD特徵是合併痛苦身體症狀與過度/適應不良的思考感受行為（可有或無可診斷身體病況）；PFAMC則是心理因素<b>負面影響</b>身體病況本身，個人思考感受行為不一定過度；PFAMC重點在加重病況惡化（如焦慮誘發心絞痛），SSD重點在適應不良的思考感受行為（如過度苦惱、頻繁量血壓）。"],
+    ["罹病焦慮症","IAD特點是高度患病焦慮但身體症狀很少或無，臨床焦點是「擔心患病」本身（通常無嚴重疾病存在）；PFAMC中焦慮是影響既有醫學狀況的心理因素之一，重點在其對醫療條件的不利影響。"]
+  ],
+  comorbid:"依定義即包含相關心理/行為症候群特質與合併的身體病況。"
+},
+{
+  id:"fd", name:"人為障礙症", en:"Factitious Disorder", code:"300.19 (F68.10)",
+  criteria:[
+    "<b>自為的人為障礙症</b>：A. 偽造身體或心理症狀、誘導受傷或疾病，並經證實為欺騙。B. 向他人顯示自己生病/有障礙/受傷。C. 即使無明顯外在獎酬，仍有欺騙行為。D. 無法以其他精神疾病更好解釋（如妄想症或其他精神病）。",
+    "<b>他為的人為障礙症</b>（前稱代理型Munchausen by proxy）：A. 對他人偽造身體或心理症狀，誘導受傷或疾病，並證實為欺騙。B. 向他人顯示另一人（受害者）生病/有障礙/受傷。C. 無明顯外部獎酬仍有欺騙行為。D. 無法以另一精神疾病更好解釋。<b>診斷是給加害者，而非受害者</b>。"
+  ],
+  specifiers:["單次發作","多次發作（兩個以上事件的偽造疾病和／或引發受傷）"],
+  features:"基本特徵：在自己或他人身上偽造醫學/心理徵象症狀，並可識別出與欺騙有關。製造傷害/疾病後，仍會為自己或他人<b>尋求治療</b>。方法包括誇大、捏造、仿真、誘導。例：報告配偶死亡後憂鬱想自殺（配偶其實未死或不存在配偶）、偽造神經系統症狀發作、操縱檢驗（加入血液/尿液）、偽造病歷、攝取物質（胰島素、warfarin）、誘導異常結果、自我傷害或誘發疾病（注射糞便致膿腫/敗血症）。<b>記錄程序</b>：他為型診斷給加害者；受害人可另給予「被虐待」相關診斷編碼。",
+  assoc:"使自己/他人暴露於重大心理困擾或功能障礙風險；家人、朋友、醫療人員常受不利影響。與物質使用障礙、進食障礙、衝動控制障礙、戀童癖障礙等有相似之處（持續性行為、努力以欺騙掩飾病態行為）。部分可能構成犯罪行為（他為型可能構成虐待兒童），犯罪與精神疾病診斷並不互斥。<b>診斷強調客觀可識別的偽造症狀，而非推論意圖/動機</b>。",
+  prevalence:"確切盛行率未知（因欺騙本質難以掌握）；住院病人中約<b>1%</b>符合診斷標準。",
+  course:"常為間歇性發作；持久不消除的單次/多次發作不常見。發病通常在成年早期，常於因身體病況或精神障礙住院之後發生。他為型常始於患者子女或依附對象住院後。反覆偽造者可能長期騙過所有醫務人員（含住院時），可持續終身。",
+  ddx:[
+    ["為免責而說謊的照顧者","否認虐待受傷家屬只是為保護自己免責——免除責任是外部獎勵（與準則C「無明顯外部回報」矛盾）——不應診斷為他為型人為障礙症，此類照顧者多為廣泛性說謊以求立即自保。"],
+    ["身體症狀障礙症","SSD可能過度關注並尋求治療感知的身體擔憂，但<b>無證據顯示提供虛假信息或欺騙行為</b>。"],
+    ["詐病 (Malingering)","<b>核心鑑別</b>：詐病是故意報告症狀以獲取<b>個人利益</b>（金錢、免除工作）；人為障礙症要求<b>無明顯回報</b>。"],
+    ["轉化症","轉化症以神經症狀與神經病理生理不一致為特點；有神經症狀的人為疾患可透過<b>欺騙偽造的證據</b>與轉化症區別。"],
+    ["邊緣性人格障礙","無自殺意圖的故意身體自殘可見於邊緣性人格障礙等其他精神障礙；人為障礙症要求誘導的傷害發生在<b>與欺騙相關</b>的脈絡下。"],
+    ["身體病況或無故意偽造症狀的精神障礙","症狀表現不符合可識別的身體/精神疾病時增加人為障礙症可能性；但診斷<b>不排除</b>真實健康狀況/精神障礙並存（合併症常見，如操縱血糖者也可能真有糖尿病）。"]
+  ],
+  comorbid:"與物質使用障礙、進食障礙、衝動控制障礙、戀童癖障礙等有相似之現象學特徵；合併症常見（如真實糖尿病與操縱血糖並存）。"
+},
+{
+  id:"other", name:"其他特定／非特定身體症狀障礙症和相關疾病", en:"Other Specified / Unspecified Somatic Symptom and Related Disorder", code:"300.89 (F45.8) ／ 300.82 (F45.9)",
+  criteria:[
+    "此類別適用於：症狀有本章疾病之特徵，臨床上造成顯著困擾或社會/職業/重要領域功能減損，但<b>不符合任何本章疾病充分診斷條件</b>。",
+    "「其他特定」：臨床醫師選擇說明不符合特定診斷之理由。「非特定」：不特別說明，或資訊不足以下更特定診斷的不尋常情境。"
+  ],
+  specifiers:[
+    "短暫性身體症狀障礙症：症狀持續&lt;6個月",
+    "短暫性罹病焦慮症：症狀持續&lt;6個月",
+    "罹病焦慮症沒有過多的健康相關行為：不滿足IAD準則D",
+    "假孕（Pseudocyesis）：與客觀身體徵象相關的懷孕錯誤信念，並報告懷孕症狀"
+  ],
+  features:"用於症狀不完全符合前述診斷（多因病程未達6個月，或缺少某項準則）但仍造成臨床顯著困擾/功能減損時。假孕雖列於本節，但學理上症狀有可能明確證實與病理生理學不一致，類似轉化症的特徵。",
+  ddx:[["各項本章疾病","主要區分點在於症狀持續時間（&lt;6個月 vs. ≥6個月）或未滿足特定準則（如IAD準則D的過度健康行為）。"]]
+}
+];
+
+const tabbar = document.getElementById('tabbar');
+const content = document.getElementById('content');
+
+disorders.forEach((d,i)=>{
+  const btn=document.createElement('button');
+  btn.textContent=d.name;
+  btn.onclick=()=>show(i);
+  btn.id='tab-'+d.id;
+  tabbar.appendChild(btn);
+});
+const compareBtn=document.createElement('button');
+compareBtn.textContent='★ 綜合比較表';
+compareBtn.id='tab-compare';
+compareBtn.onclick=()=>showCompare();
+tabbar.appendChild(compareBtn);
+
+function fieldBlock(title,text){
+  if(!text) return '';
+  return `<h3>${title}</h3><div>${text}</div>`;
+}
+function ddxBlock(list){
+  if(!list) return '';
+  let html = '<h3>鑑別診斷 (Differential Diagnosis) ★</h3>';
+  list.forEach(([name,text])=>{
+    html += `<div class="ddx-item"><b>${name}：</b>${text}</div>`;
+  });
+  return html;
+}
+
+function renderDisorder(d){
+  let html = `<h2 class="dx-title">${d.name} <span class="small">${d.en}</span></h2>`;
+  html += `<div class="code">診斷碼：${d.code}</div>`;
+  html += `<h3>診斷準則 (Diagnostic Criteria) ★★</h3>`;
+  html += `<div class="crit-box"><ul>${d.criteria.map(c=>`<li>${c}</li>`).join('')}</ul></div>`;
+  if(d.specifiers){
+    html += `<h3>特別註明 (Specifiers)</h3><div class="note"><ul>${d.specifiers.map(s=>`<li>${s}</li>`).join('')}</ul></div>`;
+  }
+  html += fieldBlock('診斷特質 (Diagnostic Features)', d.features);
+  html += fieldBlock('支持診斷相關特質 (Associated Features)', d.assoc);
+  html += fieldBlock('盛行率 (Prevalence)', d.prevalence);
+  html += fieldBlock('發展和病程 (Development and Course)', d.course);
+  html += fieldBlock('風險和預後因子 (Risk and Prognostic Factors)', d.risk);
+  html += fieldBlock('性別相關診斷議題 (Gender-Related)', d.gender);
+  html += fieldBlock('文化相關診斷議題 (Culture-Related)', d.culture);
+  html += fieldBlock('功能性後果 (Functional Consequences)', d.functional);
+  html += ddxBlock(d.ddx);
+  html += fieldBlock('共病 (Comorbidity)', d.comorbid);
+  return html;
+}
+
+function show(i){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+disorders[i].id).classList.add('active');
+  const section=document.createElement('section');
+  section.className='active';
+  section.innerHTML = renderDisorder(disorders[i]);
+  content.innerHTML='';
+  content.appendChild(section);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function showCompare(){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-compare').classList.add('active');
+  const section=document.createElement('section');
+  section.className='active';
+  section.innerHTML = `
+  <h2 class="dx-title">六大疾病綜合比較表</h2>
+  <table>
+  <tr><th>疾病</th><th>身體症狀</th><th>核心焦點</th><th>是否需欺騙</th><th>性別差異</th><th>盛行率</th></tr>
+  <tr><td><b>身體症狀障礙症</b></td><td>顯著存在（≥1個）</td><td>對症狀的<b>過度想法/感受/行為</b>（不論能否被醫學解釋）</td><td>否</td><td>女＞男</td><td>5-7%</td></tr>
+  <tr><td><b>罹病焦慮症</b></td><td>極少或無</td><td>擔心<b>患有/將患</b>嚴重疾病本身</td><td>否</td><td>男女相似</td><td>1.3-10%(社區)</td></tr>
+  <tr><td><b>轉化症</b></td><td>神經功能症狀（運動/感覺）</td><td>症狀與神經病理生理<b>不相稱</b>（客觀檢查證據）</td><td>否（意圖不可判斷）</td><td>女＞男(2-3倍)</td><td>持續型≈25/10萬人/年</td></tr>
+  <tr><td><b>受心理因素影響的其他身體病況</b></td><td>已有明確身體病況（非精神疾病）</td><td>心理/行為因素<b>負面影響</b>既有病況病程</td><td>否</td><td>—</td><td>未知，較SSD常見</td></tr>
+  <tr><td><b>人為障礙症</b></td><td>偽造/誘導</td><td>疾病認同問題，<b>刻意欺騙</b>但無明顯外在獎酬</td><td><b>是（核心特徵）</b></td><td>—</td><td>住院病人≈1%</td></tr>
+  <tr><td>（相對照：詐病，非精神疾病診斷）</td><td>偽造</td><td>故意報告症狀</td><td>是＋<b>有明顯外在利益</b>（金錢/免責）</td><td>—</td><td>—</td></tr>
+  </table>
+
+  <h3>易混淆疾病快速鑑別</h3>
+  <div class="ddx-item"><b>SSD vs. 罹病焦慮症：</b>看<span class="compare-highlight">身體症狀是否顯著存在</span>。有顯著症狀→SSD；症狀極少/無，只是擔心生病本身→IAD。</div>
+  <div class="ddx-item"><b>SSD vs. 轉化症：</b>SSD重點在對症狀的<span class="compare-highlight">過度反應（想法/感受/行為）</span>，症狀本身未必能證明與病理生理不相稱；轉化症則需<span class="compare-highlight">客觀證據證明</span>症狀與神經病理生理不一致（如Hoover's sign）。兩者可<b>並存診斷</b>。</div>
+  <div class="ddx-item"><b>轉化症 vs. 人為障礙症/詐病：</b>轉化症不需判斷是否故意（無法可靠判斷）；若有<span class="compare-highlight">明確佯裝證據</span>→考慮人為障礙症（無外在獎酬）或詐病（有明確外在利益，如賠償/免除工作）。</div>
+  <div class="ddx-item"><b>受心理因素影響的其他身體病況 vs. SSD：</b>PFAMC是心理因素<span class="compare-highlight">加重既有病況</span>（重點在病況本身惡化，如焦慮誘發心絞痛發作）；SSD是<span class="compare-highlight">對症狀的適應不良反應</span>（重點在患者的思考感受行為過度，如反覆量血壓、過度苦惱）。</div>
+  <div class="ddx-item"><b>PFAMC vs. 適應障礙症：</b>若心理/行為異常症狀是對身體病況的<span class="compare-highlight">反應</span>（如面對心絞痛而預期性焦慮）→適應障礙；若心理因素<span class="compare-highlight">導致/加重</span>身體病況本身（如生氣誘發心絞痛發作）→PFAMC。臨床上常互相加劇，區分具主觀性。</div>
+  <div class="ddx-item"><b>人為障礙症 vs. 詐病：</b>兩者都涉及故意欺騙。人為障礙症<span class="compare-highlight">無明顯外部獎酬</span>（動機是扮演病人角色/疾病認同）；詐病<span class="compare-highlight">有明確外在利益</span>（金錢、免除工作、免責）。</div>
+  <div class="ddx-item"><b>罹病焦慮症 vs. OCD：</b>IAD執念集中在「<span class="compare-highlight">已經患病</span>」；OCD侵入性想法通常聚焦「<span class="compare-highlight">未來會得病</span>」，且患者通常還有其他非疾病相關的強迫意念/行為。</div>
+  <div class="ddx-item"><b>罹病焦慮症 vs. 妄想症身體型：</b>IAD患者<span class="compare-highlight">非妄想性</span>，可接受疾病不存在的可能性；妄想症之身體妄想更<span class="compare-highlight">離奇固著</span>（如器官正在腐爛）。</div>
+  <div class="ddx-item"><b>假孕：</b>雖列於「其他特定」類別，但因症狀可能明確證實與病理生理學不一致，概念上<span class="compare-highlight">近似轉化症</span>的邏輯（客觀可證偽的身體信念表現）。</div>
+
+  <h3>本章共同主軸（整章導言重點）</h3>
+  <ul>
+  <li>本章所有疾病的共同點：<b>明顯關注身體症狀</b>為最初表現，主要求診於<b>一般醫療</b>而非精神科。</li>
+  <li>身體症狀障礙症取代DSM-IV的「身體化障礙症」，提供更實用的臨床描述方式；約75%原診斷罹病焦慮症(hypochondriasis)者現改診斷SSD，另25%在無身體症狀下仍高度焦慮者則符合新版<b>罹病焦慮症</b>。</li>
+  <li>基因遺傳、生物脆弱性（如疼痛敏感性增加）、早期創傷經驗、學習（從生病獲得重視）、文化對心理痛苦的眨低規範等，皆是增加此類障礙的共同因素。</li>
+  <li>醫學上無法解釋的症狀在<b>轉化症與假孕</b>仍是關鍵特徵；但SSD不要求症狀無法被醫學解釋。</li>
+  </ul>
+  `;
+  content.innerHTML='';
+  content.appendChild(section);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+show(0);
+</script>
+</body>
+</html>
