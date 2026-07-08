@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSM-5 國考濃縮總複習表</title>
+<style>
+  :root{
+    --bg:#0f1115; --panel:#171a21; --panel2:#1e222b; --border:#2a2f3a;
+    --text:#e6e8ec; --muted:#9aa3b2; --accent:#7dd3fc; --accent2:#fca5a5;
+    --accent3:#86efac; --warn:#fcd34d;
+  }
+  *{box-sizing:border-box;}
+  body{background:var(--bg); color:var(--text); font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif; margin:0; padding:0 0 60px;}
+  header{background:linear-gradient(135deg,#1e293b,#0f1115); padding:28px 20px 20px; border-bottom:1px solid var(--border); position:sticky; top:0; z-index:10;}
+  header h1{margin:0 0 6px; font-size:1.4rem;}
+  header p{margin:0; color:var(--muted); font-size:0.85rem; line-height:1.6;}
+  nav{display:flex; flex-wrap:wrap; gap:6px; padding:14px 20px 0; max-width:1100px; margin:0 auto;}
+  nav a{background:var(--panel2); color:var(--accent); text-decoration:none; font-size:0.78rem; padding:6px 10px; border-radius:999px; border:1px solid var(--border); white-space:nowrap;}
+  nav a:hover{background:#28303f;}
+  main{max-width:1100px; margin:0 auto; padding:20px;}
+  section{margin-bottom:28px;}
+  section h2{font-size:1.15rem; border-left:4px solid var(--accent); padding-left:10px; margin-bottom:4px;}
+  .subnote{color:var(--muted); font-size:0.8rem; margin:0 0 14px 14px;}
+  details{background:var(--panel); border:1px solid var(--border); border-radius:10px; margin-bottom:10px; overflow:hidden;}
+  summary{cursor:pointer; padding:12px 16px; font-weight:600; font-size:0.95rem; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:10px;}
+  summary::-webkit-details-marker{display:none;}
+  summary .code{color:var(--muted); font-weight:400; font-size:0.75rem;}
+  summary:after{content:"+"; color:var(--accent); font-size:1.1rem;}
+  details[open] summary:after{content:"−";}
+  .body{padding:0 16px 16px; font-size:0.85rem; line-height:1.75;}
+  .row{display:grid; grid-template-columns:88px 1fr; gap:8px; margin-bottom:8px; align-items:start;}
+  .row .lbl{color:var(--accent); font-size:0.78rem; font-weight:600; padding-top:2px;}
+  .row .val{color:var(--text);}
+  .tag{display:inline-block; background:var(--panel2); border:1px solid var(--border); border-radius:6px; padding:1px 7px; font-size:0.72rem; color:var(--warn); margin-right:4px;}
+  .diff-tag{color:var(--accent2); font-weight:600;}
+  table.mini{width:100%; border-collapse:collapse; font-size:0.8rem; margin:6px 0 10px;}
+  table.mini th, table.mini td{border:1px solid var(--border); padding:6px 8px; text-align:left; vertical-align:top;}
+  table.mini th{background:var(--panel2); color:var(--accent);}
+  .quick{background:var(--panel2); border:1px dashed var(--border); border-radius:8px; padding:10px 14px; font-size:0.82rem; margin-bottom:14px;}
+  .missing{background:#241a1a; border:1px solid #4a2c2c; border-radius:8px; padding:12px 16px; font-size:0.82rem; color:#f3b7b7;}
+  .footer{max-width:1100px; margin:30px auto 0; padding:0 20px; color:var(--muted); font-size:0.75rem; border-top:1px solid var(--border); padding-top:14px;}
+  a.src{color:var(--accent);}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📚 DSM-5 國考濃縮總複習表</h1>
+  <p>前13章資料整理自 <a class="src" href="https://111527207.github.io/PsyStudy/" target="_blank">PsyStudy 國考準備筆記網站</a>；認知類障礙症／餵食和飲食障礙症／身體症狀及相關障礙症／衝動控制及行為規範障礙症／人格障礙症 共5章因網站為JS動態渲染無法擷取，改以DSM-5診斷準則知識整理（標有淺綠色提示框），建議之後與網站原文校對。全篇僅擷取核心診斷準則／關鍵鑑別／盛行率之濃縮版。</p>
+</header>
+
+<nav>
+  <a href="#schizo">思覺失調類群</a>
+  <a href="#neuro">神經發展障礙症</a>
+  <a href="#bipolar">雙相情緒障礙症</a>
+  <a href="#depress">憂鬱症</a>
+  <a href="#anxiety">焦慮症</a>
+  <a href="#trauma">創傷及壓力相關</a>
+  <a href="#dissoc">解離症</a>
+  <a href="#sleep">睡醒障礙症</a>
+  <a href="#sexual">性功能障礙症</a>
+  <a href="#gender">性別不安</a>
+  <a href="#prevalence">盛行率速查</a>
+  <a href="#neurocog">認知類障礙症</a>
+  <a href="#eating">餵食和飲食障礙症</a>
+  <a href="#somatic">身體症狀及相關障礙症</a>
+  <a href="#impulse">衝動控制及行為規範障礙症</a>
+  <a href="#personality">人格障礙症</a>
+</nav>
+
+<main>
+
+<section id="schizo">
+<h2>🧠 思覺失調類群及其他精神病症</h2>
+<p class="subnote">五大領域：妄想、幻覺、胡亂思考、混亂/僵直行為、負性症狀</p>
+
+<div class="quick"><b>國考核心切點：</b>1天／1個月／6個月 三個時間切點 → 短暫精神病症(&gt;1天,&lt;1月,需完全恢復) → 類思覺失調症(1-6月,不需功能減退) → 思覺失調症(≥6月,需功能減退)。<br>
+情緒症狀是否佔病程<b>大半時間</b>且無情緒期仍有≥2週精神病 → 情感思覺失調症；精神病<b>只在</b>情緒發作時 → 憂/雙相+精神病特徵。</p>
+
+<details><summary>妄想症 Delusional Disorder <span class="code">297.1 F22</span></summary>
+<div class="body">
+<div class="row"><span class="lbl">核心準則</span><span class="val">≥1種妄想持續<b>≥1個月</b>；從未符合思覺失調症準則A；功能未顯著減損、行為不奇特怪異；幻覺若有需與妄想主題相關且非主要表現</span></div>
+<div class="row"><span class="lbl">亞型</span><span class="val">被害型(最常見)、嫉妒型、誇大型、愛戀型、身體型、混合型</span></div>
+<div class="row"><span class="lbl">關鍵鑑別</span><span class="val"><span class="diff-tag">思覺失調症</span>：缺乏其他活躍期症狀(顯著幻覺/胡言亂語/混亂行為/負性症狀)。<span class="diff-tag">OCD/BDD</span>：信念達妄想程度仍診斷OCD/BDD+「無病識感/具妄想信念」，不改診妄想症</span></div>
+<div class="row"><span class="lbl">盛行率</span><span class="val">終生0.2%</span></div>
+</div>
+</details>
+
+<details><summary>短暫精神病症 Brief Psychotic Disorder <span class="code">298.8 F23</span></summary>
+<div class="body">
+<div class="row"><span class="lbl">核心準則</span><span class="val">妄想/幻覺/胡言亂語/混亂或僵直行為 ≥1項(含1/2/3之一)；持續<b>&gt;1天，&lt;1個月</b>；<b>完全恢復</b>至發作前功能</span></div>
+<div class="row"><span class="lbl">盛行率</span><span class="val">佔美國首次發作精神病9%；女:男=2:1；中位發病30歲</span></div>
+<div class="row"><span class="lbl">預後</span><span class="val">儘管復發率高，社會功能與症狀預後<b>極好</b></span></div>
+</div>
+</details>
+
+<details><summary>類思覺失調症 Schizophreniform Disorder <span class="code">295.40 F20.81</span></summary>
+<div class="body">
+<div class="row"><span class="lbl">核心準則</span><span class="val">同思覺失調症準則A(≥2項)，持續<b>≥1個月，&lt;6個月</b>；<b>不需</b>功能顯著減退（與思覺失調症唯一關鍵差異之一）；未恢復下「暫時診斷」</span></div>
+<div class="row"><span class="lbl">預後</span><span class="val">約1/3在6個月內恢復(最終診斷)；2/3最終轉為思覺失調症或情感思覺失調症</span></div>
+</div>
+</details>
+
+<details><summary>思覺失調症 Schizophrenia <span class="code">295.90 F20.9</span></summary>
+<div class="body">
+<div class="row"><span class="lbl">核心準則</span><span class="val">A：≥2項活躍期症狀(至少1項為妄想/幻覺/胡言亂語)，持續≥1個月；B：功能顯著減退；C：徵兆持續<b>≥6個月</b>(含≥1月活躍期)；排除情緒障礙伴精神病特徵；ASD/溝通障礙者需額外有明顯妄想/幻覺≥1月才加診斷</span></div>
+<div class="row"><span class="lbl">盛行率</span><span class="val">終生0.3-0.7%；男20歲(早)/女20歲晚發病高峰；死於自殺5-6%</span></div>
+<div class="row"><span class="lbl">關鍵鑑別</span><span class="val"><span class="diff-tag">情感思覺失調症</span>：情緒症狀佔病程大半時間(準則C)。<span class="diff-tag">妄想症</span>：缺乏其他活躍期症狀</span></div>
+</div>
+</details>
+
+<details><summary>情感思覺失調症 Schizoaffective Disorder <span class="code">295.70 F25.x</span></summary>
+<div class="body">
+<div class="row"><span class="lbl">核心準則</span><span class="val">A:情緒發作(鬱/躁)與思覺失調症準則A症狀<b>同時</b>發生；B:終生曾有<b>無情緒發作時≥2週</b>妄想/幻覺；C:情緒症狀佔疾病活躍+殘餘期<b>大半時間</b>；亞型：雙相型/憂鬱型</span></div>
+<div class="row"><span class="lbl">一句話鑑別</span><span class="val">精神病能否脫離情緒發作獨立存在≥2週？能→情感思覺失調症；不能(精神病只跟著情緒出現)→憂/雙相+精神病特徵</span></div>
+<div class="row"><span class="lbl">盛行率</span><span class="val">終生0.3%(約為思覺失調症1/3)；女>男</span></div>
+</div>
+</details>
+
+<details><summary>僵直症 Catatonia <span class="code">293.89 F06.1</span></summary>
+<div class="body">
+<div class="row"><span class="lbl">核心準則</span><span class="val">12項精神運動特徵中≥3項(木僵/僵局/蠟樣屈曲/緘默/激越/怪異姿勢/鬼臉/自動服從/對抗/嘲弄模仿動作及言語/刻板動作)；分三類：合併另一精神障礙症(特別註明)/另一身體病況引起/非特定</span></div>
+<div class="row"><span class="lbl">鑑別</span><span class="val">需先排除神經惡性症候群(NMS)</span></div>
+</div>
+</details>
+
+<div class="quick"><b>五大症狀出現規則速查：</b>妄想症=只有妄想(無其他)；短暫精神病症/類思覺失調症/思覺失調症/情感思覺失調症=五大領域任選但需≥2項(含1/2/3之一)，思覺失調症負性症狀最突出最持久。</div>
+</section>
+
+
+<section id="neuro">
+<h2>🧩 神經發展障礙症</h2>
+
+<details><summary>智能發展障礙症 Intellectual Disability <span class="code">317-319</span></summary>
+<div class="body">
+<div class="row"><span class="lbl">核心準則</span><span class="val">A+B+C全須符合：智力功能缺損(IQ≈70±5以下)＋適應功能缺損(概念/社會/實務任一領域)＋發展期間出現。<b>嚴重度以適應功能而非IQ分級</b></span></div>
+<div class="row"><span class="lbl">關鍵鑑別</span><span class="val"><span class="diff-tag">神經認知障礙症</span>：認知功能「喪失」而非發展期缺損，可共病。<span class="diff-tag">ASD</span>：常共病，需社交能力低於一般發展程度預期</span></div>
+<div class="row"><span class="lbl">盛行率</span><span class="val">~1%一般族群；6‰嚴重智能不足</span></div>
+</div>
+</details>
+
+<details><summary>語言障礙症 / 言語發音障礙症 / 兒童期初發型語暢障礙症(口吃)</summary>
+<div class="body">
+<div class="row"><span class="lbl">語言障礙症</span><span class="val">接受/表達語言持續缺損(字彙/語句結構/述說能力)；早期發展階段出現；4歲後診斷穩定度高</span></div>
+<div class="row"><span class="lbl">言語發音</span><span class="val">發音清晰度缺陷；8歲前"晚八音"(l,r,s,z,th,ch,dzh,zh)錯誤屬正常</span></div>
+<div class="row"><span class="lbl">口吃</span><span class="val">流暢度阻滯(重複音節/拉長音/斷字/贅述)；6歲時80-90%已出現；65-85%兒童自然恢復</span></div>
+</div>
+</details>
+
+<details><summary>社交(語用)溝通障礙症 SPCD</summary>
+<div class="body">
+<div class="row"><span class="lbl">核心準則</span><span class="val">社交語言/非語言溝通使用持續困難(4項全需)；<b>無限制重複行為</b>(與ASD關鍵區別)；過往發展史完全無受限興趣/重複行為才考慮此診斷</span></div>
+<div class="row"><span class="lbl">關鍵鑑別</span><span class="val"><span class="diff-tag">ASD</span>是首要考慮，過往史若曾有重複行為即不能排除ASD。<span class="diff-tag">社交焦慮症</span>：SPCD從未有效社交溝通；社交焦慮症技能已發展但因焦慮無法運用</span></div>
+</div>
+</details>
+
+<details><summary>自閉症類群障礙症(ASD) <span class="code">299.00 F84.0</span></summary>
+<div class="body">
+<div class="row"><span class="lbl">核心準則</span><span class="val">A(社交溝通缺損，3項<b>全需</b>符合)+B(侷限重複行為，4項中<b>≥2</b>)+早期發展出現+功能減損+非智能不足可解釋</span></div>
+<div class="row"><span class="lbl">嚴重度</span><span class="val">3級(需要支援/大量支援/非常多支援)，依社交溝通+限制行為評分</span></div>
+<div class="row"><span class="lbl">盛行率</span><span class="val">~1%；男:女=4:1(女性常因偽裝被低估)</span></div>
+<div class="row"><span class="lbl">關鍵鑑別</span><span class="val"><span class="diff-tag">Rett氏症</span>：僅女性+已習得技能喪失。<span class="diff-tag">SPCD</span>：無限制重複行為</span></div>
+</div>
+</details>
+
+<details><summary>ADHD 注意力不足/過動症 <span class="code">314.xx F90.x</span></summary>
+<div class="body">
+<div class="row"><span class="lbl">核心準則</span><span class="val">不專注(I)或過動/衝動(H/I)各9項中<b>≥6</b>(17歲以上≥5)；<b>12歲前</b>出現；≥2種情境；干擾功能</span></div>
+<div class="row"><span class="lbl">類型</span><span class="val">合併型/主要不專注型/主要過動衝動型</span></div>
+<div class="row"><span class="lbl">盛行率</span><span class="val">兒童~5%；成人~2.5%；兒童男:女=2:1</span></div>
+<div class="row"><span class="lbl">關鍵鑑別</span><span class="val"><span class="diff-tag">雙相情緒障礙症</span>：躁症有週期性(發作-間歇)，ADHD症狀持續存在。<span class="diff-tag">憂鬱/焦慮</span>：症狀在12歲前已出現且不侷限於情緒期</span></div>
+</div>
+</details>
+
+<details><summary>特定學習障礙症 <span class="code">315.xx F81.x</span></summary>
+<div class="body">
+<div class="row"><span class="lbl">核心準則</span><span class="val">學習/使用學業技巧持續困難，6項中<b>≥1</b>，<b>持續≥6個月</b>(即使有介入)；顯著低於實際年齡水準</span></div>
+<div class="row"><span class="lbl">特別註明</span><span class="val">伴隨閱讀損傷(dyslexia)/書寫表達損傷/數學損傷(dyscalculia)——非正式DSM診斷名稱，需用特別註明</span></div>
+<div class="row"><span class="lbl">盛行率</span><span class="val">學齡兒童5-15%；成人~4%</span></div>
+</div>
+</details>
+
+<details><summary>動作協調發展障礙症(DCD) / 重複動作障礙症 / 抽搐症</summary>
+<div class="body">
+<div class="row"><span class="lbl">DCD</span><span class="val">動作技巧習得/執行顯著低於年齡；早期發展開始；5-11歲盛行率5-6%</span></div>
+<div class="row"><span class="lbl">重複動作障礙症</span><span class="val">重複性/驅使性/無目的動作(甩手/搖擺/撞頭)；干擾功能或致自傷；<span class="diff-tag">鑑別OCD</span>：無強迫觀念驅動。<span class="diff-tag">鑑別抽搐症</span>：更節律性、可維持較久、分心時常停止</span></div>
+<div class="row"><span class="lbl">抽搐症分類</span><span class="val">妥瑞氏症(動作+發聲抽搐≥1年,18歲前)＞持續型(單一或多重非兩者兼有,≥1年)＞暫時型(&lt;1年)；順序規則：符合妥瑞氏症不可再診斷持續/暫時型</span></div>
+<div class="row"><span class="lbl">盛行率</span><span class="val">妥瑞氏症0.3-0.8%；50-90%妥瑞氏症有ADHD；20-60%共病OCD</span></div>
+</div>
+</details>
+</section>
+
+
+<section id="bipolar">
+<h2>🌀 雙相情緒及其相關障礙症</h2>
+
+<div class="quick"><b>三大發作比較：</b>躁症(≥1週,B症狀≥3項,<b>功能必須嚴重受損或住院</b>) / 輕躁症(≥4天,B症狀≥3項,功能改變但<b>不需嚴重受損</b>，若有精神病症狀→升級為躁症) / 鬱症發作(≥2週,9項中≥5項含核心症狀)</div>
+
+<table class="mini">
+<tr><th></th><th>第一型 Bipolar I</th><th>第二型 Bipolar II</th><th>循環型 Cyclothymic</th></tr>
+<tr><td>核心準則</td><td>≥1次<b>躁症發作</b></td><td>≥1次輕躁症+≥1次鬱症發作；<b>從未</b>躁症(有則永久改第一型)</td><td>≥2年(兒童≥1年)閾值下輕躁+鬱症症狀，<b>從未</b>達完整發作準則；≥1/2時間有症狀、無症狀期≤2個月</td></tr>
+<tr><td>盛行率(12月)</td><td>0.6%(美)</td><td>0.3-0.8%</td><td>0.4-1%(終生)</td></tr>
+<tr><td>平均發病</td><td>18歲</td><td>25歲</td><td>青春期-成年早期</td></tr>
+<tr><td>自殺風險</td><td>終生≥一般人15倍</td><td>致死率<b>高於</b>第一型</td><td>較低但仍需評估</td></tr>
+</table>
+
+<details><summary>國考關鍵鑑別</summary>
+<div class="body">
+<div class="row"><span class="lbl">vs 憂鬱症</span><span class="val">平均延誤7-10年才確診雙相；紅旗徵兆：早發病(&lt;25)、發作頻繁(&gt;4次)、家族史、非典型憂鬱特徵、抗憂鬱藥誘發躁/輕躁</span></div>
+<div class="row"><span class="lbl">vs 情感思覺失調症</span><span class="val">無情緒期精神病≥2週有→情感思覺失調症；精神病只在情緒發作時→雙相有精神病特徵</span></div>
+<div class="row"><span class="lbl">vs ADHD</span><span class="val">雙相為發作性(有明確開始結束)；ADHD為持續性(從幼兒期起)。避免重複計算(double counting)</span></div>
+<div class="row"><span class="lbl">vs BPD</span><span class="val">雙相情緒波動為天到週的自發性發作；BPD為小時到天的人際事件反應性波動</span></div>
+<div class="row"><span class="lbl">兒童：DMDD vs 雙相</span><span class="val">雙相只適用曾有明確躁/輕躁發作的兒童；持續性易怒(非陣發性)→優先考慮DMDD</span></div>
+</div>
+</details>
+
+<details><summary>重要特別註明</summary>
+<div class="body">
+<div class="row"><span class="lbl">快速循環</span><span class="val">前12個月≥4次發作；預後較差</span></div>
+<div class="row"><span class="lbl">混合型特徵</span><span class="val">鬱症發作時≥3項躁症狀(或反之)；重要風險因子，易誤診為單極憂鬱</span></div>
+<div class="row"><span class="lbl">睡眠需求降低</span><span class="val">「只睡3小時就精力充沛」≠失眠的「想睡睡不著」，高度提示雙相</span></div>
+</div>
+</details>
+</section>
+
+
+<section id="depress">
+<h2>😔 憂鬱症</h2>
+
+<table class="mini">
+<tr><th>疾病</th><th>核心特徵</th><th>持續時間</th><th>年齡限制</th></tr>
+<tr><td>侵擾性情緒失調症(DMDD)</td><td>慢性易怒+反覆嚴重脾氣爆發，每週≥3次</td><td>≥12個月(無連續3月無症狀)</td><td>發病於10歲前，診斷限6-18歲</td></tr>
+<tr><td>鬱症(MDD)</td><td>9項中≥5項(含核心症狀)</td><td>≥2週</td><td>無限制</td></tr>
+<tr><td>持續性憂鬱症(PDD)</td><td>慢性情緒低落+6項中≥2項</td><td>≥2年(兒童≥1年)，無症狀期≤2個月</td><td>常早發</td></tr>
+<tr><td>經前期情緒低落症(PMDD)</td><td>經前5項以上症狀(需日常評估確認)</td><td>經期前1週出現，經後緩解</td><td>限女性</td></tr>
+<tr><td>物質/醫藥引發</td><td>與物質時序相關的憂鬱症狀</td><td>使用後1月內發生，戒斷1月內緩解</td><td>—</td></tr>
+</table>
+
+<details><summary>國考經典鑑別：正常悲傷 vs 鬱症發作</summary>
+<div class="body">
+<div class="row"><span class="lbl">正常悲傷</span><span class="val">空虛與失落，情緒有起伏(可伴正面情緒)，仍有自尊，想到死亡多針對逝者</span></div>
+<div class="row"><span class="lbl">鬱症發作</span><span class="val">持續憂鬱心情無法快樂，覺得自己毫無價值，想結束自己生命；需嚴重度(5/9)+期間(≥2週)+功能減損皆符合才可診斷</span></div>
+</div>
+</details>
+
+<details><summary>DMDD vs 雙相情緒障礙症(國考最常考)</summary>
+<div class="body">
+<div class="row"><span class="lbl">病程性質</span><span class="val">DMDD=非陣發性(易怒持續數月)；雙相=陣發性(離散情緒擾動發作)</span></div>
+<div class="row"><span class="lbl">心情高昂/自大</span><span class="val">非DMDD特點；躁狂共同特點</span></div>
+<div class="row"><span class="lbl">共存規則</span><span class="val">DMDD不可同時診斷對立反抗症/間歇暴怒症/雙相；症狀同時符合DMDD+ODD→只下DMDD</span></div>
+</div>
+</details>
+
+<details><summary>特別註明重點</summary>
+<div class="body">
+<div class="row"><span class="lbl">有混合型特徵</span><span class="val">鬱症發作中≥3項躁/輕躁症狀；提高未來轉躁風險</span></div>
+<div class="row"><span class="lbl">有憂鬱特徵(melancholic)</span><span class="val">對快樂刺激缺乏反應+≥3項(晨重、早醒2小時、精神動作激動遲緩、厭食體重減少、過度罪惡感)</span></div>
+<div class="row"><span class="lbl">分娩前後發病</span><span class="val">懷孕期或產後4週；50%「產後憂鬱」實際產前已發生；精神病特徵每500-1000次分娩1例，需警惕殺嬰風險</span></div>
+</div>
+</details>
+
+<div class="quick"><b>自殺風險核心記憶：</b>最一致危險因子=過去自殺企圖/威脅史，但<b>大部分自殺死亡案例之前並無企圖史</b>——臨床評估不能只依賴過去史。</div>
+</section>
+
+
+<section id="anxiety">
+<h2>😰 焦慮症</h2>
+<p class="subnote">章節依<b>典型起始發作年齡</b>排序：分離焦慮症→選擇性緘默症→特定畏懼症→社交焦慮症→恐慌症→特定場所畏懼症→廣泛性焦慮症</p>
+
+<table class="mini">
+<tr><th>疾病</th><th>核心恐懼焦點</th><th>持續時間</th><th>發病年齡</th><th>男女比</th></tr>
+<tr><td>分離焦慮症</td><td>與依附者分離</td><td>兒童≥4週/成人≥6月</td><td>學齡前~兒童期</td><td>女>男(社區)</td></tr>
+<tr><td>選擇性緘默症</td><td>特定社交場合說話本身</td><td>≥1個月</td><td>&lt;5歲</td><td>無顯著差異</td></tr>
+<tr><td>特定畏懼症</td><td>特定對象/情境本身</td><td>≥6個月</td><td>中位7-11歲</td><td>2:1</td></tr>
+<tr><td>社交焦慮症</td><td>被他人負面評價</td><td>≥6個月</td><td>中位13歲</td><td>1.5-2.2:1</td></tr>
+<tr><td>恐慌症</td><td>恐慌發作本身及後果</td><td>≥1個月(發作後反應)</td><td>中位20-24歲</td><td>2:1</td></tr>
+<tr><td>特定場所畏懼症</td><td>發作時難逃脫/無法獲協助</td><td>≥6個月</td><td>平均17歲</td><td>2:1</td></tr>
+<tr><td>廣泛性焦慮症</td><td>多領域廣泛擔憂</td><td>≥6個月</td><td>無特定高峰</td><td>2:1~3:2</td></tr>
+</table>
+
+<details><summary>各疾病核心診斷準則濃縮</summary>
+<div class="body">
+<div class="row"><span class="lbl">分離焦慮症</span><span class="val">8項中≥3項(過度苦惱/擔心失去依附者/拒絕外出/惡夢等)</span></div>
+<div class="row"><span class="lbl">選擇性緘默症</span><span class="val">特定場合持續無法說話，其他場合可說；常合併社交焦慮症</span></div>
+<div class="row"><span class="lbl">特定畏懼症</span><span class="val">對象/情境幾乎都引發立即恐懼+主動迴避；5類：動物/自然環境/血液注射受傷/場所/其他</span></div>
+<div class="row"><span class="lbl">社交焦慮症</span><span class="val">害怕被負面評價，社交情境幾乎總是引發恐懼；亞型「限於表現時」</span></div>
+<div class="row"><span class="lbl">恐慌症</span><span class="val">反覆<b>非預期性</b>恐慌發作(4項以上生理/認知症狀)，≥1次後有≥1個月持續擔憂或行為改變</span></div>
+<div class="row"><span class="lbl">特定場所畏懼症</span><span class="val">5種場合(交通工具/開放空間/封閉場所/排隊人群/獨自在外)中<b>≥2種</b>；與恐慌症診斷<b>互相獨立</b>，同時符合應下兩個診斷</span></div>
+<div class="row"><span class="lbl">廣泛性焦慮症</span><span class="val">過度難控制擔憂+6項中≥3項(兒童≥1項)，多領域不限對象</span></div>
+</div>
+</details>
+
+<details><summary>易混淆一句話鑑別</summary>
+<div class="body">
+<div class="row"><span class="lbl">特定畏懼症</span><span class="val">怕「那個東西/情境」本身</span></div>
+<div class="row"><span class="lbl">社交焦慮症</span><span class="val">怕「別人怎麼看我」</span></div>
+<div class="row"><span class="lbl">恐慌症</span><span class="val">怕「恐慌發作再度發生」</span></div>
+<div class="row"><span class="lbl">特定場所畏懼症</span><span class="val">怕「發作時逃不掉、沒人幫」</span></div>
+<div class="row"><span class="lbl">廣泛性焦慮症</span><span class="val">怕「很多事情都可能出錯」(無特定對象)</span></div>
+<div class="row"><span class="lbl">特定場所畏懼症 vs 特定畏懼症(場所型)</span><span class="val">只怕1種情境→特定畏懼症；怕≥2種5類場所之一→特定場所畏懼症</span></div>
+</div>
+</details>
+</section>
+
+
+<section id="trauma">
+<h2>⚡ 創傷及壓力相關障礙症</h2>
+
+<div class="quick"><b>臨床病程時序：</b>0-3天(正常急性壓力反應) → 3天-1個月(急性壓力症ASD) → 超過1個月(PTSD) → 喪親超過12個月/兒童6個月(持續性哀慟障礙症PGD，DSM-5-TR新增)</div>
+
+<details><summary>反應性依附障礙症(RAD) / 脫抑制社交參與障礙症(DSED)</summary>
+<div class="body">
+<div class="row"><span class="lbl">RAD</span><span class="val">對照顧者情感退縮，受挫時不尋求也不接受安慰；源於極端社交忽視；5歲前顯現；環境改善後可迅速恢復</span></div>
+<div class="row"><span class="lbl">DSED</span><span class="val">對陌生成人警覺性降低、過度親暱、隨意跟走；即使環境改善<b>症狀仍常持續</b>(與RAD不同)</span></div>
+<div class="row"><span class="lbl">鑑別</span><span class="val">RAD需有明確嚴重忽視史，ASD不一定；DSED核心是社交邊界瓦解，ADHD衝動則保留對照顧者的依附確認</span></div>
+</div>
+</details>
+
+<details><summary>PTSD 創傷後壓力症</summary>
+<div class="body">
+<div class="row"><span class="lbl">核心準則</span><span class="val">A創傷暴露(死亡/嚴重受傷/性暴力)+B侵入症狀≥1+C迴避≥1+D負面認知情緒≥2+E警覺反應性≥2；<b>持續&gt;1個月</b></span></div>
+<div class="row"><span class="lbl">特別註明</span><span class="val">伴隨解離症狀(自我感/現實感喪失)；伴隨延遲顯現(≥6個月才滿足準則)</span></div>
+<div class="row"><span class="lbl">盛行率</span><span class="val">美國成人終生8.7%；高風險族群(軍人/強暴倖存者)達30-50%</span></div>
+<div class="row"><span class="lbl">鑑別</span><span class="val">ASD持續3天-1月；&gt;1月變更診斷為PTSD。適應障礙症壓力源不需達致命創傷等級</span></div>
+</div>
+</details>
+
+<details><summary>急性壓力症(ASD)</summary>
+<div class="body">
+<div class="row"><span class="lbl">核心準則</span><span class="val">5大範疇(侵入/負面情緒/解離/迴避/激越警覺)共14項中<b>任9項以上</b>；持續<b>3天至1個月</b></span></div>
+<div class="row"><span class="lbl">預後</span><span class="val">約一半以上ASD會惡化演變成PTSD</span></div>
+</div>
+</details>
+
+<details><summary>適應障礙症(AD)</summary>
+<div class="body">
+<div class="row"><span class="lbl">核心準則</span><span class="val">可辨識壓力源後<b>3個月內</b>發展出情緒/行為症狀；痛苦不成比例或功能顯著損害；壓力源結束後症狀<b>不超過額外6個月</b></span></div>
+<div class="row"><span class="lbl">性質</span><span class="val"><b>排除性診斷</b>：完全符合MDD/焦慮症/PTSD準則應優先診斷該疾病</span></div>
+<div class="row"><span class="lbl">自殺風險</span><span class="val">中至高！是青少年因急性生活挫折(失戀/考試失敗)引發突發性自殺企圖的<b>最常見診斷</b></span></div>
+</div>
+</details>
+
+<details><summary>持續性哀慟障礙症(PGD) — DSM-5-TR新增</summary>
+<div class="body">
+<div class="row"><span class="lbl">核心準則</span><span class="val">喪親後<b>≥12個月</b>(兒童≥6個月)；強烈渴望/沉溺思念逝者+8項中≥3項(身分認同障礙/不置信/系統性迴避/強烈情緒痛苦/難以重新融入生活/情緒麻木/空虛/孤獨感)</span></div>
+<div class="row"><span class="lbl">鑑別正常哀慟</span><span class="val">正常哀傷1年內波浪式減輕；PGD跨越常態緩衝期後仍身分瓦解、生活停滯</span></div>
+<div class="row"><span class="lbl">盛行率</span><span class="val">喪親者中約10%</span></div>
+</div>
+</details>
+</section>
+
+
+<section id="dissoc">
+<h2>🌫️ 解離症</h2>
+<p class="subnote">核心：意識/記憶/身分認同/情感/知覺/身體表徵/運動控制/行為正常整合機能的瓦解或中斷</p>
+
+<details><summary>解離性身分疾患(DID)</summary>
+<div class="body">
+<div class="row"><span class="lbl">核心準則</span><span class="val">A身分認同瓦解(≥2個截然不同性格狀態)+B反覆記憶空缺(非一般遺忘)+排除文化宗教實踐正常部分</span></div>
+<div class="row"><span class="lbl">盛行率/風險</span><span class="val">年盛行率~1.5%；90%個案有極端嚴重童年虐待史；<b>&gt;70%門診個案有自殺企圖史</b></span></div>
+<div class="row"><span class="lbl">鑑別</span><span class="val">思覺失調症的幻聽源於外部；DID聲音源於內部性格狀態對話。雙相情緒波動持續數週至數月；DID性格切換為數分鐘內</span></div>
+</div>
+</details>
+
+<details><summary>解離性失憶症(DA)</summary>
+<div class="body">
+<div class="row"><span class="lbl">核心準則</span><span class="val">無法回憶重要自傳式資訊(通常創傷/壓力性質)，非一般遺忘</span></div>
+<div class="row"><span class="lbl">五大分型</span><span class="val">局部性(最常見)/選擇性/廣泛性/系統性/連續性</span></div>
+<div class="row"><span class="lbl">特徵</span><span class="val">「美麗的漠不關心」(La belle indifférence)——對失憶現象異常冷淡</span></div>
+</div>
+</details>
+
+<details><summary>去人格化/去現實化疾患(DDD)</summary>
+<div class="body">
+<div class="row"><span class="lbl">核心準則</span><span class="val">持續/反覆去人格化(自我疏離感)或去現實化(環境不真實感)；<b>現實檢驗能力保持完整</b>(關鍵！非精神病性妄想)</span></div>
+<div class="row"><span class="lbl">病程</span><span class="val">平均發病16歲；40歲後首發極罕見，需篩查神經系統病變。三分之一陣發/三分之一持續/三分之一由陣發轉持續</span></div>
+<div class="row"><span class="lbl">盛行率</span><span class="val">終生~2%；性別比1:1(與其他解離症不同)</span></div>
+</div>
+</details>
+
+<table class="mini">
+<tr><th>比較項</th><th>DID</th><th>DA</th><th>DDD</th></tr>
+<tr><td>身分分裂度</td><td>極高</td><td>基本完整</td><td>無分裂(僅主觀異化)</td></tr>
+<tr><td>失憶特性</td><td>全面且反覆</td><td>對核心自傳資訊喪失</td><td>無失憶</td></tr>
+<tr><td>現實檢驗</td><td>個別人格主導期完整</td><td>完全完好</td><td>絕對完好</td></tr>
+</table>
+</section>
+
+
+<section id="sleep">
+<h2>😴 睡－醒障礙症</h2>
+
+<table class="mini">
+<tr><th>疾病</th><th>核心特徵</th><th>關鍵鑑別點</th></tr>
+<tr><td>失眠症</td><td>入睡/維持困難、早醒；≥3晚/週且≥3月</td><td>有睡眠機會仍睡不好</td></tr>
+<tr><td>嗜睡症</td><td>夜睡足夠仍白天過度嗜睡、睡後遲鈍</td><td>無猝倒，長時間睡眠仍不恢復</td></tr>
+<tr><td>猝睡症</td><td>無法抗拒睡眠、猝倒、SOREMP</td><td>下視丘泌素缺乏、REM侵入</td></tr>
+<tr><td>呼吸相關睡眠障礙(OSA/CSA)</td><td>打鼾、呼吸中止、日間嗜睡</td><td>PSG/AHI異常，AHI≥15(輕)/15-30(中)/&gt;30(重)</td></tr>
+<tr><td>日夜節律睡醒障礙症</td><td>睡眠時相與社會需求不一致</td><td>依內在時程可正常睡眠</td></tr>
+<tr><td>NREM覺醒障礙症(夢遊/睡驚)</td><td>前1/3夜、慢波N3-4</td><td>事後失憶、難喚醒</td></tr>
+<tr><td>夢魘症</td><td>REM期生動惡夢，多下半夜</td><td>醒後記得夢境，定向感佳</td></tr>
+<tr><td>REM睡眠行為障礙症(RBD)</td><td>夢境演出，睡後90分鐘後</td><td>發作後完全清醒無混淆；常預告共核蛋白病(帕金森氏症等)</td></tr>
+<tr><td>腿部不寧症候群(RLS)</td><td>夜間腿部不適、想動腿</td><td>活動可改善、休息惡化</td></tr>
+</table>
+
+<details><summary>易混淆速記</summary>
+<div class="body">
+<div class="row"><span class="lbl">失眠 vs 日夜節律</span><span class="val">失眠即使有機會仍睡不好；日夜節律問題符合自身時相時可正常睡眠</span></div>
+<div class="row"><span class="lbl">嗜睡症 vs 猝睡症</span><span class="val">嗜睡症MSLT平均睡眠準備期&lt;10分鐘但少有SOREMP；猝睡症≤8分鐘且≥2次SOREMP</span></div>
+<div class="row"><span class="lbl">夢魘症 vs RBD</span><span class="val">夢魘醒後完全清醒能清楚回憶(REM期，下半夜)；RBD會實際做出夢境動作可能傷人</span></div>
+<div class="row"><span class="lbl">NREM覺醒障礙 vs 夢魘</span><span class="val">NREM夢遊/睡驚前1/3夜、難喚醒事後失憶；夢魘REM期、醒後定向感完整</span></div>
+</div>
+</details>
+</section>
+
+
+<section id="sexual">
+<h2>💑 性功能障礙症</h2>
+<p class="subnote">通用架構(除GPPD外)：A核心症狀約75-100%性行為中出現→B持續≥6個月→C臨床顯著苦惱→D排除非性疾病/人際因素/物質身體病況</p>
+
+<table class="mini">
+<tr><th>疾病</th><th>適用性別</th><th>性反應階段</th><th>核心症狀</th></tr>
+<tr><td>男性性慾低落障礙症</td><td>男</td><td>慾望期</td><td>性幻想與性慾持續不足/缺乏</td></tr>
+<tr><td>女性性興趣/興奮障礙症</td><td>女</td><td>慾望+興奮期</td><td>6項中≥3項缺乏/降低</td></tr>
+<tr><td>勃起障礙症</td><td>男</td><td>興奮期</td><td>3項中≥1項：難以勃起/維持/硬度減弱</td></tr>
+<tr><td>骨盆性器疼痛/插入障礙症</td><td>女</td><td>興奮/插入</td><td>4項中≥1項：插入困難/疼痛/恐懼/肌肉緊縮</td></tr>
+<tr><td>早洩</td><td>男</td><td>射精期</td><td><b>插入後約1分鐘內</b>射精</td></tr>
+<tr><td>遲洩</td><td>男</td><td>射精期</td><td>顯著延遲/缺乏射精(無精確時限)</td></tr>
+<tr><td>女性高潮障礙症</td><td>女</td><td>高潮期</td><td>高潮拖延/罕有/缺乏或強度降低</td></tr>
+</table>
+
+<div class="quick"><b>重要排除原則：</b>性刺激不足不診斷；能被憂鬱/雙相/焦慮/PTSD/精神病更好解釋只診斷該病；物質/醫藥引發另立診斷；嚴重關係苦惱/伴侶暴力則列V碼/Z碼而非性功能障礙。<br><b>可同時診斷多個性功能障礙症</b>(不同於其他章節單一發作僅一診斷原則)。</div>
+</section>
+
+
+<section id="gender">
+<h2>🏳️‍⚧️ 性別不安</h2>
+
+<details><summary>核心概念</summary>
+<div class="body">
+<div class="row"><span class="lbl">定義</span><span class="val">個人經驗/展現的性別與指定性別不一致所伴隨的<b>苦惱</b>；DSM-IV「性別認同疾患」→DSM-5「性別不安」，聚焦不安情緒而非認同本身——<b>跨性別認同本身不是疾病</b></span></div>
+</div>
+</details>
+
+<table class="mini">
+<tr><th>比較項</th><th>兒童</th><th>青少年/成人</th></tr>
+<tr><td>準則A項目</td><td>8項中≥6項(<b>必含A1</b>：強烈渴望成為異性)</td><td>6項中≥2項(無強制必要項目)</td></tr>
+<tr><td>持續時間</td><td>≥6個月</td><td>≥6個月</td></tr>
+<tr><td>解剖構造不安</td><td>較不傾向表現極度持續</td><td>是診斷核心特徵，隨年齡增顯著</td></tr>
+<tr><td>特別註明</td><td>有性發展障礙</td><td>有性發展障礙 / <b>性別已轉換</b></td></tr>
+</table>
+
+<details><summary>易混淆鑑別</summary>
+<div class="body">
+<div class="row"><span class="lbl">vs 性別角色不順從</span><span class="val">性別不安=想成為另一性別的強烈渴望(核心信念)；不順從僅是行為表面不符刻板角色</span></div>
+<div class="row"><span class="lbl">vs 變裝癖障礙症</span><span class="val">變裝癖核心驅動力=跨性別裝扮產生性興奮，不涉及原本性別認同問題；兩者可共病</span></div>
+<div class="row"><span class="lbl">vs 身體臆形症</span><span class="val">性別不安否定整體性別認同；BDD專注身體特定部位；兩者可共病</span></div>
+<div class="row"><span class="lbl">自殺風險</span><span class="val">術前與術後皆有風險增加，需持續關注</span></div>
+</div>
+</details>
+</section>
+
+
+<section id="prevalence">
+<h2>📊 盛行率速查(診斷準則中的頻率標準，國考必背)</h2>
+<table class="mini">
+<tr><th>疾病</th><th>頻率/持續準則</th></tr>
+<tr><td>躁症發作(Bipolar I)</td><td>≥1週，多數時間幾乎每天；B症狀≥3項(易怒僅≥4項)</td></tr>
+<tr><td>輕躁發作(Bipolar II)</td><td>≥4連續天，多數時間；B症狀≥3項</td></tr>
+<tr><td>重鬱發作(MDE)</td><td>≥2週，9項中≥5項(含核心症狀)</td></tr>
+<tr><td>DMDD</td><td>脾氣爆發≥3次/週，持續≥12個月</td></tr>
+<tr><td>GAD廣泛性焦慮症</td><td>多數時間焦慮≥6個月；≥3項身心症狀(兒童1項)</td></tr>
+<tr><td>Panic Disorder恐慌症</td><td>反覆非預期恐慌發作；≥1次後≥1個月預期焦慮/行為改變</td></tr>
+<tr><td>PTSD</td><td>症狀(B+C+D+E)持續&gt;1個月</td></tr>
+<tr><td>OCD強迫症</td><td>耗時&gt;1小時/天或顯著苦惱</td></tr>
+<tr><td>延長哀傷症</td><td>≥3症狀/9個，持續≥12個月(成人)/≥6個月(兒童)</td></tr>
+<tr><td>暴食症/BED</td><td>平均≥1次/週，持續≥3個月</td></tr>
+<tr><td>失眠症</td><td>≥3晚/週，持續≥3個月</td></tr>
+<tr><td>品行疾患CD</td><td>≥12個月(至少1項≥6個月)</td></tr>
+<tr><td>對立反抗症ODD</td><td>≥4次/週，≥6個月</td></tr>
+</table>
+<p class="subnote">完整盛行率數字表(含終生/12月/性別/年齡)請見原網站「DSM-5-TR 盛行率完整參考表」。</p>
+</section>
+
+
+<section id="neurocog">
+<h2>🧠 認知類障礙症(認知障礙症/NCD)</h2>
+<div class="missing" style="background:#1a2024;border-color:#2a3a3a;color:#9ec7c7;">此章節網站頁面內容為JS動態載入，本工具無法擷取，以下為根據DSM-5診斷準則整理，建議之後與網站原文核對。</div>
+
+<div class="quick"><b>三層架構：</b>譫妄(Delirium，急性/可逆) → 輕型認知障礙症(Mild NCD，日常功能仍獨立) → 重型認知障礙症(Major NCD，失智，功能不獨立需協助)。<b>重型/輕型皆須指明病因</b>(阿茲海默症/額顳葉型/路易氏體/血管型/創傷性腦傷/物質引發/HIV/普里昂/帕金森氏症/亨丁頓氏症/其他病況/未特定多重病因)。</div>
+
+<details><summary>譫妄 Delirium <span class="code">293.0 F05</span></summary>
+<div class="body">
+<div class="row"><span class="lbl">核心準則</span><span class="val">A注意力與覺知障礙(急性發生，數小時-數天內波動)＋B額外認知缺損＋C非因既有NCD更好解釋＋D非因昏迷等意識狀態嚴重降低＋E有證據為身體病況/物質中毒戒斷/毒素暴露/多重病因所致的直接生理後果</span></div>
+<div class="row"><span class="lbl">特徵</span><span class="val">病程<b>波動性</b>(一天內時好時壞，常傍晚惡化"日落症候群")；為NCD中<b>唯一急性可逆</b>的類型</span></div>
+<div class="row"><span class="lbl">關鍵鑑別</span><span class="val"><span class="diff-tag">失智症(Major NCD)</span>：譫妄為急性發生+意識/注意力起伏；失智為慢性穩定退化，意識清醒。兩者可並存(失智者更易發生譫妄)</span></div>
+</div>
+</details>
+
+<details><summary>重型/輕型認知障礙症 Major/Mild NCD</summary>
+<div class="body">
+<div class="row"><span class="lbl">重型(Major)</span><span class="val">≥1項認知領域(複雜注意力/執行功能/學習記憶/語言/知覺動作/社會認知)顯著退步(他述+客觀測驗低於常模)；<b>干擾日常獨立功能(需協助)</b>；非僅發生於譫妄病程中</span></div>
+<div class="row"><span class="lbl">輕型(Mild)</span><span class="val">同上但為<b>輕微</b>退步；日常獨立功能保留(僅需較多努力/代償策略)</span></div>
+<div class="row"><span class="lbl">關鍵鑑別</span><span class="val">與智能發展障礙症不同：NCD強調「認知功能從前一水準<b>喪失/退化</b>」，智能不足為發展期間的原發性缺損</span></div>
+</div>
+</details>
+
+<table class="mini">
+<tr><th>病因</th><th>核心特徵/早期表現</th><th>鑑別重點</th></tr>
+<tr><td>阿茲海默症(AD)</td><td>近事記憶最早受損；隱襲發病、緩慢漸進</td><td>基因(APOE4/APP/PSEN1/2)；病理：類澱粉斑塊+neurofibrillary tangles</td></tr>
+<tr><td>額顳葉型(FTD)</td><td>行為變異型：人格/社交行為劇變、去抑制、冷漠；語言變異型：語言表達困難</td><td>發病較早(45-65歲)；早期記憶相對保留(與AD相反)</td></tr>
+<tr><td>路易氏體型(DLB)</td><td>波動性認知、視幻覺、自發性帕金森氏症狀、REM睡眠行為障礙</td><td>對抗精神病藥物<b>極度敏感</b>(禁忌使用典型抗精神病藥)</td></tr>
+<tr><td>血管型(VaD)</td><td>與腦血管事件時序相關；階梯式惡化(非漸進)</td><td>執行功能/處理速度受損早於記憶；常有局部神經學徵象</td></tr>
+<tr><td>創傷性腦傷(TBI)</td><td>頭部外傷後立即出現，持續超過急性期</td><td>需有意識喪失/創傷後失憶/神經學徵象證據</td></tr>
+<tr><td>帕金森氏症相關</td><td>先有帕金森運動症狀≥1年才出現認知退化</td><td>與DLB鑑別：DLB認知/精神症狀先於或與運動症狀同時1年內出現("1年原則")</td></tr>
+<tr><td>亨丁頓氏症</td><td>舞蹈樣不自主動作+執行功能退化+精神症狀</td><td>體染色體顯性遺傳(CAG重複序列)</td></tr>
+<tr><td>普里昂病(CJD)</td><td>快速進展(數月內)、肌陣攣</td><td>病程遠比其他退化性NCD快速</td></tr>
+</table>
+</section>
+
+
+<section id="eating">
+<h2>🍽️ 餵食和飲食障礙症</h2>
+<div class="missing" style="background:#1a2024;border-color:#2a3a3a;color:#9ec7c7;">此章節網站頁面內容為JS動態載入，本工具無法擷取，以下為根據DSM-5診斷準則整理，建議之後與網站原文核對。</div>
+
+<table class="mini">
+<tr><th>疾病</th><th>核心特徵</th><th>體重/代償行為</th><th>頻率/持續</th></tr>
+<tr><td>異食症Pica</td><td>持續食用非營養性、非食物物質</td><td>不適用</td><td>≥1個月，發展階段不適當</td></tr>
+<tr><td>反芻症</td><td>食物反覆逆流再咀嚼/吐出/再吞嚥</td><td>不適用</td><td>≥1個月</td></tr>
+<tr><td>迴避／節制型攝食障礙症(ARFID)</td><td>迴避進食(非關身材體重擔憂)導致營養不足/體重降低/需營養補充/心理社會功能損害</td><td>非因害怕變胖</td><td>持續性</td></tr>
+<tr><td>神經性厭食症(AN)</td><td>限制熱量攝取致顯著低體重+強烈害怕變胖/持續阻礙增重行為+體像扭曲</td><td>顯著過低體重(BMI依嚴重度分級)</td><td>—</td></tr>
+<tr><td>神經性暴食症(BN)</td><td>反覆暴食(短時間內大量進食+失控感)+不當代償行為(嘔吐/瀉藥/過度運動)</td><td>體重通常正常範圍</td><td>平均<b>≥1次/週，≥3個月</b></td></tr>
+<tr><td>暴食症(BED)</td><td>反覆暴食，伴顯著苦惱，<b>無</b>不當代償行為</td><td>常過重/肥胖但非必要</td><td>平均<b>≥1次/週，≥3個月</b></td></tr>
+</table>
+
+<details><summary>神經性厭食症亞型與嚴重度</summary>
+<div class="body">
+<div class="row"><span class="lbl">亞型</span><span class="val">節制型(單靠節食/禁食/過度運動) vs 暴食/清除型(近3個月有反覆暴食或清除行為)</span></div>
+<div class="row"><span class="lbl">嚴重度(依BMI)</span><span class="val">輕度≥17／中度16-16.99／重度15-15.99／極重度&lt;15</span></div>
+<div class="row"><span class="lbl">關鍵鑑別</span><span class="val"><span class="diff-tag">vs BN暴食/清除型</span>：核心差異在<b>體重是否顯著過低</b>(AN過低；BN體重正常/過重)</span></div>
+</div>
+</details>
+
+<details><summary>國考易混淆一句話鑑別</summary>
+<div class="body">
+<div class="row"><span class="lbl">ARFID vs AN</span><span class="val">ARFID迴避進食<b>不是</b>因為怕胖/體像困擾(可能因感覺敏感/怕嗆到/缺乏興趣)；AN核心是害怕變胖</span></div>
+<div class="row"><span class="lbl">BN vs BED</span><span class="val">有無不當代償行為(催吐/瀉藥/禁食/過度運動)是唯一關鍵區別</span></div>
+<div class="row"><span class="lbl">盛行率</span><span class="val">AN終生0.4%女性；BN終生1-1.5%女性；BED終生更常見(較BN/AN高)，男女比也較平均</span></div>
+<div class="row"><span class="lbl">醫療風險</span><span class="val">AN為<b>精神科死亡率最高</b>的疾病之一(心血管併發症、自殺)</span></div>
+</div>
+</details>
+</section>
+
+
+<section id="somatic">
+<h2>🩺 身體症狀及相關障礙症</h2>
+<div class="missing" style="background:#1a2024;border-color:#2a3a3a;color:#9ec7c7;">此章節網站頁面內容為JS動態載入，本工具無法擷取，以下為根據DSM-5診斷準則整理，建議之後與網站原文核對。</div>
+
+<table class="mini">
+<tr><th>疾病</th><th>核心特徵</th><th>症狀是否需醫學無法解釋</th><th>持續時間</th></tr>
+<tr><td>身體症狀障礙症(SSD)</td><td>≥1項困擾身體症狀+過度想法/感受/行為(需B項:不成比例想法/持續高焦慮/過度投入時間精力)</td><td><b>不需要</b>(DSM-5-TR最大改變，症狀可有醫學解釋)</td><td>≥6個月(可能症狀變動)</td></tr>
+<tr><td>疾病焦慮症(illness anxiety)</td><td>擔心罹患嚴重疾病，但身體症狀輕微或不存在；過度健康行為或逃避醫療</td><td>—</td><td>≥6個月</td></tr>
+<tr><td>轉化症(功能性神經症狀障礙症)</td><td>≥1項自主運動/感覺功能改變，臨床檢查與已知神經/醫學狀況不符</td><td>需證明症狀與神經學不一致(如Hoover's sign)</td><td>—</td></tr>
+<tr><td>影響身體病況的心理因素</td><td>心理/行為因素對已存在的身體病況(非精神疾病)造成不利影響</td><td>需有明確醫學病況</td><td>—</td></tr>
+<tr><td>人為障礙症(Factitious Disorder)</td><td>偽造/誘發症狀，即使無明顯外在利益(區別於詐病)；分「加諸己身」/「加諸他人」</td><td>—</td><td>—</td></tr>
+</table>
+
+<details><summary>國考關鍵鑑別</summary>
+<div class="body">
+<div class="row"><span class="lbl">SSD vs 疾病焦慮症</span><span class="val">SSD有顯著身體症狀為主軸；疾病焦慮症身體症狀輕微或無，核心是對生病的<b>焦慮信念</b>本身</span></div>
+<div class="row"><span class="lbl">SSD vs 轉化症</span><span class="val">轉化症聚焦<b>特定神經功能</b>缺損(如癱瘓、失明、非癲癇發作)，需臨床證據顯示與神經病理不一致；SSD無此侷限</span></div>
+<div class="row"><span class="lbl">人為障礙症 vs 詐病(Malingering)</span><span class="val">人為障礙症無明顯外在動機(非為金錢/免責/藥物)；詐病則有<b>明確外在動機</b>，且詐病<b>不是</b>DSM-5精神疾病診斷</span></div>
+</div>
+</details>
+</section>
+
+
+<section id="impulse">
+<h2>😤 侵擾行為、衝動控制及行為規範障礙症</h2>
+<div class="missing" style="background:#1a2024;border-color:#2a3a3a;color:#9ec7c7;">此章節網站頁面內容為JS動態載入，本工具無法擷取，以下為根據DSM-5診斷準則整理，建議之後與網站原文核對。</div>
+
+<div class="quick"><b>核心共通點：</b>本章疾病共同特徵為對情緒/行為的自我控制困難，且行為侵犯他人權利或與社會規範/權威衝突（是唯一同時涉及外顯化(externalizing)問題的DSM章節）。</div>
+
+<table class="mini">
+<tr><th>疾病</th><th>核心特徵</th><th>頻率/持續</th><th>發病年齡</th></tr>
+<tr><td>對立反抗症(ODD)</td><td>生氣易怒/好爭辯挑釁/報復心，8項中≥4項</td><td>≥6個月，多數天數出現(頻率隨年齡調整)</td><td>學齡前~青少年早期</td></tr>
+<tr><td>間歇暴怒症(IED)</td><td>無法控制的攻擊衝動爆發(語言/非破壞性≥2次/週×3月；或破壞性≥3次/12月)，反應與誘發事件不成比例</td><td>如上</td><td>常青少年期起</td></tr>
+<tr><td>品行障礙症(CD)</td><td>侵犯他人基本權利/社會規範，15項中≥3項</td><td><b>≥12個月</b>(至少1項持續≥6個月)</td><td>兒童期發病型(&lt;10歲，預後較差) vs 青少年期發病型(≥10歲)</td></tr>
+<tr><td>反社會型人格疾患</td><td>CD延續至成人，漠視/侵犯他人權利</td><td>—</td><td>需≥18歲才可診斷，且15歲前已有CD證據</td></tr>
+<tr><td>縱火症</td><td>蓄意縱火前有張力升高，縱火時有滿足/釋放感；非為經濟/報復/掩蓋犯罪等動機</td><td>反覆≥1次以上</td><td>—</td></tr>
+<tr><td>竊盜症</td><td>無法抗拒偷竊非為己用/非為金錢價值物品之衝動；偷竊前張力上升，偷竊時滿足感</td><td>反覆發作</td><td>—</td></tr>
+</table>
+
+<details><summary>國考核心鑑別鏈</summary>
+<div class="body">
+<div class="row"><span class="lbl">ODD → IED → CD 嚴重度光譜</span><span class="val">ODD以情緒調節失敗+對抗權威為主，通常不涉及嚴重攻擊或侵犯他人權利；IED聚焦「衝動性攻擊爆發」本身；CD則進一步涉及<b>侵犯他人基本權利</b>(攻擊人/動物、破壞財產、詐欺竊盜、嚴重違規)</span></div>
+<div class="row"><span class="lbl">CD vs DMDD</span><span class="val">DMDD核心為慢性易怒情緒本身；CD核心為侵犯他人權利之外顯行為，兩者可共病但需個別評估準則</span></div>
+<div class="row"><span class="lbl">CD vs ASPD</span><span class="val">18歲前是CD，18歲後若持續反社會型態且15歲前已有CD病史→反社會型人格疾患(屬人格障礙症章節但緊扣本章)</span></div>
+</div>
+</details>
+</section>
+
+
+<section id="personality">
+<h2>🎭 人格障礙症</h2>
+<div class="missing" style="background:#1a2024;border-color:#2a3a3a;color:#9ec7c7;">此章節網站頁面內容為JS動態載入，本工具無法擷取，以下為根據DSM-5診斷準則整理，建議之後與網站原文核對。</div>
+
+<div class="quick"><b>通用準則(A-G，10種人格障礙症共通)：</b>A內在經驗/行為模式明顯偏離文化預期(認知/情感/人際功能/衝動控制≥2領域)→B廣泛僵化(多情境)→C功能顯著損害→D穩定可追溯至青少年/成人早期→E非其他精神疾病更好解釋→F非物質/身體病況所致→須<b>18歲以上</b>才可診斷(反社會型人格疾患除外，需明確有CD史)</div>
+
+<table class="mini">
+<tr><th>群集</th><th>疾病</th><th>核心特徵一句話</th></tr>
+<tr><td rowspan="3">A群(古怪疏離)</td><td>妄想型(Paranoid)</td><td>廣泛不信任、猜疑他人動機</td></tr>
+<tr><td>孤僻型(Schizoid)</td><td>疏離社交關係、情感表達侷限，<b>不渴望</b>親密關係</td></tr>
+<tr><td>思覺失調型(Schizotypal)</td><td>親密關係極度不適+認知/知覺扭曲(魔幻思考)+古怪行為，屬思覺失調症頻譜</td></tr>
+<tr><td rowspan="4">B群(戲劇情緒化)</td><td>反社會型(Antisocial)</td><td>漠視侵犯他人權利，需15歲前有CD史，≥18歲</td></tr>
+<tr><td>邊緣型(Borderline, BPD)</td><td>人際/自我形象/情感不穩定+顯著衝動；9項中≥5項</td></tr>
+<tr><td>戲劇化型(Histrionic)</td><td>過度情緒化+尋求他人注意</td></tr>
+<tr><td>自戀型(Narcissistic)</td><td>誇大自大感+需要讚賞+缺乏同理心</td></tr>
+<tr><td rowspan="3">C群(焦慮害怕)</td><td>逃避型(Avoidant)</td><td>社交壓抑+自覺能力不足+對負評極度敏感</td></tr>
+<tr><td>依賴型(Dependent)</td><td>過度需要被照顧，導致順從黏人+分離恐懼</td></tr>
+<tr><td>強迫型(OCPD)</td><td>專注秩序/完美/控制，犧牲彈性開放與效率（<b>非</b>強迫症，無強迫思考/行為儀式）</td></tr>
+</table>
+
+<details><summary>國考必考鑑別</summary>
+<div class="body">
+<div class="row"><span class="lbl">BPD vs 雙相情緒障礙症</span><span class="val">BPD情緒波動為<b>小時到天</b>、常因人際事件觸發(反應性)；雙相為<b>天到週</b>的自發性發作，與人際事件無必然關聯</span></div>
+<div class="row"><span class="lbl">思覺失調型 vs 孤僻型</span><span class="val">思覺失調型有認知/知覺怪異(魔幻思考、關係意念)；孤僻型單純對親密關係無興趣，無怪異認知</span></div>
+<div class="row"><span class="lbl">強迫型人格(OCPD) vs 強迫症(OCD)</span><span class="val">OCPD是穩定人格特質(自我協調，患者不覺得有問題)；OCD有明確強迫思考+儀式化行為，且多為自我不協調(苦惱、想擺脫)</span></div>
+<div class="row"><span class="lbl">自戀型 vs 反社會型</span><span class="val">自戀型渴望讚賞/欽佩(重視他人眼光)；反社會型純粹漠視他人權利，不特別在意讚賞</span></div>
+<div class="row"><span class="lbl">依賴型 vs 逃避型</span><span class="val">依賴型渴望依附但缺乏自信主動追求；逃避型渴望親密卻因怕負評而<b>主動迴避</b>社交</span></div>
+</div>
+</details>
+
+<div class="quick"><b>DSM-5-TR新增/替代模式提醒：</b>Section III另有「人格障礙症替代模式(AMPD)」以人格功能程度(Criterion A)+病態人格特質(Criterion B，5大領域25項面向)評估，國考仍以Section II傳統類別模式為主。</div>
+</section>
+
+</main>
+
+<div class="footer">
+資料來源：前13章整理自<a class="src" href="https://111527207.github.io/PsyStudy/" target="_blank">111527207.github.io/PsyStudy</a>（Calvin 個人整理之國考筆記網站）；後5章(認知類/餵食飲食/身體症狀/衝動控制及行為規範/人格障礙症)因網站內容為JS動態渲染無法擷取，改以DSM-5-TR診斷準則知識重新整理，建議日後與網站原文核對校正。本表為濃縮摘要版，完整診斷準則、支持診斷特質、發展病程、文化與性別議題等細節請回原網站各章節或DSM-5-TR原文詳讀。
+</div>
+
+</body>
+</html>
